@@ -1,5 +1,8 @@
 name: Publier le journal quotidien
 on:
+  push:
+    branches: [main]
+    paths: ['generator/**', 'config/**', '.github/workflows/publish-daily.yml']
   schedule:
     - cron: '5 17 * * *'
       timezone: Europe/London
