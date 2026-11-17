@@ -18,7 +18,7 @@ permissions:
   contents: read
 concurrency:
   group: french-daily-journal
-  cancel-in-progress: false
+  cancel-in-progress: true
 jobs:
   produce:
     runs-on: ubuntu-latest
