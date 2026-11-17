@@ -38,15 +38,27 @@ def generate(site,now,provider,feeds):
         packet={'event_title':c.title,'language':'fr-FR',
                 'evidence_words':evidence_words,'facts':facts,
                 'source_names':[s['publisher'] for s in sources]}
-        try:output=provider.run(packet)
-        except AiError as e:
-            errors.append(str(e));break
-        article=assemble(output,c,facts,sources)
-        if article is None:
+        article=None;inference_failure=False
+        for attempt in range(2):
+            if provider.calls>=provider.max_calls:break
+            try:output=provider.run(packet)
+            except AiError as e:
+                errors.append(str(e));inference_failure=True;break
+            article=assemble(output,c,facts,sources)
+            if article is not None:break
             repaired=reflow_paragraphs(output)
+            reason=rejection_reason(repaired,facts,sources) or 'format ou preuves invalides'
             words=sum(len(p.split()) for p in repaired.get('paragraphes',[]) if isinstance(p,str))
-            errors.append('Rejected: '+(rejection_reason(repaired,facts,sources) or 'model validation')+f' ({words} mots)')
-            continue
+            errors.append(f'Rejected: {reason} ({words} mots)')
+            if attempt==0:
+                packet={**packet,'revision_notice':(
+                    'Le premier essai a été refusé: '+reason+'. Réécris un nouvel article original '
+                    'de 380 à 500 mots, en EXACTEMENT 6 paragraphes de 60 à 85 mots, '
+                    'et EXACTEMENT 6 listes de preuves correspondantes, avec uniquement les '
+                    'identifiants des faits reçus. Ne recopie aucun passage de 15 mots des sources. '
+                    'N ajoute aucun chiffre absent des faits.')}
+        if inference_failure:break
+        if article is None:continue
         if article.category not in cache_images:
             cache_images[article.category]=find(article.category,image_http)
         image=cache_images[article.category]

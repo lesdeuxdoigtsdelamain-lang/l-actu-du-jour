@@ -1,9 +1,5 @@
 name: Publier le journal quotidien
 on:
-  # Run a first publication when the generation configuration is deployed or updated.
-  push:
-    branches: [main]
-    paths: ['config/**', 'generator/**', '.github/workflows/publish-daily.yml']
   schedule:
     - cron: '5 17 * * *'
       timezone: Europe/London
