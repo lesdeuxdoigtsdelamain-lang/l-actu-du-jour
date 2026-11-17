@@ -1,0 +1,230 @@
+{
+  "$defs": {
+    "Article": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 64,
+          "minLength": 12,
+          "title": "Id",
+          "type": "string"
+        },
+        "category": {
+          "enum": [
+            "Monde",
+            "Maroc",
+            "Monde musulman",
+            "Royaume-Uni",
+            "France",
+            "Économie",
+            "Science et technologie",
+            "Santé",
+            "Société",
+            "Environnement"
+          ],
+          "title": "Category",
+          "type": "string"
+        },
+        "title": {
+          "maxLength": 180,
+          "minLength": 18,
+          "title": "Title",
+          "type": "string"
+        },
+        "paragraphs": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 13,
+          "minItems": 4,
+          "title": "Paragraphs",
+          "type": "array"
+        },
+        "image": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Image"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "source_refs": {
+          "items": {
+            "$ref": "#/$defs/Source"
+          },
+          "maxItems": 5,
+          "minItems": 1,
+          "title": "Source Refs",
+          "type": "array"
+        },
+        "word_count": {
+          "maximum": 780,
+          "minimum": 280,
+          "title": "Word Count",
+          "type": "integer"
+        },
+        "minutes": {
+          "maximum": 7,
+          "minimum": 2,
+          "title": "Minutes",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "id",
+        "category",
+        "title",
+        "paragraphs",
+        "source_refs",
+        "word_count",
+        "minutes"
+      ],
+      "title": "Article",
+      "type": "object"
+    },
+    "Image": {
+      "additionalProperties": false,
+      "properties": {
+        "url": {
+          "title": "Url",
+          "type": "string"
+        },
+        "alt": {
+          "maxLength": 160,
+          "minLength": 5,
+          "title": "Alt",
+          "type": "string"
+        },
+        "credit": {
+          "maxLength": 140,
+          "minLength": 2,
+          "title": "Credit",
+          "type": "string"
+        },
+        "license": {
+          "maxLength": 120,
+          "minLength": 2,
+          "title": "License",
+          "type": "string"
+        },
+        "page": {
+          "title": "Page",
+          "type": "string"
+        }
+      },
+      "required": [
+        "url",
+        "alt",
+        "credit",
+        "license",
+        "page"
+      ],
+      "title": "Image",
+      "type": "object"
+    },
+    "Source": {
+      "additionalProperties": false,
+      "properties": {
+        "publisher": {
+          "maxLength": 90,
+          "minLength": 2,
+          "title": "Publisher",
+          "type": "string"
+        },
+        "url": {
+          "title": "Url",
+          "type": "string"
+        },
+        "language": {
+          "pattern": "^(fr|ar|en|es|other)$",
+          "title": "Language",
+          "type": "string"
+        },
+        "published_at": {
+          "format": "date-time",
+          "title": "Published At",
+          "type": "string"
+        }
+      },
+      "required": [
+        "publisher",
+        "url",
+        "language",
+        "published_at"
+      ],
+      "title": "Source",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": 1,
+      "default": 1,
+      "title": "Schema Version",
+      "type": "integer"
+    },
+    "edition_id": {
+      "title": "Edition Id",
+      "type": "string"
+    },
+    "edition_date": {
+      "format": "date",
+      "title": "Edition Date",
+      "type": "string"
+    },
+    "generated_at": {
+      "format": "date-time",
+      "title": "Generated At",
+      "type": "string"
+    },
+    "language": {
+      "const": "fr-FR",
+      "default": "fr-FR",
+      "title": "Language",
+      "type": "string"
+    },
+    "timezone": {
+      "const": "Europe/London",
+      "default": "Europe/London",
+      "title": "Timezone",
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "complete",
+        "partielle"
+      ],
+      "title": "Status",
+      "type": "string"
+    },
+    "minutes": {
+      "maximum": 50,
+      "minimum": 2,
+      "title": "Minutes",
+      "type": "integer"
+    },
+    "articles": {
+      "items": {
+        "$ref": "#/$defs/Article"
+      },
+      "maxItems": 8,
+      "minItems": 1,
+      "title": "Articles",
+      "type": "array"
+    }
+  },
+  "required": [
+    "edition_id",
+    "edition_date",
+    "generated_at",
+    "status",
+    "minutes",
+    "articles"
+  ],
+  "title": "Edition",
+  "type": "object"
+}
