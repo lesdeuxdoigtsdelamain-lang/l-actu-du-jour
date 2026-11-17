@@ -47,7 +47,9 @@ fun sha(bytes: ByteArray): String = MessageDigest.getInstance("SHA-256")
 fun safeUrl(url: String): Boolean = runCatching {
     val u = URI(url)
     u.scheme == "https" && !u.host.isNullOrBlank() && u.userInfo == null &&
-        u.port in listOf(-1,443) && !u.host.matches(Regex("[0-9.:]+"))
+        u.port in listOf(-1,443) && !u.host.matches(Regex("[0-9.:]+")) &&
+        u.host.lowercase() !in setOf("localhost", "localhost.localdomain") &&
+        !u.host.lowercase().endsWith(".localhost") && !u.host.lowercase().endsWith(".local")
 }.getOrDefault(false)
 fun valid(e: Edition): Edition {
     require(e.schemaVersion == 1 && e.language == "fr-FR" && e.timezone == "Europe/London")
