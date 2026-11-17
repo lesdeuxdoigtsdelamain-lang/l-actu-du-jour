@@ -96,7 +96,7 @@ def rejection_reason(result,facts,sources):
         # Flag substantial verbatim reuse, not generic 15-word factual phrasing.
         # A continuous 26-word match is longer than a short incidental excerpt.
         if len(words)<26:continue
-        for start in range(0,len(words)-25,8):
+        for start in range(0,len(words)-25):
             span=' '.join(words[start:start+26])
             if span in text.casefold():return 'passage source recopie sans reformulation'
     return None
