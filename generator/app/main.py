@@ -64,14 +64,17 @@ def generate(site,now,provider,feeds):
         image=cache_images[article.category]
         article=article.model_copy(update={'image':image})
         articles.append(article)
-    if len(articles)<3:
+    # Publish at least one genuinely verified long report, clearly marked partial.
+    # Do not keep the reader empty merely because fewer than three pass strict QA.
+    if not articles:
         return (None,status,{'calls':provider.calls,'neurons':round(provider.usage_neurons,2)},
-            f'Only {len(articles)} verified long articles; not publishing a poor edition. '+('; '.join(errors[:2])))
+            'Aucun article long vérifié; publication suspendue. '+('; '.join(errors[:2])))
     # Aim for 20 minutes, but never pad or misrepresent a shorter confirmed edition.
     status_label='complete' if len(articles)>=6 and sum(a.word_count for a in articles)>=2700 else 'partielle'
     e=Edition(edition_id=f'{day}-fr-FR',edition_date=day,generated_at=now,
         status=status_label,minutes=sum(a.minutes for a in articles),articles=articles)
-    return e,status,{'calls':provider.calls,'neurons':round(provider.usage_neurons,2)},'Articles contrôlés automatiquement (longueur, chiffres, références)'
+    explanation=('Édition partielle : '+str(len(articles))+' article(s) long(s) vérifié(s) sur 6 à 8 attendus. ' if status_label=='partielle' else 'Édition complète. ')
+    return e,status,{'calls':provider.calls,'neurons':round(provider.usage_neurons,2)},explanation+'Contrôles : longueur, chiffres, références.'
 
 def main():
     p=argparse.ArgumentParser()
