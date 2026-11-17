@@ -1,0 +1,311 @@
+{
+  "feeds": [
+    {
+      "id": "france24",
+      "publisher": "France 24",
+      "url": "https://www.france24.com/fr/rss",
+      "language": "fr",
+      "category": "Monde",
+      "hosts": [
+        "www.france24.com"
+      ],
+      "policy": "rss"
+    },
+    {
+      "id": "franceinfo",
+      "publisher": "Franceinfo",
+      "url": "https://www.francetvinfo.fr/titres.rss",
+      "language": "fr",
+      "category": "France",
+      "hosts": [
+        "www.francetvinfo.fr"
+      ],
+      "policy": "rss"
+    },
+    {
+      "id": "rfi",
+      "publisher": "RFI",
+      "url": "https://www.rfi.fr/fr/rss",
+      "language": "fr",
+      "category": "Monde",
+      "hosts": [
+        "www.rfi.fr"
+      ],
+      "policy": "rss"
+    },
+    {
+      "id": "aljazeera-ar",
+      "publisher": "Al Jazeera Arabic",
+      "url": "https://www.aljazeera.net/aljazeerarss/ar.xml",
+      "language": "ar",
+      "category": "Monde",
+      "hosts": [
+        "www.aljazeera.net"
+      ],
+      "policy": "rss"
+    },
+    {
+      "id": "aljazeera-en",
+      "publisher": "Al Jazeera English",
+      "url": "https://www.aljazeera.com/xml/rss/all.xml",
+      "language": "en",
+      "category": "Monde",
+      "hosts": [
+        "www.aljazeera.com"
+      ],
+      "policy": "rss"
+    },
+    {
+      "id": "bbc-ar",
+      "publisher": "BBC Arabic",
+      "url": "https://feeds.bbci.co.uk/arabic/rss.xml",
+      "language": "ar",
+      "category": "Monde",
+      "hosts": [
+        "feeds.bbci.co.uk",
+        "www.bbc.com",
+        "www.bbc.co.uk"
+      ],
+      "policy": "rss"
+    },
+    {
+      "id": "bbc-world",
+      "publisher": "BBC News",
+      "url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+      "language": "en",
+      "category": "Monde",
+      "hosts": [
+        "feeds.bbci.co.uk",
+        "www.bbc.com",
+        "www.bbc.co.uk"
+      ],
+      "policy": "rss"
+    },
+    {
+      "id": "bbc-uk",
+      "publisher": "BBC UK",
+      "url": "https://feeds.bbci.co.uk/news/uk/rss.xml",
+      "language": "en",
+      "category": "Royaume-Uni",
+      "hosts": [
+        "feeds.bbci.co.uk",
+        "www.bbc.co.uk",
+        "www.bbc.com"
+      ],
+      "policy": "rss"
+    },
+    {
+      "id": "bbc-business",
+      "publisher": "BBC Business",
+      "url": "https://feeds.bbci.co.uk/news/business/rss.xml",
+      "language": "en",
+      "category": "Économie",
+      "hosts": [
+        "feeds.bbci.co.uk",
+        "www.bbc.com",
+        "www.bbc.co.uk"
+      ],
+      "policy": "rss"
+    },
+    {
+      "id": "bbc-science",
+      "publisher": "BBC Science",
+      "url": "https://feeds.bbci.co.uk/news/science_and_environment/rss.xml",
+      "language": "en",
+      "category": "Science et technologie",
+      "hosts": [
+        "feeds.bbci.co.uk",
+        "www.bbc.com",
+        "www.bbc.co.uk"
+      ],
+      "policy": "rss"
+    },
+    {
+      "id": "sky-world",
+      "publisher": "Sky News",
+      "url": "https://feeds.skynews.com/feeds/rss/world.xml",
+      "language": "en",
+      "category": "Monde",
+      "hosts": [
+        "feeds.skynews.com",
+        "news.sky.com"
+      ],
+      "policy": "rss"
+    },
+    {
+      "id": "hespress-ar",
+      "publisher": "Hespress",
+      "url": "https://www.hespress.com/feed",
+      "language": "ar",
+      "category": "Maroc",
+      "hosts": [
+        "www.hespress.com"
+      ],
+      "policy": "rss"
+    },
+    {
+      "id": "hespress-fr",
+      "publisher": "Hespress Français",
+      "url": "https://fr.hespress.com/feed",
+      "language": "fr",
+      "category": "Maroc",
+      "hosts": [
+        "fr.hespress.com"
+      ],
+      "policy": "rss"
+    },
+    {
+      "id": "telquel",
+      "publisher": "TelQuel",
+      "url": "https://telquel.ma/feed",
+      "language": "fr",
+      "category": "Maroc",
+      "hosts": [
+        "telquel.ma"
+      ],
+      "policy": "rss"
+    },
+    {
+      "id": "globalvoices",
+      "publisher": "Global Voices",
+      "url": "https://globalvoices.org/feed/",
+      "language": "en",
+      "category": "Monde",
+      "hosts": [
+        "globalvoices.org"
+      ],
+      "policy": "open"
+    },
+    {
+      "id": "globalvoices-ar",
+      "publisher": "Global Voices Ar",
+      "url": "https://ar.globalvoices.org/feed/",
+      "language": "ar",
+      "category": "Monde",
+      "hosts": [
+        "ar.globalvoices.org"
+      ],
+      "policy": "open"
+    },
+    {
+      "id": "un-fr",
+      "publisher": "ONU Info",
+      "url": "https://news.un.org/feed/subscribe/fr/news/all/rss.xml",
+      "language": "fr",
+      "category": "Monde",
+      "hosts": [
+        "news.un.org"
+      ],
+      "policy": "rss"
+    },
+    {
+      "id": "un-en",
+      "publisher": "UN News",
+      "url": "https://news.un.org/feed/subscribe/en/news/all/rss.xml",
+      "language": "en",
+      "category": "Monde",
+      "hosts": [
+        "news.un.org"
+      ],
+      "policy": "rss"
+    },
+    {
+      "id": "gov-uk",
+      "publisher": "GOV.UK",
+      "url": "https://www.gov.uk/search/news-and-communications.atom",
+      "language": "en",
+      "category": "Royaume-Uni",
+      "hosts": [
+        "www.gov.uk"
+      ],
+      "policy": "open"
+    },
+    {
+      "id": "nasa",
+      "publisher": "NASA",
+      "url": "https://www.nasa.gov/news-release/feed/",
+      "language": "en",
+      "category": "Science et technologie",
+      "hosts": [
+        "www.nasa.gov",
+        "science.nasa.gov"
+      ],
+      "policy": "open"
+    },
+    {
+      "id": "nsf",
+      "publisher": "US National Science Foundation",
+      "url": "https://www.nsf.gov/rss/rss_www_news.xml",
+      "language": "en",
+      "category": "Science et technologie",
+      "hosts": [
+        "www.nsf.gov",
+        "nsf.gov"
+      ],
+      "policy": "open"
+    },
+    {
+      "id": "nps",
+      "publisher": "US National Park Service",
+      "url": "https://www.nps.gov/feeds/getNewsRSS.htm?id=nps",
+      "language": "en",
+      "category": "Environnement",
+      "hosts": [
+        "www.nps.gov"
+      ],
+      "policy": "open"
+    },
+    {
+      "id": "alarabiya",
+      "publisher": "Al Arabiya",
+      "url": "https://www.alarabiya.net/feed/rss2/ar.xml",
+      "language": "ar",
+      "category": "Monde",
+      "hosts": [
+        "www.alarabiya.net"
+      ],
+      "policy": "rss",
+      "enabled": true,
+      "note": "RSS URL and reuse permissions need manual verification"
+    },
+    {
+      "id": "map",
+      "publisher": "MAP Maroc",
+      "url": "https://www.mapnews.ma/fr/rss.xml",
+      "language": "fr",
+      "category": "Maroc",
+      "hosts": [
+        "www.mapnews.ma"
+      ],
+      "policy": "rss",
+      "enabled": false,
+      "note": "RSS URL to verify"
+    },
+    {
+      "id": "le360",
+      "publisher": "Le360",
+      "url": "https://fr.le360.ma/rss",
+      "language": "fr",
+      "category": "Maroc",
+      "hosts": [
+        "fr.le360.ma"
+      ],
+      "policy": "rss",
+      "enabled": false,
+      "note": "RSS URL to verify"
+    },
+    {
+      "id": "reuters",
+      "publisher": "Reuters",
+      "url": "https://www.reuters.com/rssFeed/worldNews",
+      "language": "en",
+      "category": "Monde",
+      "hosts": [
+        "www.reuters.com"
+      ],
+      "policy": "rss",
+      "enabled": false,
+      "note": "Legacy free RSS not independently verified"
+    }
+  ]
+}
