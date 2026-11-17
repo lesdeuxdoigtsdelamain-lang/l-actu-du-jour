@@ -8,7 +8,7 @@ from .fetch import Fetcher
 from .ingest import collect,cluster,rank
 from .evidence import make_facts
 from .cloudflare import configured,AiError
-from .editor import assemble
+from .editor import assemble,rejection_reason
 from .commons import find
 from .models import Edition
 from .publish import put,validate,history,health
@@ -42,7 +42,9 @@ def generate(site,now,provider,feeds):
         except AiError as e:
             errors.append(str(e));break
         article=assemble(output,c,facts,sources)
-        if article is None:errors.append('Rejected: weak or unsupported article');continue
+        if article is None:
+            errors.append('Rejected: '+(rejection_reason(output,facts,sources) or 'model validation'))
+            continue
         if article.category not in cache_images:
             cache_images[article.category]=find(article.category,image_http)
         image=cache_images[article.category]
