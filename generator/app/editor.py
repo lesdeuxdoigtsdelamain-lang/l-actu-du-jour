@@ -17,6 +17,60 @@ def normalized_number(s):
 
 def count_words(s):return len(s.split())
 
+
+def reflow_paragraphs(result):
+    """Re-paragraph AI text without adding facts, words or source references.
+
+    Source fact IDs follow each sentence. This repairs a model that splits a
+    substantive article into many tiny paragraphs, but never pads short texts.
+    """
+    paragraphs=result.get('paragraphes')
+    proofs=result.get('preuves')
+    if not isinstance(paragraphs,list) or not isinstance(proofs,list) or len(paragraphs)!=len(proofs):
+        return result
+    if not paragraphs or any(not isinstance(p,str) for p in paragraphs) or any(not isinstance(p,list) for p in proofs):
+        return result
+    if all(22<=count_words(p)<=160 for p in paragraphs) and 4<=len(paragraphs)<=11:
+        return result
+    total=count_words(' '.join(paragraphs))
+    if not 280<=total<=780:
+        return result
+    units=[]
+    for paragraph,refs in zip(paragraphs,proofs):
+        for sentence in re.split(r'(?<=[.!?])\s+',paragraph.strip()):
+            if sentence.strip():
+                if count_words(sentence)>150:return result
+                units.append((sentence.strip(),refs))
+    if len(units)<4:return result
+    target=max(48,min(110,round(total/6)))
+    groups=[];current=[];current_refs=[];current_size=0
+    for sentence,refs in units:
+        length=count_words(sentence)
+        if current and current_size+length>155:
+            groups.append((' '.join(current),current_refs))
+            current=[];current_refs=[];current_size=0
+        current.append(sentence);current_size+=length
+        for ref in refs:
+            if ref not in current_refs:current_refs.append(ref)
+        if current_size>=target:
+            groups.append((' '.join(current),current_refs))
+            current=[];current_refs=[];current_size=0
+    if current:
+        last=' '.join(current)
+        if groups and count_words(last)<22 and count_words(groups[-1][0])+count_words(last)<=160:
+            prev_text,prev_refs=groups[-1]
+            groups[-1]=(prev_text+' '+last,list(dict.fromkeys([*prev_refs,*current_refs])))
+        else:
+            groups.append((last,current_refs))
+    if not 4<=len(groups)<=11 or any(not 22<=count_words(p)<=160 for p,_ in groups):
+        return result
+    corrected=dict(result)
+    corrected['paragraphes']=[p for p,_ in groups]
+    corrected['preuves']=[refs for _,refs in groups]
+    # The underlying text must not gain or lose any words.
+    assert ' '.join(corrected['paragraphes']).split()== ' '.join(paragraphs).split()
+    return corrected
+
 def rejection_reason(result,facts,sources):
     """Structural + source-ID validation; numbers must occur in source evidence.
 
@@ -49,6 +103,7 @@ def verify(result,facts,sources):
     return rejection_reason(result,facts,sources) is None
 
 def assemble(result,group,facts,sources):
+    result=reflow_paragraphs(result)
     if not verify(result,facts,sources):return None
     paragraphs=[p.strip() for p in result['paragraphes']]
     wc=count_words(' '.join(paragraphs))
