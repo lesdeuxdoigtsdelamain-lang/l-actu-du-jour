@@ -93,9 +93,11 @@ def rejection_reason(result,facts,sources):
     # Reject word-for-word copying of a very large span of copyrighted excerpts.
     for f in facts:
         words=f['text'].casefold().split()
-        if len(words)<18:continue
-        for start in range(0,len(words)-14,7):
-            span=' '.join(words[start:start+15])
+        # Flag substantial verbatim reuse, not generic 15-word factual phrasing.
+        # A continuous 26-word match is longer than a short incidental excerpt.
+        if len(words)<26:continue
+        for start in range(0,len(words)-25,8):
+            span=' '.join(words[start:start+26])
             if span in text.casefold():return 'passage source recopie sans reformulation'
     return None
 
