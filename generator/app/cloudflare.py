@@ -12,14 +12,14 @@ MODEL='@cf/meta/llama-3.3-70b-instruct-fp8-fast'
 
 SCHEMA={'type':'object','properties':{
     'titre':{'type':'string'},
-    'paragraphes':{'type':'array','items':{'type':'string'},'minItems':4,'maxItems':11},
+    'paragraphes':{'type':'array','items':{'type':'string','minLength':300,'maxLength':1000},'minItems':6,'maxItems':9},
     'preuves':{'type':'array','items':{'type':'array','items':{'type':'string'}}}
 },'required':['titre','paragraphes','preuves'],'additionalProperties':False}
 
 class AiError(Exception):pass
 
 class Cloudflare:
-    def __init__(self,account,token,client=None,max_calls=8,max_output_tokens=2200):
+    def __init__(self,account,token,client=None,max_calls=8,max_output_tokens=3300):
         if not re.fullmatch(r'[0-9a-fA-F]{32}',account or '') or not token:
             raise AiError('Missing Cloudflare account or token')
         self.account=account;self.token=token;self.calls=0;self.max_calls=max_calls

@@ -31,7 +31,7 @@ def generate(site,now,provider,feeds):
         facts,sources=make_facts(c,c.clustered,source_http)
         evidence_words=sum(len(f['text'].split()) for f in facts)
         # Headlines, two press excerpts, or an APOD caption are not a full report.
-        if evidence_words<210 or len(facts)<4:continue
+        if evidence_words<300 or len(facts)<5:continue
         # Input budget: 7.5k characters per story so Free Workers quota stays bounded.
         facts=facts[:17]
         while len(str(facts))>8500 and len(facts)>4:facts.pop()
