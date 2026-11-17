@@ -1,8 +1,6 @@
 name: Publier le journal quotidien
 on:
-  push:
-    branches: [main]
-    paths: ['generator/**', 'config/**', '.github/workflows/publish-daily.yml']
+  # Production runs only on schedule or explicit manual request to preserve Free AI quota.
   schedule:
     - cron: '5 17 * * *'
       timezone: Europe/London
