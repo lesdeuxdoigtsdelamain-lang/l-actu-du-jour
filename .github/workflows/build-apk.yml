@@ -57,6 +57,10 @@ jobs:
           set -euo pipefail
           ./gradlew --no-daemon assembleRelease
           test -s app/build/outputs/apk/release/app-release.apk
+          # Verify that the release is genuinely signed before making it downloadable.
+          apksigner="$(find "$ANDROID_HOME/build-tools" -maxdepth 2 -type f -name apksigner | sort -V | tail -1)"
+          test -n "$apksigner"
+          "$apksigner" verify --verbose --print-certs app/build/outputs/apk/release/app-release.apk
           mkdir -p ../artifacts
           cp app/build/outputs/apk/release/app-release.apk ../artifacts/L-actu-du-jour.apk
           (cd ../artifacts && sha256sum L-actu-du-jour.apk > SHA256SUMS.txt)
