@@ -8,7 +8,7 @@ from .fetch import Fetcher
 from .ingest import collect,cluster,rank
 from .evidence import make_facts
 from .cloudflare import configured,AiError
-from .editor import assemble,rejection_reason
+from .editor import assemble,rejection_reason,reflow_paragraphs
 from .commons import find
 from .models import Edition
 from .publish import put,validate,history,health
@@ -43,7 +43,9 @@ def generate(site,now,provider,feeds):
             errors.append(str(e));break
         article=assemble(output,c,facts,sources)
         if article is None:
-            errors.append('Rejected: '+(rejection_reason(output,facts,sources) or 'model validation'))
+            repaired=reflow_paragraphs(output)
+            words=sum(len(p.split()) for p in repaired.get('paragraphes',[]) if isinstance(p,str))
+            errors.append('Rejected: '+(rejection_reason(repaired,facts,sources) or 'model validation')+f' ({words} mots)')
             continue
         if article.category not in cache_images:
             cache_images[article.category]=find(article.category,image_http)

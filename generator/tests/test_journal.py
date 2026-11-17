@@ -217,3 +217,25 @@ def test_complete_pipeline_with_quality_gates(monkeypatch,tmp_path):
     assert all(a.word_count>=280 and a.image is None and len(a.source_refs)>=1 for a in edition.articles)
     put(tmp_path,edition,NOW)
     validate(tmp_path)
+
+
+def test_ai_short_paragraphs_reflow_preserves_every_word_and_fact_reference():
+    from generator.app.editor import reflow_paragraphs
+    fragments=[' '.join(['Les responsables ont expliqué les mesures et les conséquences attendues.']*2)]*24
+    data={'titre':'Des responsables présentent une annonce nouvelle et détaillée',
+          'paragraphes':fragments,
+          'preuves':[[f'fact-{i}'] for i in range(len(fragments))]}
+    repaired=reflow_paragraphs(data)
+    assert repaired is not data
+    assert 4<=len(repaired['paragraphes'])<=11
+    assert all(22<=len(p.split())<=160 for p in repaired['paragraphes'])
+    assert ' '.join(repaired['paragraphes']).split() == ' '.join(fragments).split()
+    assert set(x for refs in repaired['preuves'] for x in refs)=={f'fact-{i}' for i in range(24)}
+
+
+def test_ai_insufficient_total_words_still_rejected_after_reflow():
+    from generator.app.editor import reflow_paragraphs
+    data={'titre':'Un sujet de test trop court','paragraphes':['Le sujet est très court.']*6,
+          'preuves':[['fact-1']]*6}
+    assert reflow_paragraphs(data)==data
+    assert not verify(data,[{'id':'fact-1','text':'Le sujet est très court.'}],[])
