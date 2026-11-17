@@ -38,7 +38,7 @@ class NewsRepository(private val context: Context) {
         ?.sortedByDescending { it.date } ?: emptyList()
 
     suspend fun refresh(): Boolean = withContext(Dispatchers.IO) {
-        val manifest=wire.decodeFromString<Latest>(download("latest.json",20000))
+        val manifest=wire.decodeFromString<Latest>(download("latest.json",20000).decodeToString())
         require(manifest.schemaVersion==1 && manifest.sha256.matches(Regex("[a-f0-9]{64}")))
         require(manifest.path=="editions/${manifest.date}.json")
         val d=LocalDate.parse(manifest.date)
