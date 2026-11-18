@@ -71,6 +71,16 @@ def reflow_paragraphs(result):
     assert ' '.join(corrected['paragraphes']).split()== ' '.join(paragraphs).split()
     return corrected
 
+def allowed_numbers(facts,sources):
+    evidence=' '.join(f['text'] for f in facts)+' '+ ' '.join(s.get('published_at','') for s in sources)
+    return {normalized_number(x) for x in NUMERIC.findall(evidence)}
+
+def unsupported_numbers(result,facts,sources):
+    title=result.get('titre','')
+    paragraphs=result.get('paragraphes',[])
+    text=' '.join([title if isinstance(title,str) else '', *[p for p in paragraphs if isinstance(p,str)]]) if isinstance(paragraphs,list) else ''
+    return {normalized_number(x) for x in NUMERIC.findall(text)}-allowed_numbers(facts,sources)
+
 def rejection_reason(result,facts,sources):
     """Structural + source-ID validation; numbers must occur in source evidence.
 
@@ -86,10 +96,7 @@ def rejection_reason(result,facts,sources):
     if any('<' in x or '>' in x or '\x00' in x for x in [title,*paragraphs]):return 'balises interdites'
     ids={f['id'] for f in facts}
     if not all(isinstance(p,list) and p and all(isinstance(q,str) and q in ids for q in p) for p in proofs):return 'preuve absente ou reference inconnue'
-    evidencetext=' '.join(f['text'] for f in facts)+' '+ ' '.join(s.get('published_at','') for s in sources)
-    in_numbers={normalized_number(x) for x in NUMERIC.findall(evidencetext)}
-    out_numbers={normalized_number(x) for x in NUMERIC.findall(title+' '+text)}
-    if not out_numbers <= in_numbers:return 'chiffre sans preuve dans les sources'
+    if unsupported_numbers(result,facts,sources):return 'chiffre sans preuve dans les sources'
     # Reject word-for-word copying of a very large span of copyrighted excerpts.
     for f in facts:
         words=f['text'].casefold().split()

@@ -7,6 +7,8 @@ import httpx
 from .cloudflare import AiError, configured as configured_cloudflare
 
 MODEL = 'openai/gpt-oss-120b'
+MAX_CALLS = 18
+TOKEN_BUDGET = 65000
 SCHEMA = {
     'type':'object',
     'properties':{
@@ -30,7 +32,7 @@ class Groq:
         self.remaining=None
 
     def run(self,packet):
-        if self.calls>=12 or self.tokens>=60000:
+        if self.calls>=MAX_CALLS or self.tokens>=TOKEN_BUDGET:
             raise AiError('Groq: plafond local atteint')
         # Estimate from input size and reserve completion tokens. Respect the free
         # 8k token/minute limit and the provider's Retry-After header.
@@ -50,7 +52,7 @@ class Groq:
                 'name':'article_francais','strict':True,'schema':SCHEMA}},
         }
         for attempt in range(2):
-            if self.calls>=12:raise AiError('Groq: plafond local atteint')
+            if self.calls>=MAX_CALLS or self.tokens>=TOKEN_BUDGET:raise AiError('Groq: plafond local atteint')
             self.calls+=1
             try:
                 r=self.client.post('https://api.groq.com/openai/v1/chat/completions',
@@ -67,7 +69,7 @@ class Groq:
             if r.status_code==429 and attempt==0:
                 try:retry=float(r.headers.get('retry-after','60'))
                 except ValueError:retry=60
-                if 0<=retry<=65 and self.calls<12:
+                if 0<=retry<=65 and self.calls<MAX_CALLS:
                     self.sleep(max(2,retry+1))
                     continue
             if r.status_code!=200:
@@ -94,7 +96,7 @@ class Providers:
         self.groq=groq
         self.cloudflare=cloudflare
         self.calls=0
-        self.max_calls=12
+        self.max_calls=MAX_CALLS
         self.active=[]
         self.errors=[]
         self.last_provider=None

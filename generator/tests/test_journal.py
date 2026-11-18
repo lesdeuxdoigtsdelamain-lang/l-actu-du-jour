@@ -239,3 +239,50 @@ def test_ai_insufficient_total_words_still_rejected_after_reflow():
           'preuves':[['fact-1']]*6}
     assert reflow_paragraphs(data)==data
     assert not verify(data,[{'id':'fact-1','text':'Le sujet est très court.'}],[])
+
+
+def test_edition_length_target():
+    from types import SimpleNamespace
+    from generator.app.main import complete
+    short=[SimpleNamespace(word_count=372,minutes=2)]*5
+    assert not complete(short)
+    assert not complete([SimpleNamespace(word_count=350,minutes=2)]*8)
+    assert complete([SimpleNamespace(word_count=500,minutes=3)]*7)
+
+def test_numeric_revision_reports_only_unsupported_values():
+    from generator.app.editor import unsupported_numbers,allowed_numbers
+    facts=[{'id':'a','text':'Le montant annoncé est de 12 millions.'}]
+    output={'titre':'Une annonce économique','paragraphes':['Le montant est de 12 millions, et pas 777 millions.']}
+    assert allowed_numbers(facts,[])=={'12'}
+    assert unsupported_numbers(output,facts,[])=={'777'}
+
+def test_partial_edition_is_extended_not_replaced(monkeypatch,tmp_path):
+    from generator.app import main as runner
+    previous=edition(size=5)
+    put(tmp_path,previous,NOW)
+    titles=['Une annonce municipale concerne les transports des habitants',
+            'Des chercheurs étudient une nouvelle méthode scientifique',
+            'La diplomatie prépare un accord avec plusieurs États']
+    candidates=[Candidate(f'{i+20:022d}',title,'Exemple de description pour un test local.',
+                   f'https://www.francetvinfo.fr/nouveautes/{i}',NOW,FEED) for i,title in enumerate(titles)]
+    monkeypatch.setattr(runner,'collect',lambda feeds,now:(candidates,{}))
+    def facts(c,others,http):
+        return ([{'id':str(i),'text':'Une institution a partagé des informations détaillées. '*12} for i in range(7)],
+                [{'id':c.id,'publisher':'Franceinfo','url':c.url,'language':'fr','published_at':NOW.isoformat()}])
+    monkeypatch.setattr(runner,'make_facts',facts)
+    monkeypatch.setattr(runner,'find',lambda cat,http:None)
+    class Provider:
+        max_calls=18
+        calls=0
+        usage_neurons=0
+        def run(self,packet):
+            self.calls+=1
+            return {'titre':packet['event_title'],
+                    'paragraphes':['Des données sont présentées par plusieurs acteurs et les décisions restent soumises à des vérifications indépendantes. '*6]*6,
+                    'preuves':[['0','1']]*6}
+    result,_,_,_=runner.generate(tmp_path,NOW,Provider(),[FEED])
+    assert result is not None
+    assert len(result.articles)>=6
+    assert [a.id for a in result.articles[:5]]==[a.id for a in previous.articles]
+    assert result.minutes>previous.minutes
+    assert len(result.articles)<=8

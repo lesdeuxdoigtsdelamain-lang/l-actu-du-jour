@@ -1,5 +1,7 @@
 """Non-interactive publisher; no article is fabricated to fill a daily quota."""
 from datetime import datetime,timezone
+from hashlib import sha256
+from pydantic import ValidationError
 from pathlib import Path
 from zoneinfo import ZoneInfo
 import argparse
@@ -8,7 +10,7 @@ from .fetch import Fetcher
 from .ingest import collect,cluster,rank
 from .evidence import make_facts
 from .providers import configured,AiError
-from .editor import assemble,rejection_reason,reflow_paragraphs
+from .editor import assemble,rejection_reason,reflow_paragraphs,allowed_numbers,unsupported_numbers
 from .commons import find
 from .models import Edition
 from .publish import put,validate,history,health
@@ -20,18 +22,41 @@ def ai_usage(provider):
     if hasattr(provider,'usage_stats'):return provider.usage_stats()
     return {'calls':provider.calls,'neurons':round(provider.usage_neurons,2)}
 
+TARGET_WORDS=3300
+MIN_COMPLETE_WORDS=3060
+MAX_ARTICLES=8
+MIN_ARTICLES=6
+
+def complete(articles):
+    return len(articles)>=MIN_ARTICLES and sum(a.word_count for a in articles)>=MIN_COMPLETE_WORDS and sum(a.minutes for a in articles)>=18
+
+def today_edition(site,day):
+    path=site/'editions'/f'{day}.json'
+    return Edition.model_validate_json(path.read_bytes()) if path.exists() else None
+
 def generate(site,now,provider,feeds):
     day=now.astimezone(LONDON).date()
+    existing=today_edition(site,day)
+    articles=list(existing.articles) if existing else []
+    previous_count=len(articles)
     candidates,status=collect(feeds,now)
     old_ids,old_titles=history(site,day)
-    ranked=rank(cluster(candidates),old_ids,old_titles,limit=40)
+    for a in articles:
+        old_ids.add(a.id)
+        old_titles.append(a.title)
+        for src in a.source_refs:
+            old_ids.add(sha256(src.url.encode()).hexdigest()[:22])
+    grouped=cluster(candidates)
+    grouped=[c for c in grouped if not any(x.id in old_ids for x in [c,*c.clustered])]
+    ranked=rank(grouped,old_ids,old_titles,limit=65)
+    print(f'Edition: {previous_count} articles déjà publiés, {len(ranked)} sujets candidats',flush=True)
     source_http=Fetcher(set(x for f in feeds for x in f.hosts))
     image_http=Fetcher({'commons.wikimedia.org'})
     cache_images={}
-    articles=[];errors=[]
+    errors=[]
     if not provider:return None,status,{'calls':0},'Aucun fournisseur IA configuré : pas de contenu inventé'
     for c in ranked:
-        if len(articles)==8 or provider.calls>=provider.max_calls:break
+        if len(articles)>=MAX_ARTICLES or (len(articles)>=MIN_ARTICLES and sum(a.word_count for a in articles)>=TARGET_WORDS and sum(a.minutes for a in articles)>=18) or provider.calls>=provider.max_calls:break
         facts,sources=make_facts(c,c.clustered,source_http)
         evidence_words=sum(len(f['text'].split()) for f in facts)
         # Headlines, two press excerpts, or an APOD caption are not a full report.
@@ -41,14 +66,17 @@ def generate(site,now,provider,feeds):
         while len(str(facts))>8500 and len(facts)>4:facts.pop()
         packet={'event_title':c.title,'language':'fr-FR',
                 'evidence_words':evidence_words,'facts':facts,
-                'source_names':[s['publisher'] for s in sources]}
+                'source_names':[s['publisher'] for s in sources],
+                'chiffres_autorises':sorted(allowed_numbers(facts,sources)),
+                'objectif_editorial':'Viser 480 à 600 mots, avec contexte étayé et sans répétition. Omettre les chiffres non autorisés.'}
         article=None;inference_failure=False
         for attempt in range(2):
             if provider.calls>=provider.max_calls:break
             try:output=provider.run(packet)
             except AiError as e:
                 errors.append(str(e));inference_failure=True;break
-            article=assemble(output,c,facts,sources)
+            try:article=assemble(output,c,facts,sources)
+            except (ValidationError,ValueError,TypeError):article=None
             if article is not None:break
             repaired=reflow_paragraphs(output)
             reason=rejection_reason(repaired,facts,sources) or 'format ou preuves invalides'
@@ -58,10 +86,12 @@ def generate(site,now,provider,feeds):
             if attempt==0:
                 packet={**packet,'revision_notice':(
                     'Le premier essai a été refusé: '+reason+'. Réécris un nouvel article original '
-                    'de 380 à 500 mots, en EXACTEMENT 6 paragraphes de 60 à 85 mots, '
+                    'de 480 à 600 mots si les faits le permettent, en EXACTEMENT 6 paragraphes de 80 à 100 mots, '
                     'et EXACTEMENT 6 listes de preuves correspondantes, avec uniquement les '
                     'identifiants des faits reçus. Ne recopie aucun passage de 15 mots des sources. '
-                    'N ajoute aucun chiffre absent des faits.')}
+                    'Supprime les chiffres signalés comme non autorisés, sans les inventer en lettres. '
+                    'Utilise uniquement les valeurs documentées.'),
+                    'chiffres_refuses':sorted(unsupported_numbers(repaired,facts,sources))}
         if inference_failure:break
         if article is None:continue
         if article.category not in cache_images:
@@ -76,7 +106,7 @@ def generate(site,now,provider,feeds):
         return (None,status,ai_usage(provider),
             'Aucun article long vérifié; publication suspendue. '+('; '.join(errors[:2])))
     # Aim for 20 minutes, but never pad or misrepresent a shorter confirmed edition.
-    status_label='complete' if len(articles)>=6 and sum(a.word_count for a in articles)>=2700 else 'partielle'
+    status_label='complete' if complete(articles) else 'partielle'
     e=Edition(edition_id=f'{day}-fr-FR',edition_date=day,generated_at=now,
         status=status_label,minutes=sum(a.minutes for a in articles),articles=articles)
     explanation=('Édition partielle : '+str(len(articles))+' article(s) long(s) vérifié(s) sur 6 à 8 attendus. ' if status_label=='partielle' else 'Édition complète. ')
@@ -90,14 +120,19 @@ def main():
     args=p.parse_args()
     now=datetime.now(timezone.utc);day=now.astimezone(LONDON).date()
     validate(args.output)
-    if (args.output/'editions'/f'{day}.json').exists() and not args.force:
-        print(f'Edition {day} already published. No duplicates.');return 0
+    previous=today_edition(args.output,day)
+    if previous and complete(previous.articles) and not args.force:
+        print(f'Edition {day} already complete. No duplicates.');return 0
+    if previous and len(previous.articles)>=MAX_ARTICLES:
+        print(f'Edition {day} already has eight articles. No duplicate replacement.');return 0
     provider=configured();feeds=load(ROOT/'config/sources.json')
     edition,sources,usage,reason=generate(args.output,now,provider,feeds)
     if edition is None:
         print('No new edition: '+reason)
         if not args.dry_run:health(args.output,now,'unavailable',reason,sources,usage)
         return 2
+    if previous and len(edition.articles)<=len(previous.articles):
+        print('Aucun nouvel article accepté : édition précédente conservée.');return 0
     if not args.dry_run:
         put(args.output,edition,now)
         health(args.output,now,'success',reason,sources,usage)
