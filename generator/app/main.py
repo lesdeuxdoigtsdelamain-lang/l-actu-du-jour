@@ -7,7 +7,7 @@ from .sources import load
 from .fetch import Fetcher
 from .ingest import collect,cluster,rank
 from .evidence import make_facts
-from .cloudflare import configured,AiError
+from .providers import configured,AiError
 from .editor import assemble,rejection_reason,reflow_paragraphs
 from .commons import find
 from .models import Edition
@@ -15,6 +15,10 @@ from .publish import put,validate,history,health
 
 ROOT=Path(__file__).resolve().parents[2]
 LONDON=ZoneInfo('Europe/London')
+
+def ai_usage(provider):
+    if hasattr(provider,'usage_stats'):return provider.usage_stats()
+    return {'calls':provider.calls,'neurons':round(provider.usage_neurons,2)}
 
 def generate(site,now,provider,feeds):
     day=now.astimezone(LONDON).date()
@@ -25,7 +29,7 @@ def generate(site,now,provider,feeds):
     image_http=Fetcher({'commons.wikimedia.org'})
     cache_images={}
     articles=[];errors=[]
-    if not provider:return None,status,{'calls':0},'Cloudflare not configured: no synthetic news'
+    if not provider:return None,status,{'calls':0},'Aucun fournisseur IA configuré : pas de contenu inventé'
     for c in ranked:
         if len(articles)==8 or provider.calls>=provider.max_calls:break
         facts,sources=make_facts(c,c.clustered,source_http)
@@ -50,6 +54,7 @@ def generate(site,now,provider,feeds):
             reason=rejection_reason(repaired,facts,sources) or 'format ou preuves invalides'
             words=sum(len(p.split()) for p in repaired.get('paragraphes',[]) if isinstance(p,str))
             errors.append(f'Rejected: {reason} ({words} mots)')
+            print(f'Article refusé : {reason} ({words} mots)',flush=True)
             if attempt==0:
                 packet={**packet,'revision_notice':(
                     'Le premier essai a été refusé: '+reason+'. Réécris un nouvel article original '
@@ -64,17 +69,18 @@ def generate(site,now,provider,feeds):
         image=cache_images[article.category]
         article=article.model_copy(update={'image':image})
         articles.append(article)
+        print(f'Article accepté : {article.word_count} mots, rubrique {article.category}, fournisseur {getattr(provider,"last_provider",None) or "IA"}',flush=True)
     # Publish at least one genuinely verified long report, clearly marked partial.
     # Do not keep the reader empty merely because fewer than three pass strict QA.
     if not articles:
-        return (None,status,{'calls':provider.calls,'neurons':round(provider.usage_neurons,2)},
+        return (None,status,ai_usage(provider),
             'Aucun article long vérifié; publication suspendue. '+('; '.join(errors[:2])))
     # Aim for 20 minutes, but never pad or misrepresent a shorter confirmed edition.
     status_label='complete' if len(articles)>=6 and sum(a.word_count for a in articles)>=2700 else 'partielle'
     e=Edition(edition_id=f'{day}-fr-FR',edition_date=day,generated_at=now,
         status=status_label,minutes=sum(a.minutes for a in articles),articles=articles)
     explanation=('Édition partielle : '+str(len(articles))+' article(s) long(s) vérifié(s) sur 6 à 8 attendus. ' if status_label=='partielle' else 'Édition complète. ')
-    return e,status,{'calls':provider.calls,'neurons':round(provider.usage_neurons,2)},explanation+'Contrôles : longueur, chiffres, références.'
+    return e,status,ai_usage(provider),explanation+'Contrôles : longueur, chiffres, références.'
 
 def main():
     p=argparse.ArgumentParser()
