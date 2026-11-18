@@ -1,37 +1,31 @@
 {
-  "checked_at": "2026-11-18T12:12:27.132649+00:00",
+  "checked_at": "2026-11-18T14:31:18.806239+00:00",
   "state": "success",
-  "reason": "Édition partielle : 5 article(s) long(s) vérifié(s) sur 6 à 8 attendus. Contrôles : longueur, chiffres, références.",
+  "reason": "Édition complète. Contrôles : longueur, chiffres, références.",
   "feeds": {
     "rfi": {
       "ok": 23
     },
+    "franceinfo": {
+      "error": "Disallowed host / scheme"
+    },
     "france24": {
-      "ok": 24
+      "ok": 23
+    },
+    "sky-world": {
+      "ok": 6
     },
     "bbc-world": {
       "ok": 26
     },
-    "bbc-business": {
-      "ok": 17
+    "bbc-uk": {
+      "ok": 27
     },
-    "aljazeera-ar": {
-      "ok": 25
+    "bbc-business": {
+      "ok": 20
     },
     "aljazeera-en": {
       "ok": 24
-    },
-    "bbc-science": {
-      "ok": 17
-    },
-    "bbc-ar": {
-      "ok": 13
-    },
-    "bbc-uk": {
-      "ok": 24
-    },
-    "franceinfo": {
-      "error": "Disallowed host / scheme"
     },
     "hespress-ar": {
       "ok": 12
@@ -39,17 +33,20 @@
     "hespress-fr": {
       "ok": 10
     },
-    "sky-world": {
-      "ok": 5
+    "bbc-ar": {
+      "ok": 13
     },
-    "gov-uk": {
-      "ok": 18
+    "bbc-science": {
+      "ok": 19
     },
     "nasa": {
       "ok": 10
     },
     "nsf": {
       "ok": 0
+    },
+    "gov-uk": {
+      "ok": 19
     },
     "nps": {
       "error": "Payload too large"
@@ -61,23 +58,26 @@
       "ok": 4
     },
     "globalvoices-ar": {
-      "ok": 2
+      "ok": 3
     },
     "telquel": {
-      "error": "Disallowed host / scheme"
+      "ok": 34
     },
-    "un-fr": {
-      "error": "HTTP 404"
+    "aljazeera-ar": {
+      "ok": 25
     },
     "un-en": {
+      "error": "HTTP 404"
+    },
+    "un-fr": {
       "error": "HTTP 404"
     }
   },
   "ai_usage": {
-    "calls": 12,
+    "calls": 8,
     "neurons": 0.0,
-    "groq_requests": 12,
-    "groq_tokens": 33240,
+    "groq_requests": 8,
+    "groq_tokens": 28191,
     "cloudflare_requests": 0,
     "providers": [
       "groq"

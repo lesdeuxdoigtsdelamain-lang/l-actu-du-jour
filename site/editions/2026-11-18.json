@@ -2,11 +2,11 @@
   "schema_version": 1,
   "edition_id": "2026-11-18-fr-FR",
   "edition_date": "2026-11-18",
-  "generated_at": "2026-11-18T12:12:27.132649Z",
+  "generated_at": "2026-11-18T14:31:18.806239Z",
   "language": "fr-FR",
   "timezone": "Europe/London",
-  "status": "partielle",
-  "minutes": 10,
+  "status": "complete",
+  "minutes": 18,
   "articles": [
     {
       "id": "702d392dbb3c88b7a5f3ea",
@@ -157,6 +157,90 @@
       ],
       "word_count": 332,
       "minutes": 2
+    },
+    {
+      "id": "9be64e0dbe0d4672777d3d",
+      "category": "Science et technologie",
+      "title": "Anthropic : la première cotation du cœur de l’intelligence artificielle",
+      "paragraphs": [
+        "Créée en janvier 2021 à San Francisco, Anthropic est née comme une start‑up spécialisée dans les agents conversationnels. En moins de six ans, l’entreprise californienne, connue pour son assistant Claude, se prépare à entrer en bourse, avec le lancement des achats d’actions prévu le jeudi 19 novembre. Cette évolution marque une étape majeure pour une société qui, en quelques années, est passée d’une petite équipe à un acteur reconnu du secteur de l’intelligence artificielle.",
+        "L’introduction en bourse d’Anthropic constitue la première fois que le cœur même de l’IA – les agents et chatbots – est proposé aux investisseurs. Jusqu’alors, seuls les fournisseurs d’infrastructures, comme Microsoft, Google ou Nvidia, étaient cotés. En plaçant la valeur de la technologie elle‑même sur les marchés, Anthropic ouvre une nouvelle dynamique où les performances des modèles d’IA seront directement évaluées par les capitaux publics.",
+        "Le contexte économique n’est pas des plus favorables. Les dépenses d’Anthropic en puces et serveurs ont atteint plus de 400 milliards de dollars, soit l’équivalent de treize années de ses recettes actuelles. Cette charge massive reflète la difficulté à rentabiliser les modèles d’IA, alors que les marchés s’inquiètent de la viabilité financière de ces entreprises qui consomment d’importantes ressources pour entraîner leurs systèmes.",
+        "Parallèlement, les prix facturés aux clients ont fortement baissé. Le traitement d’un token, unité de texte de référence, est aujourd’hui facturé à 0,50 dollar, contre 17 dollars il y a moins de deux ans, soit une chute de 97 %. Malgré cette pression tarifaire, Anthropic maintient son volume de ventes grâce aux nouvelles versions de Claude, qui ont généré 81 milliards de dollars de chiffre d’affaires à la fin du mois d’octobre.",
+        "Un autre frein majeur provient de la demande croissante de régulation aux États‑Unis. La victoire des démocrates au Congrès laisse présager un encadrement plus strict des infrastructures d’IA, tandis que les exigences de sécurité se renforcent après le scandale autour des licences de puces avancées. Ces évolutions législatives pourraient compliquer l’accès aux technologies essentielles pour les acteurs du secteur.",
+        "L’entrée en bourse d’Anthropic sera donc un test inédit de la confiance des investisseurs dans l’IA. Sur les 90 milliards de dollars attendus, 26 milliards sont réservés à sept groupes technologiques, dont Google et Nvidia, qui sont à la fois fournisseurs et banquiers de l’entreprise. Le PDG Dario Amodei, soucieux de la sécurité, voit dans cette opération une opportunité de financer de nouveaux marchés, notamment en recherche scientifique et médicale, même si les perspectives restent incertaines selon le FMI et la BCE."
+      ],
+      "image": null,
+      "source_refs": [
+        {
+          "publisher": "RFI",
+          "url": "https://www.rfi.fr/fr/podcasts/aujourd-hui-l-%C3%A9conomie/20261118-l-entr%C3%A9e-en-bourse-d-anthropic-teste-pour-la-premi%C3%A8re-fois-le-c%C5%93ur-de-l-intelligence-artificielle",
+          "language": "fr",
+          "published_at": "2026-11-18T12:27:50Z"
+        }
+      ],
+      "word_count": 415,
+      "minutes": 2
+    },
+    {
+      "id": "26e5c9db36819c38b8ecb5",
+      "category": "Monde",
+      "title": "Yalta, Munich et la rhétorique des grandes puissances autour de la rencontre de Shenzhen",
+      "paragraphs": [
+        "La perspective d’une réunion tripartite à Shenzhen, prévue pour le 19 novembre, a immédiatement rappelé le cliché de la conférence de Yalta de février 1945. La simple image de Vladimir Poutine, Donald Trump et Xi Jinping côte à côte évoque ce moment historique où Roosevelt, Churchill et Staline se sont rencontrés. Cette analogie, largement diffusée dans les médias, montre à quel point la Seconde Guerre mondiale continue d’alimenter le discours autour du conflit ukrainien depuis son déclenchement en février 2022.",
+        "Les commentateurs ont rapidement souligné les différences entre les deux contextes. À Yalta, Staline occupait une position de force, alors que la Russie peine à consolider le Donbass. De plus, la dynamique actuelle oppose la Chine et les États‑Unis, alors qu’en 1945 les Alliés formaient un front commun contre l’Allemagne. Cette comparaison a d’abord été encouragée par la Russie, notamment par le négociateur Vladimir Medkinski, qui a évoqué un « nouveau Yalta » comme cadre de discussion.",
+        "Face à l’engouement médiatique, le porte‑parole du Kremlin, Dmitri Peskov, a rapidement rejeté l’analogie, la qualifiant d’« exercice de science politique » déconnecté de la réalité. Cette prise de distance reflète la sensibilité du régime russe à l’évocation de Yalta, perçue comme le symbole d’un partage du monde entre grandes puissances au détriment des souverainetés nationales, un souvenir qui reste douloureux pour une large partie de la population mondiale.",
+        "Pour la Russie, la référence à Yalta reste toutefois flatteuse. Elle rappelle le rôle de grande puissance que Moscou cherche à réaffirmer, tout en s’appuyant sur la Seconde Guerre mondiale, thème récurrent dans le discours de Vladimir Poutine. Cette narration sert également à justifier l’intervention militaire en Ukraine, présentée comme une lutte contre une prétendue « nazification » du pouvoir ukrainien, un argument qui trouve un écho dans le récit historique du pays.",
+        "L’Ukraine, de son côté, a utilisé la même référence pour lancer un signal d’alarme. Le président Volodymyr Zelensky a exprimé la crainte d’un « Yalta 2,3,4 », redoutant un accord secret entre Washington, Pékin et Moscou qui diviserait les sphères d’influence. Cette inquiétude rejoint celle de Taïwan, qui perçoit également la rencontre comme une possible redistribution géopolitique où chaque puissance consoliderait son territoire d’influence.",
+        "Avant Yalta, la comparaison la plus fréquente dans le débat public était celle de Munich, la conférence de 1938 où la France et le Royaume‑Uni ont cédé les Sudètes à l’Allemagne nazie. Cette analogie, souvent invoquée depuis le déclenchement du conflit en 2022, sert à dénoncer toute forme de conciliation avec le Kremlin, rappelant les leçons de l’apaisement qui ont précédé la Seconde Guerre mondiale. Des figures politiques comme Viktor Orban ou Marine Le Pen ont été qualifiées de « Munichois », illustrant la persistance de cette rhétorique dans la sphère européenne."
+      ],
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Earth_Geoid_Field_Anomaly_globe%2C_NASA_Earth_Observatory.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "alt": "Photographie d’illustration — Monde",
+        "credit": "NASA Earth Observatory",
+        "license": "Public domain",
+        "page": "https://commons.wikimedia.org/wiki/File:Earth_Geoid_Field_Anomaly_globe%2C_NASA_Earth_Observatory.jpg"
+      },
+      "source_refs": [
+        {
+          "publisher": "RFI",
+          "url": "https://www.rfi.fr/fr/podcasts/la-fabrique-du-monde/20261118-yalta-1945-shenzhen-2026-l-analogie-qui-hante-l-ukraine",
+          "language": "fr",
+          "published_at": "2026-11-18T10:08:07Z"
+        }
+      ],
+      "word_count": 455,
+      "minutes": 3
+    },
+    {
+      "id": "35d8477d84e8ad359327c3",
+      "category": "Santé",
+      "title": "Vendeurs ambulants de médicaments : un risque grandissant pour la santé publique haïtienne",
+      "paragraphs": [
+        "Le système de santé haïtien fait face à une pénurie chronique d’infrastructures et de personnel qualifié. Les hôpitaux publics manquent d’équipements de base, la demande dépasse largement la capacité du personnel et les dysfonctionnements administratifs sont fréquents. Cette situation laisse une grande partie de la population sans accès à des soins adéquats, poussant les patients à chercher des alternatives souvent dangereuses. Le manque de structures de santé fiables constitue le socle d’un problème plus large qui se développe dans les rues des villes haïtiennes.",
+        "Dans ce contexte de carence, les vendeurs de médicaments de rue prolifèrent. On les trouve sur les trottoirs, dans les marchés publics, les gares routières et même dans de petites cabines. Aucun d’eux ne possède de formation médicale professionnelle, et ils proposent fréquemment des traitements qui ne correspondent pas aux besoins réels des clients. Les produits sont conservés dans des conditions précaires, exposés à la chaleur et à la poussière, ce qui augmente le risque de contamination et de perte d’efficacité.",
+        "L’absence de régulation gouvernementale renforce la diffusion de ces pratiques. Les autorités n’ont pas réussi à contenir l’expansion des points de vente non autorisés, tandis que les pharmacies légitimes restent peu nombreuses. La plupart des Haïtiens, ne pouvant se permettre les soins privés, se tournent vers l’automédication en achetant ces médicaments sans avis médical. Cette dynamique alimente la circulation de produits expirés, détériorés ou falsifiés, compromettant gravement la santé des consommateurs.",
+        "Le problème s’est aggravé avec l’insécurité croissante dans le pays. Des groupes criminels, notamment la coalition Viv Ansanm, ont ciblé des établissements de santé, pillant du matériel et incendiant des installations. Les centres de santé situés dans les zones contrôlées par les gangs sont souvent contraints de fermer temporairement à cause des affrontements. Cette violence a réduit davantage l’accès aux soins formels, renforçant la dépendance aux vendeurs ambulants.",
+        "Des chercheurs ont tenté de quantifier la qualité des médicaments vendus dans la capitale. En collaboration avec l’Université du Colorado et la Faculté de Médecine de l’Université d’État d’Haïti, une équipe a prélevé environ 258 boîtes d’antibiotiques dans 28 marchés en plein air de Port‑au‑Prince. Les analyses ont révélé que 6 des 11 antibiotiques testés ne respectaient aucune norme spectrale, indiquant l’absence totale de principe actif. Ces résultats soulignent l’ampleur du problème de la falsification et de la mauvaise qualité des produits circulant dans les rues.",
+        "Le constat de ces investigations a été relayé par le Dr Wellington Derameau, médecin, pharmacien et chercheur formé aux États‑Unis et en France. Dans une vidéo diffusée sur la chaîne YouTube « Sedney the Reporter », il a exposé les risques liés à la consommation de médicaments non contrôlés et a appelé à une action concertée pour renforcer la surveillance du secteur pharmaceutique. Son témoignage met en lumière la nécessité d’une réponse publique efficace afin de protéger la population contre les dangers de l’automédication non encadrée."
+      ],
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/6/6c/Easter_Craiglockhart_Hill_-_geograph.org.uk_-_36913.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "alt": "Photographie d’illustration — Santé",
+        "credit": "Kevin Rae",
+        "license": "CC BY-SA 2.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Easter_Craiglockhart_Hill_-_geograph.org.uk_-_36913.jpg"
+      },
+      "source_refs": [
+        {
+          "publisher": "Global Voices",
+          "url": "https://globalvoices.org/2026/11/17/street-medicine-vendors-are-dangerously-filling-haitis-healthcare-gaps",
+          "language": "en",
+          "published_at": "2026-11-17T15:19:06Z"
+        }
+      ],
+      "word_count": 476,
+      "minutes": 3
     }
   ]
 }
