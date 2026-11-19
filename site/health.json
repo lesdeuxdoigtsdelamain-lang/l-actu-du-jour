@@ -1,52 +1,55 @@
 {
-  "checked_at": "2026-11-18T14:31:18.806239+00:00",
+  "checked_at": "2026-11-19T17:53:34.958749+00:00",
   "state": "success",
   "reason": "Édition complète. Contrôles : longueur, chiffres, références.",
   "feeds": {
-    "rfi": {
-      "ok": 23
+    "bbc-world": {
+      "ok": 33
     },
-    "franceinfo": {
-      "error": "Disallowed host / scheme"
+    "bbc-business": {
+      "ok": 22
     },
     "france24": {
       "ok": 23
     },
-    "sky-world": {
-      "ok": 6
-    },
-    "bbc-world": {
-      "ok": 26
-    },
-    "bbc-uk": {
-      "ok": 27
-    },
-    "bbc-business": {
-      "ok": 20
-    },
     "aljazeera-en": {
       "ok": 24
+    },
+    "rfi": {
+      "ok": 23
+    },
+    "bbc-uk": {
+      "ok": 31
+    },
+    "bbc-science": {
+      "ok": 16
+    },
+    "sky-world": {
+      "ok": 7
+    },
+    "aljazeera-ar": {
+      "ok": 25
     },
     "hespress-ar": {
       "ok": 12
     },
-    "hespress-fr": {
-      "ok": 10
+    "franceinfo": {
+      "error": "Disallowed host / scheme"
     },
     "bbc-ar": {
-      "ok": 13
+      "ok": 15
     },
-    "bbc-science": {
-      "ok": 19
+    "hespress-fr": {
+      "ok": 9
     },
     "nasa": {
-      "ok": 10
+      "ok": 9
+    },
+    "gov-uk": {
+      "ok": 20
     },
     "nsf": {
       "ok": 0
-    },
-    "gov-uk": {
-      "ok": 19
     },
     "nps": {
       "error": "Payload too large"
@@ -54,17 +57,14 @@
     "alarabiya": {
       "error": "HTTP 403"
     },
-    "globalvoices": {
-      "ok": 4
-    },
     "globalvoices-ar": {
       "ok": 3
     },
-    "telquel": {
-      "ok": 34
+    "globalvoices": {
+      "ok": 5
     },
-    "aljazeera-ar": {
-      "ok": 25
+    "telquel": {
+      "ok": 45
     },
     "un-en": {
       "error": "HTTP 404"
@@ -74,10 +74,10 @@
     }
   },
   "ai_usage": {
-    "calls": 8,
+    "calls": 11,
     "neurons": 0.0,
-    "groq_requests": 8,
-    "groq_tokens": 28191,
+    "groq_requests": 11,
+    "groq_tokens": 32146,
     "cloudflare_requests": 0,
     "providers": [
       "groq"
