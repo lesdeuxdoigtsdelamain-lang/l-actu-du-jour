@@ -2,11 +2,11 @@
   "schema_version": 1,
   "edition_id": "2026-11-19-fr-FR",
   "edition_date": "2026-11-19",
-  "generated_at": "2026-11-19T17:53:34.958749Z",
+  "generated_at": "2026-11-20T23:36:15.597285Z",
   "language": "fr-FR",
   "timezone": "Europe/London",
   "status": "complete",
-  "minutes": 18,
+  "minutes": 20,
   "articles": [
     {
       "id": "f8880fb1e46f2f5381e913",
@@ -40,7 +40,7 @@
     },
     {
       "id": "5b246a457d32d7b34a7d8f",
-      "category": "Santé",
+      "category": "Maroc",
       "title": "Laâyoune : le ministre de la Santé accélère deux projets hospitaliers",
       "paragraphs": [
         "Le ministre de la Santé et de la Protection sociale, Youns Bjijou, s’est rendu à Laâyoune pour inspecter deux chantiers majeurs. Au cours de sa visite, il a exprimé la nécessité d’accélérer les travaux afin de réduire les délais d’achèvement. Le communiqué indique que les dates d’ouverture restent à fixer, soulignant l’enjeu de planifier rapidement la mise en service de ces établissements. Cette démarche s’inscrit dans la volonté de renforcer l’offre de soins dans la région du Sud.",
@@ -69,30 +69,6 @@
       "minutes": 3
     },
     {
-      "id": "3a391576888cf9eb824356",
-      "category": "Maroc",
-      "title": "Le Maroc franchit le Top 5 du classement FIFA : un tournant historique",
-      "paragraphs": [
-        "La sélection marocaine a atteint la cinquième place du classement mondial de la FIFA, une position inédite depuis la création du classement en 1993. Cette progression, qualifiée de « nouvel exploit historique » par la presse internationale, marque le meilleur classement jamais obtenu par les Lions de l’Atlas. Le saut dans le Top 5 reflète une dynamique positive qui s’est consolidée au fil des dernières années, plaçant le Maroc parmi les nations les plus performantes du football mondial.",
-        "Cette avancée s’appuie sur une progression de deux places dans le classement, portant le total de points du Maroc à 1.809,37. Ce score place les Lions de l’Atlas devant plusieurs grandes nations, dont le Portugal, relégué à la sixième place. La montée en puissance du Maroc se confirme ainsi par un écart de points significatif, soulignant la compétitivité accrue de l’équipe sur la scène internationale.",
-        "Le quotidien sportif espagnol « Sport » a souligné que cette nouvelle position confirme le statut de leader incontesté du football africain pour le Maroc. En dépassant le Portugal, les Lions de l’Atlas renforcent leur influence sur le continent, où ils occupent déjà une place de premier plan. Cette reconnaissance par les médias étrangers renforce la visibilité du football marocain au niveau mondial.",
-        "L’ascension du Maroc intervient après deux victoires convaincantes lors des éliminatoires de la Coupe d’Afrique des Nations. Ces succès ont contribué à la hausse du classement, démontrant la capacité de l’équipe à performer dans des matchs décisifs. Sous la direction de Mohamed Ouahbi, les Lions de l’Atlas ont maintenu une dynamique positive lors de la dernière fenêtre internationale, consolidant ainsi leur position dans le Top 5.",
-        "Le nouveau classement reflète également une progression constante depuis les débuts du système de points FIFA en 1993. Chaque amélioration du rang témoigne d’une stratégie de développement à long terme, incluant la formation des jeunes talents et l’amélioration des infrastructures. Le Maroc a ainsi pu transformer une ambition régionale en une présence durable parmi les meilleures équipes du monde.",
-        "En résumé, l’entrée du Maroc dans le Top 5 du classement FIFA représente un jalon majeur pour le football du pays. Le score de 1.809,37 points, la progression de deux places et le dépassement du Portugal illustrent une performance exceptionnelle. Cette réussite, reconnue par la presse internationale, ouvre de nouvelles perspectives pour les Lions de l’Atlas, tant sur le plan sportif que sur celui de l’influence culturelle du football marocain."
-      ],
-      "image": null,
-      "source_refs": [
-        {
-          "publisher": "Hespress Français",
-          "url": "https://fr.hespress.com/497101-classement-fifa-la-presse-internationale-salue-lentree-historique-du-maroc-dans-le-top-5.html",
-          "language": "fr",
-          "published_at": "2026-11-19T15:40:45Z"
-        }
-      ],
-      "word_count": 401,
-      "minutes": 2
-    },
-    {
       "id": "0e6e61751e18a02afcb4cc",
       "category": "Environnement",
       "title": "L’Académie des jeunes négociateurs du climat à la COP31 : qui sont-ils ?",
@@ -114,30 +90,6 @@
         }
       ],
       "word_count": 392,
-      "minutes": 2
-    },
-    {
-      "id": "db9748d986175850507ea0",
-      "category": "Maroc",
-      "title": "Les nouvelles alliances sécuritaires du Maroc sous la direction d’Abdelatif Hammoushi",
-      "paragraphs": [
-        "Au cours des dernières années, le directeur général de la Direction générale de la sécurité nationale et de la surveillance du territoire, Abdelatif Hammoushi, a multiplié les accords sécuritaires avec des partenaires étrangers. Ces conventions couvrent un large éventail de domaines liés à la sécurité et au renseignement, reflétant une volonté d’élargir la coopération internationale du Maroc. Cette dynamique s’inscrit dans une stratégie globale visant à renforcer la position du pays sur la scène sécuritaire mondiale.",
-        "Les partenariats signés s’étendent d’Éthiopie à la Brésil, de la Libéria aux Émirats arabes unis, en passant par des capitales européennes comme Stockholm, Amsterdam, Paris et Madrid. Cette diversité géographique montre la volonté du Maroc de proposer son modèle de sécurité comme un acteur fiable dans la lutte contre la criminalité transnationale, tout en ouvrant de nouveaux canaux d’échange d’expertise.",
-        "En début de semaine, Abdelatif Hammoushi a conclu une note d’entente bilatérale avec la direction générale de la police de Dubaï, créant un cadre de coopération durable dans les domaines de la sécurité et du renseignement. Cette signature s’ajoute à une précédente coopération avec la police d’Abou Dabi, qui avait mis en place un cadre légal pour la formation policière et le renforcement des capacités humaines, illustrant une approche graduelle mais cohérente avec les Émirats.",
-        "L’étendue géographique des accords s’est accentuée en mai 2024 avec la signature d’une note d’entente avec la police fédérale brésilienne, suivie en mai 2025 d’accords similaires avec la police fédérale éthiopienne et la police nationale libérienne. Ces engagements témoignent d’une politique d’ouverture continue, visant à couvrir plusieurs continents et à consolider le rôle du Maroc dans la prévention du crime organisé.",
-        "La diplomatie sécuritaire marocaine a également trouvé un écho en Europe du Nord. En novembre 2025, le pays a conclu son premier accord avec la Norvège lors du congrès de l’Interpol à Marrakech, marquant une incursion dans les pays scandinaves. Cette initiative a ouvert de nouvelles perspectives de coopération avec des États réputés pour leurs standards élevés en matière de sécurité publique.",
-        "En avril 2026, une nouvelle note d’entente a été signée avec la police nationale suédoise lors d’une visite officielle à Stockholm. Ce partenariat a permis de rapprocher les pratiques des deux services, aboutissant à l’arrestation de plusieurs suspects recherchés par la justice suédoise pour des faits de criminalité organisée transfrontalière, illustrant l’impact concret de ces collaborations."
-      ],
-      "image": null,
-      "source_refs": [
-        {
-          "publisher": "Hespress",
-          "url": "https://www.hespress.com/%d8%b4%d8%b1%d8%a7%d9%83%d8%a7%d8%aa-%d8%a3%d9%85%d9%86%d9%8a%d8%a9-%d8%aa%d9%8f%d8%b9%d8%b2%d9%90%d9%91%d8%b2-%d9%85%d9%83%d8%a7%d9%86%d8%a9-%d8%a7%d9%84%d9%85%d8%ba%d8%b1%d8%a8-%d9%88%d8%aa%d8%af-1842376.html",
-          "language": "ar",
-          "published_at": "2026-11-19T15:30:17Z"
-        }
-      ],
-      "word_count": 390,
       "minutes": 2
     },
     {
@@ -163,36 +115,6 @@
       ],
       "word_count": 491,
       "minutes": 3
-    },
-    {
-      "id": "f16ddbe4ad2840dbb81915",
-      "category": "Santé",
-      "title": "Laâyoune : visite ministérielle et avancées des projets hospitaliers du Sud",
-      "paragraphs": [
-        "Le jeudi 19 novembre, le ministre de la Santé et de la Protection sociale, Youns Bjijou, s’est rendu à Laâyoune pour inspecter les chantiers du futur centre hospitalier universitaire (CHU) et les travaux de réhabilitation du centre hospitalier régional (CHR) Moulay Hassan Ben El Mehdi. Accompagné du wali de la région Laâyoune‑Sakia El Hamra, Abdeslam Bekrate, et du directeur général du Groupement sanitaire territorial, Brahim El Ahmadi, il a mené une visite de terrain afin de suivre l’avancement des deux projets structurants.",
-        "Lors de cette visite, le ministre a présidé plusieurs réunions techniques destinées à lever les contraintes opérationnelles, à accélérer la cadence des travaux et à fixer des échéances précises de livraison et de mise en service. Ces rencontres ont réuni les acteurs locaux et les responsables de la maîtrise d’ouvrage, afin de garantir une coordination efficace entre les équipes de construction et les services de santé régionaux.",
-        "Le futur CHU de Laâyoune, premier établissement hospitalo‑universitaire des provinces du Sud, s’étend sur une superficie globale de plus de 180 000 m², dont 95 000 m² couverts. Il est prévu pour accueillir 500 lits, répondant ainsi aux besoins d’une population de 451 000 habitants de la région et des zones limitrophes. Le projet vise à renforcer la formation médicale, la recherche et la prise en charge spécialisée dans le Sud marocain.",
-        "L’édifice intègre des pôles médico‑chirurgicaux complets : prise en charge des cas critiques, urgences, imagerie médicale, cardiologie, néphrologie, ophtalmologie, ORL, ainsi que des pôles mère‑enfant et santé mentale. Des hôpitaux de jour en chirurgie et pédiatrie sont également prévus, afin d’offrir une offre de soins diversifiée et adaptée aux besoins locaux.",
-        "Parallèlement, le déplacement ministériel a permis d’évaluer la modernisation du CHR Moulay Hassan Ben El Mehdi. La capacité d’accueil du CHR est rehaussée de 70 lits supplémentaires, ce qui doit améliorer les conditions d’hospitalisation et la qualité des soins de proximité pour les habitants de Laâyoune et des environs.",
-        "Ces deux projets s’inscrivent dans le cadre de la réforme du système national de santé et du Nouveau Modèle de Développement des Provinces du Sud. L’objectif affiché est de consolider l’équité territoriale en matière d’accès aux soins spécialisés, en réduisant les disparités entre le Nord et le Sud du pays et en renforçant la présence d’infrastructures de santé de haut niveau dans la région."
-      ],
-      "image": {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/6/6c/Easter_Craiglockhart_Hill_-_geograph.org.uk_-_36913.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-        "alt": "Photographie d’illustration — Santé",
-        "credit": "Kevin Rae",
-        "license": "CC BY-SA 2.0",
-        "page": "https://commons.wikimedia.org/wiki/File:Easter_Craiglockhart_Hill_-_geograph.org.uk_-_36913.jpg"
-      },
-      "source_refs": [
-        {
-          "publisher": "Hespress Français",
-          "url": "https://fr.hespress.com/497067-laayoune-youns-bjijou-sinforme-de-lavancement-du-futur-chu-et-du-chr.html",
-          "language": "fr",
-          "published_at": "2026-11-19T15:20:17Z"
-        }
-      ],
-      "word_count": 385,
-      "minutes": 2
     },
     {
       "id": "f1baa3eead14ce6bfe4ddb",
@@ -223,6 +145,100 @@
       ],
       "word_count": 424,
       "minutes": 2
+    },
+    {
+      "id": "france-tour-2026-11-19",
+      "category": "France",
+      "title": "Tour de l’actu en France — 19 novembre 2026",
+      "paragraphs": [
+        "L'Arcom a annoncé ce jeudi 19 novembre que les créateurs de contenus majeurs sur YouTube et les réseaux sociaux, comme HugoDécrypte ou Guillaume Pley, devront désormais appliquer les règles de pluralisme politique lors de la campagne présidentielle de 2027. Martin Ajdari, président du régulateur, a souligné le caractère « massif » du phénomène et la nécessité d’étendre aux plateformes numériques les obligations qui s’appliquaient jusqu’ici aux chaînes de télévision et aux radios. Cette mesure vise à garantir une couverture équilibrée de l’actualité électorale, même pour les influenceurs dont les audiences dépassent celles des médias traditionnels.",
+        "Le nouveau titre de la franchise Grand Theft Auto, GTA VI, a reçu une note exceptionnelle de 99 / 100 sur Metacritic, un score jamais atteint depuis vingt‑huit ans. Les critiques internationales le qualifient de « véritable claque » et d’« expérience mémorable », soulignant la profondeur de son monde ouvert et la qualité de son scénario centré sur les personnages Lucia et Jason. Cette réception très favorable confirme les attentes élevées suscitées par la sortie du jeu, annoncée pour le 19 novembre 2026, et le place comme un nouveau standard pour le dixième art.",
+        "Face à la désertification des centres‑villes, de nombreuses municipalités françaises ont créé le poste de manager de centre‑ville, également appelé manager de commerce. À Sceaux, dans les Hauts‑de‑Seine, ce métier existe depuis vingt‑cinq ans et a inspiré la multiplication de ces fonctions, qui comptent aujourd’hui plus de trois cents postes à l’échelle nationale. Leur rôle consiste à soutenir les commerçants, attirer de nouvelles boutiques, animer les espaces publics et améliorer l’aménagement urbain afin de préserver la diversité commerciale et revitaliser les rues.",
+        "Le 19 novembre, le sénateur et ancien candidat écologiste à la présidentielle, Yannick Jadot, a annoncé son départ des Écologistes, suivi du député Jérémie Iordanoff. Cette décision intervient après la main tendue de Marine Tondelier à Jean‑Luc Mélenchon, qui a mis en lumière des fractures au sein du parti vert. Jadot a déclaré soutenir Raphaël Glucksmann, critiquant la direction prise par les Écologistes et leur rapprochement avec La France Insoumise."
+      ],
+      "image": null,
+      "source_refs": [
+        {
+          "publisher": "Franceinfo",
+          "url": "https://www.franceinfo.fr/internet/les-principaux-createurs-de-contenus-devront-desormais-respecter-le-pluralisme-dans-leur-traitement-de-l-election-presidentielle_8290187.html",
+          "language": "fr",
+          "published_at": "2026-11-19T16:54:07Z"
+        },
+        {
+          "publisher": "Franceinfo",
+          "url": "https://www.franceinfo.fr/culture/jeux-video/gta-vi/je-n-ai-jamais-joue-a-un-jeu-aussi-marquant-le-jeu-video-gta-vi-recoit-les-eloges-de-la-presse-specialisee-du-monde-entier_8289947.html",
+          "language": "fr",
+          "published_at": "2026-11-19T13:04:22Z"
+        },
+        {
+          "publisher": "RFI",
+          "url": "https://www.rfi.fr/fr/podcasts/reportage-france/20261119-les-managers-de-commerce-une-nouvelle-solution-pour-redynamiser-les-centres-villes",
+          "language": "fr",
+          "published_at": "2026-11-19T23:00:26Z"
+        },
+        {
+          "publisher": "France 24",
+          "url": "https://www.france24.com/fr/france/20261119-france-presidentielle-yannick-jadot-quitte-les-ecologistes-marine-tondelier-jean-luc-melenchon-glucksmann",
+          "language": "fr",
+          "published_at": "2026-11-19T23:04:16Z"
+        }
+      ],
+      "word_count": 342,
+      "minutes": 2
+    },
+    {
+      "id": "a52a27191f4e48f3650ab0",
+      "category": "Royaume-Uni",
+      "title": "Massive hope for pancreatic cancer pill after trial saw tumours vanish",
+      "paragraphs": [
+        "Un comprimé quotidien nommé daraxonrasib a montré des effets prometteurs sur le cancer du pancréas, l’une des tumeurs les plus mortelles. Dans un essai de phase I/II, les tumeurs ont cessé de croître chez 90 % des participants, tandis que plus de 60 % ont vu leurs lésions diminuer ou disparaître. Un patient sur douze a même vu le cancer devenir indétectable sur les scanners, selon les données publiées. Ces résultats, qualifiés de « plus grande avancée en décennies » par Cancer Research UK, relancent l’espoir d’une thérapie plus efficace que la chimiothérapie seule.",
+        "L’étude a porté sur 61 patients récemment diagnostiqués avec un cancer du pancréas avancé, déjà métastasé. Tous ont reçu daraxonrasib en association avec la chimiothérapie standard, puis ont été suivis pendant environ un an et demi. Au terme de cette période, la plupart des patients n’avaient pas vu la maladie réapparaître, bien que les chercheurs soulignent que la durée exacte de la réponse reste incertaine. Le suivi prolongé est donc essentiel pour déterminer si une rémission durable est possible.",
+        "Daraxonrasib agit comme un inhibiteur ciblé des mutations RAS, présentes dans la majorité des cancers du pancréas. En bloquant ces mutations, le médicament empêche la croissance tumorale à la source. Cette approche, décrite comme « drugging the undruggable », représente une rupture avec les traitements traditionnels qui ne ciblent que les symptômes de la maladie. Le Dr Wungki Park, du Memorial Sloan Kettering Cancer Center, a souligné que les réponses observées étaient « extrêmement encourageantes », ouvrant la voie à des essais plus larges.",
+        "Les experts insistent toutefois sur le caractère préliminaire des données. Le Dr Sam Godfrey, de Cancer Research UK, rappelle que même si les tumeurs disparaissent à l’imagerie, il faut du temps pour confirmer une absence totale de cellules cancéreuses. Les études futures devront vérifier la persistance de la réponse et son impact sur la survie globale, car la plupart des patients atteints de formes avancées ne survivent que quelques mois sans traitement efficace.",
+        "Outre le pancréas, le même mécanisme pourrait bénéficier à d’autres cancers porteurs de mutations RAS, comme le poumon ou l’ovaire. Le Dr Godfrey a exprimé l’espoir que le succès initial se traduise par des essais élargis à ces pathologies, tout en rappelant que des données supplémentaires sont indispensables pour valider cette hypothèse. La perspective d’un traitement transversal renforce l’intérêt scientifique autour de daraxonrasib.",
+        "En Grande‑Bretagne, le cancer du pancréas touche environ 11 500 personnes chaque année et cause près de 10 200 décès, selon Cancer Research UK. Le taux de mortalité reste le plus élevé parmi les cancers courants, ce qui rend chaque avancée thérapeutique cruciale. Le récent essai, bien que limité, offre une lueur d’espoir pour les patients et leurs familles, tout en soulignant la nécessité d’investir dans des recherches cliniques plus approfondies afin de transformer ces réponses initiales en bénéfices durables."
+      ],
+      "image": null,
+      "source_refs": [
+        {
+          "publisher": "BBC UK",
+          "url": "https://www.bbc.co.uk/news/articles/cqrmgjnzz9l0o",
+          "language": "en",
+          "published_at": "2026-11-20T00:08:22Z"
+        }
+      ],
+      "word_count": 473,
+      "minutes": 3
+    },
+    {
+      "id": "3ccb78afd018868336df84",
+      "category": "Monde",
+      "title": "Why Canada is embracing AI data centres while the US pushes back",
+      "paragraphs": [
+        "Kevin O'Leary, connu pour son rôle dans Shark Tank, figure parmi les investisseurs qui ciblent le Canada pour développer des data‑centres d’intelligence artificielle, alors que son projet américain rencontre une forte opposition locale. Cette dynamique s’inscrit dans un contexte où les électeurs américains ont approuvé 40 sur 41 initiatives locales visant à limiter ou empêcher la construction de ces installations lors des dernières élections législatives. En revanche, le climat d’investissement au Canada apparaît plus favorable, comme le souligne Lucy Hargreaves, directrice de Build Canada, qui a indiqué sur X que les data‑centres y sont « très attractifs ».",
+        "Le Canada bénéficie d’atouts géographiques et énergétiques qui le distinguent des États‑Unis, où le nombre de projets de data‑centres d’IA dépasse largement celui de son voisin du Nord. Les partisans canadiens avancent que l’abondance de terres, la disponibilité du gaz naturel et le climat froid permettent de réduire les problèmes de proximité avec les zones peuplées, de bruit et de pression sur les réseaux électriques, problèmes qui freinent les projets américains. Cette perception attire des promoteurs cherchant à relocaliser des capitaux initialement destinés aux États‑Unis.",
+        "Selon Hargreaves, interviewée par la BBC, une partie du capital qui aurait été investie aux États‑Unis se rend désormais disponible pour le Canada, soulevant la question de la volonté politique d’accueillir ces projets. Jusqu’à présent, la résistance au Canada reste limitée, les projets avançant sans perturbations majeures et les législateurs affichant un soutien ouvert, sans conséquences politiques notables. Cette attitude contraste fortement avec le climat de contestation qui s’est intensifié aux États‑Unis.",
+        "L’Alberta constitue le cœur de l’essor des data‑centres d’IA au Canada, avec 90 % des sites proposés prévus dans la province. Riches en réserves de gaz naturel, les acteurs locaux se positionnent comme la « destination de choix de l’Amérique du Nord » en offrant un service de « conciergerie » aux investisseurs pour accélérer la mise en œuvre des projets. Cette stratégie vise à attirer des installations de grande envergure, comme le projet Wonder Valley de 7 000 acres et 7,5 gigawatts, soutenu par le gouvernement provincial et la municipalité de Greenview.",
+        "Le projet Wonder Valley en Alberta, présenté comme « off‑grid », prévoit de s’alimenter en gaz naturel local et a été exempté d’une évaluation d’impact environnemental par le gouvernement provincial en avril, bien qu’il doive encore obtenir les permis de construction. Les résidents locaux ont exprimé des réserves, notamment concernant la consommation d’eau estimée à six millions de mètres cubes annuellement, soit l’équivalent de 2 400 piscines olympiques, mais les autorités locales estiment que cette quantité représente une petite fraction du débit du fleuve Smoky voisin. Les autorités provinciales défendent le projet en soulignant la création d’emplois et les recettes fiscales attendues.",
+        "Des oppositions émergent toutefois dans d’autres provinces. En Nouvelle‑Écosse, des centaines de manifestants se sont rassemblés contre un data‑centre prévu pour le compte d’Anthropic, soulignant que l’IA suscite déjà une méfiance généralisée tant au Canada qu’aux États‑Unis. Le gouvernement canadien, dirigé par le Premier ministre Carney, considère le développement de ces infrastructures comme une question de sécurité nationale et de souveraineté, estimant qu’une multiplication par 16 de la capacité de calcul est nécessaire d’ici quatre ans pour répondre à la demande intérieure. Cette ambition nationale se heurte à des préoccupations locales, comme le recours récent d’une nation crie à la justice pour contester la levée de l’évaluation environnementale du projet Wonder Valley."
+      ],
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Earth_Geoid_Field_Anomaly_globe%2C_NASA_Earth_Observatory.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "alt": "Photographie d’illustration — Monde",
+        "credit": "NASA Earth Observatory",
+        "license": "Public domain",
+        "page": "https://commons.wikimedia.org/wiki/File:Earth_Geoid_Field_Anomaly_globe%2C_NASA_Earth_Observatory.jpg"
+      },
+      "source_refs": [
+        {
+          "publisher": "BBC News",
+          "url": "https://www.bbc.co.uk/news/articles/cmx2q223z1jlo",
+          "language": "en",
+          "published_at": "2026-11-20T00:13:24Z"
+        }
+      ],
+      "word_count": 562,
+      "minutes": 3
     }
   ]
 }

@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "editions": [
+    {
+      "schema_version": 1,
+      "date": "2026-11-20",
+      "path": "editions/2026-11-20.json",
+      "sha256": "5eeb47b1e1311c15805c15adbccf080d04995c0c5832c44f19e617890fef1ec0",
+      "published_at": "2026-11-20T23:36:15.597285Z"
+    },
+    {
+      "schema_version": 1,
+      "date": "2026-11-19",
+      "path": "editions/2026-11-19.json",
+      "sha256": "26f3ee323285c5addabaeb7acf7857e87db8c7b5bf6578e178892b47c32156f5",
+      "published_at": "2026-11-20T23:36:15.597285Z"
+    },
+    {
+      "schema_version": 1,
+      "date": "2026-11-18",
+      "path": "editions/2026-11-18.json",
+      "sha256": "ab1a2166218b212cb4f7ddb2de4d9e765b828f75f20ef5a634ff47d55d369778",
+      "published_at": "2026-11-18T14:31:18.806239Z"
+    }
+  ]
+}

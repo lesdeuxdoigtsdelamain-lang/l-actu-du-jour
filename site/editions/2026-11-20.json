@@ -2,15 +2,15 @@
   "schema_version": 1,
   "edition_id": "2026-11-20-fr-FR",
   "edition_date": "2026-11-20",
-  "generated_at": "2026-11-20T17:55:30.917536Z",
+  "generated_at": "2026-11-20T23:36:15.597285Z",
   "language": "fr-FR",
   "timezone": "Europe/London",
-  "status": "complete",
-  "minutes": 21,
+  "status": "partielle",
+  "minutes": 16,
   "articles": [
     {
       "id": "c075216d7a476abdae6fd7",
-      "category": "Monde musulman",
+      "category": "Maroc",
       "title": "Renforcement de la Force de stabilité internationale à Gaza par le Maroc",
       "paragraphs": [
         "Le Conseil de la Paix à Gaza a annoncé ce vendredi l’intégration de deux officiers supérieurs des Forces armées royales marocaines au sein de la Force de stabilité internationale (ISF), formation multinationale créée suite à la résolution du Conseil de sécurité des Nations unies n° 2803 publiée en novembre dernier. Cette décision s’inscrit dans le cadre du plan de paix visant à mettre fin aux hostilités et à préparer le retrait progressif des forces israéliennes du territoire gazouïen.",
@@ -69,36 +69,6 @@
       "minutes": 2
     },
     {
-      "id": "62d5c1a52e829289663214",
-      "category": "Santé",
-      "title": "Refonte du système de santé marocain présentée à Dakhla",
-      "paragraphs": [
-        "Lors de la deuxième édition du Dakhla Global Summit, le ministre de la Santé, Youns Bjijou, a exposé la mécanique d’une refonte du système de santé marocain. L’intervention s’est déroulée devant des délégations africaines, dont l’ancien président sénégalais Macky Sall et l’ancienne présidente de transition centrafricaine Catherine Samba‑Panza. Le discours a mis en avant quatre axes majeurs : gouvernance, hôpitaux, soignants et numérique, dans le cadre d’une ambition partagée avec le continent africain.",
-        "Le point d’entrée de la réforme, selon le ministre, est l’assurance maladie obligatoire (AMO). Il la décrit comme le véritable moteur de la couverture sanitaire universelle au Maroc et comme le socle d’un chantier plus large de refonte intégrale. Cette approche vise à faire de l’AMO un modèle à exporter, à quelques heures de l’adoption prévue samedi de la Déclaration de Dakhla 2026, qui servirait de cadre opérationnel aux coopérations sanitaires africaines.",
-        "Bjijou a d’abord posé un diagnostic dépassant les frontières nationales, soulignant que les systèmes de santé et de protection sociale doivent aujourd’hui répondre à des transformations profondes. Il a notamment évoqué les transitions démographique et épidémiologique, qui augmentent la pression sur les établissements de soins. Cette analyse sert de base à la proposition d’une réforme qui s’appuie sur la prévention et la maîtrise des coûts pour garantir l’accès aux soins pour tous.",
-        "La réponse proposée se décline en deux volets. D’une part, le ministre insiste sur l’investissement en amont, notamment dans la prévention, les comportements de santé et l’adaptation de l’offre aux spécificités territoriales. D’autre part, il souligne la nécessité de maîtriser les dépenses, jugeant la soutenabilité financière indispensable à l’universalité de l’accès. Cette double stratégie vise à renforcer la résilience du système face aux défis futurs.",
-        "La pandémie de Covid‑19 a renforcé l’urgence de ces mesures. Bjijou a appelé à inscrire durablement la prévention, la préparation et la réponse aux menaces sanitaires au cœur des politiques publiques. Il a également plaidé pour le renforcement des capacités industrielles locales – production de diagnostics, médicaments, vaccins – afin de rendre les systèmes véritablement autonomes. Le numérique, l’intelligence artificielle, les biotechnologies et les innovations diagnostiques sont présentés comme des leviers inédits au service de l’intérêt général.",
-        "Enfin, le ministre a replacé la réforme dans l’ambition de développement portée par le roi Mohammed VI, fondée sur la dignité humaine, la solidarité et la justice sociale. La protection sociale, consacrée par la Constitution de 2011, est présentée comme un acquis universel reposant sur quatre piliers : l’AMO, les allocations familiales, l’élargissement des régimes de retraite et l’extension de l’indemnité pour perte d’emploi. Cette vision globale vise à ancrer la refonte dans une dynamique de justice sociale et de développement humain."
-      ],
-      "image": {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/6/6c/Easter_Craiglockhart_Hill_-_geograph.org.uk_-_36913.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-        "alt": "Photographie d’illustration — Santé",
-        "credit": "Kevin Rae",
-        "license": "CC BY-SA 2.0",
-        "page": "https://commons.wikimedia.org/wiki/File:Easter_Craiglockhart_Hill_-_geograph.org.uk_-_36913.jpg"
-      },
-      "source_refs": [
-        {
-          "publisher": "TelQuel",
-          "url": "https://telquel.ma/2026/11/20/refonte-de-la-sante-bjijou-expose-sa-methode-a-dakhla_2019250",
-          "language": "fr",
-          "published_at": "2026-11-20T17:03:20Z"
-        }
-      ],
-      "word_count": 441,
-      "minutes": 3
-    },
-    {
       "id": "2a97fafca63ef591de4518",
       "category": "Monde musulman",
       "title": "Des drones israéliens larguent publications et engins explosifs sur Gaza : faits et réactions",
@@ -129,30 +99,6 @@
       "minutes": 3
     },
     {
-      "id": "6d29a88f104ee4fa947c86",
-      "category": "Maroc",
-      "title": "Maroc Telecom : un modèle centralisé pour contrer les cyber‑risques en Afrique",
-      "paragraphs": [
-        "Le groupe Maroc Telecom a structuré sa défense cybernétique autour d’un centre opérationnel de sécurité (SOC) et d’une équipe de réponse aux incidents (CERT). Ces deux entités sont gérées par la filiale à 100 % du groupe, Casanet, qui propose également ces services à des entreprises au Maroc et dans le reste du continent. Cette organisation centralisée permet de surveiller l’ensemble des filiales depuis un point unique, tout en offrant la possibilité d’intervenir rapidement en cas d’incident majeur.",
-        "Lors d’une intervention à Rabat le 16 novembre, le Chief Information Security Officer, Mehdi Benamar, a présenté la stratégie du groupe dans le cadre de la semaine « ECOWAS Women in Cybersecurity ». Il a souligné que la gouvernance de la sécurité doit être traduite en actions opérationnelles concrètes. Cette approche vise à harmoniser les pratiques de cybersécurité entre les onze pays où le groupe est présent, malgré la diversité des environnements technologiques, entre cloud et serveurs sur site.",
-        "Le groupe a identifié une disparité marquée des maturités de cybersécurité entre les filiales, chaque pays étant soumis à des réglementations propres. Pour pallier ces écarts, Maroc Telecom a mis en place un socle commun de processus et de procédures, co‑développé avec les filiales puis adapté aux exigences locales. Chaque entité dispose ainsi d’un responsable de la sécurité des systèmes d’information (RSSI) et d’une équipe dédiée, garantissant le respect du minimum de sécurité requis.",
-        "Le contrôle de l’application de ces règles repose sur une auto‑évaluation des filiales, complétée par des audits ponctuels du groupe. En cas de crise, un comité réunissant les responsables du groupe et des filiales se mobilise pour coordonner la réponse. Cette gouvernance partagée assure que les mesures correctives sont appliquées de façon cohérente, tout en laissant chaque filiale la capacité d’ajuster les actions à son contexte spécifique.",
-        "Un des piliers de la détection précoce repose sur l’utilisation d’agents d’intelligence artificielle au sein du SOC. Ces agents analysent les alertes en temps réel, filtrent les faux positifs et livrent des résultats plus fiables, selon les propos de Benamar. Le dispositif s’appuie sur un processus en cinq niveaux, allant de la détection initiale à la prise de décision conjointe avec les filiales, afin d’accélérer le traitement des incidents sans divulguer de métriques précises.",
-        "Le groupe a également constaté que les alertes reçues dans une filiale sont souvent déjà apparues dans une autre quelques mois auparavant. Cette redondance a permis de constituer un « dossier de connaissances » partagé, facilitant la résolution rapide des incidents. En mutualisant l’expérience, Maroc Telecom renforce sa capacité à anticiper les menaces et à protéger les données de ses près de 78 millions de clients répartis sur les onze marchés africains."
-      ],
-      "image": null,
-      "source_refs": [
-        {
-          "publisher": "TelQuel",
-          "url": "https://telquel.ma/2026/11/20/cas-dentreprise-comment-maroc-telecom-repond-au-risque-cyber-et-protege-sa-data_2019255",
-          "language": "fr",
-          "published_at": "2026-11-20T17:08:57Z"
-        }
-      ],
-      "word_count": 444,
-      "minutes": 3
-    },
-    {
       "id": "d63545ee50582dd0784557",
       "category": "Science et technologie",
       "title": "Cérémonie des Honor Awards du centre spatial Stennis : les lauréats et leurs contributions",
@@ -177,58 +123,68 @@
       "minutes": 3
     },
     {
-      "id": "552935c3a4da7dfb41fa04",
-      "category": "Santé",
-      "title": "Nouvel hôpital régional de Dakhla : état d’avancement et perspectives",
+      "id": "france-tour-2026-11-20",
+      "category": "France",
+      "title": "Tour de l’actu en France — 20 novembre 2026",
       "paragraphs": [
-        "Le ministre de la Santé et de la Protection sociale, Youns Bjijou, s’est rendu vendredi sur le chantier du futur hôpital régional de Dakhla. Cette visite de terrain a permis de constater que les travaux de construction ont atteint un taux d’avancement de 90 %. Le ministre a ainsi pu se rendre compte de l’avancée concrète du projet, qui se situe désormais à un stade avancé de réalisation.",
-        "L’inspection s’est déroulée en présence du wali de la région de Dakhla‑Oued Eddahab, gouverneur de la province d’Oued Eddahab, Ali Khalil, ainsi que du président du Conseil régional, El Khattat Yanja. Leur participation a souligné l’importance institutionnelle accordée à ce chantier, marquant une coopération étroite entre les autorités locales et le ministère chargé de la santé.",
-        "Au cours de la visite, les responsables ont évalué le niveau de préparation des structures et des équipements prévus pour l’établissement. Cette étape a également servi à identifier les mesures nécessaires afin d’accélérer le rythme de réalisation des travaux, dans le but de garantir la mise en service du centre hospitalier dans les délais impartis.",
-        "Le projet s’inscrit dans le cadre d’un partenariat entre le ministère de la Santé, la wilaya de Dakhla‑Oued Eddahab et le Conseil régional. Le coût global de l’opération s’élève à 143 millions de dirhams, et le bâtiment s’étend sur une superficie de 2,07 hectares, soit environ 207 mètres carrés, offrant une capacité d’accueil de 78 lits, dont plusieurs dédiés à la réanimation.",
-        "L’infrastructure comprend un rez‑de‑chaussée et un étage, avec des blocs opératoires, un service d’urgence, ainsi que des unités de consultation couvrant plusieurs spécialités comme la pédiatrie, la traumatologie, l’oto‑rhino‑laryngologie, l’ophtalmologie et la médecine générale. Les travaux de construction sont déjà à 90 % d’achèvement, tandis que les études préalables ont été finalisées, préparant le terrain à la phase finale d’équipement.",
-        "Le futur hôpital sera également doté d’un service d’imagerie médicale complet, incluant IRM, scanner, échographie, mammographie et radiographie dentaire. En outre, il comportera un laboratoire d’analyses, une pharmacie, un service de médecine dentaire, une maternité, une unité d’hôpital de jour et d’autres structures d’hospitalisation et de gestion administrative, assurant ainsi une offre de soins diversifiée pour la population locale."
-      ],
-      "image": {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/6/6c/Easter_Craiglockhart_Hill_-_geograph.org.uk_-_36913.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-        "alt": "Photographie d’illustration — Santé",
-        "credit": "Kevin Rae",
-        "license": "CC BY-SA 2.0",
-        "page": "https://commons.wikimedia.org/wiki/File:Easter_Craiglockhart_Hill_-_geograph.org.uk_-_36913.jpg"
-      },
-      "source_refs": [
-        {
-          "publisher": "Hespress Français",
-          "url": "https://fr.hespress.com/497223-dakhla-lavancement-des-travaux-du-nouvel-hopital-regional-a-90.html",
-          "language": "fr",
-          "published_at": "2026-11-20T15:20:26Z"
-        }
-      ],
-      "word_count": 360,
-      "minutes": 2
-    },
-    {
-      "id": "fc2fdc6097220fe36751f6",
-      "category": "Maroc",
-      "title": "Le frein commercial des PME marocaines : un problème de leadership",
-      "paragraphs": [
-        "Dans le paysage économique marocain, de nombreuses petites et moyennes entreprises (PME) peinent à dépasser un stade de croissance malgré un environnement de marché jugé favorable. Selon Mostafa Mounasser, fondateur d’un cabinet d’accompagnement dédié aux PME, la cause principale ne réside pas dans la demande mais dans les dirigeants eux‑mêmes, souvent dépourvus d’une culture commerciale solide. Cette analyse, présentée comme un diagnostic plutôt qu’une accusation, ouvre la voie à une réflexion sur les compétences managériales requises pour soutenir la dynamique entrepreneuriale.",
-        "Les dirigeants de ces PME ont généralement émergé en tant qu’experts techniques dans leur domaine – qu’il s’agisse d’architecture, de développement, de négoce ou d’importation. Leur décision de créer une entreprise repose sur la maîtrise d’un métier plutôt que sur une formation à la vente. Cette orientation initiale explique pourquoi les structures sont souvent très compétentes sur le plan technique, mais manquent d’une approche systématique pour attirer et fidéliser une clientèle au-delà du cercle personnel.",
-        "Le modèle de développement initial repose largement sur le réseau personnel du fondateur. Les premiers contrats sont obtenus grâce aux recommandations et au bouche‑à‑oreille, ce qui crée l’illusion d’une capacité commerciale. En réalité, le dirigeant entretient surtout des relations existantes plutôt que d’élaborer une stratégie de prospection structurée. Cette dépendance au réseau devient problématique dès que celui‑ci s’épuise ou que la concurrence se renforce.",
-        "Lorsque le flux de clients issus du réseau commence à se tarir, la fragilité de l’entreprise se révèle. L’absence d’une machine commerciale – c’est‑à‑dire d’un processus de génération de leads, de qualification et de suivi – expose la société à des risques de perte de chiffre d’affaires, notamment si un client majeur se retire. Cette situation met en évidence le besoin d’une organisation commerciale indépendante du fondateur.",
-        "Face à cette impasse, certains dirigeants décident d’embaucher un commercial. Cette décision introduit un nouveau défi : le dirigeant, n’ayant jamais exercé de fonctions commerciales, se trouve démuni pour manager ce nouveau profil. Il ne sait pas identifier les compétences clés, fixer des objectifs réalistes ou évaluer l’efficacité des méthodes mises en place, ce qui limite l’impact potentiel du recrutement.",
-        "Le constat final souligne que la croissance durable des PME marocaines nécessite plus qu’une expertise technique. Il faut développer une culture commerciale au sein du leadership, capable de concevoir, piloter et ajuster une stratégie de vente. Sans cette évolution, les entreprises risquent de rester bloquées à un niveau de performance limité, malgré un marché qui, en théorie, offre des opportunités de développement."
+        "Dominique de Villepin a officiellement annoncé sa candidature à l’élection présidentielle de 2027 lors d’une conférence de presse à Paris le 20 novembre. L’ancien Premier ministre a présenté son projet comme une alternative au macronisme et aux deux forces qu’il qualifie de « radicales », la France insoumise et le Rassemblement national, qu’il décrit comme des ennemis complémentaires. Il a évoqué une « démocratie en panne » et souligné les défis liés à l’Europe, aux conflits en Ukraine et au Golfe, à l’intelligence artificielle et au réchauffement climatique.",
+        "Le Parlement a adopté définitivement, le même jour, une proposition de loi instaurant une présomption d’usage légal des armes par les forces de l’ordre. Le texte, soutenu par le gouvernement, le centre, la droite et le Rassemblement national, a recueilli 205 voix pour et 110 contre au Sénat. Il renverse la charge de la preuve en présumant que les policiers et gendarmes ont agi dans le cadre de la loi lorsqu’ils utilisent leurs armes, tout en permettant de renverser cette présomption par tout élément de preuve contraire. La gauche a annoncé son intention de saisir le Conseil constitutionnel.",
+        "La cour criminelle de Paris a rendu son verdict le 20 novembre dans l’affaire des trois policiers jugés pour violences aggravées et faux en écriture publique contre le producteur de musique Michel Zecler, âgé de 47 ans. Les magistrats ont retenu la circonstance aggravante de racisme et condamné les policiers à des peines d’un à deux ans de prison ferme. En même temps, une interdiction définitive d’exercer la fonction de policier a été prononcée à effet immédiat, exécutée provisoirement. Le verdict a été suivi d’une forte présence du public et de personnalités du monde du spectacle.",
+        "L’annonce de Villepin a relancé le débat sur son positionnement politique. Malgré son passé de ministre des Affaires étrangères, de l’Intérieur et de Premier ministre sous Jacques Chirac, il est perçu comme un homme de droite qui trouve un écho auprès d’une partie de l’électorat de gauche. Son retour sur la scène médiatique depuis la fin 2023, notamment sur les questions internationales comme la guerre à Gaza, montre une volonté de se repositionner. Cependant, son attractivité reste limitée parmi les électeurs traditionnels de droite, ce qui le place dans une quête d’électeurs transversaux."
       ],
       "image": null,
       "source_refs": [
         {
-          "publisher": "TelQuel",
-          "url": "https://telquel.ma/2026/11/20/tribune-au-maroc-le-probleme-commercial-des-pme-nest-pas-le-marche-cest-le-dirigeant_2019214",
+          "publisher": "RFI",
+          "url": "https://www.rfi.fr/fr/france/20261120-pr%C3%A9sidentielle-2027-en-france-dominique-de-villepin-annonce-officiellement-sa-candidature",
           "language": "fr",
-          "published_at": "2026-11-20T15:36:01Z"
+          "published_at": "2026-11-20T10:36:27Z"
+        },
+        {
+          "publisher": "Franceinfo",
+          "url": "https://www.franceinfo.fr/faits-divers/police/le-parlement-adopte-definitivement-la-presomption-d-usage-legal-des-armes-par-les-forces-de-l-ordre_8292845.html",
+          "language": "fr",
+          "published_at": "2026-11-20T19:26:13Z"
+        },
+        {
+          "publisher": "Franceinfo",
+          "url": "https://www.franceinfo.fr/faits-divers/producteur-passe-a-tabac-par-des-policiers/des-condamnations-allant-d-un-an-a-deux-ans-de-prison-ferme-pour-les-trois-policiers-accuses-d-avoir-roue-de-coups-michel-zecler_8292287.html",
+          "language": "fr",
+          "published_at": "2026-11-20T23:10:11Z"
+        },
+        {
+          "publisher": "France 24",
+          "url": "https://www.france24.com/fr/france/20261120-france-presidentielle-2027-dominique-de-villepin-homme-droite-populaire-gauche-sans-electeurs",
+          "language": "fr",
+          "published_at": "2026-11-20T06:43:38Z"
         }
       ],
-      "word_count": 409,
+      "word_count": 375,
       "minutes": 2
+    },
+    {
+      "id": "dab5a066bf2f99da56c589",
+      "category": "Royaume-Uni",
+      "title": "Supermarket sweep: Morrisons, Tesco and M&S back Government's business-boosting food trade deal with Europe",
+      "paragraphs": [
+        "Les dirigeants de grandes chaînes de distribution britanniques ont salué le nouveau pacte commercial alimentaire conclu entre le Royaume-Uni et l’Union européenne lors du sommet EU‑UK à Bruxelles. Selon les déclarations officielles, cet accord vise à simplifier les échanges, à réduire les formalités administratives et à éliminer les contrôles frontaliers inutiles, offrant ainsi aux détaillants plus de choix et des produits plus frais sur les rayons. Les marques mentionnées, dont Morrisons, Tesco, Asda, Lidl, Co‑op et M&S, estiment que la mesure renforcera la compétitivité du secteur et soutiendra l’emploi.",
+        "Le ministre de l’Environnement, de l’Alimentation et des Affaires rurales, Dame Angela Eagle, a souligné que les entreprises britanniques étaient auparavant entravées par une paperasserie coûteuse et des contrôles excessifs. Elle a affirmé que la suppression de ces obstacles allégerait la facture alimentaire des ménages, tout en maintenant les normes élevées attendues par le public. Le texte officiel indique que le retrait de ces barrières devrait réduire les coûts pour chaque expédition et accélérer la mise sur le marché des denrées.",
+        "Parmi les produits concernés, les exportations de saucisses fraîches, de burgers, de pommes de terre de semence et de fruits de mer pourront à nouveau circuler librement vers les marchés de l’UE. Le texte indique que la relance de ces flux contribuera à renforcer les chaînes d’approvisionnement, à diminuer les dépenses des entreprises et à exercer une pression à la baisse sur l’inflation des prix alimentaires. Une estimation avance que le dispositif pourrait ajouter jusqu’à 5,1 milliards de livres sterling à l’économie britannique.",
+        "Le nouveau cadre commercial conserve les protections robustes en matière de bien‑être animal et de biosécurité, tout en améliorant le partage d’informations entre les autorités. Les entreprises opérant entre la Grande‑Bretagne et l’Irlande du Nord bénéficieront également d’une réduction significative de la bureaucratie et des contrôles. Cette continuité des standards sanitaires vise à garantir la sécurité des produits tout en facilitant les échanges transfrontaliers.",
+        "Les acteurs du secteur soulignent que la suppression des formalités, comme les exigences de signatures vétérinaires ou de désignations latines, permettra aux produits tels que les spaghettis bolognaise de Lincolnshire d’atteindre les rayons irlandais avec deux jours de fraîcheur supplémentaire, moins de gaspillage et une gamme plus large. Les représentants de la chaîne d’import‑export ont déclaré que cela créerait de nouvelles opportunités pour les fournisseurs britanniques d’accéder à un marché européen élargi.",
+        "Enfin, les organisations de distribution et de gros ont indiqué que la simplification du commerce serait un véritable catalyseur pour les écoles, hôpitaux, commerces et restaurants qui dépendent de ces flux. Elles attendent que la réduction des coûts se traduise rapidement en économies pour les consommateurs, en renforcement de la sécurité alimentaire et en résilience accrue des chaînes d’approvisionnement à travers le pays. Le gouvernement a été invité à poursuivre la coopération avec l’industrie pour concrétiser ces bénéfices."
+      ],
+      "image": null,
+      "source_refs": [
+        {
+          "publisher": "GOV.UK",
+          "url": "https://www.gov.uk/government/news/supermarket-sweep-morrisons-tesco-and-ms-back-governments-business-boosting-food-trade-deal-with-europe",
+          "language": "en",
+          "published_at": "2026-11-20T14:25:00Z"
+        }
+      ],
+      "word_count": 467,
+      "minutes": 3
     }
   ]
 }
