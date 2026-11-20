@@ -1,34 +1,28 @@
 {
-  "checked_at": "2026-11-19T17:53:34.958749+00:00",
+  "checked_at": "2026-11-20T17:55:30.917536+00:00",
   "state": "success",
   "reason": "Édition complète. Contrôles : longueur, chiffres, références.",
   "feeds": {
-    "bbc-world": {
-      "ok": 33
-    },
-    "bbc-business": {
-      "ok": 22
-    },
-    "france24": {
-      "ok": 23
-    },
     "aljazeera-en": {
-      "ok": 24
+      "ok": 25
     },
     "rfi": {
       "ok": 23
     },
+    "bbc-world": {
+      "ok": 21
+    },
     "bbc-uk": {
-      "ok": 31
+      "ok": 26
+    },
+    "bbc-ar": {
+      "ok": 11
+    },
+    "bbc-business": {
+      "ok": 22
     },
     "bbc-science": {
       "ok": 16
-    },
-    "sky-world": {
-      "ok": 7
-    },
-    "aljazeera-ar": {
-      "ok": 25
     },
     "hespress-ar": {
       "ok": 12
@@ -36,17 +30,17 @@
     "franceinfo": {
       "error": "Disallowed host / scheme"
     },
-    "bbc-ar": {
-      "ok": 15
+    "sky-world": {
+      "ok": 8
     },
     "hespress-fr": {
-      "ok": 9
-    },
-    "nasa": {
-      "ok": 9
+      "ok": 10
     },
     "gov-uk": {
-      "ok": 20
+      "ok": 19
+    },
+    "nasa": {
+      "ok": 8
     },
     "nsf": {
       "ok": 0
@@ -57,19 +51,25 @@
     "alarabiya": {
       "error": "HTTP 403"
     },
-    "globalvoices-ar": {
-      "ok": 3
-    },
     "globalvoices": {
-      "ok": 5
+      "ok": 2
+    },
+    "globalvoices-ar": {
+      "ok": 1
+    },
+    "aljazeera-ar": {
+      "ok": 25
+    },
+    "france24": {
+      "ok": 24
     },
     "telquel": {
-      "ok": 45
-    },
-    "un-en": {
-      "error": "HTTP 404"
+      "ok": 74
     },
     "un-fr": {
+      "error": "HTTP 404"
+    },
+    "un-en": {
       "error": "HTTP 404"
     }
   },
@@ -77,7 +77,7 @@
     "calls": 11,
     "neurons": 0.0,
     "groq_requests": 11,
-    "groq_tokens": 32146,
+    "groq_tokens": 32459,
     "cloudflare_requests": 0,
     "providers": [
       "groq"
