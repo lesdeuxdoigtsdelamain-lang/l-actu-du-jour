@@ -14,10 +14,11 @@
     {
       "id": "franceinfo",
       "publisher": "Franceinfo",
-      "url": "https://www.francetvinfo.fr/titres.rss",
+      "url": "https://www.franceinfo.fr/titres.rss",
       "language": "fr",
       "category": "France",
       "hosts": [
+        "www.franceinfo.fr",
         "www.francetvinfo.fr"
       ],
       "policy": "rss"
@@ -306,6 +307,40 @@
       "policy": "rss",
       "enabled": false,
       "note": "Legacy free RSS not independently verified"
+    },
+    {
+      "id": "france24-france",
+      "publisher": "France 24",
+      "url": "https://www.france24.com/fr/france/rss",
+      "language": "fr",
+      "category": "France",
+      "hosts": [
+        "www.france24.com"
+      ],
+      "policy": "rss"
+    },
+    {
+      "id": "rfi-france",
+      "publisher": "RFI",
+      "url": "https://www.rfi.fr/fr/france/rss",
+      "language": "fr",
+      "category": "France",
+      "hosts": [
+        "www.rfi.fr"
+      ],
+      "policy": "rss"
+    },
+    {
+      "id": "sky-uk",
+      "publisher": "Sky News UK",
+      "url": "https://feeds.skynews.com/feeds/rss/uk.xml",
+      "language": "en",
+      "category": "Royaume-Uni",
+      "hosts": [
+        "feeds.skynews.com",
+        "news.sky.com"
+      ],
+      "policy": "rss"
     }
   ]
 }

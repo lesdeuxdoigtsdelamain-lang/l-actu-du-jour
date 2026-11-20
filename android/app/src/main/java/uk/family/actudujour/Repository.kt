@@ -7,6 +7,7 @@ import kotlinx.coroutines.withContext
 import kotlinx.serialization.decodeFromString
 import okhttp3.OkHttpClient
 import okhttp3.Request
+import java.io.ByteArrayOutputStream
 import java.io.File
 import java.time.LocalDate
 import java.util.concurrent.TimeUnit
@@ -27,9 +28,18 @@ class NewsRepository(private val context: Context) {
         client.newCall(req).execute().use { response ->
             require(response.isSuccessful) { "Serveur indisponible (${response.code})" }
             val body = response.body ?: error("Réponse vide")
-            val bytes=body.bytes()
-            require(bytes.size.toLong()<=maximum) { "Données trop volumineuses" }
-            return bytes
+            require(body.contentLength() <= maximum) { "Données trop volumineuses" }
+            body.byteStream().use { input ->
+                val result = ByteArrayOutputStream()
+                val buffer = ByteArray(8192)
+                while (true) {
+                    val count = input.read(buffer)
+                    if (count < 0) break
+                    require(result.size().toLong() + count <= maximum) { "Données trop volumineuses" }
+                    result.write(buffer, 0, count)
+                }
+                return result.toByteArray()
+            }
         }
     }
     private fun loadLocal(): List<Edition> = folder.listFiles { f ->
@@ -37,30 +47,47 @@ class NewsRepository(private val context: Context) {
     }?.mapNotNull { f -> runCatching { parseEdition(f.readBytes()) }.getOrNull() }
         ?.sortedByDescending { it.date } ?: emptyList()
 
-    suspend fun refresh(): Boolean = withContext(Dispatchers.IO) {
-        val manifest=wire.decodeFromString<Latest>(download("latest.json",20000).decodeToString())
-        require(manifest.schemaVersion==1 && manifest.sha256.matches(Regex("[a-f0-9]{64}")))
-        require(manifest.path=="editions/${manifest.date}.json")
-        val d=LocalDate.parse(manifest.date)
-        require(!d.isAfter(ukToday())) { "Édition datée dans le futur" }
-        val existing=File(folder,"${d}.json")
+    private fun syncEdition(manifest: Latest, today: LocalDate): Boolean {
+        val day = validateManifest(manifest, today)
+        val existing=File(folder,"$day.json")
         val old=if(existing.exists())runCatching { existing.readBytes() }.getOrNull() else null
-        if(old != null && sha(old)==manifest.sha256) {
-            editions.value=loadLocal();return@withContext false
-        }
+        if(old != null && sha(old)==manifest.sha256) return false
         val newData=download(manifest.path,800000)
-        require(sha(newData)==manifest.sha256) { "Signature d'intégrité du journal incorrecte" }
-        val e=parseEdition(newData)
-        require(e.date==manifest.date)
-        val tmp=File(folder,"${d}.tmp");tmp.writeBytes(newData)
-        require(tmp.renameTo(existing)) { "Échec d'enregistrement local" }
-        val cutoff=ukToday().minusDays(6)
+        validateDownload(newData, manifest, today)
+        // Validate before touching a healthy saved edition. Unique temporary names
+        // also avoid sharing a partially written file with the background worker.
+        val tmp=File.createTempFile("$day-", ".tmp", folder)
+        try {
+            tmp.writeBytes(newData)
+            require(tmp.renameTo(existing)) { "Échec d'enregistrement local" }
+        } finally {
+            tmp.delete()
+        }
+        return true
+    }
+
+    suspend fun refresh(): Boolean = withContext(Dispatchers.IO) {
+        val today = ukToday()
+        val manifest=wire.decodeFromString<Latest>(download("latest.json",20000).decodeToString())
+        val latestChanged = syncEdition(manifest, today)
+        // Display the latest successful download even if an archive request fails.
+        editions.value=loadLocal()
+        val archive = runCatching {
+            archiveManifests(download("archive.json",20000), manifest, today)
+        }.getOrDefault(emptyList())
+        for (entry in archive) {
+            // One missing, corrupt or offline archive must not hide the latest
+            // edition or prevent other previously saved days from being corrected.
+            runCatching { syncEdition(entry, today) }
+        }
+        val cutoff=today.minusDays(6)
         folder.listFiles()?.forEach { file ->
             val day=runCatching { LocalDate.parse(file.name.removeSuffix(".json")) }.getOrNull()
             if(day!=null && day.isBefore(cutoff)) file.delete()
         }
         editions.value=loadLocal()
-        true
+        // Old corrections do not announce a new daily edition to the worker.
+        latestChanged
     }
 
     fun toggleRead(id: String) {

@@ -41,8 +41,8 @@ def same_event(a,b):
     inter=len(a & b)
     return inter>=3 and (inter/max(1,min(len(a),len(b)))>=0.72 or inter/max(1,len(a|b))>=0.58)
 
-EXCLUDE = re.compile(r'\b(?:celebrity|celebrities|fashion|film\s+festival|movie|cinema|music|musique|gaming|video game|jeux vidéo|exhibition|exposition|people|automobile|football|soccer|cricket|rugby|tennis|sport|olympic|premier league|champions league|موسيقى|سينما|أفلام|رياضة)\b',re.I)
-BOOST = re.compile(r'\b(?:maroc|morocco|المغرب|palestin|فلسطين|gaza|غزة|sudan|soudan|ukraine|iran|iranien|إيران|election|élection|president|président|prime minister|government|gouvernement|onu|nations unies|investissement|inflation|health|santé|climat|climate|ai|intelligence artificielle|islam|مسلم)\b',re.I)
+EXCLUDE = re.compile(r'\b(?:celebrity|celebrities|fashion|film\s+festival|movie|cinema|music|musique|gaming|video game|jeux vidéo|exhibition|exposition|célébrités|vie des stars|automobile|football|soccer|cricket|rugby|tennis|sports?|fifa|lions de l.atlas|olympic|premier league|champions league|موسيقى|سينما|أفلام|رياضة)\b',re.I)
+BOOST = re.compile(r'\b(?:palestin|فلسطين|gaza|غزة|sudan|soudan|ukraine|iran|iranien|إيران|election|élection|president|président|prime minister|government|gouvernement|onu|nations unies|investissement|inflation|health|santé|climat|climate|ai|intelligence artificielle|islam|مسلم)\b',re.I)
 
 @dataclass
 class Candidate:
@@ -117,8 +117,8 @@ def cluster(candidates):
     groups=[]
     for c in sorted(candidates,key=lambda x:x.published_at,reverse=True):
         if any(c.url==q.url for g in groups for q in [g,*g.clustered]):continue
-        target=next((g for g in groups if same_event(g.title,c.title) and
-                     all(q.feed.publisher!=c.feed.publisher for q in [g,*g.clustered])),None)
+        # Two articles from the same publisher can also describe the same event.
+        target=next((g for g in groups if same_event(g.title,c.title)),None)
         if target:target.clustered.append(c)
         else:groups.append(c)
     return groups
@@ -129,7 +129,7 @@ def rank(groups,seen_ids=(),seen_titles=(),limit=25):
     while pool and len(selected)<limit:
         def score(g):
             cat=categorize(g)
-            bias=3 if cat in ('Maroc','Monde musulman','Monde') else 1
+            bias=2 if cat in ('Monde musulman','Monde') else 1
             depth=len(g.description.split())+sum(len(x.description.split()) for x in g.clustered)
             return (bias + (4 if BOOST.search(g.title) else 0)+ min(4,len(g.clustered)*2)
                     +min(3,depth//70) - 4*counts.get(cat,0) - 2*publishers.get(g.feed.publisher,0))

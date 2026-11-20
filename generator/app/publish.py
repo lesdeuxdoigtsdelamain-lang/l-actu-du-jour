@@ -15,13 +15,24 @@ def atomic(path,raw):
 def put(site:Path,edition:Edition,now:datetime):
     raw=(edition.model_dump_json(indent=2)+'\n').encode()
     path=f'editions/{edition.edition_date}.json'
-    man=Manifest(date=edition.edition_date,path=path,sha256=sha256(raw).hexdigest(),published_at=now)
     atomic(site/path,raw)
-    cutoff=edition.edition_date.__class__.fromordinal(edition.edition_date.toordinal()-6)
+    dates=[edition.edition_date.__class__.fromisoformat(f.stem) for f in (site/'editions').glob('*.json')]
+    newest=max(dates)
+    cutoff=edition.edition_date.__class__.fromordinal(newest.toordinal()-6)
     for old in (site/'editions').glob('*.json'):
         try: day=edition.edition_date.__class__.fromisoformat(old.stem)
         except ValueError: continue
         if day<cutoff:old.unlink()
+    manifests=[]
+    for current in sorted((site/'editions').glob('*.json'),reverse=True):
+        data=current.read_bytes()
+        e=Edition.model_validate_json(data)
+        manifests.append(Manifest(date=e.edition_date,path=f'editions/{current.name}',
+            sha256=sha256(data).hexdigest(),published_at=e.generated_at))
+    # Separate optional index keeps the installed v1 latest contract unchanged.
+    atomic(site/'archive.json',(json.dumps({'schema_version':1,
+        'editions':[m.model_dump(mode='json') for m in manifests]},ensure_ascii=False,indent=2)+'\n').encode())
+    man=manifests[0]
     atomic(site/'latest.json',(man.model_dump_json(indent=2)+'\n').encode())
     return man
 
@@ -35,6 +46,18 @@ def validate(site:Path):
         if sha256(data).hexdigest()!=m.sha256:raise ValueError('Edition hash mismatch')
         e=Edition.model_validate_json(data)
         if e.edition_date!=m.date:raise ValueError('Date mismatch')
+    if (site/'archive.json').exists():
+        index=json.loads((site/'archive.json').read_text())
+        entries=index['editions']
+        if index['schema_version']!=1 or not 1<=len(entries)<=7:raise ValueError('Invalid archive index')
+        dates=set()
+        for entry in entries:
+            m=Manifest.model_validate(entry)
+            if m.date in dates or m.path!=f'editions/{m.date}.json':raise ValueError('Invalid archive path/date')
+            dates.add(m.date)
+            data=(site/m.path).read_bytes()
+            if sha256(data).hexdigest()!=m.sha256:raise ValueError('Archive hash mismatch')
+            if Edition.model_validate_json(data).edition_date!=m.date:raise ValueError('Archive date mismatch')
 
 def history(site,today,lookback=7):
     ids=set();titles=[]

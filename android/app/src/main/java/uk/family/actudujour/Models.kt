@@ -41,6 +41,42 @@ fun ukToday(): LocalDate = LocalDate.now(london)
     val date: String, val path: String, val sha256: String,
     @SerialName("published_at") val publishedAt: String
 )
+@Serializable data class Archive(
+    @SerialName("schema_version") val schemaVersion: Int,
+    val editions: List<Latest>
+)
+
+fun validateManifest(manifest: Latest, today: LocalDate = ukToday()): LocalDate {
+    require(manifest.schemaVersion == 1 && manifest.sha256.matches(Regex("[a-f0-9]{64}")))
+    val day = LocalDate.parse(manifest.date)
+    require(manifest.date == day.toString() && manifest.path == "editions/$day.json")
+    require(!day.isAfter(today)) { "Édition datée dans le futur" }
+    OffsetDateTime.parse(manifest.publishedAt)
+    return day
+}
+
+/** The optional index never overrides the authoritative latest manifest. */
+fun archiveManifests(raw: ByteArray, latest: Latest, today: LocalDate = ukToday()): List<Latest> {
+    val archive = wire.decodeFromString<Archive>(raw.decodeToString())
+    require(archive.schemaVersion == 1 && archive.editions.size <= 7)
+    require(archive.editions.map { it.date }.distinct().size == archive.editions.size)
+    val latestDay = validateManifest(latest, today)
+    val cutoff = today.minusDays(6)
+    return archive.editions.filter { manifest ->
+        val day = validateManifest(manifest, today)
+        // The last publication can still be yesterday while the next is prepared.
+        // Ignore entries that have aged out rather than rejecting the entire index.
+        !day.isBefore(cutoff) && day.isBefore(latestDay)
+    }.sortedByDescending { it.date }
+}
+
+fun validateDownload(raw: ByteArray, manifest: Latest, today: LocalDate = ukToday()): Edition {
+    validateManifest(manifest, today)
+    require(sha(raw) == manifest.sha256) { "Signature d'intégrité du journal incorrecte" }
+    val edition = parseEdition(raw)
+    require(edition.date == manifest.date) { "Date du journal incorrecte" }
+    return edition
+}
 
 fun sha(bytes: ByteArray): String = MessageDigest.getInstance("SHA-256")
     .digest(bytes).joinToString("") { "%02x".format(it) }
@@ -62,8 +98,8 @@ fun valid(e: Edition): Edition {
     for(a in e.articles) {
         require(a.id.length in 12..64 && a.title.length in 18..180 && a.sources.isNotEmpty())
         require(a.paragraphs.size in 4..13 && a.wordCount in 280..780)
-        require(a.paragraphs.joinToString(" ").trim().split(Regex("\\s+")).size == a.wordCount)
-        require(a.paragraphs.all { it.split(Regex("\\s+")).size in 18..160 && '<' !in it && '>' !in it })
+        require(a.paragraphs.joinToString(" ").trim().split(Regex("[\\s\\p{Z}]+")).size == a.wordCount)
+        require(a.paragraphs.all { it.split(Regex("[\\s\\p{Z}]+")).size in 18..160 && '<' !in it && '>' !in it })
         require(a.sources.size <= 5 && a.sources.all { safeUrl(it.url) })
         a.image?.let { require(safeUrl(it.url) && URI(it.url).host == "upload.wikimedia.org") }
     }

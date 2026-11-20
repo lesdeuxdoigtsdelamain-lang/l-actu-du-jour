@@ -184,23 +184,25 @@ def test_verified_commons_photo_and_no_unlicensed_photo():
     assert find('Maroc',Fetcher({'commons.wikimedia.org'},client)) is None
 
 
-def test_complete_pipeline_with_quality_gates(monkeypatch,tmp_path):
+def test_complete_pipeline_rejects_generated_duplicates(monkeypatch,tmp_path):
     from generator.app import main as runner
     from generator.app.ingest import Candidate
-    feeds=[FEED]
+    from dataclasses import replace
+    global_feed=replace(FEED,category='Monde')
+    feeds=[global_feed]
     titles=['Une annonce économique concerne plusieurs collectivités et communes',
             'Des chercheurs étudient les mesures sur la planète Mars',
             'Les responsables examinent un nouveau dossier de santé',
             'La diplomatie prépare des échanges entre plusieurs pays']
     candidates=[Candidate(f'{i:022d}',title,'Synthèse initiale suffisamment complète pour servir d’exemple.',
-        f'https://www.francetvinfo.fr/politique/dossier-{i}',NOW,FEED) for i,title in enumerate(titles)]
+        f'https://www.francetvinfo.fr/politique/dossier-{i}',NOW,global_feed) for i,title in enumerate(titles)]
     def fake_collect(feeds,now):return candidates,{'franceinfo':{'ok':4}}
     def fake_facts(c,others,http):
         source={'id':c.id,'publisher':'Franceinfo','url':c.url,'language':'fr',
                 'published_at':NOW.isoformat()}
         facts=[{'id':str(i),'text':('Une institution a partagé des informations détaillées. '*12)} for i in range(7)]
         return facts,[source]
-    paragraph=' '.join(['Des données sont présentées par plusieurs acteurs et les décisions restent soumises à des vérifications indépendantes.']*7)
+    paragraph=' '.join(['Des données sont présentées par plusieurs acteurs et les décisions restent soumises à des vérifications indépendantes.']*6)
     class Provider:
         def __init__(self):self.calls=0;self.max_calls=8;self.usage_neurons=0
         def run(self,packet):
@@ -213,7 +215,7 @@ def test_complete_pipeline_with_quality_gates(monkeypatch,tmp_path):
     monkeypatch.setattr(runner,'find',lambda cat,http:None)
     p=Provider()
     edition,status,usage,why=runner.generate(tmp_path,NOW,p,feeds)
-    assert edition is not None and len(edition.articles)==4 and edition.status=='partielle'
+    assert edition is not None and len(edition.articles)==1 and edition.status=='partielle'
     assert all(a.word_count>=280 and a.image is None and len(a.source_refs)>=1 for a in edition.articles)
     put(tmp_path,edition,NOW)
     validate(tmp_path)
@@ -247,7 +249,11 @@ def test_edition_length_target():
     short=[SimpleNamespace(word_count=372,minutes=2)]*5
     assert not complete(short)
     assert not complete([SimpleNamespace(word_count=350,minutes=2)]*8)
-    assert complete([SimpleNamespace(word_count=500,minutes=3)]*7)
+    long=SimpleNamespace(word_count=500,minutes=3,title='Une annonce générale développée',paragraphs=[])
+    uk=SimpleNamespace(word_count=500,minutes=3,title='Le Royaume-Uni annonce une décision publique',paragraphs=[])
+    fr=SimpleNamespace(word_count=350,minutes=2,title='Tour de l’actu en France',paragraphs=[])
+    assert not complete([long]*7)
+    assert complete([long]*5+[uk,fr])
 
 def test_numeric_revision_reports_only_unsupported_values():
     from generator.app.editor import unsupported_numbers,allowed_numbers
@@ -258,13 +264,29 @@ def test_numeric_revision_reports_only_unsupported_values():
 
 def test_partial_edition_is_extended_not_replaced(monkeypatch,tmp_path):
     from generator.app import main as runner
+    from dataclasses import replace
+    global_feed=replace(FEED,category='Monde')
     previous=edition(size=5)
+    # Distinct synthetic reports: identical boilerplate is now correctly deduplicated.
+    phrases=[
+      'Astronomes télescopes galaxies observations cosmiques poussières orbitales étoiles lointaines.',
+      'Banques crédits entreprises financement investissement épargne dépôts prêts garanties financières.',
+      'Forêts arbres biodiversité oiseaux plantes habitats humides graines réserves naturelles.',
+      'Volcans lave magma géologues cratères roches sismiques tremblements tectoniques souterrains.',
+      'Navires ports marchandises cargaisons transport maritime conteneurs fret douanes commerciales.']
+    updated=[]
+    for a,phrase in zip(previous.articles,phrases):
+        paragraphs=[' '.join([phrase]*9)]*6
+        wc=len(' '.join(paragraphs).split())
+        updated.append(a.model_copy(update={'title':'Dossier fictif : '+phrase,
+            'paragraphs':paragraphs,'word_count':wc,'minutes':max(2,min(7,round(wc/170)))}))
+    previous=previous.model_copy(update={'articles':updated,'minutes':sum(a.minutes for a in updated)})
     put(tmp_path,previous,NOW)
     titles=['Une annonce municipale concerne les transports des habitants',
             'Des chercheurs étudient une nouvelle méthode scientifique',
             'La diplomatie prépare un accord avec plusieurs États']
     candidates=[Candidate(f'{i+20:022d}',title,'Exemple de description pour un test local.',
-                   f'https://www.francetvinfo.fr/nouveautes/{i}',NOW,FEED) for i,title in enumerate(titles)]
+                   f'https://www.francetvinfo.fr/nouveautes/{i}',NOW,global_feed) for i,title in enumerate(titles)]
     monkeypatch.setattr(runner,'collect',lambda feeds,now:(candidates,{}))
     def facts(c,others,http):
         return ([{'id':str(i),'text':'Une institution a partagé des informations détaillées. '*12} for i in range(7)],
@@ -280,9 +302,14 @@ def test_partial_edition_is_extended_not_replaced(monkeypatch,tmp_path):
             return {'titre':packet['event_title'],
                     'paragraphes':['Des données sont présentées par plusieurs acteurs et les décisions restent soumises à des vérifications indépendantes. '*6]*6,
                     'preuves':[['0','1']]*6}
-    result,_,_,_=runner.generate(tmp_path,NOW,Provider(),[FEED])
+    result,_,_,_=runner.generate(tmp_path,NOW,Provider(),[global_feed])
     assert result is not None
     assert len(result.articles)>=6
     assert [a.id for a in result.articles[:5]]==[a.id for a in previous.articles]
     assert result.minutes>previous.minutes
     assert len(result.articles)<=8
+
+
+def test_english_people_is_not_an_entertainment_keyword():
+    assert parse(rss(title='UK agreement creates economic opportunities for young people'),FEED,NOW)
+    assert not parse(rss(title='Le Maroc entre dans le Top 5 du classement FIFA'),FEED,NOW)

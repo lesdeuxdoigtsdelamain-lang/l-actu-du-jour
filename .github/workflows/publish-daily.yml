@@ -12,9 +12,13 @@ on:
   workflow_dispatch:
     inputs:
       force_refresh:
-        description: "Compléter l'édition du jour sans supprimer les articles validés"
+        description: "Recontrôler et compléter l'édition du jour"
         type: boolean
         default: false
+      repair_dates:
+        description: "Archives à corriger (YYYY-MM-DD,YYYY-MM-DD), sept derniers jours"
+        type: string
+        default: ''
 permissions:
   contents: read
 concurrency:
@@ -46,8 +50,11 @@ jobs:
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           FORCE_REFRESH: ${{ inputs.force_refresh || github.event_name == 'push' }}
+          REPAIR_DATES: ${{ inputs.repair_dates || (github.event_name == 'push' && contains(github.event.head_commit.message, '[repair editions]') && '2026-11-19,2026-11-20') || '' }}
         run: |
-          if [ "$FORCE_REFRESH" = "true" ]; then
+          if [ -n "$REPAIR_DATES" ]; then
+            python -m generator.app.main --force --repair-dates "$REPAIR_DATES"
+          elif [ "$FORCE_REFRESH" = "true" ]; then
             python -m generator.app.main --force
           else
             python -m generator.app.main
