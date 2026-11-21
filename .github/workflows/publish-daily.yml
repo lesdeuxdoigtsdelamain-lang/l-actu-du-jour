@@ -29,6 +29,8 @@ jobs:
     if: github.event_name != 'push' || contains(github.event.head_commit.message, '[publish now]')
     runs-on: ubuntu-latest
     timeout-minutes: 35
+    outputs:
+      pages_artifact: github-pages-${{ github.run_id }}-${{ github.run_attempt }}
     permissions:
       contents: write
     steps:
@@ -65,6 +67,7 @@ jobs:
           python -m generator.app.ci_state save
       - uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa # v3
         with:
+          name: github-pages-${{ github.run_id }}-${{ github.run_attempt }}
           path: site
   deploy:
     needs: produce
@@ -79,3 +82,5 @@ jobs:
       - name: Publish JSON editions
         id: deployment
         uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4
+        with:
+          artifact_name: ${{ needs.produce.outputs.pages_artifact }}
