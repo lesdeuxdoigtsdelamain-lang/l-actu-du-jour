@@ -2,11 +2,11 @@
   "schema_version": 1,
   "edition_id": "2026-11-21-fr-FR",
   "edition_date": "2026-11-21",
-  "generated_at": "2026-11-21T17:41:18.535713Z",
+  "generated_at": "2026-11-21T19:04:06.790863Z",
   "language": "fr-FR",
   "timezone": "Europe/London",
-  "status": "partielle",
-  "minutes": 9,
+  "status": "complete",
+  "minutes": 20,
   "articles": [
     {
       "id": "e935592423530fbb8a5a17",
@@ -84,6 +84,136 @@
         }
       ],
       "word_count": 576,
+      "minutes": 3
+    },
+    {
+      "id": "france-tour-2026-11-21",
+      "category": "France",
+      "title": "Tour de l’actu en France — 21 novembre 2026",
+      "paragraphs": [
+        "Le député François Ruffin, issu de la Somme et ancien membre de La France insoumise, a annoncé le 21 novembre qu’il se retirait de la course à la présidentielle. Dans un communiqué publié sur le réseau X, il a indiqué qu’il prenait « acte de l’impasse » après avoir échoué à imposer une grande primaire de la gauche. Il ne soutient aucun candidat et adresse ses vœux de bonne campagne aux « candidats de gauche encore en lice », sans les nommer, afin de porter un projet majoritaire face à un Rassemblement national proche du pouvoir.",
+        "Le ministre de la Transition écologique, Sébastien Lecornu, a souligné lors d’une réunion interministérielle du 19 novembre que l’intelligence artificielle devient un « multiplicateur de force » pour les cybercriminels. Selon le directeur général de l’ANSSI, Vincent Strubel, l’IA permet aux attaquants de lancer des opérations mille fois plus nombreuses et plus rapides. Cette évolution rend les menaces particulièrement graves et inédites, touchant aussi bien des acteurs étatiques que criminels.",
+        "Une sixième manifestation consécutive contre la hausse du coût de la vie a eu lieu à Paris le samedi, rassemblant des milliers de manifestants. Les protestataires, dont de nombreuses organisations étudiantes, ont défilé dans le calme, brandissant drapeaux syndicaux et slogans contre la loi légitimant l’usage d’armes par les forces de l’ordre. Cette mobilisation s’inscrit dans une vague européenne de contestations liées à la flambée des prix et à la détérioration du pouvoir d’achat.",
+        "Thomas Vacheron, secrétaire confédéral de la CGT, a rappelé que les mobilisations sociales ne doivent pas attendre l’élection présidentielle. Interrogé sur Franceinfo, il a souligné que les revendications portent sur des hausses de salaires et le blocage des prix, avec la perspective d’une grande grève le 1er décembre. Selon le ministère de l’Intérieur, 82 500 personnes ont participé à cette sixième journée de protestation, chiffre que la CGT porte à 150 000, estimant que les actions passées ont déjà fait bouger le SMIC, même si les augmentations restent jugées insuffisantes."
+      ],
+      "image": null,
+      "source_refs": [
+        {
+          "publisher": "Franceinfo",
+          "url": "https://www.franceinfo.fr/elections/francois-ruffin-retire-sa-candidature-a-l-election-presidentielle-et-souhaite-bonne-campagne-aux-candidats-de-gauche-encore-en-lice_8294003.html",
+          "language": "fr",
+          "published_at": "2026-11-21T17:56:33Z"
+        },
+        {
+          "publisher": "Franceinfo",
+          "url": "https://www.franceinfo.fr/internet/securite-sur-internet/cyberattaques/des-campagnes-d-attaques-de-plus-en-plus-automatisees-comment-les-cybercriminels-ont-place-l-intelligence-artificielle-au-c-ur-de-leurs-operations_8292092.html",
+          "language": "fr",
+          "published_at": "2026-11-21T06:18:32Z"
+        },
+        {
+          "publisher": "Hespress",
+          "url": "https://www.hespress.com/%d8%a7%d9%84%d8%ba%d9%84%d8%a7%d8%a1-%d9%8a%d9%88%d8%a7%d8%b5%d9%84-%d8%a5%d8%ae%d8%b1%d8%a7%d8%ac-%d8%a7%d9%84%d9%81%d8%b1%d9%86%d8%b3%d9%8a%d9%8a%d9%86-%d9%84%d9%84%d8%b4%d9%88%d8%a7%d8%b1%d8%b9-1843475.html",
+          "language": "ar",
+          "published_at": "2026-11-21T18:33:24Z"
+        },
+        {
+          "publisher": "Franceinfo",
+          "url": "https://www.franceinfo.fr/societe/on-n-attendra-pas-l-election-presidentielle-on-veut-que-la-vie-des-gens-s-ameliore-maintenant-pointe-le-secretaire-confederal-de-la-cgt_8294036.html",
+          "language": "fr",
+          "published_at": "2026-11-21T17:55:20Z"
+        }
+      ],
+      "word_count": 330,
+      "minutes": 2
+    },
+    {
+      "id": "18580e47f4ba3c611127e7",
+      "category": "Monde musulman",
+      "title": "Une frappe israélienne abat un véhicule d'aide alimentaire à Gaza, faisant trois morts",
+      "paragraphs": [
+        "Samedi, un drone israélien a percuté un véhicule transportant des vivres destiné aux personnes déplacées dans le quartier de Tal al‑Hawa, à Gaza‑City. L'attaque a tué trois Palestiniens, selon les rapports des médias locaux. Des documents portant le logo de l'organisation humanitaire World Central Kitchen ont été retrouvés à l'intérieur du véhicule, bien que cette ONG ait nié toute affiliation avec le bus. Cette cible, qui distribuait de la nourriture aux habitants des tentes, a été frappée alors qu'elle s'apprêtait à s'arrêter pour la distribution.",
+        "Un témoin, Abu Zein al‑Daya, a déclaré à Reuters que le bus était sur le point de livrer des repas aux enfants lorsqu'il a été touché par le missile. Il a souligné que le véhicule était clairement identifié comme un moyen de distribution de nourriture et d'eau aux populations vulnérables, ce qui, selon lui, indique que la cible aurait été toute personne fournissant de l'aide humanitaire. Cette version souligne la perception locale d'une attaque délibérée contre les secours.",
+        "Le même jour, d'autres violences ont été signalées dans la bande de Gaza. Un homme palestinien a été abattu par des tirs israéliens dans le camp de déplacement de Halawa, à l'est du camp de réfugiés de Jabalia. Par ailleurs, un jeune homme circulant à vélo électrique à al‑Mawasi, dans le sud de Khan Younis, a été visé, blessant trois personnes qui ont été transportées à l'hôpital Nasser. Ces incidents illustrent la persistance d'actions militaires israéliennes dans plusieurs zones de la bande.",
+        "Ces frappes s'inscrivent dans le cadre d'un cesse‑feu déclaré en octobre de l'année précédente, mais largement violé. Selon les informations disponibles, plus de 600 violations du cesse‑feu ont été recensées depuis son entrée en vigueur. Le nombre total de morts palestiniens depuis le début du conflit a atteint 74 736, tandis que le ministère de la Santé de Gaza indique 1 671 victimes depuis le déclenchement du cesse‑feu en octobre 2025. Ces chiffres témoignent de l'intensité du conflit malgré les accords proclamés.",
+        "L'hiver aggrave la crise humanitaire à Gaza. Le Programme alimentaire mondial a averti que les habitants sont contraints de brûler des déchets pour cuisiner, les conditions météorologiques rendant le bois et le charbon rares. L'Organisation internationale pour les migrations signale que plus de 100 000 tentes destinées à l'aide humanitaire sont bloquées à cause de restrictions israéliennes sur le diamètre des poteaux centraux, limitant ainsi l'acheminement de l'aide de l'Égypte vers Gaza. Cette situation accentue le manque de besoins de base pour la population.",
+        "Au niveau international, le Royaume-Uni a récemment été critiqué pour avoir attribué 14,4 m de contrats publics à des entreprises liées aux colonies israéliennes en Cisjordanie, malgré une annonce de boycott des produits de ces colonies. Cette contradiction a suscité des réactions de la part d'organisations de défense des droits humains, qui dénoncent l'impunité des attaques israéliennes et la continuité du soutien économique à des activités jugées illégales. Le lien entre ces contrats et la situation sur le terrain souligne les tensions entre la rhétorique politique et les actions concrètes."
+      ],
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Mosques_in_Great_Britain-_Islamic_Architecture_in_the_UK%2C_c_1945_D24089.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "alt": "Photographie d’illustration — Monde musulman",
+        "credit": "Ministry of Information Photo Division Photographer",
+        "license": "Public domain",
+        "page": "https://commons.wikimedia.org/wiki/File:Mosques_in_Great_Britain-_Islamic_Architecture_in_the_UK%2C_c_1945_D24089.jpg"
+      },
+      "source_refs": [
+        {
+          "publisher": "Al Jazeera English",
+          "url": "https://www.aljazeera.com/video/newsfeed/2026/11/21/21-11-sv-israel-targets-gaza-food-truck",
+          "language": "en",
+          "published_at": "2026-11-21T17:54:19Z"
+        },
+        {
+          "publisher": "Al Jazeera English",
+          "url": "https://www.aljazeera.com/news/2026/11/21/at-least-four-palestinians-killed-in-israeli-attacks-on-gaza",
+          "language": "en",
+          "published_at": "2026-11-21T12:29:49Z"
+        }
+      ],
+      "word_count": 501,
+      "minutes": 3
+    },
+    {
+      "id": "c098c8dea679626b6c1d1d",
+      "category": "Royaume-Uni",
+      "title": "GTA 6 réalise le plus gros lancement d’un produit de divertissement avec 3,8 milliards de dollars en une journée",
+      "paragraphs": [
+        "Le nouveau titre de Rockstar Games, Grand Theft Auto VI, a généré 3,8 milliards de dollars (2,9 milliards de livres) de ventes au détail dès son premier jour complet de commercialisation, établissant ainsi le record historique de lancement dans tous les médias de divertissement. Take‑Two, maison mère de Rockstar, a indiqué que ce chiffre repose sur des estimations recueillies jusqu’à la fin de la journée de jeudi, surpassant les records précédents de jeux vidéo et de box‑office cinématographique. Le jeu a également été pré‑vendu à hauteur de 32,5 millions d’exemplaires, ce qui confirme l’ampleur de l’engouement mondial.",
+        "En comparaison, le film le plus rentable de l’année, Spider‑Man : Brand New Day, a totalisé 2,5 milliards de dollars sur l’ensemble de sa diffusion en salles, soit bien moins que le chiffre d’affaires d’une seule journée de GTA VI. Les données de Cloudflare montrent que les téléchargements du jeu sur PlayStation 5 au Royaume‑Uni ont atteint un pic de 8,6 fois le niveau habituel, tandis que la Nouvelle‑Zélande a enregistré un bond de 14,8 fois quatre heures avant le lancement officiel, suggérant que certains joueurs ont changé de région pour accéder plus tôt au produit.",
+        "Le trafic vers les services en ligne de Rockstar a également explosé : en Australie, les accès ont été 11,2 fois supérieurs à la normale, et sur la côte Est des États-Unis, 9,3 fois. En Europe, l’intérêt britannique a été particulièrement fort, avec un facteur sept, contre 5,3 en France et en Allemagne. Ces hausses dépassent largement les performances du précédent opus, GTA V, qui détenait le record d’ouverture avec 1,15 milliard de dollars (1,2 milliard de livres) en cinq jours.",
+        "Le jeu, qui s’inscrit dans la franchise de près de trois décennies, propose une satire du rêve américain à travers les personnages de Lucia et Jason, deux petits criminels évoluant dans l’État fictif de Leonida, inspiré de la Floride. Cette nouvelle itération s’appuie sur un budget de développement estimé à plus d’un milliard de dollars, ce qui en ferait le jeu le plus coûteux jamais réalisé. Selon Sensor Tower, la popularité du titre devrait réduire de 10 % le temps passé par les joueurs sur d’autres jeux solo.",
+        "Les ventes se sont majoritairement réalisées sur la PlayStation 5, représentant environ les trois quarts du total, le reste étant attribué aux consoles Xbox, d’après Sensor Tower. Niko Partners prévoit que les recettes mondiales de GTA VI dépasseront les 3 milliards de dollars cette année, le plaçant parmi les plus gros succès de l’histoire du divertissement, même si le film « Gone with the Wind » de 1939 reste en tête avec 4,5 milliards de dollars ajustés à l’inflation.",
+        "Rockstar n’a pas encore communiqué de date de sortie pour la version PC ni pour l’extension multijoueur, qui devrait, à l’image de GTA V, générer des revenus supplémentaires grâce aux achats in‑game. Le lancement a également provoqué un record de trafic sur le réseau Virgin Media O2, les joueurs devant télécharger le fichier de 212 Go du jeu. Certaines juridictions, comme le Japon, ont imposé des censures, tandis que la Chine continentale n’a pas autorisé la commercialisation du titre."
+      ],
+      "image": null,
+      "source_refs": [
+        {
+          "publisher": "BBC Business",
+          "url": "https://www.bbc.co.uk/news/articles/c9zr5nyv5dj2o",
+          "language": "en",
+          "published_at": "2026-11-20T22:53:24Z"
+        }
+      ],
+      "word_count": 520,
+      "minutes": 3
+    },
+    {
+      "id": "0b91abafbfcadaf8c4bb84",
+      "category": "Économie",
+      "title": "Nouvelles règles d'Airbnb : moins de corvées pour les hôtes, mais des coûts plus élevés pour les clients",
+      "paragraphs": [
+        "Les nouvelles règles d'Airbnb concernant les tâches que les hôtes peuvent demander aux clients sont entrées en vigueur. Désormais, les hôtes ne devraient pas demander aux clients de faire la vaisselle, de retirer les draps des lits ou de sortir les poubelles. Cependant, les hôtes peuvent faire appel à Airbnb si ils ont une raison valable pour demander une tâche supplémentaire.",
+        "Certains clients ont trouvé les listes de règles de la maison fastidieuses à compléter, avec l'un d'eux déclarant à la BBC que « cela n'était pas relaxant du tout ». Mais certains hôtes ont déclaré que les coûts de nettoyage supplémentaire pourraient être répercutés sur les clients. Les nouvelles règles d'Airbnb permettent aux hôtes de choisir parmi sept règles de base, qui incluent la détermination du nombre de personnes pouvant séjourner et si les animaux de compagnie ou le tabagisme sont autorisés.",
+        "Les hôtes peuvent ensuite établir des règles supplémentaires, mais les clients ne devraient pas être invités à faire la vaisselle, à retirer les draps des lits, à sortir les poubelles ou à éviter d'utiliser les services publics. Airbnb a commencé à examiner les listes et enverra des e-mails aux hôtes qui doivent prendre des mesures. Les hôtes peuvent faire appel à Airbnb pour plaider en faveur d'une règle de maison supplémentaire et demander à Airbnb de l'approuver.",
+        "Si la règle de la maison n'est pas approuvée et que l'hôte la maintient néanmoins, Airbnb signalera cela aux clients sur la page de liste de l'hôte avec un message tel que « comprend des tâches de nettoyage ». Airbnb a déclaré que les corvées peuvent inciter les clients à hésiter à réserver sur la plateforme, en argumentant que le fait de rendre les règles de la maison « plus claires » augmenterait le nombre de clients. Cependant, certains hôtes ont déclaré qu'ils pourraient devoir répercuter les coûts de nettoyage supplémentaire sur les clients.",
+        "Lisa Clewes, qui dirige un gîte de vacances au Pays de Galles, a déclaré à la BBC qu'elle était « horrifiée » par l'état dans lequel ses clients avaient laissé la maison après une soirée. Il y avait des verres cassés, des canettes de boissons sur le sol, des casseroles remplies de nourriture sur la table et des viscères de poisson laissés dans le jardin. Clewes a déclaré qu'il faut généralement quatre heures aux nettoyeurs pour nettoyer sa propriété de trois chambres.",
+        "Les nouvelles règles ont apporté un soulagement aux clients comme Jessica Newhook, qui a déclaré avoir été confrontée à des listes de vérification de départ longues, souvent en plus de frais de nettoyage élevés. Elle a réservé un Airbnb en Floride pour une réunion de famille de 11 personnes et a déclaré qu'ils devaient « laisser la propriété prête pour les nettoyeurs », malgré avoir payé un frais de nettoyage de 250 dollars."
+      ],
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/a/af/The_Stock_Exchange_Building%2C_Brussels.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "alt": "Photographie d’illustration — Économie",
+        "credit": "Rharris",
+        "license": "CC BY-SA 3.0",
+        "page": "https://commons.wikimedia.org/wiki/File:The_Stock_Exchange_Building%2C_Brussels.jpg"
+      },
+      "source_refs": [
+        {
+          "publisher": "BBC Business",
+          "url": "https://www.bbc.co.uk/news/articles/cmx278n2genyo",
+          "language": "en",
+          "published_at": "2026-11-20T15:48:35Z"
+        }
+      ],
+      "word_count": 469,
       "minutes": 3
     }
   ]

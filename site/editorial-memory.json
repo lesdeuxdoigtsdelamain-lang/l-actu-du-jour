@@ -131,5 +131,70 @@
       ]
     }
   ],
-  "2026-11-21": []
+  "2026-11-21": [
+    {
+      "id": "3938a3f625d236f6b28224",
+      "title": "Le député François Ruffin, issu de la Somme et ancien membre de La France insoumise, a annoncé le 21 novembre qu’il se retirait de la course à la présidentielle.",
+      "category": "France",
+      "paragraphs": [
+        "Le député François Ruffin, issu de la Somme et ancien membre de La France insoumise, a annoncé le 21 novembre qu’il se retirait de la course à la présidentielle. Dans un communiqué publié sur le réseau X, il a indiqué qu’il prenait « acte de l’impasse » après avoir échoué à imposer une grande primaire de la gauche. Il ne soutient aucun candidat et adresse ses vœux de bonne campagne aux « candidats de gauche encore en lice », sans les nommer, afin de porter un projet majoritaire face à un Rassemblement national proche du pouvoir."
+      ],
+      "source_refs": [
+        {
+          "publisher": "Franceinfo",
+          "url": "https://www.franceinfo.fr/elections/francois-ruffin-retire-sa-candidature-a-l-election-presidentielle-et-souhaite-bonne-campagne-aux-candidats-de-gauche-encore-en-lice_8294003.html",
+          "language": "fr",
+          "published_at": "2026-11-21T17:56:33+00:00"
+        }
+      ]
+    },
+    {
+      "id": "f4eb41d94d48ab1b688c36",
+      "title": "Le ministre de la Transition écologique, Sébastien Lecornu, a souligné lors d’une réunion interministérielle du 19 novembre que l’intelligence artificielle devient un «",
+      "category": "France",
+      "paragraphs": [
+        "Le ministre de la Transition écologique, Sébastien Lecornu, a souligné lors d’une réunion interministérielle du 19 novembre que l’intelligence artificielle devient un « multiplicateur de force » pour les cybercriminels. Selon le directeur général de l’ANSSI, Vincent Strubel, l’IA permet aux attaquants de lancer des opérations mille fois plus nombreuses et plus rapides. Cette évolution rend les menaces particulièrement graves et inédites, touchant aussi bien des acteurs étatiques que criminels."
+      ],
+      "source_refs": [
+        {
+          "publisher": "Franceinfo",
+          "url": "https://www.franceinfo.fr/internet/securite-sur-internet/cyberattaques/des-campagnes-d-attaques-de-plus-en-plus-automatisees-comment-les-cybercriminels-ont-place-l-intelligence-artificielle-au-c-ur-de-leurs-operations_8292092.html",
+          "language": "fr",
+          "published_at": "2026-11-21T06:18:32+00:00"
+        }
+      ]
+    },
+    {
+      "id": "51dc593bbbf705e5ccd441",
+      "title": "Une sixième manifestation consécutive contre la hausse du coût de la vie a eu lieu à Paris le samedi, rassemblant des milliers de manifestants.",
+      "category": "France",
+      "paragraphs": [
+        "Une sixième manifestation consécutive contre la hausse du coût de la vie a eu lieu à Paris le samedi, rassemblant des milliers de manifestants. Les protestataires, dont de nombreuses organisations étudiantes, ont défilé dans le calme, brandissant drapeaux syndicaux et slogans contre la loi légitimant l’usage d’armes par les forces de l’ordre. Cette mobilisation s’inscrit dans une vague européenne de contestations liées à la flambée des prix et à la détérioration du pouvoir d’achat."
+      ],
+      "source_refs": [
+        {
+          "publisher": "Hespress",
+          "url": "https://www.hespress.com/%d8%a7%d9%84%d8%ba%d9%84%d8%a7%d8%a1-%d9%8a%d9%88%d8%a7%d8%b5%d9%84-%d8%a5%d8%ae%d8%b1%d8%a7%d8%ac-%d8%a7%d9%84%d9%81%d8%b1%d9%86%d8%b3%d9%8a%d9%8a%d9%86-%d9%84%d9%84%d8%b4%d9%88%d8%a7%d8%b1%d8%b9-1843475.html",
+          "language": "ar",
+          "published_at": "2026-11-21T18:33:24+00:00"
+        }
+      ]
+    },
+    {
+      "id": "6b4479ddc87571a8b33c9c",
+      "title": "Thomas Vacheron, secrétaire confédéral de la CGT, a rappelé que les mobilisations sociales ne doivent pas attendre l’élection présidentielle.",
+      "category": "France",
+      "paragraphs": [
+        "Thomas Vacheron, secrétaire confédéral de la CGT, a rappelé que les mobilisations sociales ne doivent pas attendre l’élection présidentielle. Interrogé sur Franceinfo, il a souligné que les revendications portent sur des hausses de salaires et le blocage des prix, avec la perspective d’une grande grève le 1er décembre. Selon le ministère de l’Intérieur, 82 500 personnes ont participé à cette sixième journée de protestation, chiffre que la CGT porte à 150 000, estimant que les actions passées ont déjà fait bouger le SMIC, même si les augmentations restent jugées insuffisantes."
+      ],
+      "source_refs": [
+        {
+          "publisher": "Franceinfo",
+          "url": "https://www.franceinfo.fr/societe/on-n-attendra-pas-l-election-presidentielle-on-veut-que-la-vie-des-gens-s-ameliore-maintenant-pointe-le-secretaire-confederal-de-la-cgt_8294036.html",
+          "language": "fr",
+          "published_at": "2026-11-21T17:55:20+00:00"
+        }
+      ]
+    }
+  ]
 }
