@@ -2,11 +2,11 @@
   "schema_version": 1,
   "edition_id": "2026-11-20-fr-FR",
   "edition_date": "2026-11-20",
-  "generated_at": "2026-11-20T23:59:34.834686Z",
+  "generated_at": "2026-11-21T00:00:48.047677Z",
   "language": "fr-FR",
   "timezone": "Europe/London",
-  "status": "partielle",
-  "minutes": 17,
+  "status": "complete",
+  "minutes": 19,
   "articles": [
     {
       "id": "c075216d7a476abdae6fd7",
@@ -175,6 +175,46 @@
       ],
       "word_count": 556,
       "minutes": 3
+    },
+    {
+      "id": "france-tour-2026-11-20",
+      "category": "France",
+      "title": "Tour de l’actu en France — 20 novembre 2026",
+      "paragraphs": [
+        "Le ministre de l’Intérieur a demandé aux préfets d’être particulièrement vigilants ce samedi, jour de nouvelles mobilisations sociales marquant le huitième anniversaire du mouvement des gilets jaunes. Les organisations de jeunesse, les syndicats et les groupes de gilets jaunes prévoient une manifestation entre la place de la République et la place de la Nation, avec un départ à 14 h, soutenue par l’association Droit au logement qui tiendra une conférence de presse avant le cortège. Le dispositif de sécurité a été validé par les autorités, aucune interdiction n’ayant été prononcée.",
+        "Le Parlement a définitivement adopté, vendredi 20 novembre, une proposition de loi instaurant une présomption d’usage légal des armes par les forces de l’ordre. Le texte, soutenu par le gouvernement, le centre, la droite et l’extrême droite, a recueilli 205 voix pour et 110 contre au Sénat. Il renverse la charge de la preuve en présumant que policiers et gendarmes ont agi dans le cadre de la loi lorsqu’ils utilisent leurs armes, tout en prévoyant la possibilité de renverser cette présomption par tout élément de preuve contraire.",
+        "Après un rejet à l’Assemblée nationale, le projet de loi de fin de gestion (PLFG) pour 2026 a trouvé un compromis en commission mixte paritaire le soir du vendredi 20 novembre. Le texte, qui ajuste les derniers crédits budgétaires de l’année, inclut des ouvertures de crédits pour répondre aux crises de sécheresse et à la guerre au Moyen‑Orient, ainsi que le financement de 920 enseignants contractuels dans l’Éducation nationale. Le rapporteur du texte, le député LR Philippe Juvin, a souligné l’importance de répondre aux besoins d’urgence sans alourdir davantage le déficit public, estimé à 5,4 % du PIB en 2026.",
+        "Dominique de Villepin, ancien Premier ministre sous Jacques Chirac, a annoncé sa candidature à l’élection présidentielle lors d’une conférence à la Maison de l’Amérique latine à Paris. Il se présente comme une alternative aux extrêmes, rejoignant ainsi les candidats déjà annoncés, dont l’extrême‑droite et le judoka Teddy Riner. Villepin a indiqué que son entrée en lice intervient à cinq mois du scrutin, malgré un paysage politique déjà très saturé et des intentions de vote modestes dans les sondages."
+      ],
+      "image": null,
+      "source_refs": [
+        {
+          "publisher": "Franceinfo",
+          "url": "https://www.franceinfo.fr/economie/greve/organisations-presentes-dispositif-de-securite-a-quoi-faut-il-s-attendre-pour-les-manifestations-du-samedi-21-novembre_8292461.html",
+          "language": "fr",
+          "published_at": "2026-11-20T19:11:44Z"
+        },
+        {
+          "publisher": "Franceinfo",
+          "url": "https://www.franceinfo.fr/faits-divers/police/le-parlement-adopte-definitivement-la-presomption-d-usage-legal-des-armes-par-les-forces-de-l-ordre_8292845.html",
+          "language": "fr",
+          "published_at": "2026-11-20T19:26:13Z"
+        },
+        {
+          "publisher": "Franceinfo",
+          "url": "https://www.franceinfo.fr/economie/budget/deputes-et-senateurs-parviennent-a-un-accord-sur-le-projet-de-budget-de-fin-de-gestion-pour-2026-avant-une-possible-adoption-definitive-mardi_8292914.html",
+          "language": "fr",
+          "published_at": "2026-11-20T21:35:30Z"
+        },
+        {
+          "publisher": "Franceinfo",
+          "url": "https://www.franceinfo.fr/elections/vu-a-quel-niveau-sont-les-autres-on-n-est-pas-si-loin-dominique-de-villepin-se-lance-dans-la-course-presidentielle-malgre-les-embuches_8288267.html",
+          "language": "fr",
+          "published_at": "2026-11-20T14:26:13Z"
+        }
+      ],
+      "word_count": 355,
+      "minutes": 2
     }
   ]
 }

@@ -1,67 +1,70 @@
 {
-  "checked_at": "2026-11-20T23:36:15.597285+00:00",
-  "state": "partial",
-  "reason": "Édition partielle: 6 articles, 16 min; Maroc au maximum une fois, contrôle des événements sur sept jours.",
+  "checked_at": "2026-11-21T00:00:48.047677+00:00",
+  "state": "success",
+  "reason": "Édition complete: 7 articles, 19 min; Maroc au maximum une fois, contrôle des événements sur sept jours.",
   "feeds": {
-    "aljazeera-en": {
-      "ok": 23
+    "rfi": {
+      "ok": 22
     },
     "bbc-world": {
       "ok": 24
     },
-    "bbc-ar": {
-      "ok": 10
-    },
-    "france24": {
-      "ok": 24
-    },
-    "bbc-business": {
-      "ok": 24
-    },
-    "franceinfo": {
-      "ok": 27
-    },
-    "hespress-ar": {
-      "ok": 12
-    },
     "bbc-uk": {
       "ok": 28
-    },
-    "hespress-fr": {
-      "ok": 10
-    },
-    "rfi": {
-      "ok": 22
     },
     "bbc-science": {
       "ok": 14
     },
+    "bbc-business": {
+      "ok": 23
+    },
+    "france24": {
+      "ok": 24
+    },
+    "aljazeera-en": {
+      "ok": 23
+    },
     "sky-world": {
       "ok": 6
     },
-    "nasa": {
-      "ok": 9
+    "franceinfo": {
+      "ok": 27
     },
     "aljazeera-ar": {
       "ok": 25
     },
+    "hespress-ar": {
+      "ok": 12
+    },
+    "hespress-fr": {
+      "ok": 10
+    },
+    "bbc-ar": {
+      "ok": 10
+    },
     "gov-uk": {
       "ok": 19
-    },
-    "alarabiya": {
-      "error": "HTTP 403"
     },
     "nsf": {
       "ok": 0
     },
+    "nps": {
+      "error": "Payload too large"
+    },
+    "nasa": {
+      "ok": 9
+    },
     "france24-france": {
       "ok": 16
     },
-    "sky-uk": {
-      "ok": 10
+    "alarabiya": {
+      "error": "HTTP 403"
     },
     "rfi-france": {
       "ok": 18
+    },
+    "sky-uk": {
+      "ok": 10
     },
     "globalvoices": {
       "ok": 2
@@ -70,10 +73,7 @@
       "ok": 1
     },
     "telquel": {
-      "ok": 66
-    },
-    "nps": {
-      "error": "Payload too large"
+      "ok": 62
     },
     "un-en": {
       "error": "HTTP 404"
@@ -83,14 +83,13 @@
     }
   },
   "ai_usage": {
-    "calls": 18,
-    "neurons": 862.16,
-    "groq_requests": 15,
-    "groq_tokens": 67068,
-    "cloudflare_requests": 3,
+    "calls": 7,
+    "neurons": 0.0,
+    "groq_requests": 7,
+    "groq_tokens": 30272,
+    "cloudflare_requests": 0,
     "providers": [
-      "groq",
-      "cloudflare"
+      "groq"
     ]
   }
 }

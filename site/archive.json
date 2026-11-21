@@ -5,15 +5,15 @@
       "schema_version": 1,
       "date": "2026-11-20",
       "path": "editions/2026-11-20.json",
-      "sha256": "529875783242adaf6a48f36d3384be9545d071c550a79beacae9bd68802a25f4",
-      "published_at": "2026-11-20T23:59:34.834686Z"
+      "sha256": "5b9f9575fe4b83779ca2f0d07278786ef1e33881c45f88ec44cfd046d65da37e",
+      "published_at": "2026-11-21T00:00:48.047677Z"
     },
     {
       "schema_version": 1,
       "date": "2026-11-19",
       "path": "editions/2026-11-19.json",
-      "sha256": "c9c507c305f2b18deb1dcb24a85b8399cd5ebaedf741176ded863953dc02c4db",
-      "published_at": "2026-11-20T23:59:34.834686Z"
+      "sha256": "3a7fd89180b4de3644bde28a1207357df1b70d0a6e4eb58d9f817a63af5ed971",
+      "published_at": "2026-11-21T00:00:48.047677Z"
     },
     {
       "schema_version": 1,
