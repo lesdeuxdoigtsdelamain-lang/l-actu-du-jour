@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "edition_id": "2026-11-21-fr-FR",
+  "edition_date": "2026-11-21",
+  "generated_at": "2026-11-21T17:41:18.535713Z",
+  "language": "fr-FR",
+  "timezone": "Europe/London",
+  "status": "partielle",
+  "minutes": 9,
+  "articles": [
+    {
+      "id": "e935592423530fbb8a5a17",
+      "category": "Royaume-Uni",
+      "title": "Accord historique entre le Royaume-Uni et l’UE : réduction des coûts et nouvelles opportunités pour les jeunes",
+      "paragraphs": [
+        "Le Premier ministre britannique Andy Burnham a conclu, lors du sommet Royaume‑Uni‑UE à Bruxelles, un ensemble de mesures visant à diminuer les dépenses des entreprises et à alléger la pression sur les prix des supermarchés. Le paquet comprend des accords sur l’alimentation, les boissons, les marchés du carbone et un dispositif d’expérience pour les jeunes, destiné à faciliter la mobilité des 18‑31 ans en Europe pendant jusqu’à trois ans. Ces engagements sont présentés comme un « win‑win » pour le Royaume‑Uni et l’Union européenne, renforçant les liens économiques et politiques entre les deux parties.",
+        "Parmi les mesures phares, les contrôles coûteux sur les produits alimentaires, agricoles et phytosanitaires circulant entre le Royaume‑Uni et l’UE seront supprimés. Les certificats sanitaires d’exportation, qui pouvaient atteindre £200 chacun, seront abrogés, accélérant ainsi la mise en rayon des produits frais et réduisant le gaspillage ainsi que les coûts pour les détaillants. Cette simplification devrait contribuer à diminuer le prix des courses hebdomadaires pour les consommateurs britanniques.",
+        "Le nouvel accord sur les denrées alimentaires et les boissons prévoit également la réintroduction sur les marchés européens de produits britanniques auparavant bloqués, tels que les saucisses, les burgers, les moules galloises et les pommes de terre semences écossaises. En parallèle, le cadre du Windsor Framework sera renforcé, éliminant la majorité des formalités administratives entre la Grande‑Bretagne et l’Irlande du Nord, ce qui devrait fluidifier le marché intérieur britannique et consolider l’union du pays.",
+        "Le lien entre les systèmes d’échange de quotas d’émission du Royaume‑Uni et de l’UE créera le plus grand marché carbone intégré au monde. Cette connexion exemptera £6,5 milliards d’exportations britanniques, notamment l’acier et l’aluminium, du mécanisme d’ajustement carbone de l’UE (CBAM). Selon les estimations, ce volet du pacte pourrait ajouter jusqu’à £5,1 milliards par an à l’économie britannique d’ici 2040, tout en renforçant la compétitivité des industries lourdes.",
+        "Le schéma Youth Experience, sans exigence d’offre d’emploi, de salaire ou de maîtrise linguistique, offrira aux jeunes de 18 à 31 ans la possibilité de vivre, travailler, étudier et voyager en Europe pendant trois ans. Ce dispositif, limité dans le temps et soumis à un visa, ne donnera pas accès aux prestations sociales ni aux droits de regroupement familial, mais il devrait augmenter le PIB britannique de 0,2 % grâce à l’attraction de talents européens et à la mobilité accrue des jeunes britanniques.",
+        "En matière de sécurité et de migration, le Royaume‑Uni et l’UE instaureront un dialogue structuré et un plan d’action pour le canal, visant à démanteler les réseaux de passeurs et à réduire les traversées illégales. Cette coopération s’inscrit dans une ambition partagée de renforcer la paix, la sécurité et la défense, incluant la lutte contre la flotte fantôme russe, les cyber‑attaques et la protection des démocraties. Le Premier ministre a rappelé que le soutien à l’Ukraine demeure prioritaire, s’appuyant sur un paquet de £260 millions annoncé précédemment."
+      ],
+      "image": null,
+      "source_refs": [
+        {
+          "publisher": "GOV.UK",
+          "url": "https://www.gov.uk/government/news/costs-cut-prime-minister-secures-deal-with-eu-to-cut-costs-keep-prices-down-and-create-opportunities-for-young-people-worth-up-to-17-billion-per-year",
+          "language": "en",
+          "published_at": "2026-11-20T14:36:25Z"
+        }
+      ],
+      "word_count": 474,
+      "minutes": 3
+    },
+    {
+      "id": "26f93c1bd10e75318fcae2",
+      "category": "Royaume-Uni",
+      "title": "L’IA doit‑elle juger notre solvabilité ?",
+      "paragraphs": [
+        "Sophie Hope, nail‑artist de Brighton, a vu son score de crédit basculer de « excellent » à « très mauvais » du jour au lendemain, entraînant le refus de son prêt hypothécaire. Elle a découvert que des fraudeurs avaient ouvert des comptes à son nom, commandé des produits comme une PlayStation 4 et des chaussettes Nike, et transféré la dette à une société de financement secondaire. Cette fraude, qui s’est accumulée pendant trois à quatre ans, a gravement affecté son historique de crédit, montrant la vulnérabilité du système actuel face aux usurpations d’identité.",
+        "Le système de notation britannique repose sur les trois grands bureaux – Experian, Equifax et TransUnion – qui utilisent des données similaires pour établir les scores. Selon la juriste spécialisée en finance, Funmi Olufunwa, ces scores sont « rétrospectifs », évaluant le passé sans forcément prédire la capacité future de remboursement. Ils pénalisent notamment les « thin‑file applicants », c’est‑à‑dire les jeunes et les nouveaux arrivants qui n’ont pas encore construit d’historique de crédit, limitant ainsi leur accès aux prêts.",
+        "Face à ces limites, des fintechs américaines comme Upstart et Zest AI proposent des modèles d’apprentissage automatique analysant plus de 2 500 variables pour offrir davantage de prêts à des prix compétitifs, y compris aux groupes démographiques traditionnellement exclus. La fondatrice de The Mortgage Mum, Sarah Tucker, estime que l’IA pourrait permettre aux prêteurs d’examiner des ensembles de données plus larges, d’identifier rapidement des schémas et de dresser un portrait plus individualisé de la solvabilité, ouvrant ainsi la voie à une inclusion financière accrue.",
+        "Cependant, l’usage de l’IA soulève des inquiétudes quant à la transparence et à la discrimination. Sandra Wachter, professeure à Oxford, rappelle que les algorithmes reproduisent les biais historiques s’ils ne sont pas encadrés, et que les consommateurs doivent pouvoir connaître les critères utilisés et contester les décisions erronées. Upstart affirme avoir intégré des évaluations objectives pour détecter les biais et les corriger lors de l’entraînement du modèle, mais la nécessité de régulations supplémentaires reste soulignée.",
+        "Des alternatives sans IA émergent également. En 2021, Evangeline Atkinson, frustrée par son invisibilité dans les bases de crédit, a co‑fondé Noggin HQ, une agence de référence autorisée par la FCA. Cette plateforme analyse les données transactionnelles des comptes courants pour aider les prêteurs à évaluer la solvabilité, tout en évitant les risques de biais inhérents aux modèles d’IA, selon Atkinson, qui insiste sur la sensibilité des données personnelles.",
+        "Les trois grands bureaux de crédit britanniques expérimentent désormais l’IA : Experian a annoncé un partenariat avec OpenAI en août 2026, Equifax a lancé la plateforme Amplify AI, et TransUnion intègre les modèles Gemini de Google. Ces initiatives visent à moderniser l’évaluation du risque, mais, comme le souligne Olufunwa, elles doivent dépasser le caractère rétroactif des scores traditionnels pour proposer de véritables prédicteurs d’avenir, tout en garantissant que les consommateurs acceptent et comprennent ces nouvelles méthodes."
+      ],
+      "image": null,
+      "source_refs": [
+        {
+          "publisher": "BBC Business",
+          "url": "https://www.bbc.co.uk/news/articles/c6d94pzk9vleo",
+          "language": "en",
+          "published_at": "2026-11-20T07:32:19Z"
+        }
+      ],
+      "word_count": 477,
+      "minutes": 3
+    },
+    {
+      "id": "071cf928eef7869c7f1784",
+      "category": "Monde",
+      "title": "L'ANC lutte pour garder le contrôle des principales villes sud‑africaines après un revers électoral",
+      "paragraphs": [
+        "L’African National Congress (ANC), parti dominant depuis plus de trois décennies, fait face à une chute historique de son soutien lors des élections municipales de ce mois. Le parti a enregistré son pire résultat depuis 1994, année de la transition vers la démocratie, et ne conserve la majorité que dans la province du Limpopo, contre six provinces lors du scrutin précédent. Au niveau local, il ne mène que deux des huit grandes villes, contre six en 2021, ce qui le place en course contre la montre pour conclure des accords de partage du pouvoir dans la plupart des municipalités.",
+        "Au total, l’ANC a recueilli 31 % des voix, en nette baisse par rapport aux 46 % obtenus lors des dernières élections locales, tout en restant le premier parti au niveau national avec 25 % du vote, en hausse par rapport à 22 % il y a cinq ans. Il conserve la majorité à Cape Town et domine à Nelson Mandela Bay, tandis que le parti uMkhonto weSizwe (MK) arrive troisième avec 10 % des suffrages. En KwaZulu‑Natal, l’ANC s’impose avec 34 % des voix, mais doit désormais composer avec des coalitions pour gouverner.",
+        "Sur le plan national, l’ANC partage le pouvoir avec la Democratic Alliance (DA) au sein du Gouvernement d’Unité Nationale (GNU) depuis 2024, suite à la perte de la majorité parlementaire. Malgré cet accord, les deux formations restent en désaccord sur plusieurs dossiers et ont menacé à plusieurs reprises de rompre le pacte. Les dirigeants de l’ANC semblent réticents à reproduire ce modèle de coalition au niveau municipal, préférant, selon les déclarations de la SABC, considérer une alliance avec la DA comme un « dernier recours » et chercher d’autres partenaires pour former des conseils locaux.",
+        "Dans les négociations locales, l’ANC a ainsi privilégié le rapprochement avec des partis plus petits. En Gauteng, il aurait envisagé un accord avec ActionSA, parti anti‑immigration qui a obtenu 17 % des voix et se positionne comme un possible faiseur de rois. La DA, de son côté, poursuit également des discussions avec divers acteurs, mais les divergences sur les candidats à la mairie de Johannesburg et Pretoria compliquent toute entente avec ActionSA. Aucun des deux grands partis n’a encore officialisé de partenariat à l’échelle municipale, laissant planer une incertitude sur la composition des futurs gouvernements locaux.",
+        "Les analystes attribuent le recul de l’ANC à la corruption persistante et à la perte de confiance des électeurs quant à la capacité du parti à assurer les services de base, notamment l’électricité, l’eau et la collecte des déchets. Certains observateurs soulignent que la progression de la DA résulte de sa réputation de gestion efficace dans les municipalités qu’elle dirige, bien que des critiques l’accusent de négliger les zones pauvres et les townships. Cette dynamique électorale reflète un mécontentement généralisé et rend les futures coalitions locales particulièrement délicates à mettre en place.",
+        "Les experts mettent en garde contre la stabilité des gouvernements de coalition, qui ont déjà caractérisé la moitié des villes sud‑africaines depuis 2016. En Gauteng, les administrations municipales ont été régulièrement scrutées pour leur instabilité, affectant la prestation des services publics. Selon l’analyste politique Andre Duvenhage, même après la formation de nouvelles alliances, il faudra environ dix ans pour redresser les problèmes structurels des municipalités, notamment à Johannesburg. Le même horizon temporel est évoqué par Sandile Swana, qui estime qu’une « purification » des conseils locaux nécessitera une décennie avant de les voir fonctionner comme de « véritables municipalités »."
+      ],
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Earth_Geoid_Field_Anomaly_globe%2C_NASA_Earth_Observatory.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "alt": "Photographie d’illustration — Monde",
+        "credit": "NASA Earth Observatory",
+        "license": "Public domain",
+        "page": "https://commons.wikimedia.org/wiki/File:Earth_Geoid_Field_Anomaly_globe%2C_NASA_Earth_Observatory.jpg"
+      },
+      "source_refs": [
+        {
+          "publisher": "BBC News",
+          "url": "https://www.bbc.co.uk/news/articles/cqpv94d10rwpo",
+          "language": "en",
+          "published_at": "2026-11-21T00:34:51Z"
+        }
+      ],
+      "word_count": 576,
+      "minutes": 3
+    }
+  ]
+}

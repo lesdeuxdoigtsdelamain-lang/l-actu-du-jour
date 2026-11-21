@@ -1,93 +1,96 @@
 {
-  "checked_at": "2026-11-21T00:15:12.872120+00:00",
-  "state": "success",
-  "reason": "Édition complete: 7 articles, 19 min; Maroc au maximum une fois, contrôle des événements sur sept jours.",
+  "checked_at": "2026-11-21T17:41:18.535713+00:00",
+  "state": "partial",
+  "reason": "Édition partielle: 3 articles, 9 min; Maroc au maximum une fois, contrôle des événements sur sept jours. Manque : tour France",
   "feeds": {
-    "franceinfo": {
-      "ok": 27
-    },
-    "aljazeera-en": {
-      "ok": 23
-    },
-    "rfi": {
-      "ok": 22
-    },
-    "aljazeera-ar": {
-      "ok": 25
-    },
-    "sky-world": {
-      "ok": 6
-    },
     "france24": {
       "ok": 24
-    },
-    "hespress-ar": {
-      "ok": 12
-    },
-    "hespress-fr": {
-      "ok": 10
-    },
-    "bbc-business": {
-      "ok": 23
-    },
-    "bbc-science": {
-      "ok": 14
     },
     "bbc-world": {
       "ok": 24
     },
-    "gov-uk": {
-      "ok": 19
-    },
-    "nasa": {
-      "ok": 9
-    },
     "bbc-ar": {
       "ok": 10
+    },
+    "rfi": {
+      "ok": 23
+    },
+    "bbc-science": {
+      "ok": 11
+    },
+    "aljazeera-en": {
+      "ok": 21
+    },
+    "sky-world": {
+      "ok": 4
+    },
+    "bbc-business": {
+      "ok": 16
+    },
+    "franceinfo": {
+      "ok": 26
+    },
+    "hespress-fr": {
+      "ok": 9
+    },
+    "aljazeera-ar": {
+      "ok": 25
+    },
+    "gov-uk": {
+      "ok": 20
+    },
+    "bbc-uk": {
+      "ok": 18
+    },
+    "hespress-ar": {
+      "ok": 12
+    },
+    "nasa": {
+      "ok": 5
     },
     "nsf": {
       "ok": 0
     },
-    "nps": {
-      "error": "Payload too large"
-    },
     "alarabiya": {
       "error": "HTTP 403"
     },
-    "rfi-france": {
-      "ok": 18
-    },
-    "bbc-uk": {
-      "ok": 28
+    "france24-france": {
+      "ok": 13
     },
     "sky-uk": {
-      "ok": 10
+      "ok": 8
     },
-    "france24-france": {
-      "ok": 16
+    "rfi-france": {
+      "ok": 14
+    },
+    "nps": {
+      "error": "Payload too large"
+    },
+    "globalvoices-ar": {
+      "ok": 0
     },
     "globalvoices": {
       "ok": 2
     },
-    "globalvoices-ar": {
-      "ok": 1
-    },
     "telquel": {
-      "ok": 62
-    },
-    "un-fr": {
-      "error": "HTTP 404"
+      "ok": 39
     },
     "un-en": {
+      "error": "HTTP 404"
+    },
+    "un-fr": {
       "error": "HTTP 404"
     }
   },
   "ai_usage": {
-    "calls": 0,
-    "neurons": 0.0,
-    "groq_requests": 0,
-    "groq_tokens": 0,
-    "cloudflare_requests": 0,
-    "providers": []
+    "calls": 18,
+    "neurons": 1056.73,
+    "groq_requests": 14,
+    "groq_tokens": 65135,
+    "cloudflare_requests": 4,
+    "providers": [
+      "groq",
+      "cloudflare"
+    ]
   }
 }
