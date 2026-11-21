@@ -6,6 +6,7 @@ from zoneinfo import ZoneInfo
 from urllib.parse import urlsplit
 import argparse
 import json
+import re
 from pydantic import ValidationError
 from .sources import load
 from .fetch import Fetcher
@@ -40,7 +41,7 @@ def complete(articles):
     return (MIN_ARTICLES <= len(articles) <= MAX_ARTICLES
             and sum(a.word_count for a in articles) >= MIN_COMPLETE_WORDS
             and sum(a.minutes for a in articles) >= 18
-            and any(is_roundup(a) and 300 <= a.word_count <= 400 for a in articles)
+            and sum(is_roundup(a) and 300 <= a.word_count <= 400 for a in articles) == 1
             and any(article_region(a) == 'Royaume-Uni' for a in articles)
             and sum(is_morocco_article(a) for a in articles) <= 1)
 
@@ -85,6 +86,7 @@ def seed_articles(existing, previous):
     kept, reasons = clean_articles(existing.articles, previous)
     # Old individual French stories give way to one daily domestic roundup.
     kept = [a for a in kept if not EXCLUDE.search(a.title)
+            and all(s.published_at.astimezone(LONDON).date() <= existing.edition_date for s in a.source_refs)
             and (article_region(a) != 'France' or is_roundup(a))
             and (not is_roundup(a) or 300 <= a.word_count <= 400)]
     # Reserve the required slots even when an old edition already had eight items.
@@ -139,11 +141,20 @@ def repair_candidates(feeds, day):
     return result
 
 
+def english_title(title):
+    words = set(re.findall(r"[a-zàâçéèêëîïôùûü]+", title.casefold()))
+    english = words & {'the','and','for','with','after','before','why','how','while','says','saw',
+                       'what','which','their','against','its','has','have','will','from','back','hope','boosting'}
+    french = words & {'le','la','les','un','une','de','du','des','en','au','aux','et','à','pour',
+                      'dans','sur','après','avec','son','sa','ces','ce','qui','vers'}
+    return len(english) >= 2 and len(english) > len(french)
+
+
 def draft(c, facts, sources, provider, seen, errors, *, mode='article', topics=()):
     """Generate once, with at most one targeted revision; validate actual length."""
     minimum, maximum = (300, 400) if mode == 'tour_france' else (450, 650)
     packet = {
-        'event_title': c.title, 'titre_attendu': c.title,
+        'event_title': c.title,
         'mode_editorial': mode, 'language': 'fr-FR',
         'evidence_words': sum(len(f['text'].split()) for f in facts),
         'facts': facts, 'sujets': topics,
@@ -153,6 +164,10 @@ def draft(c, facts, sources, provider, seen, errors, *, mode='article', topics=(
                                for a in seen][-60:],
         'objectif_editorial': f'{minimum} à {maximum} mots réels, sans répétition ni ajout non sourcé.',
     }
+    # Only a roundup has a prescribed (already French) title. Passing an English
+    # source headline as titre_attendu caused the model to copy it verbatim.
+    if mode == 'tour_france':
+        packet['titre_attendu'] = c.title
     for attempt in range(2):
         if provider.calls >= provider.max_calls:
             break
@@ -160,6 +175,8 @@ def draft(c, facts, sources, provider, seen, errors, *, mode='article', topics=(
         repaired = reflow_paragraphs(output)
         words = sum(len(p.split()) for p in repaired.get('paragraphes', []) if isinstance(p, str))
         reason = rejection_reason(repaired, facts, sources)
+        if reason is None and english_title(repaired.get('titre','')):
+            reason = 'le titre doit être rédigé en français, pas repris de la source anglaise'
         article = None
         if reason is None:
             try:
@@ -187,10 +204,15 @@ def draft(c, facts, sources, provider, seen, errors, *, mode='article', topics=(
                 return article, records
         errors.append(f'Rejected: {reason} ({words} mots)')
         print(f'Article refusé : {reason} ({words} mots)', flush=True)
+        if reason and ('déjà traité' in reason or 'déjà publié' in reason):
+            # A second wording cannot turn the same event into a new story.
+            return None, []
         packet['revision_notice'] = (
             f'Premier essai refusé : {reason}. Rédige une nouvelle version entre {minimum} et {maximum} mots. '
             'Respecte le mode éditorial, les faits et leurs unités. Ne complète jamais avec un fait inventé.')
         packet['chiffres_refuses'] = sorted(unsupported_numbers(repaired, facts, sources))
+        if packet['chiffres_refuses']:
+            print('Valeurs numériques refusées : ' + ', '.join(packet['chiffres_refuses']), flush=True)
     return None, []
 
 
@@ -203,8 +225,13 @@ def generate(site, now, provider, feeds, *, target_day=None, memory_sink=None):
     articles, removals = seed_articles(existing, previous)
     errors = []
     candidates, status = collect(feeds, cutoff)
+    reviewed = []
     if target_day is not None:
-        candidates = [*repair_candidates(feeds, day), *candidates]
+        reviewed = repair_candidates(feeds, day)
+        candidates = [*reviewed, *candidates]
+    # The feed parser's small live clock tolerance must never import tomorrow's
+    # stories into a historical edition being repaired.
+    candidates = [c for c in candidates if c.published_at <= cutoff]
     old_ids, old_titles = history(site, day)
     old_urls = {canonical_url(s.url) for a in [*earlier_articles(site, day), *articles] for s in a.source_refs}
     for topic in previous_topics(memory, day):
@@ -215,7 +242,12 @@ def generate(site, now, provider, feeds, *, target_day=None, memory_sink=None):
         old_titles.append(a.title)
     grouped = cluster(candidates)
     grouped = [c for c in grouped if not any(canonical_url(x.url) in old_urls for x in [c, *c.clustered])]
-    ranked = rank(grouped, old_ids, old_titles, limit=100)
+    ranked = rank(grouped, old_ids, old_titles, limit=len(grouped) if reviewed else 100)
+    if reviewed:
+        priority = {canonical_url(c.url): i for i, c in enumerate(reviewed)}
+        ranked.sort(key=lambda c: min((priority.get(canonical_url(x.url), len(priority))
+                                       for x in [c, *c.clustered]), default=len(priority)))
+        ranked = ranked[:100]
     print(f'Édition {day}: {len(articles)} articles conservés, {len(removals)} retraits, {len(ranked)} candidats', flush=True)
     for reason in removals:
         print('Correction : ' + reason, flush=True)
@@ -261,7 +293,8 @@ def generate(site, now, provider, feeds, *, target_day=None, memory_sink=None):
                     break
                 if len(articles) >= MAX_ARTICLES:
                     break
-                if complete(articles) and sum(a.word_count for a in articles) >= TARGET_WORDS:
+                if complete(articles) and (sum(a.word_count for a in articles) >= TARGET_WORDS
+                                           or sum(a.minutes for a in articles) >= 19):
                     break
                 region = candidate_region(c)
                 # The French domestic news belongs in the single daily roundup.

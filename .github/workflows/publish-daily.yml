@@ -1,6 +1,6 @@
 name: Publier le journal quotidien
 on:
-  # A deliberate marked workflow commit can trigger one deployment test.
+  # A marked commit publishes the current day or the reviewed archive corrections.
   push:
     branches: [main]
     paths: ['.github/workflows/publish-daily.yml']

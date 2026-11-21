@@ -3,7 +3,7 @@ import json
 from types import SimpleNamespace
 
 from generator.app.briefing import (
-    domestic_france, is_roundup, prepare_roundup, topic_records,
+    domestic_france, is_roundup, prepare_roundup, topic_records, same_roundup_subject,
 )
 from generator.app.ingest import Candidate
 from generator.app.sources import Feed
@@ -150,3 +150,35 @@ def test_roundup_heading_recognized_with_curly_quotes_and_date():
     assert is_roundup({'title': 'Tour de l’actu en France — 20 novembre 2026'})
     assert is_roundup(SimpleNamespace(title="Tour de l'actualité en France"))
     assert not is_roundup(SimpleNamespace(title='Le Tour de France ouvre une nouvelle étape'))
+
+
+def test_global_gta_review_is_not_a_french_domestic_brief():
+    game = Candidate('gta-review', 'GTA VI reçoit les éloges de la presse mondiale',
+                     'Les joueurs français découvrent les critiques du nouveau Grand Theft Auto.',
+                     'https://news.example.net/culture/jeux-video/gta-vi/test', NOW, FEED)
+    assert not domestic_france(game)
+    game.title = 'Un lancement exceptionnel enthousiasme les joueurs français'
+    assert not domestic_france(game)
+    game.description = 'Les critiques saluent cette sortie mondiale.'
+    assert not domestic_france(game)  # Publisher section remains informative.
+
+
+def test_announcement_and_profile_of_villepin_use_one_roundup_slot():
+    announcement = Candidate('villepin-announcement', 'Dominique de Villepin annonce sa candidature présidentielle',
+                             TEXTS[0], 'https://news.example.net/announcement', NOW, FEED)
+    profile = Candidate('villepin-profile', 'Dominique de Villepin, un homme de droite en quête d’électeurs de gauche',
+                        TEXTS[1], 'https://news.example.net/profile', NOW, FEED)
+    assert same_roundup_subject(announcement, profile)
+    profile.title = 'Villepin se lance malgré les obstacles et cherche un nouvel électorat'
+    assert same_roundup_subject(announcement, profile)
+    prepared = prepare_roundup([announcement, profile, *candidates()[2:]], None, DAY, make_facts_fn=fake_facts)
+    assert prepared is not None
+    ids = {topic['id'] for topic in prepared[3]}
+    assert announcement.id in ids and profile.id not in ids
+    assert len(ids) == 4
+
+
+def test_shared_first_name_does_not_merge_different_people_in_roundup():
+    a = SimpleNamespace(title='Michel Barnier présente ses propositions économiques')
+    b = SimpleNamespace(title='Michel Zecler attend le verdict de son procès')
+    assert not same_roundup_subject(a, b)

@@ -199,7 +199,8 @@ def test_new_source_url_does_not_make_repeated_generated_content_new():
     provider=Provider([output,output])
     errors=[]
     result,_=runner.draft(c,facts,sources,provider,[previous],errors)
-    assert result is None and provider.calls==2
+    # Rewording an already covered event cannot make it a new news item.
+    assert result is None and provider.calls==1
     assert any('déjà traité' in message for message in errors)
 
 
@@ -255,3 +256,113 @@ def test_complete_edition_rerun_is_idempotent_and_does_not_call_ai(monkeypatch,t
     after={p.name:p.read_bytes() for p in [tmp_path/'latest.json',tmp_path/'archive.json',
                                          tmp_path/'editions/2026-11-20.json']}
     assert after==before
+
+
+@pytest.mark.parametrize('future_time',['00:00:00','00:08:00','00:13:00'])
+def test_historical_repair_never_includes_next_day_news_even_inside_feed_clock_tolerance(
+        monkeypatch,tmp_path,future_time):
+    yesterday=date(2026,11,19)
+    put(tmp_path,edition([france(day=yesterday),uk(day=yesterday),article('historicseed',day=yesterday)],yesterday),NOW)
+    allowed=candidate('beforemidnight','Des chercheurs observent les étoiles dans une galaxie lointaine')
+    allowed.published_at=datetime.fromisoformat('2026-11-19T23:59:59+00:00')
+    future=candidate('aftermidnight','Une étude teste de nouveaux soins contre le cancer du pancréas')
+    future.published_at=datetime.fromisoformat(f'2026-11-20T{future_time}+00:00')
+    requested=[]
+    monkeypatch.setattr(runner,'collect',lambda feeds,now:([future,allowed],{}))
+    monkeypatch.setattr(runner,'repair_candidates',lambda feeds,day:[])
+    monkeypatch.setattr(runner,'find',lambda *args:None)
+    def make_facts(c,*args):
+        requested.append(c.id)
+        facts,sources=facts_for(c)
+        sources[0]['published_at']=c.published_at.isoformat()
+        return facts,sources
+    def draft(c,facts,sources,provider,seen,errors,**kwargs):
+        provider.calls+=1
+        return article('accepted'+('late' if c.id==future.id else 'earlier'),day=yesterday),[]
+    monkeypatch.setattr(runner,'make_facts',make_facts)
+    monkeypatch.setattr(runner,'draft',draft)
+    result,_,_,_=runner.generate(tmp_path,NOW,Provider(),[FEED],target_day=yesterday)
+    assert result is not None and result.edition_date==yesterday
+    assert allowed.id in requested
+    assert future.id not in requested
+    assert 'fixture-acceptedlate-article' not in {a.id for a in result.articles}
+
+
+def test_regular_article_prompt_does_not_require_copying_an_english_source_title():
+    c=candidate('englishsource','UK agrees new trade measures after talks with European leaders','Royaume-Uni')
+    c.feed=replace(c.feed,language='en')
+    facts,sources=facts_for(c)
+    sources[0]['language']='en'
+    french=uk('frenchoutput')
+    output={'titre':french.title,'paragraphes':french.paragraphs,'preuves':[[facts[0]['id']]]*6}
+    packets=[]
+    class CapturingProvider(Provider):
+        def run(self,packet):
+            packets.append(dict(packet))
+            return super().run(packet)
+    result,_=runner.draft(c,facts,sources,CapturingProvider([output]),[],[])
+    assert result is not None and result.title==french.title
+    assert packets[0]['event_title']==c.title
+    assert 'titre_attendu' not in packets[0]
+
+
+def test_france_roundup_keeps_its_explicit_french_expected_title():
+    c,facts,sources,topics,output=roundup_inputs(350)
+    packets=[]
+    class CapturingProvider(Provider):
+        def run(self,packet):
+            packets.append(dict(packet))
+            return super().run(packet)
+    result,_=runner.draft(c,facts,sources,CapturingProvider([output]),[],[],mode='tour_france',topics=topics)
+    assert result is not None and result.title==c.title
+    assert packets[0]['titre_attendu']==c.title
+
+
+def test_obviously_english_generated_title_gets_one_french_revision():
+    c=candidate('englishtitle','UK agrees new trade measures after talks with European leaders','Royaume-Uni')
+    c.feed=replace(c.feed,language='en')
+    facts,sources=facts_for(c)
+    sources[0]['language']='en'
+    french=uk('translatedoutput')
+    corrected={'titre':french.title,'paragraphes':french.paragraphs,'preuves':[[facts[0]['id']]]*6}
+    english={**corrected,'titre':c.title}
+    provider=Provider([english,corrected])
+    result,_=runner.draft(c,facts,sources,provider,[],[])
+    assert result is not None and result.title==french.title
+    assert provider.calls==2
+
+
+def test_twenty_minute_complete_edition_does_not_gain_an_unnecessary_eighth_article(monkeypatch,tmp_path):
+    articles=[france(),uk().model_copy(),*[article('neartarget'+chr(97+i),count=450) for i in range(5)]]
+    assert runner.complete(articles) and sum(a.minutes for a in articles)==20
+    assert sum(a.word_count for a in articles)<runner.TARGET_WORDS
+    put(tmp_path,edition(articles),NOW)
+    extra=candidate('unnecessary','Des chercheurs cartographient une nouvelle zone forestière')
+    monkeypatch.setattr(runner,'collect',lambda feeds,now:([extra],{}))
+    monkeypatch.setattr(runner,'find',lambda *args:None)
+    monkeypatch.setattr(runner,'make_facts',lambda *args:pytest.fail('A complete twenty-minute edition needs no eighth article'))
+    result,_,_,_=runner.generate(tmp_path,NOW,Provider(),[FEED])
+    assert result is not None and len(result.articles)==7
+    assert [a.id for a in result.articles]==[a.id for a in articles]
+
+
+def test_reviewed_historical_source_has_priority_when_only_one_drafting_call_remains(monkeypatch,tmp_path):
+    yesterday=date(2026,11,19)
+    put(tmp_path,edition([france(day=yesterday),uk(day=yesterday),article('priorreview',day=yesterday)],yesterday),NOW)
+    reviewed=candidate('reviewed','Des scientifiques observent une galaxie distante')
+    live=candidate('rankboost','Le président annonce des investissements contre l’inflation')
+    for c in (reviewed,live):c.published_at=datetime.fromisoformat('2026-11-19T19:00:00+00:00')
+    monkeypatch.setattr(runner,'collect',lambda feeds,now:([live],{}))
+    monkeypatch.setattr(runner,'repair_candidates',lambda feeds,day:[reviewed])
+    monkeypatch.setattr(runner,'make_facts',facts_for)
+    monkeypatch.setattr(runner,'find',lambda *args:None)
+    drafted=[]
+    def draft(c,facts,sources,provider,seen,errors,**kwargs):
+        drafted.append(c.id)
+        provider.calls+=1
+        return article('reviewedoutput' if c.id==reviewed.id else 'liveoutput',day=yesterday),[]
+    monkeypatch.setattr(runner,'draft',draft)
+    provider=Provider();provider.max_calls=1
+    result,_,_,_=runner.generate(tmp_path,NOW,provider,[FEED],target_day=yesterday)
+    assert result is not None and provider.calls==1
+    assert drafted==[reviewed.id]

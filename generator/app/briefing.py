@@ -11,7 +11,7 @@ import re
 
 from .diversity import candidate_region, duplicates, normalize
 from .evidence import make_facts
-from .ingest import Candidate
+from .ingest import Candidate, EXCLUDE
 
 
 _MONTHS = ('', 'janvier', 'février', 'mars', 'avril', 'mai', 'juin',
@@ -28,6 +28,16 @@ _DOMESTIC = re.compile(
     r'\b(?:france|paris|lyon|marseille|'
     r'francais(?:e|es)?|francilien(?:ne)?s?|matignon|'
     r'sncf|ratp)\b')
+_ENTERTAINMENT = re.compile(
+    r'\b(?:gta(?:\s*(?:vi|6))?|grand\s+theft\s+auto|jeux?\s+video|'
+    r'video\s+games?|gamers?|gaming|playstation|xbox|nintendo|'
+    r'cinema|box\s+office|blockbuster|album|concert|telenovela)\b')
+_PERSON_NAME = re.compile(
+    r'\b[A-ZÀ-ÖØ-Þ][a-zà-öø-ÿA-ZÀ-ÖØ-Þ’\'-]+'
+    r'(?:\s+(?:(?:de|du|des|le|la)\s+)?[A-ZÀ-ÖØ-Þ][a-zà-öø-ÿA-ZÀ-ÖØ-Þ’\'-]+){1,3}\b')
+_GENERIC_NAME_WORDS = {'le', 'la', 'les', 'un', 'une', 'des', 'en', 'au', 'aux',
+                       'france', 'francais', 'paris', 'premier', 'ministre', 'president',
+                       'parlement', 'senat', 'assemblee', 'nationale', 'tour', 'actu'}
 
 
 def is_roundup(article):
@@ -37,6 +47,11 @@ def is_roundup(article):
 
 def domestic_france(candidate):
     """A French-language world feed is not a France domestic-news feed."""
+    text = candidate.title + ' ' + candidate.description
+    if EXCLUDE.search(text) or _ENTERTAINMENT.search(normalize(text)):
+        return False
+    if re.search(r'/(?:culture/)?(?:jeux-video|cinema|musique|series|gaming|entertainment)/', candidate.url):
+        return False
     region = candidate_region(candidate)
     if region in ('Maroc', 'Royaume-Uni'):
         return False
@@ -45,6 +60,31 @@ def domestic_france(candidate):
     if _ABROAD.search(title) and not _DOMESTIC.search(title):
         return False
     return region == 'France' or candidate.feed.category == 'France'
+
+
+def same_roundup_subject(a, b):
+    """A compact digest does not split one actor's announcement and its profile.
+
+    This intentionally stricter variety check applies only within a roundup,
+    not to the seven-day event gate: different news about a person can still be
+    meaningful on different days. A full named actor in one headline is matched
+    against the other headline, including a surname-only headline.
+    """
+    if duplicates(a, b):
+        return True
+    def title(value):
+        return value.get('title', '') if isinstance(value, dict) else value.title
+    left, right = title(a), title(b)
+    def surnames(text):
+        result = set()
+        for match in _PERSON_NAME.finditer(text):
+            words = [w for w in normalize(match.group()).split()
+                     if w not in _GENERIC_NAME_WORDS and w not in ('de', 'du', 'des')]
+            if len(words) >= 2 and len(words[-1]) >= 4:
+                result.add(words[-1])
+        return result
+    return bool(surnames(left) & set(normalize(right).split())
+                or surnames(right) & set(normalize(left).split()))
 
 
 def _trim(text, limit):
@@ -150,7 +190,7 @@ def prepare_roundup(candidates, http, day, make_facts_fn=make_facts, previous_ar
         preview = _preview(candidate, topic_facts, source)
         if any(duplicates(preview, old) for old in previous_articles):
             continue
-        if any(duplicates(preview, _preview(c, fs, s)) for c, fs, s in chosen):
+        if any(same_roundup_subject(preview, _preview(c, fs, s)) for c, fs, s in chosen):
             continue
         if len(chosen) < 4:
             chosen.append((candidate, topic_facts, source))

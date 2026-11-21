@@ -40,7 +40,7 @@ _GEOGRAPHY = {
         r'المغرب|المغربي|المغربية|المغاربة|مغربي|مغربية|الرباط|'
         r'الدار\s+البيضاء|مراكش|فاس|طنجة|اكادير|العيون|الداخلة)\b'),
     'Royaume-Uni': re.compile(
-        r'\b(?:royaume\s+uni|united\s+kingdom|uk|britain|british|'
+        r'\b(?:royaume\s+uni|grande\s+bretagne|united\s+kingdom|uk|britain|british|'
         r'britannique(?:s)?|angleterre|england|anglais(?:e|es)?|'
         r'ecosse|scotland|ecossais(?:e|es)?|pays\s+de\s+galles|wales|'
         r'northern\s+ireland|irlande\s+du\s+nord|londres|london|'
@@ -56,13 +56,19 @@ _GEOGRAPHY = {
 
 def _region(title, lead='', body=''):
     title, lead, body = normalize(title), normalize(lead), normalize(body)
+    # A quoted charity is not the location of a trial or of its participants.
+    # In particular Cancer Research UK routinely comments on US/global studies.
+    organisation = re.compile(r'\bcancer\s+research\s+uk\b')
+    title, lead, body = (organisation.sub('', text) for text in (title, lead, body))
     scores = {}
     for region, pattern in _GEOGRAPHY.items():
         in_title = len(pattern.findall(title))
         in_lead = len(pattern.findall(lead))
         in_body = len(pattern.findall(body))
         # A passing mention near the end of a worldwide report is not its focus.
-        if in_title or in_lead or in_body >= 3:
+        # A UK comparison/statistic in the closing paragraphs cannot satisfy the
+        # dedicated domestic-news slot: the country must be central from the lead.
+        if in_title or in_lead or (region != 'Royaume-Uni' and in_body >= 3):
             scores[region] = 8 * in_title + 3 * in_lead + min(5, in_body)
     # An explicitly Moroccan lead/actor counts toward the cap even when the
     # wider event takes place abroad (e.g. Moroccan officers deployed to Gaza).

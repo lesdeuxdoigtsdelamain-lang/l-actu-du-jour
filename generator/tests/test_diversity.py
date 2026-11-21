@@ -160,3 +160,28 @@ def test_later_duplicate_does_not_use_up_morocco_slot():
                     'la chronologie du site et les pratiques artisanales locales.')
     kept, reasons = clean_articles([duplicate, fresh], [first])
     assert kept == [fresh] and len(reasons) == 1
+
+
+def test_us_cancer_trial_does_not_become_uk_news_because_a_charity_is_quoted():
+    trial = article('us-cancer-trial', 'Un comprimé expérimental contre le cancer du pancréas',
+                    'Un essai clinique rapporte des résultats prometteurs. Cancer Research UK '
+                    'commente ces premières observations et appelle à confirmer leur efficacité.')
+    trial.paragraphs += [
+        'Les participants reçoivent le médicament expérimental avec une chimiothérapie.',
+        'Les chercheurs du Memorial Sloan Kettering Cancer Center présentent les résultats de leur étude américaine.',
+        'Cancer Research UK souligne les limites du suivi. Cancer Research UK demande davantage de recherches.',
+        'En Grande-Bretagne, les statistiques illustrent la gravité de cette maladie au Royaume-Uni.',
+    ]
+    assert article_region(trial) is None
+    assert candidate_region(SimpleNamespace(
+        title='Hope for pancreatic cancer pill after trial',
+        description='Cancer Research UK welcomes results from Memorial Sloan Kettering in the US.')) is None
+
+
+def test_real_uk_domestic_health_still_qualifies():
+    alert = article('ukhsa-cold', 'L’UKHSA prolonge ses alertes sanitaires liées au froid',
+                    'Les autorités sanitaires prolongent les alertes pour le Yorkshire et les Midlands.')
+    care = article('nhs-care', 'Le NHS prépare une nouvelle organisation des soins',
+                   'Les patients en Angleterre seront concernés par les dispositions annoncées.')
+    assert article_region(alert) == 'Royaume-Uni'
+    assert article_region(care) == 'Royaume-Uni'

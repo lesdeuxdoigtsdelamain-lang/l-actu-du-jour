@@ -1,6 +1,6 @@
 # L'actu du jour — journal personnel Android en français
 
-**Version de développement 1.0.0 — Samsung Galaxy A56, Android 9+.**
+**Version de développement 1.0.1 — Samsung Galaxy A56, Android 9+.**
 
 Une application de lecture volontairement sobre : cartes d'actualité illustrées, articles longs rédigés en français, consultation des sources, mode lecture plein écran, polices ajustables, trois thèmes, marquage des articles lus, et archive hors ligne de sept jours. **Sans publicité, compte, quiz, API ni analyse de données embarqués dans l'APK.**
 
