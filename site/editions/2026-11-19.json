@@ -2,11 +2,11 @@
   "schema_version": 1,
   "edition_id": "2026-11-19-fr-FR",
   "edition_date": "2026-11-19",
-  "generated_at": "2026-11-20T23:36:15.597285Z",
+  "generated_at": "2026-11-20T23:59:34.834686Z",
   "language": "fr-FR",
   "timezone": "Europe/London",
-  "status": "complete",
-  "minutes": 20,
+  "status": "partielle",
+  "minutes": 12,
   "articles": [
     {
       "id": "f8880fb1e46f2f5381e913",
@@ -145,100 +145,6 @@
       ],
       "word_count": 424,
       "minutes": 2
-    },
-    {
-      "id": "france-tour-2026-11-19",
-      "category": "France",
-      "title": "Tour de l’actu en France — 19 novembre 2026",
-      "paragraphs": [
-        "L'Arcom a annoncé ce jeudi 19 novembre que les créateurs de contenus majeurs sur YouTube et les réseaux sociaux, comme HugoDécrypte ou Guillaume Pley, devront désormais appliquer les règles de pluralisme politique lors de la campagne présidentielle de 2027. Martin Ajdari, président du régulateur, a souligné le caractère « massif » du phénomène et la nécessité d’étendre aux plateformes numériques les obligations qui s’appliquaient jusqu’ici aux chaînes de télévision et aux radios. Cette mesure vise à garantir une couverture équilibrée de l’actualité électorale, même pour les influenceurs dont les audiences dépassent celles des médias traditionnels.",
-        "Le nouveau titre de la franchise Grand Theft Auto, GTA VI, a reçu une note exceptionnelle de 99 / 100 sur Metacritic, un score jamais atteint depuis vingt‑huit ans. Les critiques internationales le qualifient de « véritable claque » et d’« expérience mémorable », soulignant la profondeur de son monde ouvert et la qualité de son scénario centré sur les personnages Lucia et Jason. Cette réception très favorable confirme les attentes élevées suscitées par la sortie du jeu, annoncée pour le 19 novembre 2026, et le place comme un nouveau standard pour le dixième art.",
-        "Face à la désertification des centres‑villes, de nombreuses municipalités françaises ont créé le poste de manager de centre‑ville, également appelé manager de commerce. À Sceaux, dans les Hauts‑de‑Seine, ce métier existe depuis vingt‑cinq ans et a inspiré la multiplication de ces fonctions, qui comptent aujourd’hui plus de trois cents postes à l’échelle nationale. Leur rôle consiste à soutenir les commerçants, attirer de nouvelles boutiques, animer les espaces publics et améliorer l’aménagement urbain afin de préserver la diversité commerciale et revitaliser les rues.",
-        "Le 19 novembre, le sénateur et ancien candidat écologiste à la présidentielle, Yannick Jadot, a annoncé son départ des Écologistes, suivi du député Jérémie Iordanoff. Cette décision intervient après la main tendue de Marine Tondelier à Jean‑Luc Mélenchon, qui a mis en lumière des fractures au sein du parti vert. Jadot a déclaré soutenir Raphaël Glucksmann, critiquant la direction prise par les Écologistes et leur rapprochement avec La France Insoumise."
-      ],
-      "image": null,
-      "source_refs": [
-        {
-          "publisher": "Franceinfo",
-          "url": "https://www.franceinfo.fr/internet/les-principaux-createurs-de-contenus-devront-desormais-respecter-le-pluralisme-dans-leur-traitement-de-l-election-presidentielle_8290187.html",
-          "language": "fr",
-          "published_at": "2026-11-19T16:54:07Z"
-        },
-        {
-          "publisher": "Franceinfo",
-          "url": "https://www.franceinfo.fr/culture/jeux-video/gta-vi/je-n-ai-jamais-joue-a-un-jeu-aussi-marquant-le-jeu-video-gta-vi-recoit-les-eloges-de-la-presse-specialisee-du-monde-entier_8289947.html",
-          "language": "fr",
-          "published_at": "2026-11-19T13:04:22Z"
-        },
-        {
-          "publisher": "RFI",
-          "url": "https://www.rfi.fr/fr/podcasts/reportage-france/20261119-les-managers-de-commerce-une-nouvelle-solution-pour-redynamiser-les-centres-villes",
-          "language": "fr",
-          "published_at": "2026-11-19T23:00:26Z"
-        },
-        {
-          "publisher": "France 24",
-          "url": "https://www.france24.com/fr/france/20261119-france-presidentielle-yannick-jadot-quitte-les-ecologistes-marine-tondelier-jean-luc-melenchon-glucksmann",
-          "language": "fr",
-          "published_at": "2026-11-19T23:04:16Z"
-        }
-      ],
-      "word_count": 342,
-      "minutes": 2
-    },
-    {
-      "id": "a52a27191f4e48f3650ab0",
-      "category": "Royaume-Uni",
-      "title": "Massive hope for pancreatic cancer pill after trial saw tumours vanish",
-      "paragraphs": [
-        "Un comprimé quotidien nommé daraxonrasib a montré des effets prometteurs sur le cancer du pancréas, l’une des tumeurs les plus mortelles. Dans un essai de phase I/II, les tumeurs ont cessé de croître chez 90 % des participants, tandis que plus de 60 % ont vu leurs lésions diminuer ou disparaître. Un patient sur douze a même vu le cancer devenir indétectable sur les scanners, selon les données publiées. Ces résultats, qualifiés de « plus grande avancée en décennies » par Cancer Research UK, relancent l’espoir d’une thérapie plus efficace que la chimiothérapie seule.",
-        "L’étude a porté sur 61 patients récemment diagnostiqués avec un cancer du pancréas avancé, déjà métastasé. Tous ont reçu daraxonrasib en association avec la chimiothérapie standard, puis ont été suivis pendant environ un an et demi. Au terme de cette période, la plupart des patients n’avaient pas vu la maladie réapparaître, bien que les chercheurs soulignent que la durée exacte de la réponse reste incertaine. Le suivi prolongé est donc essentiel pour déterminer si une rémission durable est possible.",
-        "Daraxonrasib agit comme un inhibiteur ciblé des mutations RAS, présentes dans la majorité des cancers du pancréas. En bloquant ces mutations, le médicament empêche la croissance tumorale à la source. Cette approche, décrite comme « drugging the undruggable », représente une rupture avec les traitements traditionnels qui ne ciblent que les symptômes de la maladie. Le Dr Wungki Park, du Memorial Sloan Kettering Cancer Center, a souligné que les réponses observées étaient « extrêmement encourageantes », ouvrant la voie à des essais plus larges.",
-        "Les experts insistent toutefois sur le caractère préliminaire des données. Le Dr Sam Godfrey, de Cancer Research UK, rappelle que même si les tumeurs disparaissent à l’imagerie, il faut du temps pour confirmer une absence totale de cellules cancéreuses. Les études futures devront vérifier la persistance de la réponse et son impact sur la survie globale, car la plupart des patients atteints de formes avancées ne survivent que quelques mois sans traitement efficace.",
-        "Outre le pancréas, le même mécanisme pourrait bénéficier à d’autres cancers porteurs de mutations RAS, comme le poumon ou l’ovaire. Le Dr Godfrey a exprimé l’espoir que le succès initial se traduise par des essais élargis à ces pathologies, tout en rappelant que des données supplémentaires sont indispensables pour valider cette hypothèse. La perspective d’un traitement transversal renforce l’intérêt scientifique autour de daraxonrasib.",
-        "En Grande‑Bretagne, le cancer du pancréas touche environ 11 500 personnes chaque année et cause près de 10 200 décès, selon Cancer Research UK. Le taux de mortalité reste le plus élevé parmi les cancers courants, ce qui rend chaque avancée thérapeutique cruciale. Le récent essai, bien que limité, offre une lueur d’espoir pour les patients et leurs familles, tout en soulignant la nécessité d’investir dans des recherches cliniques plus approfondies afin de transformer ces réponses initiales en bénéfices durables."
-      ],
-      "image": null,
-      "source_refs": [
-        {
-          "publisher": "BBC UK",
-          "url": "https://www.bbc.co.uk/news/articles/cqrmgjnzz9l0o",
-          "language": "en",
-          "published_at": "2026-11-20T00:08:22Z"
-        }
-      ],
-      "word_count": 473,
-      "minutes": 3
-    },
-    {
-      "id": "3ccb78afd018868336df84",
-      "category": "Monde",
-      "title": "Why Canada is embracing AI data centres while the US pushes back",
-      "paragraphs": [
-        "Kevin O'Leary, connu pour son rôle dans Shark Tank, figure parmi les investisseurs qui ciblent le Canada pour développer des data‑centres d’intelligence artificielle, alors que son projet américain rencontre une forte opposition locale. Cette dynamique s’inscrit dans un contexte où les électeurs américains ont approuvé 40 sur 41 initiatives locales visant à limiter ou empêcher la construction de ces installations lors des dernières élections législatives. En revanche, le climat d’investissement au Canada apparaît plus favorable, comme le souligne Lucy Hargreaves, directrice de Build Canada, qui a indiqué sur X que les data‑centres y sont « très attractifs ».",
-        "Le Canada bénéficie d’atouts géographiques et énergétiques qui le distinguent des États‑Unis, où le nombre de projets de data‑centres d’IA dépasse largement celui de son voisin du Nord. Les partisans canadiens avancent que l’abondance de terres, la disponibilité du gaz naturel et le climat froid permettent de réduire les problèmes de proximité avec les zones peuplées, de bruit et de pression sur les réseaux électriques, problèmes qui freinent les projets américains. Cette perception attire des promoteurs cherchant à relocaliser des capitaux initialement destinés aux États‑Unis.",
-        "Selon Hargreaves, interviewée par la BBC, une partie du capital qui aurait été investie aux États‑Unis se rend désormais disponible pour le Canada, soulevant la question de la volonté politique d’accueillir ces projets. Jusqu’à présent, la résistance au Canada reste limitée, les projets avançant sans perturbations majeures et les législateurs affichant un soutien ouvert, sans conséquences politiques notables. Cette attitude contraste fortement avec le climat de contestation qui s’est intensifié aux États‑Unis.",
-        "L’Alberta constitue le cœur de l’essor des data‑centres d’IA au Canada, avec 90 % des sites proposés prévus dans la province. Riches en réserves de gaz naturel, les acteurs locaux se positionnent comme la « destination de choix de l’Amérique du Nord » en offrant un service de « conciergerie » aux investisseurs pour accélérer la mise en œuvre des projets. Cette stratégie vise à attirer des installations de grande envergure, comme le projet Wonder Valley de 7 000 acres et 7,5 gigawatts, soutenu par le gouvernement provincial et la municipalité de Greenview.",
-        "Le projet Wonder Valley en Alberta, présenté comme « off‑grid », prévoit de s’alimenter en gaz naturel local et a été exempté d’une évaluation d’impact environnemental par le gouvernement provincial en avril, bien qu’il doive encore obtenir les permis de construction. Les résidents locaux ont exprimé des réserves, notamment concernant la consommation d’eau estimée à six millions de mètres cubes annuellement, soit l’équivalent de 2 400 piscines olympiques, mais les autorités locales estiment que cette quantité représente une petite fraction du débit du fleuve Smoky voisin. Les autorités provinciales défendent le projet en soulignant la création d’emplois et les recettes fiscales attendues.",
-        "Des oppositions émergent toutefois dans d’autres provinces. En Nouvelle‑Écosse, des centaines de manifestants se sont rassemblés contre un data‑centre prévu pour le compte d’Anthropic, soulignant que l’IA suscite déjà une méfiance généralisée tant au Canada qu’aux États‑Unis. Le gouvernement canadien, dirigé par le Premier ministre Carney, considère le développement de ces infrastructures comme une question de sécurité nationale et de souveraineté, estimant qu’une multiplication par 16 de la capacité de calcul est nécessaire d’ici quatre ans pour répondre à la demande intérieure. Cette ambition nationale se heurte à des préoccupations locales, comme le recours récent d’une nation crie à la justice pour contester la levée de l’évaluation environnementale du projet Wonder Valley."
-      ],
-      "image": {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Earth_Geoid_Field_Anomaly_globe%2C_NASA_Earth_Observatory.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-        "alt": "Photographie d’illustration — Monde",
-        "credit": "NASA Earth Observatory",
-        "license": "Public domain",
-        "page": "https://commons.wikimedia.org/wiki/File:Earth_Geoid_Field_Anomaly_globe%2C_NASA_Earth_Observatory.jpg"
-      },
-      "source_refs": [
-        {
-          "publisher": "BBC News",
-          "url": "https://www.bbc.co.uk/news/articles/cmx2q223z1jlo",
-          "language": "en",
-          "published_at": "2026-11-20T00:13:24Z"
-        }
-      ],
-      "word_count": 562,
-      "minutes": 3
     }
   ]
 }

@@ -2,11 +2,11 @@
   "schema_version": 1,
   "edition_id": "2026-11-20-fr-FR",
   "edition_date": "2026-11-20",
-  "generated_at": "2026-11-20T23:36:15.597285Z",
+  "generated_at": "2026-11-20T23:59:34.834686Z",
   "language": "fr-FR",
   "timezone": "Europe/London",
   "status": "partielle",
-  "minutes": 16,
+  "minutes": 17,
   "articles": [
     {
       "id": "c075216d7a476abdae6fd7",
@@ -123,49 +123,9 @@
       "minutes": 3
     },
     {
-      "id": "france-tour-2026-11-20",
-      "category": "France",
-      "title": "Tour de l’actu en France — 20 novembre 2026",
-      "paragraphs": [
-        "Dominique de Villepin a officiellement annoncé sa candidature à l’élection présidentielle de 2027 lors d’une conférence de presse à Paris le 20 novembre. L’ancien Premier ministre a présenté son projet comme une alternative au macronisme et aux deux forces qu’il qualifie de « radicales », la France insoumise et le Rassemblement national, qu’il décrit comme des ennemis complémentaires. Il a évoqué une « démocratie en panne » et souligné les défis liés à l’Europe, aux conflits en Ukraine et au Golfe, à l’intelligence artificielle et au réchauffement climatique.",
-        "Le Parlement a adopté définitivement, le même jour, une proposition de loi instaurant une présomption d’usage légal des armes par les forces de l’ordre. Le texte, soutenu par le gouvernement, le centre, la droite et le Rassemblement national, a recueilli 205 voix pour et 110 contre au Sénat. Il renverse la charge de la preuve en présumant que les policiers et gendarmes ont agi dans le cadre de la loi lorsqu’ils utilisent leurs armes, tout en permettant de renverser cette présomption par tout élément de preuve contraire. La gauche a annoncé son intention de saisir le Conseil constitutionnel.",
-        "La cour criminelle de Paris a rendu son verdict le 20 novembre dans l’affaire des trois policiers jugés pour violences aggravées et faux en écriture publique contre le producteur de musique Michel Zecler, âgé de 47 ans. Les magistrats ont retenu la circonstance aggravante de racisme et condamné les policiers à des peines d’un à deux ans de prison ferme. En même temps, une interdiction définitive d’exercer la fonction de policier a été prononcée à effet immédiat, exécutée provisoirement. Le verdict a été suivi d’une forte présence du public et de personnalités du monde du spectacle.",
-        "L’annonce de Villepin a relancé le débat sur son positionnement politique. Malgré son passé de ministre des Affaires étrangères, de l’Intérieur et de Premier ministre sous Jacques Chirac, il est perçu comme un homme de droite qui trouve un écho auprès d’une partie de l’électorat de gauche. Son retour sur la scène médiatique depuis la fin 2023, notamment sur les questions internationales comme la guerre à Gaza, montre une volonté de se repositionner. Cependant, son attractivité reste limitée parmi les électeurs traditionnels de droite, ce qui le place dans une quête d’électeurs transversaux."
-      ],
-      "image": null,
-      "source_refs": [
-        {
-          "publisher": "RFI",
-          "url": "https://www.rfi.fr/fr/france/20261120-pr%C3%A9sidentielle-2027-en-france-dominique-de-villepin-annonce-officiellement-sa-candidature",
-          "language": "fr",
-          "published_at": "2026-11-20T10:36:27Z"
-        },
-        {
-          "publisher": "Franceinfo",
-          "url": "https://www.franceinfo.fr/faits-divers/police/le-parlement-adopte-definitivement-la-presomption-d-usage-legal-des-armes-par-les-forces-de-l-ordre_8292845.html",
-          "language": "fr",
-          "published_at": "2026-11-20T19:26:13Z"
-        },
-        {
-          "publisher": "Franceinfo",
-          "url": "https://www.franceinfo.fr/faits-divers/producteur-passe-a-tabac-par-des-policiers/des-condamnations-allant-d-un-an-a-deux-ans-de-prison-ferme-pour-les-trois-policiers-accuses-d-avoir-roue-de-coups-michel-zecler_8292287.html",
-          "language": "fr",
-          "published_at": "2026-11-20T23:10:11Z"
-        },
-        {
-          "publisher": "France 24",
-          "url": "https://www.france24.com/fr/france/20261120-france-presidentielle-2027-dominique-de-villepin-homme-droite-populaire-gauche-sans-electeurs",
-          "language": "fr",
-          "published_at": "2026-11-20T06:43:38Z"
-        }
-      ],
-      "word_count": 375,
-      "minutes": 2
-    },
-    {
       "id": "dab5a066bf2f99da56c589",
       "category": "Royaume-Uni",
-      "title": "Supermarket sweep: Morrisons, Tesco and M&S back Government's business-boosting food trade deal with Europe",
+      "title": "Commerce alimentaire avec l’UE : les enseignes britanniques saluent le nouvel accord",
       "paragraphs": [
         "Les dirigeants de grandes chaînes de distribution britanniques ont salué le nouveau pacte commercial alimentaire conclu entre le Royaume-Uni et l’Union européenne lors du sommet EU‑UK à Bruxelles. Selon les déclarations officielles, cet accord vise à simplifier les échanges, à réduire les formalités administratives et à éliminer les contrôles frontaliers inutiles, offrant ainsi aux détaillants plus de choix et des produits plus frais sur les rayons. Les marques mentionnées, dont Morrisons, Tesco, Asda, Lidl, Co‑op et M&S, estiment que la mesure renforcera la compétitivité du secteur et soutiendra l’emploi.",
         "Le ministre de l’Environnement, de l’Alimentation et des Affaires rurales, Dame Angela Eagle, a souligné que les entreprises britanniques étaient auparavant entravées par une paperasserie coûteuse et des contrôles excessifs. Elle a affirmé que la suppression de ces obstacles allégerait la facture alimentaire des ménages, tout en maintenant les normes élevées attendues par le public. Le texte officiel indique que le retrait de ces barrières devrait réduire les coûts pour chaque expédition et accélérer la mise sur le marché des denrées.",
@@ -184,6 +144,36 @@
         }
       ],
       "word_count": 467,
+      "minutes": 3
+    },
+    {
+      "id": "3ccb78afd018868336df84",
+      "category": "Monde",
+      "title": "Centres de données d’IA : pourquoi le Canada attire les projets contestés aux États-Unis",
+      "paragraphs": [
+        "Kevin O'Leary figure parmi les investisseurs qui ciblent le Canada pour développer des data‑centres d’intelligence artificielle, alors que son projet américain rencontre une forte opposition locale. Cette dynamique s’inscrit dans un contexte où les électeurs américains ont approuvé 40 sur 41 initiatives locales visant à limiter ou empêcher la construction de ces installations lors des élections américaines de mi-mandat. En revanche, le climat d’investissement au Canada apparaît plus favorable, comme le souligne Lucy Hargreaves, directrice de Build Canada, qui a indiqué sur X que les data‑centres y sont « très attractifs ».",
+        "Le Canada bénéficie d’atouts géographiques et énergétiques qui le distinguent des États‑Unis, où le nombre de projets de data‑centres d’IA dépasse largement celui de son voisin du Nord. Les partisans canadiens avancent que l’abondance de terres, la disponibilité du gaz naturel et le climat froid permettent de réduire les problèmes de proximité avec les zones peuplées, de bruit et de pression sur les réseaux électriques, problèmes qui freinent les projets américains. Cette perception attire des promoteurs cherchant à relocaliser des capitaux initialement destinés aux États‑Unis.",
+        "Selon Hargreaves, interviewée par la BBC, une partie du capital qui aurait été investie aux États‑Unis se rend désormais disponible pour le Canada, soulevant la question de la volonté politique d’accueillir ces projets. Jusqu’à présent, la résistance au Canada reste limitée, les projets avançant sans perturbations majeures et les législateurs affichant un soutien ouvert, sans conséquences politiques notables. Cette attitude contraste fortement avec le climat de contestation qui s’est intensifié aux États‑Unis.",
+        "L’Alberta constitue le cœur de l’essor des data‑centres d’IA au Canada, avec 90 % des sites proposés prévus dans la province. Riches en réserves de gaz naturel, les acteurs locaux se positionnent comme la « destination de choix de l’Amérique du Nord » en offrant un service de « conciergerie » aux investisseurs pour accélérer la mise en œuvre des projets. Cette stratégie vise à attirer des installations de grande envergure, comme le projet Wonder Valley de 7 000 acres et 7,5 gigawatts, soutenu par le gouvernement provincial et la municipalité de Greenview.",
+        "Le projet Wonder Valley en Alberta, présenté comme « off‑grid », prévoit de s’alimenter en gaz naturel local et a été exempté d’une évaluation d’impact environnemental par le gouvernement provincial en avril, bien qu’il doive encore obtenir les permis de construction. Les résidents locaux ont exprimé des réserves, notamment concernant la consommation d’eau estimée à six millions de mètres cubes annuellement, soit l’équivalent de 2 400 piscines olympiques, mais les autorités locales estiment que cette quantité représente une petite fraction du débit du fleuve Smoky voisin. Les autorités provinciales défendent le projet en soulignant la création d’emplois et les recettes fiscales attendues.",
+        "Des oppositions émergent toutefois dans d’autres provinces. En Nouvelle‑Écosse, des centaines de manifestants se sont rassemblés contre un data‑centre prévu pour le compte d’Anthropic, soulignant que l’IA suscite déjà une méfiance généralisée tant au Canada qu’aux États‑Unis. Le gouvernement canadien, dirigé par le Premier ministre Carney, considère le développement de ces infrastructures comme une question de sécurité nationale et de souveraineté, estimant qu’une multiplication par 16 de la capacité de calcul est nécessaire d’ici quatre ans pour répondre à la demande intérieure. Cette ambition nationale se heurte à des préoccupations locales, comme le recours récent d’une nation crie à la justice pour contester la levée de l’évaluation environnementale du projet Wonder Valley."
+      ],
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Earth_Geoid_Field_Anomaly_globe%2C_NASA_Earth_Observatory.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "alt": "Photographie d’illustration — Monde",
+        "credit": "NASA Earth Observatory",
+        "license": "Public domain",
+        "page": "https://commons.wikimedia.org/wiki/File:Earth_Geoid_Field_Anomaly_globe%2C_NASA_Earth_Observatory.jpg"
+      },
+      "source_refs": [
+        {
+          "publisher": "BBC News",
+          "url": "https://www.bbc.co.uk/news/articles/cmx2q223z1jlo",
+          "language": "en",
+          "published_at": "2026-11-20T00:13:24Z"
+        }
+      ],
+      "word_count": 556,
       "minutes": 3
     }
   ]
