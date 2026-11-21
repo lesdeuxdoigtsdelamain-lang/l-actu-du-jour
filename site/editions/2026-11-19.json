@@ -2,7 +2,7 @@
   "schema_version": 1,
   "edition_id": "2026-11-19-fr-FR",
   "edition_date": "2026-11-19",
-  "generated_at": "2026-11-21T00:12:23.377122Z",
+  "generated_at": "2026-11-21T00:13:05.983621Z",
   "language": "fr-FR",
   "timezone": "Europe/London",
   "status": "complete",
@@ -212,7 +212,7 @@
     },
     {
       "id": "dee3ac0e92ac2d1eb51ba2",
-      "category": "Société",
+      "category": "Royaume-Uni",
       "title": "Les chatbots juridiques : promesses et limites pour l’accès à la justice",
       "paragraphs": [
         "Les outils d’intelligence artificielle destinés à expliquer les droits suscitent un grand intérêt, notamment grâce à leur capacité à rendre le droit plus lisible. Un rapport du Hague Institute for Innovation in Law souligne que, bien que ces chatbots facilitent la compréhension juridique, l’enjeu réel reste de savoir s’ils aident les usagers à résoudre leurs problèmes concrets, au-delà de la simple information. Cette distinction entre accès à l’information et accès à la justice constitue le point de départ de l’analyse des initiatives actuelles.",

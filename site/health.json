@@ -1,16 +1,19 @@
 {
-  "checked_at": "2026-11-21T00:00:48.047677+00:00",
+  "checked_at": "2026-11-21T00:13:05.983621+00:00",
   "state": "success",
   "reason": "Édition complete: 7 articles, 19 min; Maroc au maximum une fois, contrôle des événements sur sept jours.",
   "feeds": {
-    "rfi": {
-      "ok": 22
+    "aljazeera-en": {
+      "ok": 23
     },
     "bbc-world": {
       "ok": 24
     },
-    "bbc-uk": {
-      "ok": 28
+    "rfi": {
+      "ok": 22
+    },
+    "france24": {
+      "ok": 24
     },
     "bbc-science": {
       "ok": 14
@@ -18,14 +21,14 @@
     "bbc-business": {
       "ok": 23
     },
-    "france24": {
-      "ok": 24
+    "hespress-ar": {
+      "ok": 12
     },
-    "aljazeera-en": {
-      "ok": 23
+    "hespress-fr": {
+      "ok": 10
     },
-    "sky-world": {
-      "ok": 6
+    "bbc-uk": {
+      "ok": 28
     },
     "franceinfo": {
       "ok": 27
@@ -33,17 +36,14 @@
     "aljazeera-ar": {
       "ok": 25
     },
-    "hespress-ar": {
-      "ok": 12
-    },
-    "hespress-fr": {
-      "ok": 10
+    "gov-uk": {
+      "ok": 19
     },
     "bbc-ar": {
       "ok": 10
     },
-    "gov-uk": {
-      "ok": 19
+    "nasa": {
+      "ok": 9
     },
     "nsf": {
       "ok": 0
@@ -51,45 +51,43 @@
     "nps": {
       "error": "Payload too large"
     },
-    "nasa": {
-      "ok": 9
-    },
-    "france24-france": {
-      "ok": 16
-    },
     "alarabiya": {
       "error": "HTTP 403"
     },
-    "rfi-france": {
-      "ok": 18
+    "sky-world": {
+      "ok": 6
     },
     "sky-uk": {
       "ok": 10
     },
-    "globalvoices": {
-      "ok": 2
+    "france24-france": {
+      "ok": 16
+    },
+    "rfi-france": {
+      "ok": 18
     },
     "globalvoices-ar": {
       "ok": 1
     },
+    "globalvoices": {
+      "ok": 2
+    },
     "telquel": {
       "ok": 62
     },
-    "un-en": {
+    "un-fr": {
       "error": "HTTP 404"
     },
-    "un-fr": {
+    "un-en": {
       "error": "HTTP 404"
     }
   },
   "ai_usage": {
-    "calls": 7,
+    "calls": 0,
     "neurons": 0.0,
-    "groq_requests": 7,
-    "groq_tokens": 30272,
+    "groq_requests": 0,
+    "groq_tokens": 0,
     "cloudflare_requests": 0,
-    "providers": [
-      "groq"
-    ]
+    "providers": []
   }
 }
