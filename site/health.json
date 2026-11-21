@@ -1,25 +1,25 @@
 {
-  "checked_at": "2026-11-21T00:13:05.983621+00:00",
+  "checked_at": "2026-11-21T00:15:12.872120+00:00",
   "state": "success",
   "reason": "Édition complete: 7 articles, 19 min; Maroc au maximum une fois, contrôle des événements sur sept jours.",
   "feeds": {
+    "franceinfo": {
+      "ok": 27
+    },
     "aljazeera-en": {
       "ok": 23
-    },
-    "bbc-world": {
-      "ok": 24
     },
     "rfi": {
       "ok": 22
     },
+    "aljazeera-ar": {
+      "ok": 25
+    },
+    "sky-world": {
+      "ok": 6
+    },
     "france24": {
       "ok": 24
-    },
-    "bbc-science": {
-      "ok": 14
-    },
-    "bbc-business": {
-      "ok": 23
     },
     "hespress-ar": {
       "ok": 12
@@ -27,23 +27,23 @@
     "hespress-fr": {
       "ok": 10
     },
-    "bbc-uk": {
-      "ok": 28
+    "bbc-business": {
+      "ok": 23
     },
-    "franceinfo": {
-      "ok": 27
+    "bbc-science": {
+      "ok": 14
     },
-    "aljazeera-ar": {
-      "ok": 25
+    "bbc-world": {
+      "ok": 24
     },
     "gov-uk": {
       "ok": 19
     },
-    "bbc-ar": {
-      "ok": 10
-    },
     "nasa": {
       "ok": 9
+    },
+    "bbc-ar": {
+      "ok": 10
     },
     "nsf": {
       "ok": 0
@@ -54,8 +54,11 @@
     "alarabiya": {
       "error": "HTTP 403"
     },
-    "sky-world": {
-      "ok": 6
+    "rfi-france": {
+      "ok": 18
+    },
+    "bbc-uk": {
+      "ok": 28
     },
     "sky-uk": {
       "ok": 10
@@ -63,14 +66,11 @@
     "france24-france": {
       "ok": 16
     },
-    "rfi-france": {
-      "ok": 18
+    "globalvoices": {
+      "ok": 2
     },
     "globalvoices-ar": {
       "ok": 1
-    },
-    "globalvoices": {
-      "ok": 2
     },
     "telquel": {
       "ok": 62
