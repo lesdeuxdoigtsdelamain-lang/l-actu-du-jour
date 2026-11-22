@@ -2,11 +2,11 @@
   "schema_version": 1,
   "edition_id": "2026-11-22-fr-FR",
   "edition_date": "2026-11-22",
-  "generated_at": "2026-11-22T17:40:52.532304Z",
+  "generated_at": "2026-11-22T19:05:59.409569Z",
   "language": "fr-FR",
   "timezone": "Europe/London",
   "status": "partielle",
-  "minutes": 3,
+  "minutes": 14,
   "articles": [
     {
       "id": "cac9bd38464bc736e539db",
@@ -30,6 +30,136 @@
         }
       ],
       "word_count": 488,
+      "minutes": 3
+    },
+    {
+      "id": "france-tour-2026-11-22",
+      "category": "France",
+      "title": "Tour de l’actu en France — 22 novembre 2026",
+      "paragraphs": [
+        "Marine Le Pen, candidate du Rassemblement national à la présidentielle, a déclaré ne jamais avoir reçu d’informations confidentielles du préfet Hugues Moutouh, suspecté d’avoir transmis des données au parti. Interrogée sur France 2, elle a affirmé ne pas connaître personnellement le préfet et s’est montrée « incapable » de répondre davantage, l’enquête étant toujours en cours. Elle a également indiqué ignorer comment un courriel du service de Moutouh a pu être retrouvé chez l’ancien prestataire du RN, Frédéric Chatillon.",
+        "Le président Emmanuel Macron envisagerait de convoquer un Congrès à Versailles afin d’inscrire une « règle d’or » budgétaire dans la Constitution, visant à encadrer les déficits publics. Selon des informations obtenues par La Tribune Dimanche, cette mesure, déjà adoptée en 2011 sous Nicolas Sarkozy, nécessiterait une majorité des trois cinquièmes des députés et sénateurs réunis. L’entourage du chef de l’État n’a pas confirmé le projet, rappelant que, dans un contexte de tensions internationales sur les taux et d’instabilité financière, toutes les solutions renforçant la crédibilité budgétaire méritent d’être étudiées.",
+        "La conférence des Nations unies sur le climat s’est clôturée à Antalya, en Turquie, sans qu’un accord global ne soit trouvé. Après près de 48 heures de discussions et deux jours de prolongations, les participants ont constaté l’échec d’un texte final, l’Union européenne ayant refusé de signer un projet dépourvu de mention aux énergies fossiles. Les responsables ont souligné que les températures records et l’intensification des phénomènes climatiques rendent chaque retard plus coûteux, tout en rappelant l’importance de la science dans la lutte contre le changement climatique.",
+        "Dans le cadre de l’émission « Dimanche politique », Charlotte Derouin a reçu le directeur de la Revue Civique, Jean‑Philippe Moinet, ainsi que le grand reporter Jefferson Desport du Sud‑Ouest. Les deux invités ont participé à la discussion autour des enjeux politiques actuels, sans que des détails supplémentaires ne soient fournis dans les faits disponibles."
+      ],
+      "image": null,
+      "source_refs": [
+        {
+          "publisher": "Franceinfo",
+          "url": "https://www.franceinfo.fr/politique/front-national/je-n-ai-jamais-recu-d-informations-confidentielles-affirme-marine-le-pen-au-sujet-du-prefet-hugues-moutouh-soupconne-d-avoir-renseigne-le-rn_8294876.html",
+          "language": "fr",
+          "published_at": "2026-11-22T14:21:09Z"
+        },
+        {
+          "publisher": "Franceinfo",
+          "url": "https://www.franceinfo.fr/economie/budget/toutes-les-solutions-meritent-d-etre-explorees-l-elysee-ne-confirme-pas-la-possible-inscription-de-la-regle-d-or-budgetaire-dans-la-constitution-debut-2027_8295083.html",
+          "language": "fr",
+          "published_at": "2026-11-22T18:25:32Z"
+        },
+        {
+          "publisher": "Franceinfo",
+          "url": "https://www.franceinfo.fr/environnement/crise-climatique/cop-climat/direct-l-union-europeenne-s-oppose-a-l-adoption-de-la-declaration-finale-de-la-cop31-apres-pres-de-deux-jours-de-prolongations_8294819.html",
+          "language": "fr",
+          "published_at": "2026-11-22T18:39:08Z"
+        },
+        {
+          "publisher": "RFI",
+          "url": "https://www.rfi.fr/fr/podcasts/dimanche-politique/20261122-jean-philippe-moinet-la-revue-civique-et-jefferson-desport-sud-ouest",
+          "language": "fr",
+          "published_at": "2026-11-22T18:35:24Z"
+        }
+      ],
+      "word_count": 311,
+      "minutes": 2
+    },
+    {
+      "id": "0a3a05d548f8234a328628",
+      "category": "Environnement",
+      "title": "Échec historique de la COP31 en Turquie : aucun accord global signé",
+      "paragraphs": [
+        "La conférence des Nations unies sur le climat (COP31) s’est terminée à Antalya, en Turquie, sans qu’aucun accord global ne soit conclu, marquant la première impasse depuis la réunion de Copenhague en 2009. Cette session, la plus longue de l’histoire des COP, a vu les négociations s’étendre au-delà du délai prévu, les pays n’ayant pas réussi à se mettre d’accord sur un texte commun. Le rejet du projet de texte, jugé trop faible pour répondre à l’urgence climatique, a conduit à la suspension des discussions, une situation rare depuis le lancement des COP en 1995.",
+        "Le principal point de discorde portait sur la mention des « fossil fuels » (combustibles fossiles) dans le texte final. Les pays producteurs de pétrole et de gaz se sont opposés à toute référence explicite à ces énergies, entraînant la suppression de ce terme du projet de texte. Cette omission a été critiquée par l’Union européenne et plusieurs États insulaires, qui ont estimé que le texte « ne mentionne même pas les combustibles fossiles, moteur du changement climatique », le qualifiant de « recul » et de « greenwashing ».",
+        "En outre, le texte révisé a abandonné l’objectif de financement de 120 milliards de dollars destiné à aider les pays les plus vulnérables à s’adapter aux effets du changement climatique. Cette suppression a suscité la déception du groupe des Pays les moins avancés (PMA), qui représente plus d’un milliard de personnes, ainsi que du groupe Afrique, qui attendait des engagements financiers concrets. L’absence de chiffre précis sur le financement de l’adaptation a été perçue comme un recul majeur dans la prise en compte des besoins des nations les plus exposées.",
+        "Le secrétaire général de l’ONU, Antonio Guterres, a exprimé une « profonde frustration » face à l’échec de la COP31, dénonçant l’influence des intérêts des combustibles fossiles qui, selon lui, « distordent les preuves scientifiques, retardent les politiques et privilégient les profits ». De son côté, le ministre turc de l’Environnement, Murat Kurum, s’est déclaré « optimiste » au début du sommet, mais l’optimisme n’a pas été partagé par l’UE, qui a indiqué qu’elle ne soutiendrait pas un accord ne mentionnant pas les combustibles fossiles et ne répondant pas à l’urgence climatique.",
+        "Le Royaume‑Uni, représenté par son négociateur en chef, la secrétaire d’État à l’Énergie Miatta Fahnbulleh, a maintenu un ton plus conciliant, affirmant que son équipe continuait à travailler pour parvenir à un accord. Cependant, la version du texte présentée plus tôt dans la semaine, qui appelait à une accélération du retrait des combustibles fossiles, a été remplacée par une version épurée, dépourvue de toute référence au charbon, au pétrole et au gaz, déclenchant des menaces de retrait de la part de certains pays.",
+        "Si aucun consensus n’est atteint, les négociations pourraient être suspendues jusqu’à l’an prochain, une mesure qui n’a été prise qu’une seule fois depuis 1995. Cette perspective accentue les inquiétudes quant à la capacité de la communauté internationale à répondre efficacement à la crise climatique, alors que les scientifiques avertissent que le réchauffement mondial dépasse déjà le seuil critique de 1,5 °C fixé par l’Accord de Paris de 2015."
+      ],
+      "image": null,
+      "source_refs": [
+        {
+          "publisher": "Al Jazeera English",
+          "url": "https://www.aljazeera.com/video/newsfeed/2026/11/22/un-climate-talks-collapse-without-a-deal",
+          "language": "en",
+          "published_at": "2026-11-22T18:04:25Z"
+        },
+        {
+          "publisher": "Al Jazeera English",
+          "url": "https://www.aljazeera.com/news/2026/11/22/countries-react-after-cop31-climate-talks-end-in-collapse",
+          "language": "en",
+          "published_at": "2026-11-22T16:33:26Z"
+        },
+        {
+          "publisher": "BBC Science",
+          "url": "https://www.bbc.co.uk/news/articles/cq7827z2841zo",
+          "language": "en",
+          "published_at": "2026-11-22T06:54:06Z"
+        }
+      ],
+      "word_count": 518,
+      "minutes": 3
+    },
+    {
+      "id": "bdb651569942259d10f67b",
+      "category": "Royaume-Uni",
+      "title": "Le patron de Centrica alerte sur la hausse imminente des factures d’énergie au Royaume-Uni",
+      "paragraphs": [
+        "Chris O'Shea, directeur général de Centrica, propriétaire de British Gas, a déclaré à la BBC qu’il était « hugement préoccupé » par l’impact prévu d’une hausse des factures d’énergie dès janvier. Selon lui, le nombre de ménages incapables ou réticents à régler leurs factures devrait augmenter lorsque les prix grimperont au nouveau cap annuel. Cette inquiétude s’inscrit dans un contexte où le gouvernement britannique prévoit d’annoncer le nouveau plafond tarifaire, qui, selon la société de conseil Cornwall Insight, pourrait ajouter 443 £ par an à la facture moyenne d’un foyer.",
+        "Le nouveau plafond tarifaire, qui prendra effet le 1er janvier, devrait s’élever à 2 166 £ par an pour un ménage type, soit une hausse de 26 % par rapport à l’année précédente. Cette augmentation toucherait environ 20 millions de foyers en Angleterre, en Écosse et au Pays de Galles, selon les données d’Ofgem. Le gouvernement a annoncé un paiement unique de 100 £ destiné à aider les ménages à faire face à cette hausse, mesure jugée insuffisante par plusieurs associations de consommateurs, dont Citizens Advice, qui la qualifie de « goutte d’océan ».",
+        "Parallèlement, le gouvernement a maintenu une réduction temporaire de la TVA de 5 % sur l’électricité jusqu’à la fin juin de l’an prochain, ce qui devrait permettre aux ménages de réaliser une économie d’environ 45 £ par an. Malgré ces mesures, les organisations de lutte contre la précarité énergétique, comme le Fuel Poverty Action Group, estiment que les aides restent largement insuffisantes pour les personnes fortement endettées, soulignant le risque de décès liés au froid cet hiver. Elles demandent également des actions plus fortes contre les profits jugés excessifs des fournisseurs d’énergie.",
+        "O'Shea a souligné que le problème du non‑paiement des factures d’énergie au Royaume-Uni était « massif ». Il a indiqué que chaque consommateur d’électricité payait environ 1,50 £ à 1,60 £ par semaine pour couvrir les coûts liés aux factures impayées, et que cette charge devrait s’alourdir avec la hausse prévue des tarifs. Cette situation s’explique en partie par la hausse des prix de gros de l’énergie, alimentée par le conflit au Moyen‑Orient, qui a fait grimper les coûts pour les fournisseurs et, en fin de compte, pour les consommateurs.",
+        "Le montant total des sommes dues aux fournisseurs d’énergie par les ménages a atteint 5 milliards de £ entre avril et juin, selon le régulateur Ofgem. Cette dette croissante reflète la difficulté croissante des ménages à faire face aux factures, aggravée par la hausse des prix de gros. Le gouvernement a également introduit en 2022 une taxe exceptionnelle sur les profits des entreprises pétrolières et gazières, portant le taux global d’imposition sur leurs bénéfices à 78 %, dans le but de limiter les marges excessives et de financer des mesures d’aide.",
+        "En résumé, le secteur de l’énergie au Royaume-Uni se trouve à la croisée des chemins entre une hausse tarifaire importante, des mesures d’aide jugées modestes et une pression croissante sur les ménages déjà fragilisés. Le patron de Centrica, tout en reconnaissant la nécessité de protéger les consommateurs, met en garde contre une aggravation du problème du non‑paiement, qui pourrait entraîner une hausse supplémentaire des coûts pour l’ensemble des usagers. Les débats restent ouverts quant à l’efficacité des aides gouvernementales et à la nécessité d’une régulation plus stricte des profits des fournisseurs d’énergie."
+      ],
+      "image": null,
+      "source_refs": [
+        {
+          "publisher": "BBC Business",
+          "url": "https://www.bbc.co.uk/news/articles/c6jre7gpdw13o",
+          "language": "en",
+          "published_at": "2026-11-22T13:50:21Z"
+        }
+      ],
+      "word_count": 549,
+      "minutes": 3
+    },
+    {
+      "id": "a6beef9a090b525cc74f8e",
+      "category": "Monde musulman",
+      "title": "L'Iran dévoile un lanceur double de missiles et une « ville des missiles » souterraine",
+      "paragraphs": [
+        "Le commandant de la Force aérienne du Corps des gardiens de la révolution islamique (IRGC), le général Ahmad Vahidi, a conduit une visite officielle d’un complexe souterrain où a été présenté un nouveau lanceur capable de tirer simultanément deux missiles à carburant liquide. Selon le diffuseur d’État IRIB, le dispositif a été montré lors d’une tournée de responsables militaires, soulignant la volonté de l’Iran de mettre en avant ses capacités de frappe malgré les frappes américaines et israéliennes récentes. Cette démonstration s’inscrit dans une stratégie de dissuasion affichée par le régime.",
+        "Le lanceur double fait partie d’une gamme élargie d’armes développées par l’Iran au cours des trente dernières années, incluant des missiles balistiques et de croisière. Les missiles à carburant liquide, lancés verticalement, offrent une meilleure maîtrise de la vitesse, ce qui, d’après les médias d’État, facilite le contournement des systèmes de défense aérienne. Les dernières générations d’engins présentées affichent des améliorations en portée, précision et guidage, fonctionnant de façon indépendante du système GPS américain.",
+        "Le complexe souterrain, annoncé le 10 novembre par l’agence semi‑officielle Tasnim, comprend des kilomètres de tunnels destinés à la production et au stockage d’armes. Selon Tasnim, ces installations permettent de poursuivre la fabrication et le stockage de missiles et de drones même sous des bombardements intenses. Des images diffusées par IRIB montrent des centaines de missiles et de lanceurs, dont le nouveau système double, ainsi que des installations de production déplacées sous terre pour garantir la continuité de la production militaire.",
+        "Des analystes externes soulignent que l’exposition de ces capacités vise à envoyer un message de résilience face aux sanctions et aux pressions économiques. Rami Khouri, chercheur à l’Université américaine de Beyrouth, indique que l’Iran peut stocker en toute sécurité des pièces détachées, des matières premières et des produits finis dans ces sites souterrains, préparant ainsi une éventuelle escalade. Cette capacité de stockage massif renforce la perception d’une force de frappe prête à être déployée si le conflit s’intensifie.",
+        "Le contexte économique de l’Iran reste difficile, le pays subissant un blocus naval imposé par les États‑Unis qui perturbe fortement ses exportations de pétrole. Selon les observations de spécialistes, cette pression économique pourrait inciter le régime à accentuer la démonstration de ses capacités militaires afin de compenser les contraintes internes et de renforcer son positionnement géopolitique dans la région.",
+        "Enfin, la visite du général Vahidi et la diffusion de ces images ont été perçues comme une opération de propagande visant à rassurer la population iranienne et à dissuader les adversaires. Des commentateurs, dont Rob Geist Pinfold du King’s College London, estiment que l’Iran se montre plus audacieux dans l’affirmation de ses capacités militaires, profitant d’un climat politique international perçu comme moins susceptible d’une escalade directe, tout en cherchant à maintenir une posture de force face aux menaces extérieures."
+      ],
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Mosques_in_Great_Britain-_Islamic_Architecture_in_the_UK%2C_c_1945_D24089.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "alt": "Photographie d’illustration — Monde musulman",
+        "credit": "Ministry of Information Photo Division Photographer",
+        "license": "Public domain",
+        "page": "https://commons.wikimedia.org/wiki/File:Mosques_in_Great_Britain-_Islamic_Architecture_in_the_UK%2C_c_1945_D24089.jpg"
+      },
+      "source_refs": [
+        {
+          "publisher": "Al Jazeera English",
+          "url": "https://www.aljazeera.com/news/2026/11/22/iran-unveils-dual-missile-launcher-new-missile-city-what-to-know",
+          "language": "en",
+          "published_at": "2026-11-22T14:20:41Z"
+        }
+      ],
+      "word_count": 462,
       "minutes": 3
     }
   ]

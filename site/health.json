@@ -1,73 +1,73 @@
 {
-  "checked_at": "2026-11-22T17:40:52.532304+00:00",
+  "checked_at": "2026-11-22T19:05:59.409569+00:00",
   "state": "partial",
-  "reason": "Édition partielle: 1 articles, 3 min; Maroc au maximum une fois, contrôle des événements sur sept jours. Manque : tour France",
+  "reason": "Édition partielle: 5 articles, 14 min; Maroc au maximum une fois, contrôle des événements sur sept jours.",
   "feeds": {
     "rfi": {
-      "ok": 21
+      "ok": 22
     },
-    "france24": {
-      "ok": 24
+    "bbc-world": {
+      "ok": 22
     },
     "aljazeera-ar": {
       "ok": 25
     },
-    "bbc-world": {
-      "ok": 15
+    "aljazeera-en": {
+      "ok": 23
+    },
+    "bbc-science": {
+      "ok": 16
     },
     "bbc-business": {
       "ok": 6
     },
-    "sky-world": {
-      "ok": 4
-    },
-    "franceinfo": {
-      "ok": 29
-    },
     "hespress-ar": {
       "ok": 12
     },
-    "hespress-fr": {
-      "ok": 8
+    "france24": {
+      "ok": 24
     },
     "bbc-uk": {
       "ok": 22
     },
-    "bbc-science": {
-      "ok": 12
-    },
     "bbc-ar": {
       "ok": 12
     },
-    "nasa": {
-      "ok": 1
+    "sky-world": {
+      "ok": 4
     },
-    "aljazeera-en": {
-      "ok": 23
+    "hespress-fr": {
+      "ok": 8
+    },
+    "franceinfo": {
+      "ok": 28
+    },
+    "gov-uk": {
+      "ok": 6
+    },
+    "nsf": {
+      "ok": 0
     },
     "nps": {
       "error": "Payload too large"
     },
-    "nsf": {
-      "ok": 0
+    "nasa": {
+      "ok": 1
+    },
+    "alarabiya": {
+      "error": "HTTP 403"
+    },
+    "sky-uk": {
+      "ok": 6
     },
     "france24-france": {
       "ok": 3
     },
     "rfi-france": {
-      "ok": 11
-    },
-    "sky-uk": {
-      "ok": 6
-    },
-    "alarabiya": {
-      "error": "HTTP 403"
-    },
-    "gov-uk": {
-      "ok": 6
+      "ok": 9
     },
     "globalvoices": {
-      "ok": 3
+      "ok": 2
     },
     "globalvoices-ar": {
       "ok": 2
@@ -84,10 +84,10 @@
   },
   "ai_usage": {
     "calls": 18,
-    "neurons": 844.96,
-    "groq_requests": 15,
-    "groq_tokens": 66228,
-    "cloudflare_requests": 3,
+    "neurons": 1115.29,
+    "groq_requests": 13,
+    "groq_tokens": 67495,
+    "cloudflare_requests": 4,
     "providers": [
       "groq",
       "cloudflare"

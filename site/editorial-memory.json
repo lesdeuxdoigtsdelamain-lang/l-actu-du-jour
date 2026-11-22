@@ -197,5 +197,70 @@
       ]
     }
   ],
-  "2026-11-22": []
+  "2026-11-22": [
+    {
+      "id": "e4b95fad1cc690a5deb4e3",
+      "title": "Marine Le Pen, candidate du Rassemblement national à la présidentielle, a déclaré ne jamais avoir reçu d’informations confidentielles du préfet Hugues Moutouh, suspecté d’avoir",
+      "category": "France",
+      "paragraphs": [
+        "Marine Le Pen, candidate du Rassemblement national à la présidentielle, a déclaré ne jamais avoir reçu d’informations confidentielles du préfet Hugues Moutouh, suspecté d’avoir transmis des données au parti. Interrogée sur France 2, elle a affirmé ne pas connaître personnellement le préfet et s’est montrée « incapable » de répondre davantage, l’enquête étant toujours en cours. Elle a également indiqué ignorer comment un courriel du service de Moutouh a pu être retrouvé chez l’ancien prestataire du RN, Frédéric Chatillon."
+      ],
+      "source_refs": [
+        {
+          "publisher": "Franceinfo",
+          "url": "https://www.franceinfo.fr/politique/front-national/je-n-ai-jamais-recu-d-informations-confidentielles-affirme-marine-le-pen-au-sujet-du-prefet-hugues-moutouh-soupconne-d-avoir-renseigne-le-rn_8294876.html",
+          "language": "fr",
+          "published_at": "2026-11-22T14:21:09+00:00"
+        }
+      ]
+    },
+    {
+      "id": "f26b52598d5173006431ad",
+      "title": "Le président Emmanuel Macron envisagerait de convoquer un Congrès à Versailles afin d’inscrire une « règle d’or » budgétaire dans la Constitution, visant à encadrer les déficits",
+      "category": "France",
+      "paragraphs": [
+        "Le président Emmanuel Macron envisagerait de convoquer un Congrès à Versailles afin d’inscrire une « règle d’or » budgétaire dans la Constitution, visant à encadrer les déficits publics. Selon des informations obtenues par La Tribune Dimanche, cette mesure, déjà adoptée en 2011 sous Nicolas Sarkozy, nécessiterait une majorité des trois cinquièmes des députés et sénateurs réunis. L’entourage du chef de l’État n’a pas confirmé le projet, rappelant que, dans un contexte de tensions internationales sur les taux et d’instabilité financière, toutes les solutions renforçant la crédibilité budgétaire méritent d’être étudiées."
+      ],
+      "source_refs": [
+        {
+          "publisher": "Franceinfo",
+          "url": "https://www.franceinfo.fr/economie/budget/toutes-les-solutions-meritent-d-etre-explorees-l-elysee-ne-confirme-pas-la-possible-inscription-de-la-regle-d-or-budgetaire-dans-la-constitution-debut-2027_8295083.html",
+          "language": "fr",
+          "published_at": "2026-11-22T18:25:32+00:00"
+        }
+      ]
+    },
+    {
+      "id": "5ea9b088d005666432cd5a",
+      "title": "La conférence des Nations unies sur le climat s’est clôturée à Antalya, en Turquie, sans qu’un accord global ne soit trouvé.",
+      "category": "France",
+      "paragraphs": [
+        "La conférence des Nations unies sur le climat s’est clôturée à Antalya, en Turquie, sans qu’un accord global ne soit trouvé. Après près de 48 heures de discussions et deux jours de prolongations, les participants ont constaté l’échec d’un texte final, l’Union européenne ayant refusé de signer un projet dépourvu de mention aux énergies fossiles. Les responsables ont souligné que les températures records et l’intensification des phénomènes climatiques rendent chaque retard plus coûteux, tout en rappelant l’importance de la science dans la lutte contre le changement climatique."
+      ],
+      "source_refs": [
+        {
+          "publisher": "Franceinfo",
+          "url": "https://www.franceinfo.fr/environnement/crise-climatique/cop-climat/direct-l-union-europeenne-s-oppose-a-l-adoption-de-la-declaration-finale-de-la-cop31-apres-pres-de-deux-jours-de-prolongations_8294819.html",
+          "language": "fr",
+          "published_at": "2026-11-22T18:39:08+00:00"
+        }
+      ]
+    },
+    {
+      "id": "ea68273979065971750b98",
+      "title": "Dans le cadre de l’émission « Dimanche politique », Charlotte Derouin a reçu le directeur de la Revue Civique, Jean‑Philippe Moinet, ainsi que le grand reporter Jefferson Desport",
+      "category": "France",
+      "paragraphs": [
+        "Dans le cadre de l’émission « Dimanche politique », Charlotte Derouin a reçu le directeur de la Revue Civique, Jean‑Philippe Moinet, ainsi que le grand reporter Jefferson Desport du Sud‑Ouest. Les deux invités ont participé à la discussion autour des enjeux politiques actuels, sans que des détails supplémentaires ne soient fournis dans les faits disponibles."
+      ],
+      "source_refs": [
+        {
+          "publisher": "RFI",
+          "url": "https://www.rfi.fr/fr/podcasts/dimanche-politique/20261122-jean-philippe-moinet-la-revue-civique-et-jefferson-desport-sud-ouest",
+          "language": "fr",
+          "published_at": "2026-11-22T18:35:24+00:00"
+        }
+      ]
+    }
+  ]
 }
