@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "edition_id": "2026-11-22-fr-FR",
+  "edition_date": "2026-11-22",
+  "generated_at": "2026-11-22T17:40:52.532304Z",
+  "language": "fr-FR",
+  "timezone": "Europe/London",
+  "status": "partielle",
+  "minutes": 3,
+  "articles": [
+    {
+      "id": "cac9bd38464bc736e539db",
+      "category": "Royaume-Uni",
+      "title": "Le Royaume‑Uni renforce son accès à l’espace grâce à l’initiative NATO STARLIFT",
+      "paragraphs": [
+        "Le Royaume‑Uni a rejoint onze pays, dont la Belgique, le Canada et la Corée du Sud, dans le cadre de l’initiative NATO STARLIFT. Cette coopération vise à créer un réseau de services de lancement de satellites flexibles, afin d’assurer un accès fiable à l’espace à court terme. Le texte officiel indique que le Royaume‑Uni participe à la mise en place de sites de lancement répartis sur l’ensemble de l’Alliance, renforçant ainsi la sécurité collective et la résilience de son infrastructure spatiale. Cette démarche s’inscrit dans la stratégie de défense commune de l’OTAN.",
+        "Les satellites sont essentiels à la vie quotidienne au Royaume‑Uni, soutenant les paiements par carte, les prévisions météorologiques et la navigation. Dans un contexte où l’espace devient de plus en plus congestionné et contesté, la capacité de placer rapidement des satellites en orbite revêt une importance stratégique pour la sécurité nationale et les services civils. L’initiative STARLIFT, en élargissant la rapidité et la liberté de lancement, représente une avancée majeure pour le secteur spatial britannique, tant sur le plan sécuritaire que pour la croissance durable du pays.",
+        "Les menaces provenant d’États hostiles dans le domaine spatial ont conduit le Royaume‑Uni à renforcer sa résilience collective avec ses alliés. STARLIFT prévoit de mutualiser les forces des pays participants, d’identifier et d’agréger les capacités de lancement, puis de les contracter de façon commune. Quatre projets initiaux sont prévus : développer des méthodes communes d’identification, tester des opérations de lancement réactives, consolider les infrastructures et la logistique, et lever les obstacles réglementaires liés à la gestion du trafic aérien, maritime et spatial.",
+        "Le Royaume‑Uni a récemment investi dans le site de lancement de SaxaVord, situé aux îles Shetland, qui constitue le seul espace de lancement orbital vertical entièrement licencié du pays. Ce site est approuvé pour jusqu’à trente lancements annuels. En septembre, le gouvernement a annoncé un investissement de trente millions de livres sterling pour accélérer la mise en service opérationnelle de l’infrastructure nécessaire à des activités de lancement orbital régulier, renforçant ainsi la capacité nationale de lancement.",
+        "La nouvelle stratégie spatiale du Royaume‑Uni, publiée récemment, prévoit plus de sept virgule huit milliards de livres sterling pour sécuriser les intérêts nationaux et stimuler la croissance via le secteur spatial. Cette enveloppe financière soutient notamment les engagements pris dans le cadre de STARLIFT, qui vise à réduire la dépendance à un seul fournisseur de lancement. Le programme s’aligne sur les objectifs de la stratégie, qui incluent le partage de capacités, l’accès assuré à l’espace et l’interopérabilité accrue entre alliés.",
+        "Parmi les réalisations récentes du programme spatial britannique, le satellite Titania a été lancé dans le cadre du Programme ISTARI. Ce deuxième satellite destiné à l’espace améliore la capacité des forces armées à observer les activités militaires terrestres depuis l’orbite. Cette mise en orbite illustre la capacité croissante du Royaume‑Uni à développer et exploiter des systèmes spatiaux autonomes, renforçant ainsi la souveraineté et la sécurité du pays dans le domaine spatial."
+      ],
+      "image": null,
+      "source_refs": [
+        {
+          "publisher": "GOV.UK",
+          "url": "https://www.gov.uk/government/news/uk-reaches-for-stars-with-nato-space-launch-plan",
+          "language": "en",
+          "published_at": "2026-11-22T00:01:05Z"
+        }
+      ],
+      "word_count": 488,
+      "minutes": 3
+    }
+  ]
+}
