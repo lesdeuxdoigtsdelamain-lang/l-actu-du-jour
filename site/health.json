@@ -1,37 +1,28 @@
 {
-  "checked_at": "2026-11-23T17:57:11.052377+00:00",
+  "checked_at": "2026-11-23T19:16:48.000361+00:00",
   "state": "partial",
-  "reason": "Édition partielle: 3 articles, 8 min; Maroc au maximum une fois, contrôle des événements sur sept jours.",
+  "reason": "Édition partielle: 6 articles, 17 min; Maroc au maximum une fois, contrôle des événements sur sept jours.",
   "feeds": {
-    "aljazeera-en": {
-      "ok": 25
+    "rfi": {
+      "ok": 23
     },
     "bbc-world": {
-      "ok": 26
+      "ok": 27
     },
     "france24": {
       "ok": 23
     },
+    "aljazeera-en": {
+      "ok": 25
+    },
     "bbc-science": {
-      "ok": 17
-    },
-    "bbc-business": {
-      "ok": 22
-    },
-    "rfi": {
-      "ok": 23
-    },
-    "franceinfo": {
-      "ok": 26
-    },
-    "bbc-uk": {
-      "ok": 33
+      "ok": 14
     },
     "aljazeera-ar": {
       "ok": 25
     },
-    "sky-world": {
-      "ok": 3
+    "bbc-business": {
+      "ok": 23
     },
     "hespress-fr": {
       "ok": 10
@@ -39,41 +30,50 @@
     "hespress-ar": {
       "ok": 12
     },
-    "nasa": {
-      "ok": 7
-    },
     "bbc-ar": {
       "ok": 14
+    },
+    "bbc-uk": {
+      "ok": 32
+    },
+    "sky-world": {
+      "ok": 3
     },
     "gov-uk": {
       "ok": 20
     },
+    "franceinfo": {
+      "ok": 25
+    },
+    "telquel": {
+      "error": "Disallowed host / scheme"
+    },
     "nsf": {
       "ok": 0
     },
-    "nps": {
-      "error": "Payload too large"
+    "nasa": {
+      "ok": 7
     },
     "alarabiya": {
       "error": "HTTP 403"
     },
     "france24-france": {
-      "error": "HTTP 403"
+      "ok": 6
     },
     "rfi-france": {
-      "ok": 12
+      "ok": 11
     },
     "sky-uk": {
       "ok": 8
     },
     "globalvoices": {
-      "ok": 2
+      "ok": 1
     },
     "globalvoices-ar": {
       "ok": 2
     },
-    "telquel": {
-      "ok": 27
+    "nps": {
+      "error": "Payload too large"
     },
     "un-fr": {
       "error": "HTTP 404"
@@ -83,10 +83,10 @@
     }
   },
   "ai_usage": {
-    "calls": 18,
-    "neurons": 1092.7,
-    "groq_requests": 13,
-    "groq_tokens": 70683,
+    "calls": 17,
+    "neurons": 1123.19,
+    "groq_requests": 12,
+    "groq_tokens": 68756,
     "cloudflare_requests": 4,
     "providers": [
       "groq",
