@@ -1,49 +1,52 @@
 {
-  "checked_at": "2026-11-22T19:05:59.409569+00:00",
+  "checked_at": "2026-11-23T17:57:11.052377+00:00",
   "state": "partial",
-  "reason": "Édition partielle: 5 articles, 14 min; Maroc au maximum une fois, contrôle des événements sur sept jours.",
+  "reason": "Édition partielle: 3 articles, 8 min; Maroc au maximum une fois, contrôle des événements sur sept jours.",
   "feeds": {
-    "rfi": {
-      "ok": 22
+    "aljazeera-en": {
+      "ok": 25
     },
     "bbc-world": {
+      "ok": 26
+    },
+    "france24": {
+      "ok": 23
+    },
+    "bbc-science": {
+      "ok": 17
+    },
+    "bbc-business": {
       "ok": 22
+    },
+    "rfi": {
+      "ok": 23
+    },
+    "franceinfo": {
+      "ok": 26
+    },
+    "bbc-uk": {
+      "ok": 33
     },
     "aljazeera-ar": {
       "ok": 25
     },
-    "aljazeera-en": {
-      "ok": 23
+    "sky-world": {
+      "ok": 3
     },
-    "bbc-science": {
-      "ok": 16
-    },
-    "bbc-business": {
-      "ok": 6
+    "hespress-fr": {
+      "ok": 10
     },
     "hespress-ar": {
       "ok": 12
     },
-    "france24": {
-      "ok": 24
-    },
-    "bbc-uk": {
-      "ok": 22
+    "nasa": {
+      "ok": 7
     },
     "bbc-ar": {
-      "ok": 12
-    },
-    "sky-world": {
-      "ok": 4
-    },
-    "hespress-fr": {
-      "ok": 8
-    },
-    "franceinfo": {
-      "ok": 28
+      "ok": 14
     },
     "gov-uk": {
-      "ok": 6
+      "ok": 20
     },
     "nsf": {
       "ok": 0
@@ -51,20 +54,17 @@
     "nps": {
       "error": "Payload too large"
     },
-    "nasa": {
-      "ok": 1
-    },
     "alarabiya": {
       "error": "HTTP 403"
     },
-    "sky-uk": {
-      "ok": 6
-    },
     "france24-france": {
-      "ok": 3
+      "error": "HTTP 403"
     },
     "rfi-france": {
-      "ok": 9
+      "ok": 12
+    },
+    "sky-uk": {
+      "ok": 8
     },
     "globalvoices": {
       "ok": 2
@@ -73,20 +73,20 @@
       "ok": 2
     },
     "telquel": {
-      "ok": 2
-    },
-    "un-en": {
-      "error": "HTTP 404"
+      "ok": 27
     },
     "un-fr": {
+      "error": "HTTP 404"
+    },
+    "un-en": {
       "error": "HTTP 404"
     }
   },
   "ai_usage": {
     "calls": 18,
-    "neurons": 1115.29,
+    "neurons": 1092.7,
     "groq_requests": 13,
-    "groq_tokens": 67495,
+    "groq_tokens": 70683,
     "cloudflare_requests": 4,
     "providers": [
       "groq",

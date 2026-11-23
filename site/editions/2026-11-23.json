@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "edition_id": "2026-11-23-fr-FR",
+  "edition_date": "2026-11-23",
+  "generated_at": "2026-11-23T17:57:11.052377Z",
+  "language": "fr-FR",
+  "timezone": "Europe/London",
+  "status": "partielle",
+  "minutes": 8,
+  "articles": [
+    {
+      "id": "france-tour-2026-11-23",
+      "category": "France",
+      "title": "Tour de l’actu en France — 23 novembre 2026",
+      "paragraphs": [
+        "Le débat sur le calendrier de l’élection présidentielle s’intensifie. L’exécutif a fixé le premier tour au 18 avril et le second au 2 mai, mais le code électoral impose une pause de campagne à minuit le vendredi précédant le vote, soit le 30 avril pour le second tour. Ce découpage crée des tensions parmi les syndicats et les responsables politiques, dont le président du Sénat Gérard Larcher, qui soulignent les difficultés d’articuler les manifestations du 1er mai avec les exigences légales. Le sujet reste d’actualité alors que la classe politique examine la possibilité d’avancer les dates.",
+        "Le sommet Choose France, tenu à Toulouse, a mis en avant la volonté du président Emmanuel Macron de faire de la France le pays le plus rapide d’Europe pour créer des sites industriels. Au programme, plus de 270 projets industriels, dont 81 inédits, et près de 15 milliards d’euros d’investissements nouveaux d’entreprises françaises. Parmi les annonces, le laboratoire pharmaceutique Virbac a présenté un plan d’investissement de plus de 320 millions d’euros jusqu’en 2030, prévoyant la création de plus de 110 emplois directs dans le secteur de la santé animale.",
+        "Une enquête du Parisien a révélé des propos racistes et un salut nazi échangés entre élèves de l’École nationale supérieure de la police de Cannes‑Écluse, en Seine‑et‑Marne. Le patron de la police nationale a saisi la justice à ce sujet, après la publication de captures d’écran provenant de fils de discussion WhatsApp et Instagram. L’enquête, basée sur des témoignages anonymes, souligne la gravité des dérives au sein de la promotion destinée à former l’élite des futurs officiers de police.",
+        "Le gouvernement a fait adopter au Sénat une prolongation de la prime carburant pour 2027, mesure annoncée le 9 novembre pour répondre à la colère sociale liée à la flambée des prix. Initialement prévue pour 2026, la prime, qui peut atteindre 1 000 euros, sera maintenue afin d’atténuer l’impact sur les salariés utilisant leur véhicule personnel pour leurs déplacements domicile‑travail. La rapporteure générale du budget, Christine Lavarde, a toutefois regretté l’absence de nouveaux dispositifs incitatifs pour favoriser la transition vers des modes de transport alternatifs."
+      ],
+      "image": null,
+      "source_refs": [
+        {
+          "publisher": "Franceinfo",
+          "url": "https://www.franceinfo.fr/elections/presidentielle/faut-il-changer-les-dates-de-l-election-presidentielle-on-fait-le-point-sur-le-debat-politique-sur-cette-question_8296431.html",
+          "language": "fr",
+          "published_at": "2026-11-23T17:15:13Z"
+        },
+        {
+          "publisher": "Franceinfo",
+          "url": "https://www.franceinfo.fr/economie/industrie/direct-sommet-choose-france-emmanuel-macron-en-visite-sur-le-site-d-airbus-a-toulouse_8295704.html",
+          "language": "fr",
+          "published_at": "2026-11-23T15:29:31Z"
+        },
+        {
+          "publisher": "RFI",
+          "url": "https://www.rfi.fr/fr/france/20261123-france-la-justice-saisie-pour-des-propos-racistes-et-un-salut-nazi-dans-une-%C3%A9cole-de-police",
+          "language": "fr",
+          "published_at": "2026-11-23T05:19:55Z"
+        },
+        {
+          "publisher": "Franceinfo",
+          "url": "https://www.franceinfo.fr/economie/automobile/essence/le-gouvernement-fait-adopter-au-senat-une-prolongation-de-la-prime-carburant-en-2027_8296031.html",
+          "language": "fr",
+          "published_at": "2026-11-23T14:07:35Z"
+        }
+      ],
+      "word_count": 349,
+      "minutes": 2
+    },
+    {
+      "id": "b48e6452ff0a4dc6ae14a1",
+      "category": "Royaume-Uni",
+      "title": "Lancement d’un sandbox réglementaire pour l’IA en santé mentale au Royaume-Uni",
+      "paragraphs": [
+        "Le 23 novembre, le Medicines and Healthcare products Regulatory Agency (MHRA) et le National Institute for Health and Care Excellence (NICE) ont inauguré un nouveau sandbox réglementaire dédié aux technologies numériques de santé mentale intégrant l’intelligence artificielle. Cette initiative, baptisée « AI in Mental Health Airlock », vise à explorer comment les approches de sécurité peuvent être évaluées et encadrées de façon proportionnée, afin de permettre aux innovations prometteuses d’atteindre les patients plus rapidement. Elle s’inscrit dans le cadre du programme « AI Airlock » du MHRA, élargi pour couvrir les spécificités de la santé mentale.",
+        "Le projet s’appuie sur la collaboration entre le MHRA, le laboratoire d’évaluation technologique de la santé (HTA Lab) de NICE et d’autres parties prenantes, dont des cliniciens, des experts et des personnes ayant une expérience vécue. Ensemble, ils examineront les besoins d’évaluation propres aux technologies d’IA en santé mentale et développeront des recommandations inspirées de la Commission nationale sur la régulation de l’IA en santé. L’objectif est de renforcer la confiance du public, des patients et du NHS tout en libérant le potentiel de l’IA dans les soins.",
+        "Cette deuxième phase du programme, financée par Wellcome et lancée initialement en 2023, se concentre sur l’identification des défis réglementaires, d’évaluation technologique et de preuve que posent les outils numériques de santé mentale. En réunissant innovateurs, cliniciens, experts et usagers, le sandbox cherche à proposer des approches proportionnées qui offrent des garde‑fous adéquats tout en favorisant l’innovation. Il s’agit d’un espace sécurisé où NICE peut tester de nouvelles méthodes d’évaluation sans impacter ses évaluations en cours.",
+        "Les technologies numériques de santé mentale (DMHT) sont de plus en plus utilisées, tant par les individus que par le NHS, allant du soutien thérapeutique via des chatbots à la réalité virtuelle intégrée à l’IA. Des études récentes indiquent que 37 % des adultes ont déjà recours à un chatbot d’IA pour leur bien‑être. Certaines de ces solutions peuvent être considérées comme des dispositifs médicaux et donc soumises à la réglementation, tandis que d’autres ne le sont pas, soulignant la nécessité d’un cadre d’évaluation clair.",
+        "Le sandbox prévoit de sélectionner jusqu’à cinq organisations pour participer à des ateliers et activités de test. Ces participants travailleront directement avec le MHRA, le HTA Lab de NICE et d’autres régulateurs afin de générer des enseignements pratiques sur la façon d’identifier, d’évaluer et de gérer les risques liés à l’IA en santé mentale. Les résultats attendus devraient éclairer les futures approches réglementaires et d’évaluation tant au Royaume‑Uni qu’à l’international.",
+        "Parallèlement, le MHRA a publié plus tôt cette année des conseils pratiques gratuits destinés au public, aux parents, aux aidants et aux professionnels pour choisir en connaissance de cause les produits numériques de santé mentale. Ces recommandations portent sur cinq points essentiels : les objectifs du produit, le public visé, les preuves scientifiques, l’usage des données personnelles et le statut de dispositif médical. Elles s’inscrivent dans la stratégie 2030 du MHRA, qui mise sur la science réglementaire et des approches innovantes pour soutenir l’adoption sécurisée des technologies émergentes."
+      ],
+      "image": null,
+      "source_refs": [
+        {
+          "publisher": "GOV.UK",
+          "url": "https://www.gov.uk/government/news/ai-in-mental-health-airlock-to-support-safe-innovation",
+          "language": "en",
+          "published_at": "2026-11-23T16:46:00Z"
+        }
+      ],
+      "word_count": 503,
+      "minutes": 3
+    },
+    {
+      "id": "1d4bb0822cabf6916a7c0f",
+      "category": "Environnement",
+      "title": "Échec de la COP31 à Antalya : quelles perspectives pour l’action climatique ?",
+      "paragraphs": [
+        "La conférence des Nations unies sur le climat, COP31, s’est soldée par un échec majeur à Antalya, en Turquie, les États membres n’ayant pas trouvé d’accord pour accélérer la réduction du réchauffement planétaire. Les négociations, les plus longues de l’histoire du sommet, ont été interrompues après deux jours supplémentaires, les pays bloquant toute mention d’une sortie progressive des énergies fossiles. Cette impasse reflète la fracture entre les grands pollueurs, qui protègent leurs intérêts, et les nations les plus vulnérables aux catastrophes climatiques, comme le soulignent les observateurs.",
+        "Le principal point de discorde portait sur la phase d’abandon des combustibles fossiles. L’Union européenne et plusieurs États fortement exposés aux effets du climat ont exigé que le texte final mentionne explicitement un chemin de transition, soutenus par une lettre de 130 nations. En revanche, l’OPEP et ses alliés, dont l’Arabie saoudite, ont opposé toute référence à une telle phase, privilégiant la capture du carbone, jugée coûteuse et peu efficace. Cette opposition a conduit à la rupture du texte proposé par la présidence turque.",
+        "Outre le blocage sur les combustibles, aucun progrès n’a été réalisé sur le financement destiné aux pays en développement. Selon le cadre de l’Accord de Paris de 2015, les nations riches doivent soutenir les transitions énergétiques et la résilience face aux catastrophes, mais les guerres en Iran et en Ukraine ont limité leurs budgets, réduisant la volonté d’engager les sommes attendues. Les experts dénoncent une hypocrisie : les pays les plus riches réclament des transitions justes tout en négligeant leurs obligations financières.",
+        "L’échec de la COP31 relance le débat sur la réforme du processus de consensus qui caractérise les négociations climatiques. Alors que le passage d’une simple mention à un véritable « phase‑out » des énergies fossiles était l’une des avancées majeures de la COP28 à Dubaï, les pressions des producteurs de pétrole ont empêché toute formulation contraignante. Certains observateurs estiment que le système actuel, où chaque État possède un droit de veto, ne permet plus d’avancer face à l’urgence climatique.",
+        "Parallèlement, des alternatives émergent pour compenser les limites du sommet officiel. Le volet volontaire du processus, appelé Global Climate Action Agenda, attire de plus en plus d’acteurs – institutions financières, villes, entreprises et société civile – qui s’engagent de façon autonome. Cette dynamique collaborative contraste avec les tensions observées lors des négociations formelles et pourrait offrir un cadre plus flexible pour des actions concrètes, même si elle ne remplace pas le cadre juridique international.",
+        "Enfin, d’autres pistes sont explorées pour faire avancer la lutte climatique. La Cour internationale de Justice a récemment confirmé l’obligation juridique des États de combattre le changement climatique, tandis que l’initiative Santa Marta a réuni 57 pays autour d’une coopération non contraignante sur la sortie des combustibles fossiles. Les experts insistent sur le fait que l’échec de la COP31 n’altère en rien la clarté scientifique ni les obligations légales, rappelant que la transition équitable reste une responsabilité collective à assumer."
+      ],
+      "image": null,
+      "source_refs": [
+        {
+          "publisher": "Al Jazeera English",
+          "url": "https://www.aljazeera.com/news/2026/11/23/cop31-what-next-after-un-climate-talks-collapse",
+          "language": "en",
+          "published_at": "2026-11-23T11:19:08Z"
+        },
+        {
+          "publisher": "BBC News",
+          "url": "https://www.bbc.co.uk/news/videos/cr1ewge81q4qo",
+          "language": "en",
+          "published_at": "2026-11-23T05:34:39Z"
+        }
+      ],
+      "word_count": 486,
+      "minutes": 3
+    }
+  ]
+}

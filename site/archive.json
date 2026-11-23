@@ -3,6 +3,13 @@
   "editions": [
     {
       "schema_version": 1,
+      "date": "2026-11-23",
+      "path": "editions/2026-11-23.json",
+      "sha256": "1ebf1648fb5ef58bf05244f54a1628404b9b7fe497a91d9bfde38b1f1939c2dc",
+      "published_at": "2026-11-23T17:57:11.052377Z"
+    },
+    {
+      "schema_version": 1,
       "date": "2026-11-22",
       "path": "editions/2026-11-22.json",
       "sha256": "2ec3b5e46b5a280690843d7e9313e3590dafde63b352b018042208c004117e5b",

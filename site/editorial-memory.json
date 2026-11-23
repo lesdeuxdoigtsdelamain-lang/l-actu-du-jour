@@ -262,5 +262,71 @@
         }
       ]
     }
+  ],
+  "2026-11-23": [
+    {
+      "id": "6ab5036bdf2331d8239c84",
+      "title": "Le débat sur le calendrier de l’élection présidentielle s’intensifie.",
+      "category": "France",
+      "paragraphs": [
+        "Le débat sur le calendrier de l’élection présidentielle s’intensifie. L’exécutif a fixé le premier tour au 18 avril et le second au 2 mai, mais le code électoral impose une pause de campagne à minuit le vendredi précédant le vote, soit le 30 avril pour le second tour. Ce découpage crée des tensions parmi les syndicats et les responsables politiques, dont le président du Sénat Gérard Larcher, qui soulignent les difficultés d’articuler les manifestations du 1er mai avec les exigences légales. Le sujet reste d’actualité alors que la classe politique examine la possibilité d’avancer les dates."
+      ],
+      "source_refs": [
+        {
+          "publisher": "Franceinfo",
+          "url": "https://www.franceinfo.fr/elections/presidentielle/faut-il-changer-les-dates-de-l-election-presidentielle-on-fait-le-point-sur-le-debat-politique-sur-cette-question_8296431.html",
+          "language": "fr",
+          "published_at": "2026-11-23T17:15:13+00:00"
+        }
+      ]
+    },
+    {
+      "id": "8d34aca0252dfafa493480",
+      "title": "Le sommet Choose France, tenu à Toulouse, a mis en avant la volonté du président Emmanuel Macron de faire de la France le pays le plus rapide d’Europe pour créer des sites",
+      "category": "France",
+      "paragraphs": [
+        "Le sommet Choose France, tenu à Toulouse, a mis en avant la volonté du président Emmanuel Macron de faire de la France le pays le plus rapide d’Europe pour créer des sites industriels. Au programme, plus de 270 projets industriels, dont 81 inédits, et près de 15 milliards d’euros d’investissements nouveaux d’entreprises françaises. Parmi les annonces, le laboratoire pharmaceutique Virbac a présenté un plan d’investissement de plus de 320 millions d’euros jusqu’en 2030, prévoyant la création de plus de 110 emplois directs dans le secteur de la santé animale."
+      ],
+      "source_refs": [
+        {
+          "publisher": "Franceinfo",
+          "url": "https://www.franceinfo.fr/economie/industrie/direct-sommet-choose-france-emmanuel-macron-en-visite-sur-le-site-d-airbus-a-toulouse_8295704.html",
+          "language": "fr",
+          "published_at": "2026-11-23T15:29:31+00:00"
+        }
+      ]
+    },
+    {
+      "id": "5d6e763731a33a101832f4",
+      "title": "Une enquête du Parisien a révélé des propos racistes et un salut nazi échangés entre élèves de l’École nationale supérieure de la police de Cannes‑Écluse, en Seine‑et‑Marne.",
+      "category": "France",
+      "paragraphs": [
+        "Une enquête du Parisien a révélé des propos racistes et un salut nazi échangés entre élèves de l’École nationale supérieure de la police de Cannes‑Écluse, en Seine‑et‑Marne. Le patron de la police nationale a saisi la justice à ce sujet, après la publication de captures d’écran provenant de fils de discussion WhatsApp et Instagram. L’enquête, basée sur des témoignages anonymes, souligne la gravité des dérives au sein de la promotion destinée à former l’élite des futurs officiers de police."
+      ],
+      "source_refs": [
+        {
+          "publisher": "RFI",
+          "url": "https://www.rfi.fr/fr/france/20261123-france-la-justice-saisie-pour-des-propos-racistes-et-un-salut-nazi-dans-une-%C3%A9cole-de-police",
+          "language": "fr",
+          "published_at": "2026-11-23T05:19:55+00:00"
+        }
+      ]
+    },
+    {
+      "id": "f6fdd023566cd877173dca",
+      "title": "Le gouvernement a fait adopter au Sénat une prolongation de la prime carburant pour 2027, mesure annoncée le 9 novembre pour répondre à la colère sociale liée à la flambée des",
+      "category": "France",
+      "paragraphs": [
+        "Le gouvernement a fait adopter au Sénat une prolongation de la prime carburant pour 2027, mesure annoncée le 9 novembre pour répondre à la colère sociale liée à la flambée des prix. Initialement prévue pour 2026, la prime, qui peut atteindre 1 000 euros, sera maintenue afin d’atténuer l’impact sur les salariés utilisant leur véhicule personnel pour leurs déplacements domicile‑travail. La rapporteure générale du budget, Christine Lavarde, a toutefois regretté l’absence de nouveaux dispositifs incitatifs pour favoriser la transition vers des modes de transport alternatifs."
+      ],
+      "source_refs": [
+        {
+          "publisher": "Franceinfo",
+          "url": "https://www.franceinfo.fr/economie/automobile/essence/le-gouvernement-fait-adopter-au-senat-une-prolongation-de-la-prime-carburant-en-2027_8296031.html",
+          "language": "fr",
+          "published_at": "2026-11-23T14:07:35+00:00"
+        }
+      ]
+    }
   ]
 }
