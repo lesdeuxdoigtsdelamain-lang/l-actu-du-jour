@@ -1,6 +1,6 @@
 name: Publier le journal quotidien
 on:
-  # A marked commit publishes the current day and the independent daily extras.
+  # A marked commit completes the current day and refreshes the independent extras.
   push:
     branches: [main]
     paths: ['.github/workflows/publish-daily.yml']

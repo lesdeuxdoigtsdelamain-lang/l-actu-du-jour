@@ -40,10 +40,25 @@ def http_error_category(status):
     if status==408 or 500<=status<600:return 'transient'
     return 'provider_error'
 
+
+SAFE_ERROR_CODES=frozenset({
+    'json_validate_failed','invalid_request_error','context_length_exceeded',
+    'model_not_found','model_decommissioned','model_permission_blocked',
+    'model_permission_blocked_org','model_permission_blocked_project',
+    'rate_limit_exceeded','tool_use_failed','invalid_api_key','blocked_api_access',
+    'invalid_json_schema','strict_schema_unsupported',
+})
+SAFE_ERROR_TYPES=frozenset({
+    'invalid_request_error','authentication_error','permission_error',
+    'rate_limit_error','server_error','api_error',
+})
+
+
 class AiError(Exception):
     """A sanitized provider failure; retryable errors do not disable a provider."""
     def __init__(self, message, *, retryable=False, category='provider_error',
-                 http_status=None, limit=None, ceiling=None, retry_after=None):
+                 http_status=None, limit=None, ceiling=None, retry_after=None,
+                 error_code=None,error_type=None):
         super().__init__(message)
         self.retryable=retryable
         self.category=category
@@ -51,11 +66,15 @@ class AiError(Exception):
         self.limit=limit
         self.ceiling=ceiling
         self.retry_after=retry_after
+        self.error_code=(error_code if isinstance(error_code,str) and error_code in SAFE_ERROR_CODES else None)
+        self.error_type=(error_type if isinstance(error_type,str) and error_type in SAFE_ERROR_TYPES else None)
 
     def diagnostic(self,provider):
         # Never include exception text, response bodies, prompts or credentials.
         result={'provider':provider,'category':self.category,'retryable':self.retryable}
         if self.http_status is not None:result['http_status']=self.http_status
+        if self.error_code is not None:result['error_code']=self.error_code
+        if self.error_type is not None:result['error_type']=self.error_type
         if self.limit is not None:result.update(limit=self.limit,ceiling=self.ceiling)
         if (isinstance(self.retry_after,(int,float)) and
                 math.isfinite(self.retry_after) and self.retry_after>=0):

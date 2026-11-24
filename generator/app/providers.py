@@ -5,6 +5,7 @@ import os
 import time
 import httpx
 from .cloudflare import (AiError, HISTORY_PROMPT, HISTORY_SCHEMA,
+                         SAFE_ERROR_CODES, SAFE_ERROR_TYPES,
                          http_error_category, configured as configured_cloudflare)
 
 MODEL = 'openai/gpt-oss-120b'
@@ -64,6 +65,22 @@ class Groq:
             if number>=0:self.rate_limits[key]=number
         self.remaining=self.rate_limits.get('tokens_remaining_per_minute')
 
+    @staticmethod
+    def _error_details(response):
+        # Provider error messages and failed_generation may echo source text or
+        # credentials. Only exact allowlisted code/type values can leave here.
+        if len(response.content)>160000:return {}
+        try:body=response.json()
+        except ValueError:return {}
+        error=body.get('error') if isinstance(body,dict) else None
+        if not isinstance(error,dict):return {}
+        details={}
+        for key,output,allowed in (('code','error_code',SAFE_ERROR_CODES),
+                                   ('type','error_type',SAFE_ERROR_TYPES)):
+            value=error.get(key)
+            if isinstance(value,str) and value in allowed:details[output]=value
+        return details
+
     def run(self,packet):
         prompt=Path(__file__).with_name('system_prompt.txt').read_text(encoding='utf-8')
         count=4 if packet.get('mode_editorial')=='tour_france' else 6
@@ -105,20 +122,34 @@ class Groq:
             # Allow fast successive requests when the documented token budget permits;
             # otherwise allow a full minute for the bucket to recover.
             self.next_call=self.clock()+(60 if self.remaining is None or self.remaining<estimated else 5)
+            error_details=self._error_details(r) if r.status_code!=200 else {}
             if r.status_code==429:
                 try:retry=float(r.headers.get('retry-after','60'))
                 except ValueError:retry=60
                 can_retry=attempt+1<attempts and 0<=retry<=65 and self.calls<MAX_CALLS
                 error=self._failure('Groq HTTP 429',category='rate_limit',http_status=429,
-                                    retryable=can_retry,retry_after=retry)
+                                    retryable=can_retry,retry_after=retry,**error_details)
                 if can_retry:
                     self.sleep(max(2,retry+1))
                     continue
                 raise error
             if r.status_code!=200:
-                raise self._failure(f'Groq HTTP {r.status_code}',
-                              category=http_error_category(r.status_code),http_status=r.status_code,
-                              retryable=r.status_code==408 or 500<=r.status_code<600)
+                code=error_details.get('error_code')
+                category=http_error_category(r.status_code)
+                retryable=r.status_code==408 or 500<=r.status_code<600
+                if r.status_code==400 and code=='json_validate_failed':
+                    # A failed output is specific to this generation, not proof
+                    # that Groq is unavailable for every later article. Do not
+                    # retry HTTP here; leave recovery to the bounded writer.
+                    category='invalid_response';retryable=True
+                elif code=='invalid_api_key':
+                    category='authentication';retryable=False
+                elif code in ('invalid_json_schema','strict_schema_unsupported'):
+                    category='configuration';retryable=False
+                suffix=f' ({code})' if code else ''
+                raise self._failure(f'Groq HTTP {r.status_code}{suffix}',
+                              category=category,http_status=r.status_code,
+                              retryable=retryable,**error_details)
             if len(r.content)>160000:raise self._failure('Groq: réponse trop volumineuse',category='invalid_response')
             try:
                 body=r.json()

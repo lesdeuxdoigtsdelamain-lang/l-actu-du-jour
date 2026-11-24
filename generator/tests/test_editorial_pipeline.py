@@ -183,6 +183,59 @@ def test_france_roundup_over_400_words_is_revised_and_never_published_oversized(
     assert result is not None and result.word_count==400 and len(records)==4
 
 
+def test_model_packet_uses_readable_fact_refs_and_restores_canonical_roundup_memory():
+    c,facts,sources,topics,output=roundup_inputs(350)
+    class AliasedProvider(Provider):
+        def run(self,packet):
+            self.calls+=1
+            assert [f['id'] for f in packet['facts']]==['PREUVE_A','PREUVE_B','PREUVE_C','PREUVE_D']
+            assert all('source_id' not in f and f['source']=='Source fictive' for f in packet['facts'])
+            assert all(set(t)=={'title','fact_ids'} for t in packet['sujets'])
+            refs=[[f['id']] for f in packet['facts']]
+            assert [t['fact_ids'] for t in packet['sujets']]==refs
+            paragraphs=[p+' ['+ref[0]+']' for p,ref in zip(output['paragraphes'],refs)]
+            return {**output,'paragraphes':paragraphs,'preuves':refs}
+    provider=AliasedProvider()
+    result,records=runner.draft(c,facts,sources,provider,[],[],mode='tour_france',topics=topics)
+    assert result is not None and result.word_count==350 and provider.calls==1
+    assert len(records)==4 and {record['id'] for record in records}=={topic['id'] for topic in topics}
+    assert all('PREUVE_' not in p for p in result.paragraphs)
+
+
+def test_unbracketed_model_evidence_metadata_cannot_leak_to_published_prose():
+    c,facts,sources,topics,output=roundup_inputs(350)
+    output={**output,'paragraphes':[p+' PREUVE_A' for p in output['paragraphes']]}
+    provider=Provider([output,output])
+    errors=[]
+    result,_=runner.draft(c,facts,sources,provider,[],errors,mode='tour_france',topics=topics)
+    assert result is None and provider.calls==2
+    assert any('références techniques' in error for error in errors)
+
+
+def test_transient_provider_response_uses_existing_editorial_attempt_without_aborting_edition():
+    c,facts,sources,topics,output=roundup_inputs(350)
+    class RecoveringProvider(Provider):
+        def run(self,packet):
+            self.calls+=1
+            if self.calls==1:
+                raise runner.AiError('Groq HTTP 400 (json_validate_failed)',retryable=True)
+            return output
+    provider=RecoveringProvider()
+    result,_=runner.draft(c,facts,sources,provider,[],[],mode='tour_france',topics=topics)
+    assert result is not None and provider.calls==2
+
+
+def test_repeated_recoverable_response_failure_never_exceeds_two_editorial_attempts():
+    c,facts,sources,topics,_=roundup_inputs(350)
+    class FailingProvider(Provider):
+        def run(self,packet):
+            self.calls+=1
+            raise runner.AiError('Groq HTTP 400 (json_validate_failed)',retryable=True)
+    provider=FailingProvider()
+    result,_=runner.draft(c,facts,sources,provider,[],[],mode='tour_france',topics=topics)
+    assert result is None and provider.calls==2
+
+
 @pytest.mark.parametrize('count',[299,401])
 def test_france_roundup_outside_real_word_limits_is_rejected_after_bounded_retries(count):
     c,facts,sources,topics,output=roundup_inputs(count)

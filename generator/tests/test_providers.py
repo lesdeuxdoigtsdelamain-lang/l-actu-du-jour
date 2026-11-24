@@ -277,3 +277,66 @@ def test_history_works_with_cloudflare_only_and_has_same_local_ceiling():
     assert cf.calls==1
     assert p.usage_stats()['diagnostics']==[{'provider':'cloudflare','category':'local_limit',
         'retryable':False,'limit':'cloudflare_calls','ceiling':1}]
+
+
+def test_groq_json_validation_error_is_sanitized_and_does_not_disable_later_articles(capsys):
+    requests=[]
+    def respond(req):
+        requests.append(req)
+        if len(requests)==1:
+            return httpx.Response(400,json={'error':{'code':'json_validate_failed',
+                'type':'invalid_request_error','message':'PRIVATE_SOURCE_DO_NOT_LOG',
+                'failed_generation':'SECRET_DO_NOT_LOG'}})
+        return groq_response(req)
+    g=Groq('TEST_ONLY',httpx.Client(transport=httpx.MockTransport(respond)),sleeper=lambda _:None)
+    p=Providers(g)
+    with pytest.raises(AiError) as first:p.run({})
+    assert first.value.retryable is True
+    assert g.calls==1  # No immediate HTTP retry for the rejected generation.
+    assert not p.disabled
+    assert p.run({})==ARTICLE
+    assert g.calls==2 and p.calls==2
+    assert p.usage_stats()['diagnostics']==[{'provider':'groq','category':'invalid_response',
+        'retryable':True,'http_status':400,'error_code':'json_validate_failed',
+        'error_type':'invalid_request_error'}]
+    all_output=json.dumps(p.usage_stats())+' '.join(p.errors)+str(first.value)+capsys.readouterr().out
+    assert 'SECRET_DO_NOT_LOG' not in all_output
+    assert 'PRIVATE_SOURCE_DO_NOT_LOG' not in all_output
+
+
+@pytest.mark.parametrize('code,category',[
+    ('context_length_exceeded','provider_error'),('invalid_api_key','authentication'),
+    ('strict_schema_unsupported','configuration'),('invalid_json_schema','configuration'),
+])
+def test_groq_fatal_400_codes_remain_fatal_and_distinguishable(code,category):
+    g=Groq('TEST_ONLY',httpx.Client(transport=httpx.MockTransport(
+        lambda req:httpx.Response(400,json={'error':{'code':code,'type':'invalid_request_error',
+            'message':'SECRET_DO_NOT_LOG'}}))))
+    p=Providers(g)
+    for _ in range(2):
+        with pytest.raises(AiError) as error:p.run({})
+        assert error.value.retryable is False
+    assert g.calls==1 and p.disabled=={'groq'}
+    diagnostic=p.usage_stats()['diagnostics'][0]
+    assert diagnostic['category']==category and diagnostic['error_code']==code
+    assert 'SECRET_DO_NOT_LOG' not in json.dumps(p.usage_stats())
+
+
+@pytest.mark.parametrize('error_body',[
+    {'error':{'code':'SECRET_DO_NOT_LOG','type':'SECRET_DO_NOT_LOG',
+              'message':'json_validate_failed','failed_generation':'PRIVATE_SOURCE_DO_NOT_LOG'}},
+    {'error':{'code':['json_validate_failed'],'type':{'token':'SECRET_DO_NOT_LOG'}}},
+    {'error':'SECRET_DO_NOT_LOG'},
+    ['SECRET_DO_NOT_LOG'],
+])
+def test_groq_error_metadata_is_strictly_allowlisted_without_message_inference(error_body,capsys):
+    g=Groq('TEST_ONLY',httpx.Client(transport=httpx.MockTransport(
+        lambda req:httpx.Response(400,json=error_body))))
+    p=Providers(g)
+    with pytest.raises(AiError):p.run({})
+    diagnostic=p.usage_stats()['diagnostics'][0]
+    assert diagnostic=={'provider':'groq','category':'provider_error',
+        'retryable':False,'http_status':400}
+    output=json.dumps(p.usage_stats())+' '.join(p.errors)+capsys.readouterr().out
+    assert 'SECRET_DO_NOT_LOG' not in output
+    assert 'PRIVATE_SOURCE_DO_NOT_LOG' not in output

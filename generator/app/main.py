@@ -162,11 +162,25 @@ def english_title(title):
 def draft(c, facts, sources, provider, seen, errors, *, mode='article', topics=()):
     """Generate once, with at most one targeted revision; validate actual length."""
     minimum, maximum = (300, 400) if mode == 'tour_france' else (450, 650)
+    # Long hexadecimal source IDs were sometimes copied into the prose, where
+    # their digits triggered the quantity guard. Use readable, number-free
+    # references only in the model packet; retain canonical IDs for validation
+    # and the existing editorial memory after the response is decoded.
+    aliases = {fact['id']: 'PREUVE_' + chr(65 + index)
+               for index, fact in enumerate(facts)}
+    canonical = {alias: original for original, alias in aliases.items()}
+    source_map = {source['id']: source for source in sources if source.get('id')}
+    presented_facts = [{'id': aliases[fact['id']], 'text': fact['text'],
+                        'source': source_map.get(fact.get('source_id'), {}).get('publisher', 'Source fournie')}
+                       for fact in facts]
+    presented_topics = [{'title': topic['title'],
+                         'fact_ids': [aliases[ref] for ref in topic['fact_ids']]}
+                        for topic in topics]
     packet = {
         'event_title': c.title,
         'mode_editorial': mode, 'language': 'fr-FR',
         'evidence_words': sum(len(f['text'].split()) for f in facts),
-        'facts': facts, 'sujets': topics,
+        'facts': presented_facts, 'sujets': presented_topics,
         'source_names': [s['publisher'] for s in sources],
         'chiffres_autorises': sorted(allowed_numbers(facts, sources)),
         'sujets_deja_traites': [getattr(a, 'title', a.get('title', '') if isinstance(a, dict) else '')
@@ -180,10 +194,27 @@ def draft(c, facts, sources, provider, seen, errors, *, mode='article', topics=(
     for attempt in range(2):
         if provider.calls >= provider.max_calls:
             break
-        output = provider.run(packet)
+        try:
+            output = provider.run(packet)
+        except AiError as exc:
+            if not exc.retryable:
+                raise
+            errors.append('Provider retryable: ' + str(exc))
+            print('Réponse fournisseur inutilisable ; tentative de rédaction bornée conservée.', flush=True)
+            # This consumes one of the two existing editorial attempts. A
+            # recoverable response failure must not abort every remaining story.
+            continue
+        output = strip_inline_fact_refs(output, presented_facts)
+        if isinstance(output.get('preuves'), list):
+            output = {**output, 'preuves': [
+                [canonical.get(ref, ref) if isinstance(ref, str) else ref for ref in refs]
+                if isinstance(refs, list) else refs for refs in output['preuves']]}
         repaired = reflow_paragraphs(strip_inline_fact_refs(output, facts))
         words = sum(len(p.split()) for p in repaired.get('paragraphes', []) if isinstance(p, str))
         reason = rejection_reason(repaired, facts, sources)
+        if reason is None and any(re.search(r'\bPREUVE_[A-Z]+\b', text)
+                                  for text in [repaired['titre'], *repaired['paragraphes']]):
+            reason = 'les références techniques doivent figurer uniquement dans le champ preuves'
         if reason is None and english_title(repaired.get('titre','')):
             reason = 'le titre doit être rédigé en français, pas repris de la source anglaise'
         article = None

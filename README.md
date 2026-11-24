@@ -24,7 +24,7 @@ Une application de lecture volontairement sobre : cartes d'actualité illustrée
 
 ## Comprendre les limites de génération
 
-Le diagnostic public `health.json` distingue les rejets éditoriaux, les plafonds locaux et les erreurs des fournisseurs. `extras-health.json` suit séparément les compléments. Aucun de ces fichiers ne contient de clé, de corps de requête ou d'extrait privé de source.
+Le diagnostic public `health.json` distingue les rejets éditoriaux, les plafonds locaux et les erreurs des fournisseurs. Les codes d'erreur structurés reconnus permettent notamment de distinguer un JSON de génération refusé d'une erreur de quota. Un échec JSON récupérable consomme une des tentatives déjà prévues sans désactiver le fournisseur pour tous les articles suivants ; le contrôle des faits reste obligatoire. `extras-health.json` suit séparément les compléments. Aucun de ces fichiers ne contient de clé, de corps de requête ou d'extrait privé de source.
 
 La rédaction utilise `openai/gpt-oss-120b` chez Groq, avec **18 tentatives maximum et un seuil local de 65 000 tokens consommés** par exécution. Le contrôle s'effectue entre les appels : une réponse peut dépasser légèrement le seuil avant l'arrêt suivant. Ces protections logicielles sont distinctes des quotas du compte. Un grand nombre de textes refusés peut donc produire une édition partielle sans aucune erreur de quota de Groq.
 
