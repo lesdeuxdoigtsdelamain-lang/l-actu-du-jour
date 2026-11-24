@@ -329,5 +329,70 @@
       ]
     }
   ],
-  "2026-11-24": []
+  "2026-11-24": [
+    {
+      "id": "974699181e7e97f3a3213a",
+      "title": "Le tribunal correctionnel de Paris a renvoyé l’ex‑président Nicolas Sarkozy, son épouse Carla Bruni‑Sarkozy et « Mimi » Marchand devant la justice pour leur implication présumée",
+      "category": "France",
+      "paragraphs": [
+        "Le tribunal correctionnel de Paris a renvoyé l’ex‑président Nicolas Sarkozy, son épouse Carla Bruni‑Sarkozy et « Mimi » Marchand devant la justice pour leur implication présumée dans la rétractation monnayée de l’intermédiaire Ziad Takieddine. Selon une source proche du dossier, les onze personnes mises en examen seront jugées du 3 novembre au 2 décembre 2027, l’affaire portant sur une possible tentative de tromper la justice dans le financement libyen de la campagne présidentielle de 2007. Cette décision confirme les informations relayées par l’AFP et RTL."
+      ],
+      "source_refs": [
+        {
+          "publisher": "RFI",
+          "url": "https://www.rfi.fr/fr/france/20261124-fausse-r%C3%A9tractation-de-ziad-takieddine-nicolas-sarkozy-et-carla-bruni-renvoy%C3%A9s-en-proc%C3%A8s",
+          "language": "fr",
+          "published_at": "2026-11-24T12:30:30+00:00"
+        }
+      ]
+    },
+    {
+      "id": "75887f1943a9155d739c8a",
+      "title": "À Strasbourg, plus de 300 organisations ont convergé devant le Parlement européen pour protester contre le projet de simplification législative baptisé « Omnibus X ».",
+      "category": "France",
+      "paragraphs": [
+        "À Strasbourg, plus de 300 organisations ont convergé devant le Parlement européen pour protester contre le projet de simplification législative baptisé « Omnibus X ». Les manifestants, parmi lesquels des ONG environnementales et des associations de malades, dénoncent la perspective d’autorisations illimitées pour certains pesticides, alors que la réglementation actuelle prévoit une réévaluation tous les dix à quinze ans. Les slogans affichés – « Pesticides à vie, non merci » – traduisent la crainte d’un impact négatif sur la santé et l’environnement."
+      ],
+      "source_refs": [
+        {
+          "publisher": "Franceinfo",
+          "url": "https://www.franceinfo.fr/environnement/transition-ecologique-de-l-agriculture/pesticides/on-sacrifie-la-sante-pour-les-profits-a-strasbourg-les-manifestants-denoncent-l-ominibus-x-le-projet-de-simplification-europeen-sur-les-pesticides_8297778.html",
+          "language": "fr",
+          "published_at": "2026-11-24T16:15:47+00:00"
+        }
+      ]
+    },
+    {
+      "id": "0503411d3414d04b83dc58",
+      "title": "La mère de Nahel Merzouk, Mounia Merzouk, a exprimé son soulagement après que la cour d’appel de Versailles a confirmé le renvoi du policier responsable du meurtre de son fils en",
+      "category": "France",
+      "paragraphs": [
+        "La mère de Nahel Merzouk, Mounia Merzouk, a exprimé son soulagement après que la cour d’appel de Versailles a confirmé le renvoi du policier responsable du meurtre de son fils en 2023 devant les assises. Lors d’une interview à France Inter, elle a déclaré être « soulagée et contente », tout en soulignant que la condamnation du policier reste incertaine. Cette décision judiciaire intervient trois ans et demi après le drame, ravivant le débat sur les violences policières et la justice pénale."
+      ],
+      "source_refs": [
+        {
+          "publisher": "Franceinfo",
+          "url": "https://www.franceinfo.fr/faits-divers/adolescent-tue-par-un-policier-a-nanterre/la-mere-de-nahel-merzouk-se-dit-soulagee-et-contente-alors-que-la-justice-confirme-en-appel-le-renvoi-du-policier-pour-meurtre_8297925.html",
+          "language": "fr",
+          "published_at": "2026-11-24T15:06:27+00:00"
+        }
+      ]
+    },
+    {
+      "id": "a4222dda3c8decd31ffbb0",
+      "title": "En 2025, la France a enregistré 111 féminicides, laissant de nombreux enfants orphelins.",
+      "category": "France",
+      "paragraphs": [
+        "En 2025, la France a enregistré 111 féminicides, laissant de nombreux enfants orphelins. À la veille de la Journée de lutte contre les violences faites aux femmes, Natacha Vesnitch a rencontré deux survivantes: Cloé, âgée de sept ans lorsqu’elle a vu son père tuer sa mère, et Eva‑Louise, 20 ans, dont la mère a été abattue. Leurs témoignages illustrent les conséquences dramatiques de ces crimes sur les enfants, soulignant la nécessité d’un accompagnement spécialisé pour les orphelins de féminicides."
+      ],
+      "source_refs": [
+        {
+          "publisher": "France 24",
+          "url": "https://www.france24.com/fr/%C3%A9missions/c-est-en-france/20261124-orphelins-feminicides-meurtres-violences-faites-aux-femmes",
+          "language": "fr",
+          "published_at": "2026-11-24T11:43:57+00:00"
+        }
+      ]
+    }
+  ]
 }

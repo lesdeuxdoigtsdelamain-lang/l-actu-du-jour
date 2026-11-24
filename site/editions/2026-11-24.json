@@ -2,11 +2,11 @@
   "schema_version": 1,
   "edition_id": "2026-11-24-fr-FR",
   "edition_date": "2026-11-24",
-  "generated_at": "2026-11-24T17:52:45.154036Z",
+  "generated_at": "2026-11-24T18:52:21.489385Z",
   "language": "fr-FR",
   "timezone": "Europe/London",
   "status": "partielle",
-  "minutes": 3,
+  "minutes": 11,
   "articles": [
     {
       "id": "d8a99416203b8c3c9b075e",
@@ -30,6 +30,94 @@
         }
       ],
       "word_count": 460,
+      "minutes": 3
+    },
+    {
+      "id": "france-tour-2026-11-24",
+      "category": "France",
+      "title": "Tour de l’actu en France — 24 novembre 2026",
+      "paragraphs": [
+        "Le tribunal correctionnel de Paris a renvoyé l’ex‑président Nicolas Sarkozy, son épouse Carla Bruni‑Sarkozy et « Mimi » Marchand devant la justice pour leur implication présumée dans la rétractation monnayée de l’intermédiaire Ziad Takieddine. Selon une source proche du dossier, les onze personnes mises en examen seront jugées du 3 novembre au 2 décembre 2027, l’affaire portant sur une possible tentative de tromper la justice dans le financement libyen de la campagne présidentielle de 2007. Cette décision confirme les informations relayées par l’AFP et RTL.",
+        "À Strasbourg, plus de 300 organisations ont convergé devant le Parlement européen pour protester contre le projet de simplification législative baptisé « Omnibus X ». Les manifestants, parmi lesquels des ONG environnementales et des associations de malades, dénoncent la perspective d’autorisations illimitées pour certains pesticides, alors que la réglementation actuelle prévoit une réévaluation tous les dix à quinze ans. Les slogans affichés – « Pesticides à vie, non merci » – traduisent la crainte d’un impact négatif sur la santé et l’environnement.",
+        "La mère de Nahel Merzouk, Mounia Merzouk, a exprimé son soulagement après que la cour d’appel de Versailles a confirmé le renvoi du policier responsable du meurtre de son fils en 2023 devant les assises. Lors d’une interview à France Inter, elle a déclaré être « soulagée et contente », tout en soulignant que la condamnation du policier reste incertaine. Cette décision judiciaire intervient trois ans et demi après le drame, ravivant le débat sur les violences policières et la justice pénale.",
+        "En 2025, la France a enregistré 111 féminicides, laissant de nombreux enfants orphelins. À la veille de la Journée de lutte contre les violences faites aux femmes, Natacha Vesnitch a rencontré deux survivantes: Cloé, âgée de sept ans lorsqu’elle a vu son père tuer sa mère, et Eva‑Louise, 20 ans, dont la mère a été abattue. Leurs témoignages illustrent les conséquences dramatiques de ces crimes sur les enfants, soulignant la nécessité d’un accompagnement spécialisé pour les orphelins de féminicides."
+      ],
+      "image": null,
+      "source_refs": [
+        {
+          "publisher": "RFI",
+          "url": "https://www.rfi.fr/fr/france/20261124-fausse-r%C3%A9tractation-de-ziad-takieddine-nicolas-sarkozy-et-carla-bruni-renvoy%C3%A9s-en-proc%C3%A8s",
+          "language": "fr",
+          "published_at": "2026-11-24T12:30:30Z"
+        },
+        {
+          "publisher": "Franceinfo",
+          "url": "https://www.franceinfo.fr/environnement/transition-ecologique-de-l-agriculture/pesticides/on-sacrifie-la-sante-pour-les-profits-a-strasbourg-les-manifestants-denoncent-l-ominibus-x-le-projet-de-simplification-europeen-sur-les-pesticides_8297778.html",
+          "language": "fr",
+          "published_at": "2026-11-24T16:15:47Z"
+        },
+        {
+          "publisher": "Franceinfo",
+          "url": "https://www.franceinfo.fr/faits-divers/adolescent-tue-par-un-policier-a-nanterre/la-mere-de-nahel-merzouk-se-dit-soulagee-et-contente-alors-que-la-justice-confirme-en-appel-le-renvoi-du-policier-pour-meurtre_8297925.html",
+          "language": "fr",
+          "published_at": "2026-11-24T15:06:27Z"
+        },
+        {
+          "publisher": "France 24",
+          "url": "https://www.france24.com/fr/%C3%A9missions/c-est-en-france/20261124-orphelins-feminicides-meurtres-violences-faites-aux-femmes",
+          "language": "fr",
+          "published_at": "2026-11-24T11:43:57Z"
+        }
+      ],
+      "word_count": 328,
+      "minutes": 2
+    },
+    {
+      "id": "c4b16dee2b5ea88ffbd541",
+      "category": "Science et technologie",
+      "title": "Inquiétudes persistantes autour du boom de l'IA malgré le retour de Jensen Huang chez Nvidia",
+      "paragraphs": [
+        "Les craintes qui entouraient déjà le dynamisme du secteur de l'intelligence artificielle se sont intensifiées avant le départ précipité de Jensen Huang de Nvidia, et son retour à la tête de l'entreprise n'a pas apaisé les inquiétudes. Le marché a vu le rebond spectaculaire de Nvidia s'estomper, les actions de la société ayant reculé d'environ 30 % sur les six derniers mois, bien avant que le scandale lié à Huang n'émerge au cours du mois précédent. Ces appréhensions, antérieures à la controverse, demeurent présentes dans le climat financier actuel.",
+        "Les investisseurs affichent une nervosité accrue, illustrée par la chute notable du cours d'Anthropic, première société purement dédiée à l'IA à être cotée en bourse. Cette baisse intervient alors que la société était perçue comme un test crucial de la persistance de l'appétit des marchés pour les technologies d'IA. Parallèlement, le président américain a interféré publiquement, affirmant avoir conseillé le conseil d'administration de Nvidia de réintégrer Huang, ce qui souligne l'implication politique dans le secteur technologique.",
+        "Le président Trump a également déclaré qu'une enquête de deux jours avait disculpé Huang de toute préoccupation liée à la sécurité nationale, le qualifiant de « trésor national » possédant la prochaine génération de puces d'IA. Cette intervention exceptionnelle reflète la perception de l'importance stratégique des dirigeants de l'industrie de l'IA et la volonté de l'administration de soutenir les acteurs clés du domaine, même en l'absence de processus d'enquête approfondis.",
+        "Sur les marchés, les sceptiques du boom de l'IA soulignent l'absence de précédents d'une telle mobilisation pour soutenir une hausse boursière. Les « vigilants obligataires » et les vendeurs à découvert se retrouvent désormais opposés à la fois à la Silicon Valley et à la Maison-Blanche. Les investisseurs évaluent non plus les performances financières, mais le degré de soutien politique, à un moment où les électeurs américains ont exprimé un rejet des centres de données d'IA.",
+        "Dans ce contexte, la stabilité du pilier central du boom technologique – Nvidia – apparaît fragile. L'entreprise génère environ 400 milliards de dollars de ventes annuelles de puces avancées, soit près de 304 milliards de livres sterling, et son rôle crucial dans le financement, l'emprunt et la détention croisée de projets de centres de données renforce les incertitudes. La directrice intérimaire Colette Kress avait déjà indiqué un retrait partiel de cette stratégie la semaine précédente, laissant planer le doute sur la direction future de l'entreprise.",
+        "La baisse du cours d'Anthropic soulève également des questions quant à la future introduction en bourse d'OpenAI, deux acteurs jugés essentiels pour le secteur. Bien que ces sociétés restent dotées de technologies de pointe utilisées par les plus grands groupes mondiaux, il demeure incertain si les entreprises continueront à privilégier les modèles de pointe coûteux ou se tourneront vers des solutions génériques moins onéreuses, notamment celles proposées par la Chine. Cette volatilité exceptionnelle, avec des variations de valeur atteignant des niveaux de plusieurs billions de dollars, témoigne de la fragilité du sentiment des investisseurs."
+      ],
+      "image": null,
+      "source_refs": [
+        {
+          "publisher": "BBC Business",
+          "url": "https://www.bbc.co.uk/news/articles/c6894evgpel5o",
+          "language": "en",
+          "published_at": "2026-11-24T18:21:43Z"
+        }
+      ],
+      "word_count": 490,
+      "minutes": 3
+    },
+    {
+      "id": "61679fc7da72b8328a39a6",
+      "category": "Maroc",
+      "title": "Analyse du rapport FinHealth 2.0 sur le budget santé marocain 2027",
+      "paragraphs": [
+        "Le diagnostic FinHealth 2.0, élaboré conjointement par la Banque mondiale et l’OMS, examine la capacité des systèmes de santé à transformer les crédits budgétaires en soins effectifs. Il part du principe que l’argent voté ne produit aucun résultat tant qu’il n’est pas déboursé, soulignant que des déblocages imprévisibles, des achats lents ou des règles financières rigides peuvent faire échouer même des systèmes bien financés. Cette approche a été testée entre 2019 et 2025 dans une dizaine de pays, de l’Arménie au Togo, mais le Maroc n’en fait pas partie, ce qui limite la portée du diagnostic pour le royaume.",
+        "Le budget de la santé présenté le 5 novembre 2026 prévoit une enveloppe de 45,36 milliards de dirhams, soit une hausse de 7,08 % par rapport à 2026, où il s’élevait à 42,36 milliards. Le rapport identifie trois points clés: l’exécution des crédits, le rôle du payeur et le financement des établissements. À fin octobre 2026, 87 % des crédits d’investissement ouverts, soit 17,45 milliards de dirhams, étaient engagés, mais seulement la moitié des dépenses engagées avait été réglée, révélant un important retard d’exécution.",
+        "Les indicateurs d’exécution montrent des disparités selon les postes. Le compte spécial de la pharmacie centrale, doté de 2,82 milliards de dirhams, affichait un taux d’engagement de 98 % et un taux de paiement de 56 %. Les dépenses de personnel étaient payées à 83 % et le matériel à 96 %. Le ministère anticipe toutefois d’atteindre 100 % de paiement pour le personnel et le fonctionnement d’ici la fin de l’exercice, tout en visant 75 % pour l’investissement et le compte de la pharmacie centrale, soulignant la nécessité d’accélérer l’exécution.",
+        "Le rapport insiste sur la nécessité de réformer le circuit de financement. Il recommande que les paiements aux prestataires soient liés à l’activité réelle, que les établissements disposent d’une autonomie suffisante et que la comptabilité adopte un modèle d’entreprise. Dans le cadre de l’AMO, la part des établissements publics dans les recettes et dépenses de soins reste autour de 10 %, avec un objectif de 50 % à l’horizon 2031. Les leviers proposés incluent le renforcement de l’attractivité hospitalière, la révision de la tarification nationale et le déploiement de la facturation électronique.",
+        "La demande de soins continue de croître: plus de 32 millions de personnes étaient couvertes en 2025, soit environ 89 % de la population, contre 42 % avant la réforme. Cette même année, 7,25 millions de bénéficiaires ont effectivement eu recours aux soins via les régimes gérés par la CNSS, qui a traité 26,2 millions de dossiers et versé 22,65 milliards de dirhams en remboursements. Le déficit structurel de plusieurs régimes d’AMO pourrait atteindre environ 33 milliards de dirhams d’ici 2030 si aucune mesure corrective n’est prise, mettant en évidence la pression financière croissante.",
+        "Enfin, le rapport met en garde contre les transferts de responsabilités non accompagnés de moyens adéquats. Il cite le Timor‑Leste, où la maintenance confiée aux municipalités n’a pas reçu les financements nécessaires, comme illustration des conséquences d’une chaîne de transfert rompue. Au Maroc, le chapitre matériel et dépenses diverses double à 23,36 milliards de dirhams, dont 22,12 milliards de subventions et transferts, soit une hausse de 132,8 % et représentant près de 94,7 % du chapitre. Cette forte dépendance aux transferts souligne l’importance d’une meilleure planification budgétaire et d’une exécution plus rapide."
+      ],
+      "image": null,
+      "source_refs": [
+        {
+          "publisher": "TelQuel",
+          "url": "https://telquel.ma/2026/11/24/sante-ce-que-le-rapport-oms-banque-mondiale-pourrait-rapporter-a-la-reforme-marocaine_2019547",
+          "language": "fr",
+          "published_at": "2026-11-24T14:56:53Z"
+        }
+      ],
+      "word_count": 552,
       "minutes": 3
     }
   ]
