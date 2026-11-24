@@ -102,15 +102,19 @@ def collect(feeds,now):
             except Exception:status[f.id]={'error':'Unexpected source error'}
     return candidates,status
 
-def categorize(c):
-    t=norm(c.title+' '+c.description[:220])
+def categorize_text(title,description='',fallback='Monde'):
+    """Classify the reported subject, including already generated French text."""
+    t=norm(title+' '+description[:220])
     if re.search(r'\b(maroc|morocco|المغرب|الرباط|rabat|casablanca|الدار البيضاء)\b',t):return 'Maroc'
     if re.search(r'\b(health|medicine|medical|sante|hopital|hospital|صحة|vaccin)\b',t):return 'Santé'
-    if re.search(r'\b(artificial intelligence|intelligence artificielle|science|nasa|research|technolog|robot|satellit|astronomi)\b',t):return 'Science et technologie'
+    if re.search(r'\b(artificial intelligence|intelligence artificielle|science|nasa|research|technolog|robot|satellit|astronomi|nvidia|jensen huang|openai|semiconducteurs?|semiconductors?|semi conductors?|microchips?|microprocesseurs?|processeurs?|puces? electroniques?|ai chips?|الذكاء الاصطناعي|انفيديا|نيفيديا)\b',t):return 'Science et technologie'
     if re.search(r'\b(climate|climat|environment|environnement|biodiversit|emissions|flood|glacier)\b',t):return 'Environnement'
     # Geography is only a topical signal; the publisher's language is not an identity.
     if re.search(r'\b(palestin|palestinian|gaza|غزة|فلسطين|iran|إيران|iraq|العراق|syrie|syria|سوريا|saudi|السعودية|yemen|اليمن|pakistan|باكستان|tunisie|tunisia|تونس|algerie|algérie|الجزائر|turquie|turkey|تركيا|indonesie|indonesia|إندونيسيا|afghanistan|أفغانستان|muslim|musulman|islam|مسلم|الإسلام)\b',t):return 'Monde musulman'
-    return c.feed.category
+    return fallback
+
+def categorize(c):
+    return categorize_text(c.title,c.description,c.feed.category)
 
 def cluster(candidates):
     """Sources describing the same event may be merged; cross-script matches need editorial verification."""

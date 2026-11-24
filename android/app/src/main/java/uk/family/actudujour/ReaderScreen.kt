@@ -36,6 +36,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
 import java.time.LocalDate
+import java.time.OffsetDateTime
 import java.time.format.DateTimeFormatter
 import java.util.Locale
 
@@ -50,6 +51,8 @@ private fun niceDate(s:String):String=runCatching{
 fun ReaderApp(model:NewsViewModel,onBrowser:(String)->Unit,onFullScreen:(Boolean)->Unit) {
     val all by model.editions.collectAsState()
     val read by model.readIds.collectAsState()
+    val extras by model.extras.collectAsState()
+    val alerts = activeAlerts(extras, model.clock.value)
     var chosenDate by remember { mutableStateOf<String?>(null) }
     var chosenArticle by remember { mutableStateOf<String?>(null) }
     var options by remember { mutableStateOf(false) }
@@ -112,35 +115,22 @@ fun ReaderApp(model:NewsViewModel,onBrowser:(String)->Unit,onFullScreen:(Boolean
         } else {
             Column(modifier=Modifier.fillMaxSize().padding(padding)) {
                 if(model.working.value) LinearProgressIndicator(modifier=Modifier.fillMaxWidth())
-                if(chosen==null) {
-                    Column(Modifier.fillMaxSize().padding(28.dp),
-                        horizontalAlignment=Alignment.CenterHorizontally,
-                        verticalArrangement=Arrangement.Center) {
-                        Icon(Icons.Default.MenuBook,null,modifier=Modifier.size(58.dp),
-                            tint=MaterialTheme.colorScheme.primary)
-                        Spacer(Modifier.height(18.dp))
-                        Text("Aucune édition téléchargée",style=MaterialTheme.typography.titleLarge)
-                        Spacer(Modifier.height(10.dp))
-                        Text("Le premier journal apparaîtra ici dès sa publication. La lecture hors ligne sera ensuite disponible.",
-                            style=MaterialTheme.typography.bodyMedium)
-                        Spacer(Modifier.height(20.dp))
-                        Button(onClick={model.refresh()},enabled=!model.working.value){Text("Vérifier maintenant")}
-                        if(model.message.value.isNotBlank()) {
-                            Spacer(Modifier.height(12.dp));Text(model.message.value,
-                                style=MaterialTheme.typography.bodySmall)
-                        }
+                LazyColumn(contentPadding=PaddingValues(start=16.dp,end=16.dp,bottom=24.dp),
+                    verticalArrangement=Arrangement.spacedBy(14.dp)) {
+                    // Live alerts always lead the feed, even while an archive is selected.
+                    items(alerts,key={"alert-${it.id}"}) { alert ->
+                        UrgentCard(alert,model.font.value,onBrowser)
                     }
-                } else {
-                    LazyRow(contentPadding=PaddingValues(horizontal=16.dp),
-                        horizontalArrangement=Arrangement.spacedBy(8.dp)) {
-                        items(all,key={it.id}) { e ->
-                            FilterChip(selected=chosen.date==e.date,
-                                onClick={chosenDate=e.date},label={Text(LocalDate.parse(e.date)
-                                    .format(DateTimeFormatter.ofPattern("dd MMM",fr)))})
+                    if(chosen!=null) {
+                        item {
+                            LazyRow(horizontalArrangement=Arrangement.spacedBy(8.dp)) {
+                                items(all,key={it.id}) { e ->
+                                    FilterChip(selected=chosen.date==e.date,
+                                        onClick={chosenDate=e.date},label={Text(LocalDate.parse(e.date)
+                                            .format(DateTimeFormatter.ofPattern("dd MMM",fr)))})
+                                }
+                            }
                         }
-                    }
-                    LazyColumn(contentPadding=PaddingValues(start=16.dp,end=16.dp,bottom=24.dp),
-                        verticalArrangement=Arrangement.spacedBy(14.dp)) {
                         item {
                             Spacer(Modifier.height(4.dp))
                             Text(niceDate(chosen.date),style=MaterialTheme.typography.headlineSmall,
@@ -155,11 +145,71 @@ fun ReaderApp(model:NewsViewModel,onBrowser:(String)->Unit,onFullScreen:(Boolean
                         items(chosen.articles,key={it.id}) { a ->
                             NewsCard(a,a.id in read,onClick={chosenArticle=a.id})
                         }
-                        if(model.message.value.isNotBlank()) item {
-                            Text(model.message.value,style=MaterialTheme.typography.bodySmall,
-                                color=MaterialTheme.colorScheme.onSurfaceVariant)
+                    } else {
+                        item {
+                            Column(Modifier.fillMaxWidth().padding(horizontal=12.dp,vertical=28.dp),
+                                horizontalAlignment=Alignment.CenterHorizontally,
+                                verticalArrangement=Arrangement.Center) {
+                                Icon(Icons.Default.MenuBook,null,modifier=Modifier.size(58.dp),
+                                    tint=MaterialTheme.colorScheme.primary)
+                                Spacer(Modifier.height(18.dp))
+                                Text("Aucune édition téléchargée",style=MaterialTheme.typography.titleLarge)
+                                Spacer(Modifier.height(10.dp))
+                                Text("Le premier journal apparaîtra ici dès sa publication. La lecture hors ligne sera ensuite disponible.",
+                                    style=MaterialTheme.typography.bodyMedium)
+                                Spacer(Modifier.height(20.dp))
+                                Button(onClick={model.refresh()},enabled=!model.working.value){Text("Vérifier maintenant")}
+                            }
                         }
                     }
+                    val note=historyFor(extras,chosen?.date ?: ukToday().toString())
+                    if(note!=null) item(key="history-${note.editionDate}") {
+                        HistoryCard(note,model.font.value,onBrowser)
+                    }
+                    if(model.message.value.isNotBlank()) item {
+                        Text(model.message.value,style=MaterialTheme.typography.bodySmall,
+                            color=MaterialTheme.colorScheme.onSurfaceVariant)
+                    }
+                }
+            }
+        }
+    }
+}
+
+@Composable
+private fun UrgentCard(alert:BreakingAlert,font:Float,onBrowser:(String)->Unit) {
+    // White on dark red remains readable in all three app themes.
+    Surface(color=Color(0xFFA11520),contentColor=Color.White,shape=RoundedCornerShape(12.dp)) {
+        Column(Modifier.fillMaxWidth().padding(16.dp),verticalArrangement=Arrangement.spacedBy(8.dp)) {
+            val time=OffsetDateTime.parse(alert.publishedAt).atZoneSameInstant(london)
+                .format(DateTimeFormatter.ofPattern("dd MMM · HH:mm",fr))
+            Text("URGENT · $time (heure UK)",fontSize=(12*font).sp,fontWeight=FontWeight.Bold)
+            Text(alert.title,fontSize=(19*font).sp,lineHeight=(25*font).sp,fontWeight=FontWeight.Bold)
+            if(alert.summary.isNotBlank()) Text(alert.summary,fontSize=(15*font).sp,lineHeight=(21*font).sp)
+            for(source in alert.sources) {
+                TextButton(onClick={onBrowser(source.url)},
+                    colors=ButtonDefaults.textButtonColors(contentColor=Color.White),
+                    contentPadding=PaddingValues(horizontal=0.dp,vertical=4.dp)) {
+                    Text("Source : ${source.publisher}",fontSize=(13*font).sp)
+                }
+            }
+        }
+    }
+}
+
+@Composable
+private fun HistoryCard(note:HistoryNote,font:Float,onBrowser:(String)->Unit) {
+    Surface(shape=RoundedCornerShape(12.dp),tonalElevation=1.dp) {
+        Column(Modifier.fillMaxWidth().padding(18.dp),verticalArrangement=Arrangement.spacedBy(8.dp)) {
+            Text("Ce jour-là",style=MaterialTheme.typography.titleMedium,
+                fontWeight=FontWeight.Bold,color=MaterialTheme.colorScheme.primary)
+            Text(LocalDate.parse(note.eventDate).format(DateTimeFormatter.ofPattern("d MMMM yyyy",fr)),
+                fontSize=(20*font).sp,lineHeight=(26*font).sp,fontWeight=FontWeight.SemiBold)
+            Text(note.lines.joinToString("\n"),fontSize=(16*font).sp,lineHeight=(24*font).sp)
+            for(source in note.sources) {
+                TextButton(onClick={onBrowser(source.url)},
+                    contentPadding=PaddingValues(horizontal=0.dp,vertical=4.dp)) {
+                    Text("Source : ${source.publisher}",fontSize=(13*font).sp)
                 }
             }
         }

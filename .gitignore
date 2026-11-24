@@ -16,3 +16,7 @@ site/editions/*.tmp
 site/latest.json
 site/health.json
 site/editions/*.json
+site/archive.json
+site/editorial-memory.json
+site/extras.json
+site/extras-health.json

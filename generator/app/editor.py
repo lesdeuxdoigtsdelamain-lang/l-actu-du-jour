@@ -76,6 +76,36 @@ def normalized_number(s,language=None):
 def count_words(s):return len(s.split())
 
 
+def strip_inline_fact_refs(result, facts):
+    """Remove only exact, proven internal IDs enclosed in citation brackets.
+
+    A model sometimes repeats evidence IDs in prose as well as in `preuves`.
+    Their hash digits are not reported quantities. Do not remove unknown IDs,
+    bare numbers or ordinary bracketed dates; the numeric gate remains strict.
+    """
+    paragraphs = result.get('paragraphes')
+    proofs = result.get('preuves')
+    if (not isinstance(paragraphs, list) or not isinstance(proofs, list)
+            or len(paragraphs) != len(proofs)):
+        return result
+    known = {f['id'] for f in facts if isinstance(f.get('id'), str) and len(f['id']) >= 8}
+
+    def clean(text, refs):
+        if not isinstance(text, str) or not isinstance(refs, list):
+            return text
+        ids = sorted({q for q in refs if isinstance(q, str) and q in known}, key=len, reverse=True)
+        if not ids:
+            return text
+        one = '(?:' + '|'.join(re.escape(q) for q in ids) + ')'
+        group = r'(?:preuves?\s*:\s*|sources?\s*:\s*)?' + one + r'(?:\s*[,;]\s*' + one + r')*'
+        pattern = r'\[\s*' + group + r'\s*\]'
+        return re.sub(r'\s+([.,;:!?])', r'\1', ' '.join(re.sub(pattern, '', text).split()))
+
+    cleaned = dict(result)
+    cleaned['paragraphes'] = [clean(p, refs) for p, refs in zip(paragraphs, proofs)]
+    return cleaned
+
+
 def reflow_paragraphs(result):
     """Re-paragraph AI text without adding facts, words or source references.
 

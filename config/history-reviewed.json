@@ -1,0 +1,23 @@
+{
+  "11-24": {
+    "event_date": "1969-11-24",
+    "lines": [
+      "La capsule Apollo 12 amerrit dans le Pacifique, au retour d’une mission sur la Lune.",
+      "À bord se trouvent les Américains Charles Conrad, Alan Bean et Richard Gordon.",
+      "Conrad et Bean ont exploré la surface lunaire ; Gordon est resté en orbite.",
+      "L’équipage est récupéré par les équipes du porte-avions USS Hornet.",
+      "La mission rapporte des roches lunaires et des pièces de la sonde Surveyor 3.",
+      "Ces matériaux servent à étudier le sol lunaire et les effets d’une longue exposition sur la Lune."
+    ],
+    "sources": [
+      {
+        "publisher": "NASA",
+        "url": "https://www.nasa.gov/missions/apollo/apollo-12-the-pinpoint-mission/"
+      },
+      {
+        "publisher": "US Naval History and Heritage Command",
+        "url": "https://www.history.navy.mil/browse-by-topic/exploration-and-innovation/navy-and-space-exploration/Apollo_12_NASA.html"
+      }
+    ]
+  }
+}

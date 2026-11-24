@@ -1,6 +1,6 @@
 name: Publier le journal quotidien
 on:
-  # A marked commit publishes the current day or the reviewed archive corrections.
+  # A marked commit publishes the current day and the independent daily extras.
   push:
     branches: [main]
     paths: ['.github/workflows/publish-daily.yml']
@@ -23,7 +23,9 @@ permissions:
   contents: read
 concurrency:
   group: french-daily-journal
-  cancel-in-progress: true
+  # Both publication workflows share this lock through Pages deployment.
+  # An urgent refresh must never cancel an edition or overwrite newer state.
+  cancel-in-progress: false
 jobs:
   produce:
     if: github.event_name != 'push' || contains(github.event.head_commit.message, '[publish now]')
@@ -47,6 +49,8 @@ jobs:
       - name: Restore previous seven days of public content
         run: python -m generator.app.ci_state restore
       - name: Produce sourced, quality-gated French edition
+        id: edition
+        continue-on-error: true
         env:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
@@ -61,10 +65,19 @@ jobs:
           else
             python -m generator.app.main
           fi
+      - name: Update serious alerts and the short historical note
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: python -m generator.app.extras
       - name: Validate and retain publications (no API secrets)
         run: |
           python -m generator.app.verify_site site
           python -m generator.app.ci_state save
+      - name: Report an incomplete generation without losing healthy publications
+        if: steps.edition.outcome == 'failure'
+        run: echo '::warning::Generation failed. Existing validated editions and independent extras are retained; consult health.json and generation logs.'
       - uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa # v3
         with:
           name: github-pages-${{ github.run_id }}-${{ github.run_attempt }}

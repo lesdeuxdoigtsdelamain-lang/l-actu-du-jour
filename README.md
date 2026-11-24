@@ -1,6 +1,6 @@
 # L'actu du jour — journal personnel Android en français
 
-**Version de développement 1.0.1 — Samsung Galaxy A56, Android 9+.**
+**Version 1.0.2 — Samsung Galaxy A56, Android 9+.**
 
 Une application de lecture volontairement sobre : cartes d'actualité illustrées, articles longs rédigés en français, consultation des sources, mode lecture plein écran, polices ajustables, trois thèmes, marquage des articles lus, et archive hors ligne de sept jours. **Sans publicité, compte, quiz, API ni analyse de données embarqués dans l'APK.**
 
@@ -12,6 +12,23 @@ Une application de lecture volontairement sobre : cartes d'actualité illustrée
 - `site/` — données publiques sur GitHub Pages ; **aucune information privée**.
 - `.github/workflows/` — publication automatisée du journal à 17:05 (Europe/London) avec seconde tentative à 18:20, compilation signée.
 - `schema/edition.schema.json` — format public strict des éditions.
+- `generator/app/extras.py` et `schema/extras.schema.json` — compléments facultatifs et indépendants des articles : alertes graves et rubrique historique courte, publiés dans `site/extras.json`.
+
+## Urgences et « Ce jour-là » — version 1.0.2
+
+- Les **alertes graves récentes** apparaissent en rouge tout en haut du fil, y compris pendant la consultation d'une archive. La sélection est prudente : événement grave, sources concordantes, exclusion des anniversaires, procès, menaces et exercices. Elle repose sur les flux français configurés et peut manquer un événement ou se tromper ; elle ne garantit pas une couverture exhaustive.
+- Une vérification des flux est programmée **toutes les quinze minutes**, sans appel Groq ni Cloudflare. L'application consulte le résultat à l'ouverture, à l'actualisation manuelle et toutes les soixante secondes lorsqu'elle est visible. Les alertes périmées disparaissent aussi hors ligne. Les tâches GitHub peuvent être retardées : ce dispositif n'est pas un service d'alerte instantanée.
+- **« Ce jour-là »** est un encadré après les articles : même jour et même mois que l'édition, année passée, six à dix courtes phrases, date historique et sources consultables. La longueur affichée dépend de l'écran et de la taille de police. L'encadré ne remplace aucun article et ne compte pas dans l'objectif de lecture des six à huit articles.
+- L'historique est conservé sept jours. Une note déjà produite est réutilisée ; une tentative de génération historique au maximum est autorisée par jour. Si les preuves ou le fournisseur manquent, aucune anecdote n'est inventée pour remplir l'encadré.
+- Les lecteurs **1.0.1** continuent de recevoir le journal habituel. Installer l'APK **1.0.2** est nécessaire pour voir les nouveaux encadrés. Le format des éditions et des manifestes existants reste inchangé.
+
+## Comprendre les limites de génération
+
+Le diagnostic public `health.json` distingue les rejets éditoriaux, les plafonds locaux et les erreurs des fournisseurs. `extras-health.json` suit séparément les compléments. Aucun de ces fichiers ne contient de clé, de corps de requête ou d'extrait privé de source.
+
+La rédaction utilise `openai/gpt-oss-120b` chez Groq, avec **18 tentatives maximum et un seuil local de 65 000 tokens consommés** par exécution. Le contrôle s'effectue entre les appels : une réponse peut dépasser légèrement le seuil avant l'arrêt suivant. Ces protections logicielles sont distinctes des quotas du compte. Un grand nombre de textes refusés peut donc produire une édition partielle sans aucune erreur de quota de Groq.
+
+Groq applique ses limites à l'organisation : **une deuxième clé de la même organisation n'ajoute pas de quota**. Les limites exactes sont à consulter dans le compte ; la documentation publique indique actuellement 30 requêtes/minute, 1 000/jour, 8 000 tokens/minute et 200 000/jour pour le modèle utilisé. Voir [la documentation officielle Groq](https://console.groq.com/docs/rate-limits). Un HTTP 429 est enregistré comme une limite fournisseur, même si la courte reprise a réussi. Aucun passage automatique à une offre payante n'est prévu.
 
 ## Déploiement
 

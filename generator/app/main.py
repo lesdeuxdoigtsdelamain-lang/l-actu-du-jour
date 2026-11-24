@@ -4,6 +4,7 @@ from hashlib import sha256
 from pathlib import Path
 from zoneinfo import ZoneInfo
 from urllib.parse import urlsplit
+from collections import Counter
 import argparse
 import json
 import re
@@ -13,7 +14,7 @@ from .fetch import Fetcher
 from .ingest import collect, cluster, rank, Candidate, EXCLUDE
 from .evidence import make_facts
 from .providers import configured, AiError
-from .editor import assemble, rejection_reason, reflow_paragraphs, allowed_numbers, unsupported_numbers
+from .editor import assemble, rejection_reason, reflow_paragraphs, allowed_numbers, unsupported_numbers, strip_inline_fact_refs
 from .commons import find
 from .models import Edition
 from .publish import put, validate, history, health, atomic
@@ -28,12 +29,20 @@ MAX_ARTICLES = 8
 MIN_ARTICLES = 6
 
 
-def ai_usage(provider):
+def ai_usage(provider, errors=()):
     if not provider:
         return {'calls': 0}
     if hasattr(provider, 'usage_stats'):
-        return provider.usage_stats()
-    return {'calls': provider.calls, 'neurons': round(provider.usage_neurons, 2)}
+        usage = provider.usage_stats()
+    else:
+        usage = {'calls': provider.calls, 'neurons': round(provider.usage_neurons, 2)}
+    rejections = Counter(message.removeprefix('Rejected: ').rsplit(' (', 1)[0]
+                         for message in errors if message.startswith('Rejected: '))
+    usage['quality_rejections'] = dict(rejections)
+    usage['quality_rejections_total'] = sum(rejections.values())
+    if provider.calls >= provider.max_calls:
+        usage['local_attempt_limit_reached'] = True
+    return usage
 
 
 def complete(articles):
@@ -172,7 +181,7 @@ def draft(c, facts, sources, provider, seen, errors, *, mode='article', topics=(
         if provider.calls >= provider.max_calls:
             break
         output = provider.run(packet)
-        repaired = reflow_paragraphs(output)
+        repaired = reflow_paragraphs(strip_inline_fact_refs(output, facts))
         words = sum(len(p.split()) for p in repaired.get('paragraphes', []) if isinstance(p, str))
         reason = rejection_reason(repaired, facts, sources)
         if reason is None and english_title(repaired.get('titre','')):
@@ -335,11 +344,11 @@ def generate(site, now, provider, feeds, *, target_day=None, memory_sink=None):
             errors.append(str(exc))
             print('Rédaction interrompue : ' + str(exc), flush=True)
     if not articles:
-        return None, status, ai_usage(provider), 'Aucun article publiable. ' + '; '.join(errors[:2])
+        return None, status, ai_usage(provider, errors), 'Aucun article publiable. ' + '; '.join(errors[:2])
     # Enforce the editorial gate again after generation, before the public write.
     articles, final_removals = clean_articles(articles, previous)
     if not articles:
-        return None, status, ai_usage(provider), 'Aucun sujet nouveau après contrôle des doublons'
+        return None, status, ai_usage(provider, errors), 'Aucun sujet nouveau après contrôle des doublons'
     label = 'complete' if complete(articles) else 'partielle'
     edition = Edition(edition_id=f'{day}-fr-FR', edition_date=day, generated_at=now,
                       status=label, minutes=sum(a.minutes for a in articles), articles=articles)
@@ -354,7 +363,7 @@ def generate(site, now, provider, feeds, *, target_day=None, memory_sink=None):
               'Maroc au maximum une fois, contrôle des événements sur sept jours.')
     if missing:
         reason += ' Manque : ' + ', '.join(missing)
-    return edition, status, ai_usage(provider), reason
+    return edition, status, ai_usage(provider, errors), reason
 
 
 def main():
@@ -386,6 +395,8 @@ def main():
         edition, source_status, usage, reason = generate(
             args.output, now, provider, feeds, target_day=day if args.repair_dates else None, memory_sink=memory)
         if edition is None:
+            if not args.dry_run:
+                health(args.output, now, 'failed', reason, source_status, usage)
             print(reason)
             exit_code = 2
             continue

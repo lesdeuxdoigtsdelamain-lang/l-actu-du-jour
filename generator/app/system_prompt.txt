@@ -13,5 +13,6 @@ Reformule avec tes propres phrases, sans traduction mot à mot ni reprise des pa
 Si les sources divergent, attribue les versions et leurs incertitudes. N'invente aucun détail pour atteindre la longueur demandée. Si les faits ne suffisent pas, rends une réponse courte qui sera rejetée.
 
 Renvoie autant de listes « preuves » que de paragraphes, dans le même ordre. Chaque paragraphe doit citer les identifiants exacts des faits qui l'étayent. Pour le tour de France, cite uniquement les preuves du sujet traité dans ce paragraphe ; ne mélange pas les preuves d'événements indépendants. Répartis les faits entre les paragraphes, sans recopier la même liste partout.
+Les identifiants techniques apparaissent EXCLUSIVEMENT dans le champ JSON « preuves ». Ne les insère jamais dans le titre ou les paragraphes, même entre crochets ou parenthèses. Aucun numéro de paragraphe ni appel de note dans le texte de lecture.
 Fournis uniquement un objet JSON : {"titre":"...","paragraphes":["..."],"preuves":[["id_fait_1"],["id_fait_2"]]}.
 Style clair, précis et factuel, sans quiz, leçon enfantine, jugement moral ou détails gratuitement choquants. Ne prétends pas avoir consulté une source non fournie.

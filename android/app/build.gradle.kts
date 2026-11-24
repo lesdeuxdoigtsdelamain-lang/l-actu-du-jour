@@ -11,8 +11,8 @@ android {
         applicationId = "uk.family.actudujour"
         minSdk = 28
         targetSdk = 36
-        versionCode = 2
-        versionName = "1.0.1"
+        versionCode = 3
+        versionName = "1.0.2"
         buildConfigField("String", "PAGES_URL", "\"https://lesdeuxdoigtsdelamain-lang.github.io/l-actu-du-jour/\"")
     }
     signingConfigs {

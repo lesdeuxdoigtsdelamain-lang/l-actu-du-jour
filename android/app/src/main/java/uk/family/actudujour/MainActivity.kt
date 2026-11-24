@@ -10,6 +10,12 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.isActive
+import kotlinx.coroutines.launch
 import androidx.core.content.ContextCompat
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
@@ -23,6 +29,19 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         DailyScheduler.schedule(this)
+        // Poll only while the reader is visible. The clock also hides alerts that
+        // expire during offline reading without waiting for another download.
+        lifecycleScope.launch {
+            repeatOnLifecycle(Lifecycle.State.STARTED) {
+                var elapsed = 0
+                while(isActive) {
+                    delay(1000)
+                    model.tick()
+                    elapsed += 1
+                    if(elapsed >= 60) { elapsed=0;model.refreshExtras() }
+                }
+            }
+        }
         setContent {
             val theme=model.theme.value
             val scheme=when(theme) {

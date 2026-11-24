@@ -1,0 +1,152 @@
+{
+  "$defs": {
+    "ExtraSource": {
+      "additionalProperties": false,
+      "properties": {
+        "publisher": {
+          "maxLength": 90,
+          "minLength": 2,
+          "title": "Publisher",
+          "type": "string"
+        },
+        "url": {
+          "title": "Url",
+          "type": "string"
+        }
+      },
+      "required": [
+        "publisher",
+        "url"
+      ],
+      "title": "ExtraSource",
+      "type": "object"
+    },
+    "HistoricalNote": {
+      "additionalProperties": false,
+      "properties": {
+        "edition_date": {
+          "format": "date",
+          "title": "Edition Date",
+          "type": "string"
+        },
+        "event_date": {
+          "format": "date",
+          "title": "Event Date",
+          "type": "string"
+        },
+        "lines": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 10,
+          "minItems": 6,
+          "title": "Lines",
+          "type": "array"
+        },
+        "sources": {
+          "items": {
+            "$ref": "#/$defs/ExtraSource"
+          },
+          "maxItems": 5,
+          "minItems": 1,
+          "title": "Sources",
+          "type": "array"
+        }
+      },
+      "required": [
+        "edition_date",
+        "event_date",
+        "lines",
+        "sources"
+      ],
+      "title": "HistoricalNote",
+      "type": "object"
+    },
+    "UrgentAlert": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 64,
+          "minLength": 12,
+          "title": "Id",
+          "type": "string"
+        },
+        "title": {
+          "maxLength": 200,
+          "minLength": 12,
+          "title": "Title",
+          "type": "string"
+        },
+        "summary": {
+          "default": "",
+          "maxLength": 400,
+          "title": "Summary",
+          "type": "string"
+        },
+        "published_at": {
+          "format": "date-time",
+          "title": "Published At",
+          "type": "string"
+        },
+        "expires_at": {
+          "format": "date-time",
+          "title": "Expires At",
+          "type": "string"
+        },
+        "sources": {
+          "items": {
+            "$ref": "#/$defs/ExtraSource"
+          },
+          "maxItems": 5,
+          "minItems": 1,
+          "title": "Sources",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "title",
+        "published_at",
+        "expires_at",
+        "sources"
+      ],
+      "title": "UrgentAlert",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": 1,
+      "default": 1,
+      "title": "Schema Version",
+      "type": "integer"
+    },
+    "updated_at": {
+      "format": "date-time",
+      "title": "Updated At",
+      "type": "string"
+    },
+    "alerts": {
+      "items": {
+        "$ref": "#/$defs/UrgentAlert"
+      },
+      "maxItems": 3,
+      "title": "Alerts",
+      "type": "array"
+    },
+    "history": {
+      "items": {
+        "$ref": "#/$defs/HistoricalNote"
+      },
+      "maxItems": 7,
+      "title": "History",
+      "type": "array"
+    }
+  },
+  "required": [
+    "updated_at"
+  ],
+  "title": "Extras",
+  "type": "object"
+}

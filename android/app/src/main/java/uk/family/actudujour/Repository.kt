@@ -4,6 +4,8 @@ import android.content.Context
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.withContext
+import kotlinx.coroutines.sync.Mutex
+import kotlinx.coroutines.sync.withLock
 import kotlinx.serialization.decodeFromString
 import okhttp3.OkHttpClient
 import okhttp3.Request
@@ -13,11 +15,14 @@ import java.time.LocalDate
 import java.util.concurrent.TimeUnit
 
 class NewsRepository(private val context: Context) {
+    companion object { private val extrasLock = Mutex() }
     private val client = OkHttpClient.Builder()
         .connectTimeout(8,TimeUnit.SECONDS).readTimeout(17,TimeUnit.SECONDS)
         .followRedirects(false).build()
     private val folder = File(context.filesDir,"editions").apply { mkdirs() }
     private val settings = context.getSharedPreferences("reader",Context.MODE_PRIVATE)
+    private val extrasFile = File(context.filesDir, "extras.json")
+    val extras = MutableStateFlow(runCatching { parseExtras(extrasFile.readBytes()) }.getOrNull())
     val editions = MutableStateFlow(loadLocal())
     val readIds = MutableStateFlow(settings.getStringSet("read",emptySet())?.toSet() ?: emptySet())
 
@@ -64,6 +69,32 @@ class NewsRepository(private val context: Context) {
             tmp.delete()
         }
         return true
+    }
+
+    /** Failure here never prevents downloading or reading the daily edition. */
+    suspend fun refreshExtras(): Boolean = withContext(Dispatchers.IO) {
+        extrasLock.withLock {
+            val raw = download("extras.json", 100000)
+            val parsed = parseExtras(raw)
+            val old = extras.value
+            // Do not let a delayed request replace a newer cached publication.
+            val disk = runCatching { parseExtras(extrasFile.readBytes()) }.getOrNull()
+            val latest = listOfNotNull(old, disk).maxByOrNull {
+                java.time.OffsetDateTime.parse(it.updatedAt).toInstant()
+            }
+            if (latest != null && java.time.OffsetDateTime.parse(parsed.updatedAt).toInstant()
+                    .isBefore(java.time.OffsetDateTime.parse(latest.updatedAt).toInstant())) {
+                extras.value = latest
+                return@withLock false
+            }
+            val tmp = File.createTempFile("extras-", ".tmp", context.filesDir)
+            try {
+                tmp.writeBytes(raw)
+                require(tmp.renameTo(extrasFile)) { "Échec d'enregistrement des compléments" }
+            } finally { tmp.delete() }
+            extras.value = parsed
+            old != parsed
+        }
     }
 
     suspend fun refresh(): Boolean = withContext(Dispatchers.IO) {

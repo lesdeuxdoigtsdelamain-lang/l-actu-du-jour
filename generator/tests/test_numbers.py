@@ -1,6 +1,6 @@
 import pytest
 
-from generator.app.editor import allowed_numbers, normalized_number, unsupported_numbers
+from generator.app.editor import allowed_numbers, normalized_number, unsupported_numbers, strip_inline_fact_refs
 
 
 @pytest.mark.parametrize('text,language,expected', [
@@ -89,3 +89,31 @@ def test_malformed_output_numbers_fail_closed():
     facts = [{'id': 'fr:0', 'source_id': 'fr', 'text': 'Le montant est de 1234,56 euros.'}]
     refused = unsupported_numbers(result('Le montant est de 1,234.56 euros.'), facts, [source('fr', 'fr')])
     assert refused and any(value.startswith('format ambigu:') for value in refused)
+
+
+def test_exact_known_inline_fact_ids_are_removed_but_real_figures_remain_checked():
+    fact_id = '2989abcedf01234567890ab:0'
+    facts = [{'id': fact_id, 'text': 'Une décision est annoncée.'}]
+    raw = {'titre': 'Un titre informatif sans identifiant',
+           'paragraphes': [f'Une décision est annoncée [{fact_id}]. Le coût atteint 999 euros.'],
+           'preuves': [[fact_id]]}
+    cleaned = strip_inline_fact_refs(raw, facts)
+    assert cleaned['paragraphes'] == ['Une décision est annoncée. Le coût atteint 999 euros.']
+    assert cleaned['preuves'] == raw['preuves']
+    assert fact_id in raw['paragraphes'][0]
+    assert unsupported_numbers(cleaned, facts, []) == {'999'}
+
+
+def test_unknown_or_unproved_bracketed_references_and_dates_are_never_erased():
+    fact_id = '2989abcedf01234567890ab:0'
+    facts = [{'id': fact_id, 'text': 'Une décision est annoncée.'}]
+    raw = {'paragraphes': [f'Date [2025]. Identifiant [{fact_id}]. Inconnu [abc999xyz:1].'],
+           'preuves': [['other-proof']]}
+    assert strip_inline_fact_refs(raw, facts) == raw
+
+
+def test_inline_citations_can_contain_multiple_exact_proven_ids():
+    ids = ['abcde0123456789abcde012:0', 'abcde0123456789abcde012:1']
+    facts = [{'id': q, 'text': 'Texte factuel.'} for q in ids]
+    raw = {'paragraphes': [f'Annonce publique [sources: {ids[0]}, {ids[1]}].'], 'preuves': [ids]}
+    assert strip_inline_fact_refs(raw, facts)['paragraphes'] == ['Annonce publique.']

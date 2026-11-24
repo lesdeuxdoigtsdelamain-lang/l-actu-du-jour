@@ -32,6 +32,8 @@ _ENTERTAINMENT = re.compile(
     r'\b(?:gta(?:\s*(?:vi|6))?|grand\s+theft\s+auto|jeux?\s+video|'
     r'video\s+games?|gamers?|gaming|playstation|xbox|nintendo|'
     r'cinema|box\s+office|blockbuster|album|concert|telenovela)\b')
+_INTERNATIONAL_EVENT = re.compile(
+    r'\bcop\s*\d{1,2}\b|\b(?:sommet|conference)\s+(?:mondial|internationa|des\s+nations\s+unies)')
 _PERSON_NAME = re.compile(
     r'\b[A-ZÀ-ÖØ-Þ][a-zà-öø-ÿA-ZÀ-ÖØ-Þ’\'-]+'
     r'(?:\s+(?:(?:de|du|des|le|la)\s+)?[A-ZÀ-ÖØ-Þ][a-zà-öø-ÿA-ZÀ-ÖØ-Þ’\'-]+){1,3}\b')
@@ -52,12 +54,18 @@ def domestic_france(candidate):
         return False
     if re.search(r'/(?:culture/)?(?:jeux-video|cinema|musique|series|gaming|entertainment)/', candidate.url):
         return False
+    # A radio/TV programme listing describes its guests, not a reported event.
+    # There are separate article feeds for the underlying domestic news.
+    if re.search(r'/(?:podcasts?|emissions?)/', candidate.url):
+        return False
     region = candidate_region(candidate)
     if region in ('Maroc', 'Royaume-Uni'):
         return False
     title = normalize(candidate.title)
     # Diplomacy happening abroad does not use up one of the domestic briefs.
     if _ABROAD.search(title) and not _DOMESTIC.search(title):
+        return False
+    if _INTERNATIONAL_EVENT.search(title) and not _DOMESTIC.search(title):
         return False
     return region == 'France' or candidate.feed.category == 'France'
 

@@ -37,6 +37,12 @@ def put(site:Path,edition:Edition,now:datetime):
     return man
 
 def validate(site:Path):
+    # A separate optional contract preserves compatibility with installed v1
+    # readers, which reject unknown fields inside the original edition JSON.
+    extras = site / 'extras.json'
+    if extras.exists():
+        from .extras import Extras
+        Extras.model_validate_json(extras.read_bytes())
     for f in (site/'editions').glob('*.json'):
         e=Edition.model_validate_json(f.read_bytes())
         if f.name!=f'{e.edition_date}.json':raise ValueError('Mismatch edition filename')

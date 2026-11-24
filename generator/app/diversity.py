@@ -53,6 +53,12 @@ _GEOGRAPHY = {
         r'فرنسا|الفرنسي|الفرنسية|فرنسي|فرنسية|باريس)\b'),
 }
 
+_FOREIGN_FOCUS = re.compile(
+    r'\b(?:gaza|palestin(?:e|ien(?:ne)?s?)|israel|ukraine|russie|moscou|kiev|'
+    r'iran|soudan|chine|chinois(?:e)?s?|pekin|etats\s+unis|americain(?:e)?s?|'
+    r'turquie|antalya|liban|syrie|inde|pakistan|afghanistan|bresil|'
+    r'غزة|فلسطين|اوكرانيا|إيران|الصين)\b')
+
 
 def _region(title, lead='', body=''):
     title, lead, body = normalize(title), normalize(lead), normalize(body)
@@ -65,6 +71,11 @@ def _region(title, lead='', body=''):
         in_title = len(pattern.findall(title))
         in_lead = len(pattern.findall(lead))
         in_body = len(pattern.findall(body))
+        # A domestic-news slot is not satisfied by a British institution quoted
+        # about an event clearly located abroad. An explicit UK title/actor still
+        # qualifies, e.g. a British government decision concerning foreign aid.
+        if region == 'Royaume-Uni' and not in_title and _FOREIGN_FOCUS.search(title):
+            continue
         # A passing mention near the end of a worldwide report is not its focus.
         # A UK comparison/statistic in the closing paragraphs cannot satisfy the
         # dedicated domestic-news slot: the country must be central from the lead.
@@ -80,7 +91,7 @@ def _region(title, lead='', body=''):
 def article_region(article):
     """Return subject geography; neither language nor publisher proves it."""
     paragraphs = _get(article, 'paragraphs', []) or []
-    return _region(_get(article, 'title', ''), ' '.join(paragraphs[:2]), ' '.join(paragraphs))
+    return _region(_get(article, 'title', ''), ' '.join(paragraphs[:1]), ' '.join(paragraphs))
 
 
 def candidate_region(candidate):
@@ -140,6 +151,44 @@ def _is_roundup(article):
     return bool(re.search(r'\btour\s+de\s+l\s+actu(?:alite)?\s+en\s+france\b', title))
 
 
+def _conference_outcomes(article):
+    """Identify the same named summit's closing failure across reworded reports.
+
+    A conference number alone is never a duplicate signal. The main reported
+    event must be its closing failure, not a negotiation, separate announcement
+    or a later decision merely introduced with "after the failure".
+    """
+    paragraphs = _get(article, 'paragraphs', []) or []
+    title = normalize(_get(article, 'title', ''))
+    text = ' '.join([title, *paragraphs, *_urls(article)])
+    editions = set(re.findall(r'\bcop\s*(\d{1,2})\b', normalize(text)))
+    if not editions:
+        return set()
+    headline_failure = re.match(r'^(?:un\s+)?echec(?:\s+historique)?\s+de\s+(?:la\s+)?cop\s*\d+', title)
+    # Closing-result sentences, not every mention of disagreement at the summit.
+    closure = re.compile(
+        r'\b(?:climat|climatique|climate|cop\s*\d+)\b.{0,180}'
+        r'\b(?:s\s+est\s+(?:terminee?|cloturee?|soldee?|achevee?)|'
+        r's\s+acheve|s\s+termine|ended|end|collapsed|collapse)\b.{0,140}'
+        r'\b(?:sans\s+(?:qu\s+)?(?:un\s+|aucun\s+)?accord|'
+        r'sans\s+consensus|echec|impasse|without\s+(?:a\s+)?deal)\b')
+    outcomes = set()
+    if headline_failure:
+        outcomes.update((edition, 'closing-failure') for edition in re.findall(r'\bcop\s*(\d{1,2})\b', title))
+    for paragraph in paragraphs if _is_roundup(article) else paragraphs[:1]:
+        first = normalize(re.split(r'(?<=[.!?])\s+', paragraph, maxsplit=1)[0])
+        if re.match(r'^(?:apres|depuis|after|following)\b', first):
+            continue
+        if not closure.search(first):
+            continue
+        explicit = set(re.findall(r'\bcop\s*(\d{1,2})\b', first))
+        if explicit:
+            outcomes.update((edition, 'closing-failure') for edition in explicit)
+        elif len(editions) == 1:
+            outcomes.add((next(iter(editions)), 'closing-failure'))
+    return outcomes
+
+
 def duplicates(a, b):
     """Whether two articles repeat an event, including across publication days.
 
@@ -162,6 +211,9 @@ def duplicates(a, b):
     text_a = normalize(' '.join(paragraphs_a)).strip()
     text_b = normalize(' '.join(paragraphs_b)).strip()
     if text_a and text_a == text_b:
+        return True
+    if (not (_is_roundup(a) and _is_roundup(b))
+            and _conference_outcomes(a) & _conference_outcomes(b)):
         return True
     body_a, body_b = _tokens(' '.join(paragraphs_a)), _tokens(' '.join(paragraphs_b))
     if min(len(body_a), len(body_b)) < 8:

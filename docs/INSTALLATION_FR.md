@@ -22,7 +22,7 @@ L'URL configurée dans l'APK est :
 
 Dans le nouveau dépôt : **Settings → Secrets and variables → Actions → New repository secret**.
 
-Ajoute les **six** secrets suivants :
+Ajoute les **sept** secrets suivants :
 
 1. `CLOUDFLARE_ACCOUNT_ID` : même valeur que pour My Daily World.
 2. `CLOUDFLARE_API_TOKEN` : même valeur existante pour Workers AI.
@@ -30,6 +30,7 @@ Ajoute les **six** secrets suivants :
 4. `LADJ_STORE_PASSWORD` : même fichier privé.
 5. `LADJ_KEY_ALIAS` : même fichier privé.
 6. `LADJ_KEY_PASSWORD` : même fichier privé.
+7. `GROQ_API_KEY` : clé Groq de rédaction principale. La clé reste uniquement dans les secrets GitHub Actions.
 
 Ne mets jamais ces valeurs dans un message, une capture d'écran ou un dépôt public. Le ZIP privé doit rester en lieu sûr, hors GitHub. Il est **distinct de la clé de My Daily World**.
 
@@ -40,6 +41,12 @@ Dans le nouveau dépôt : **Actions → Compiler l'APK signé → Run workflow �
 Envoie uniquement l'APK via WeTransfer/USB, puis installe-le sur le Galaxy A56. Il s'agit d'une nouvelle application avec son propre identifiant Android ; **ne désinstalle pas My Daily World**.
 
 Ne télécharge **pas** `app-debug.apk` pour usage quotidien ; les debug sont signés temporairement. Les versions futures seront compilées avec la même clé privée et un `versionCode` plus élevé.
+
+### Mettre à jour vers la version 1.0.2
+
+Télécharge le nouvel APK signé et installe-le par-dessus **L'actu du jour** déjà installé. Ne désinstalle pas l'application : ses réglages de lecture et ses éditions locales restent ainsi conservés. La version 1.0.2 ajoute les bandeaux rouges d'urgence et l'encadré « Ce jour-là ». Les anciennes versions peuvent continuer à lire les articles, mais n'affichent pas ces compléments.
+
+Le workflow **Vérifier les urgences graves** consulte les flux toutes les quinze minutes, sans clé IA. GitHub peut retarder les vérifications. L'application actualise les compléments lorsqu'elle est visible ; cette nouveauté n'ajoute pas de notification d'urgence lorsque l'application est fermée.
 
 ## 5. Publier ton premier vrai journal
 
