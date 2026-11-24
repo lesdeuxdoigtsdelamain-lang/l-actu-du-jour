@@ -1,16 +1,13 @@
 {
-  "checked_at": "2026-11-24T18:52:21.489385+00:00",
-  "state": "partial",
-  "reason": "Édition partielle: 4 articles, 11 min; Maroc au maximum une fois, contrôle des événements sur sept jours.",
+  "checked_at": "2026-11-24T19:07:29.252975+00:00",
+  "state": "success",
+  "reason": "Édition complete: 7 articles, 20 min; Maroc au maximum une fois, contrôle des événements sur sept jours.",
   "feeds": {
     "bbc-world": {
       "ok": 25
     },
-    "bbc-ar": {
-      "ok": 12
-    },
-    "bbc-uk": {
-      "ok": 23
+    "bbc-business": {
+      "ok": 24
     },
     "aljazeera-en": {
       "ok": 23
@@ -18,35 +15,38 @@
     "bbc-science": {
       "ok": 10
     },
+    "sky-world": {
+      "ok": 5
+    },
     "rfi": {
       "ok": 22
-    },
-    "bbc-business": {
-      "ok": 25
     },
     "franceinfo": {
       "ok": 25
     },
-    "hespress-ar": {
-      "ok": 12
-    },
-    "hespress-fr": {
-      "ok": 10
-    },
     "france24": {
       "ok": 24
     },
-    "gov-uk": {
-      "ok": 19
+    "bbc-uk": {
+      "ok": 23
     },
-    "sky-world": {
-      "ok": 5
+    "hespress-ar": {
+      "ok": 12
+    },
+    "bbc-ar": {
+      "ok": 12
     },
     "aljazeera-ar": {
       "ok": 25
     },
+    "hespress-fr": {
+      "ok": 10
+    },
     "nsf": {
       "ok": 2
+    },
+    "nasa": {
+      "ok": 10
     },
     "nps": {
       "error": "Payload too large"
@@ -54,48 +54,44 @@
     "france24-france": {
       "ok": 14
     },
-    "nasa": {
-      "ok": 10
-    },
     "alarabiya": {
       "error": "HTTP 403"
     },
     "rfi-france": {
       "ok": 15
     },
-    "globalvoices": {
-      "ok": 1
-    },
-    "globalvoices-ar": {
-      "ok": 0
-    },
     "sky-uk": {
       "ok": 9
     },
+    "gov-uk": {
+      "ok": 19
+    },
+    "globalvoices": {
+      "ok": 1
+    },
     "telquel": {
-      "ok": 48
+      "ok": 49
+    },
+    "un-en": {
+      "error": "HTTP 404"
     },
     "un-fr": {
       "error": "HTTP 404"
     },
-    "un-en": {
-      "error": "HTTP 404"
+    "globalvoices-ar": {
+      "ok": 0
     }
   },
   "ai_usage": {
-    "calls": 11,
-    "neurons": 1196.87,
-    "groq_requests": 7,
-    "groq_tokens": 33348,
-    "cloudflare_requests": 4,
+    "calls": 5,
+    "neurons": 0.0,
+    "groq_requests": 5,
+    "groq_tokens": 29089,
+    "cloudflare_requests": 0,
     "providers": [
-      "groq",
-      "cloudflare"
-    ],
-    "disabled_providers": [
-      "cloudflare",
       "groq"
     ],
+    "disabled_providers": [],
     "limits": {
       "writer_calls": 18,
       "groq_calls": 18,
@@ -105,33 +101,14 @@
     },
     "groq_rate_limits": {
       "requests_limit_per_day": 1000,
-      "requests_remaining_per_day": 993,
+      "requests_remaining_per_day": 994,
       "tokens_limit_per_minute": 8000,
-      "tokens_remaining_per_minute": 1647
+      "tokens_remaining_per_minute": 1347
     },
-    "diagnostics": [
-      {
-        "provider": "groq",
-        "category": "provider_error",
-        "retryable": false,
-        "http_status": 400
-      },
-      {
-        "provider": "cloudflare",
-        "category": "local_limit",
-        "retryable": false,
-        "limit": "cloudflare_calls",
-        "ceiling": 4
-      }
-    ],
+    "diagnostics": [],
     "quality_rejections": {
-      "article trop court ou trop long": 1,
-      "longueur réelle 388, attendu 450 à 650 mots": 1,
-      "chiffre sans preuve dans les sources": 2,
-      "longueur réelle 340, attendu 450 à 650 mots": 1,
-      "longueur réelle 350, attendu 450 à 650 mots": 1,
-      "longueur réelle 416, attendu 450 à 650 mots": 1
+      "chiffre sans preuve dans les sources": 2
     },
-    "quality_rejections_total": 7
+    "quality_rejections_total": 2
   }
 }

@@ -2,11 +2,11 @@
   "schema_version": 1,
   "edition_id": "2026-11-24-fr-FR",
   "edition_date": "2026-11-24",
-  "generated_at": "2026-11-24T18:52:21.489385Z",
+  "generated_at": "2026-11-24T19:07:29.252975Z",
   "language": "fr-FR",
   "timezone": "Europe/London",
-  "status": "partielle",
-  "minutes": 11,
+  "status": "complete",
+  "minutes": 20,
   "articles": [
     {
       "id": "d8a99416203b8c3c9b075e",
@@ -118,6 +118,84 @@
         }
       ],
       "word_count": 552,
+      "minutes": 3
+    },
+    {
+      "id": "0ce87e7b89bac333f8545c",
+      "category": "Science et technologie",
+      "title": "Le gouvernement gallois exclut un abattage massif de blaireaux dans sa nouvelle stratégie contre la tuberculose bovine",
+      "paragraphs": [
+        "Les ministres du parti Plaid Cymru ont confirmé qu’aucune campagne d’abattage massif de blaireaux ne sera mise en œuvre dans le cadre du nouveau plan de lutte contre la tuberculose bovine (TB). Cette décision fait suite à plusieurs semaines de spéculations sur les intentions du gouvernement gallois, après qu’un groupe d’experts avait préconisé une « évolution radicale » des mesures. Les responsables ont souligné que l’approche adoptée sera « fondée sur des preuves et guidée par la science », excluant ainsi toute forme de cull non sélectif.",
+        "Une pétition lancée sur le site du Sénedd a recueilli plus de 28 000 signatures, témoignant d’une forte opposition publique à l’abattage de blaireaux. Le gouvernement a rappelé que près de 96 % des troupeaux bovins du pays sont désormais exempts de TB, un résultat qu’il souhaite consolider grâce à des actions ciblées plutôt qu’à des mesures de grande ampleur.",
+        "Le problème de la TB reste concentré dans l’ouest du Pays de Galles et le long de la frontière anglaise, où les niveaux d’incidence sont les plus élevés. Au cours des douze mois précédant juin 2026, 10 090 vaches ont été abattues après des tests positifs. Le gouvernement précédent, dirigé par le parti travailliste, avait fixé pour objectif l’éradication totale de la maladie d’ici 2041, un but jugé désormais difficile à atteindre sans ajustements stratégiques.",
+        "Avant les élections sénédriennes de mai, le groupe consultatif chargé de conseiller les ministres a averti que l’objectif de 2041 ne serait pas atteint sans actions urgentes et un financement accru. En réponse, le gouvernement a annoncé la poursuite de recherches sur le rôle des blaireaux et des cerfs dans la propagation de la TB, incluant de nouvelles enquêtes de population et des travaux de terrain. Ces études visent à développer des interventions « ciblées et proportionnées », telles que le piégeage, le test et, le cas échéant, la vaccination ou l’euthanasie des animaux lorsque les données le justifient.",
+        "Les autorités ont indiqué que le « retrait sélectif » de blaireaux pourrait être envisagé à l’avenir, bien que le calendrier reste indéfini. Des modifications du dépistage du bétail sont également à l’étude pour détecter plus tôt les infections. Un nouveau service de conseil destiné aux agriculteurs et aux vétérinaires devrait être mis en place, offrant des données actualisées sur les risques de maladie et des options de gestion plus flexibles pour les exploitations sous gestion renforcée.",
+        "Les représentants du secteur agricole ont salué la décision de ne pas recourir à un cull massif, tout en appelant à une mise en œuvre rapide des mesures promises. Le président de NFU Cymru, Abi Reader, a souligné l’importance d’un programme de piégeage‑test‑retrait dès que possible. De son côté, le président de la Farmers' Union of Wales, Ian Rickman, a qualifié les actions ciblées de « positif », tandis que la RSPCA Cymru a accueilli la déclaration avec prudence, rappelant que le recours à la mise à mort de la faune n’est pas totalement exclu."
+      ],
+      "image": null,
+      "source_refs": [
+        {
+          "publisher": "BBC Science",
+          "url": "https://www.bbc.co.uk/news/articles/cm930yjy97xyo",
+          "language": "en",
+          "published_at": "2026-11-24T16:47:05Z"
+        }
+      ],
+      "word_count": 493,
+      "minutes": 3
+    },
+    {
+      "id": "8f563a592b438312411780",
+      "category": "Environnement",
+      "title": "L’échec de la COP31 à Antalya révèle les fractures géopolitiques du climat",
+      "paragraphs": [
+        "La conférence climatique de l’ONU à Antalya, en Turquie, s’est soldée par l’absence d’accord global, un revers attribué aux intérêts divergents des pays producteurs de pétrole, à un boycott américain et à un différend sur le financement. Cette rupture met en lumière la difficulté d’obtenir un consensus dans un contexte géopolitique qualifié de « le plus compliqué et tendu de la mémoire vivante » par le ministre australien des négociations, Chris Bowen. Le président turc du sommet, Murat Kurum, a dénoncé le blocage comme une déception pour les populations en quête d’action climatique.",
+        "Le cœur du désaccord portait sur la mention des combustibles fossiles. Alors que la COP28 à Dubaï avait convenu d’une transition énergétique, le texte d’Antalya, le « Antalya Pact », ne faisait aucune référence aux hydrocarbures, ce qui a conduit plusieurs pays à le rejeter, estimant que l’absence de cet engagement affaiblirait l’accord de Dubaï. Les détracteurs ont souligné la différence entre réduire les émissions et s’engager à abandonner les sources responsables de la majorité du carbone.",
+        "Les nations productrices de pétrole, notamment les 22 pays de la Ligue arabe représentés par le négociateur saoudien Mohammad Ayoub, ont argumenté que leurs émissions historiques ne dépassaient pas 2 % du total mondial, imputant la responsabilité aux pays industrialisés riches. Le délégué russe Sergei Kononuchenko a ajouté que toute formulation contraignant la réduction du pétrole et du gaz entraînerait des pénuries, une hausse des prix et une précarité énergétique, justifiant ainsi le refus de toute mention des combustibles fossiles.",
+        "Les États‑Unis, absents de la délégation officielle après le retrait du président Donald Trump du processus climatique, ont pourtant signé, avec la Chine et la Russie, une déclaration à Shenzhen appelant à augmenter la production de produits pétroliers raffinés. Cette divergence entre les priorités des grandes puissances et les discussions en salle de négociation souligne le contraste entre les engagements affichés et les intérêts nationaux.",
+        "Malgré le blocage, environ 130 gouvernements, soit deux‑tiers des participants, ont soutenu l’inclusion d’un langage explicite sur la sortie des combustibles fossiles, rappelant l’importance d’une ambition accrue. Christiana Figueres, architecte de l’Accord de Paris, a soutenu que le retrait du texte était préférable à l’adoption d’un engagement affaibli, et que la majorité souhaitait poursuivre des actions plus ambitieuses.",
+        "Le débat sur le financement climatique a également été central. Le représentant russe a critiqué le recours aux prêts plutôt qu’aux subventions, qualifiant ce mécanisme d’une « ancienne distribution coloniale du travail sous une nouvelle bannière ». Des voix, comme celle du militant kényan Mohamed Adow, ont reproché à l’Europe de refuser un financement substantiel tout en refusant de reconnaître sa responsabilité dans l’échec. Le chef de l’ONU pour le climat, Simon Stiell, a évoqué la nécessité de réformer le processus, y compris l’éventualité de votes, bien que le consensus reste crucial pour protéger les petites et pauvres nations."
+      ],
+      "image": null,
+      "source_refs": [
+        {
+          "publisher": "BBC Science",
+          "url": "https://www.bbc.co.uk/news/articles/cky970n83rvjo",
+          "language": "en",
+          "published_at": "2026-11-23T17:24:25Z"
+        }
+      ],
+      "word_count": 472,
+      "minutes": 3
+    },
+    {
+      "id": "7ae02115ae9b608af6e28b",
+      "category": "Monde musulman",
+      "title": "Gaza place l’ensemble du territoire sous alerte sanitaire face à la flambée des cas de méningite",
+      "paragraphs": [
+        "La ministre de la Santé palestinienne a déclaré l’état d’alerte sanitaire dans toutes les provinces de Gaza, invoquant une hausse inquiétante des infections à méningite. Le directeur du complexe médical Al‑Shifa a signalé douze décès liés à la maladie au cours des deux derniers mois, tandis que des mères décrivent la détresse de leurs enfants face à la fièvre et aux symptômes associés. Cette décision intervient dans un contexte de dégradation générale des services de santé, de contamination de l’eau et de pénurie de médicaments, selon le même communiqué officiel.",
+        "Le nombre de cas enregistrés en octobre a atteint 272, soit plus de huit fois le niveau habituel qui oscille entre trente et cinquante. Le responsable de la santé publique, le Dr Nidal Ghanim, a indiqué que quinze décès ont été recensés depuis le début de l’année, dont cinq survenus en août, septembre et octobre. Il a également précisé que les formes bactériennes de la maladie sont passées de dix‑vingt cas mensuels à cent‑huit en octobre, avec cent cas supplémentaires signalés depuis le début du mois de novembre.",
+        "Les analyses de laboratoire ont révélé que près de soixante‑quinze pour cent des infections étaient attribuées à un entérovirus, bien que l’identification précise des souches génétiques reste impossible faute d’équipements spécialisés. Le Dr Ghanim a averti que la persistance de ces chiffres, surtout pour les formes bactériennes, pourrait entraîner une hausse du nombre de décès et des séquelles neurologiques permanentes chez les patients.",
+        "Les autorités sanitaires ont imputé l’aggravation de la situation à la détérioration de l’environnement et des infrastructures. La destruction des réseaux d’eau et d’assainissement, l’afflux de populations dans les camps de déplacement et la contamination des réserves d’eau potable par les eaux usées, aggravées par les pluies récentes, sont pointées du doigt. La responsabilité de ces dommages est attribuée à Israël, notamment en raison des restrictions imposées sur l’entrée de matériel de réparation, de désinfection et de carburant.",
+        "Pour limiter la propagation, le ministère a exhorté la population à adopter des mesures d’hygiène strictes: lavage des mains, utilisation d’eau sûre et consultation immédiate des centres de santé dès l’apparition de symptômes tels que fièvre soudaine, céphalées intenses, raideur de la nuque ou vomissements répétés. Les responsables sanitaires soulignent que la combinaison d’infrastructures sanitaires défaillantes et de conditions de vie surpeuplées augmente le risque d’infections, en particulier chez les nourrissons et les jeunes enfants.",
+        "Les équipes médicales, confrontées à une pénurie d’antibiotiques et de solutions de réhydratation, peinent à prendre en charge les patients. Le directeur de l’aide médicale à Gaza, Mohamed Abu Afesh, a décrit l’afflux quotidien de dizaines d’enfants atteints, tant de formes bactériennes que virales, et a mis en garde contre le danger de mortalité élevé en l’absence de traitements adéquats. Les témoignages de plusieurs mères, dont les enfants ont présenté des fièvres persistantes, des céphalées sévères et des troubles digestifs, illustrent la gravité de la crise sanitaire actuelle."
+      ],
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Mosques_in_Great_Britain-_Islamic_Architecture_in_the_UK%2C_c_1945_D24089.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "alt": "Photographie d’illustration — Monde musulman",
+        "credit": "Ministry of Information Photo Division Photographer",
+        "license": "Public domain",
+        "page": "https://commons.wikimedia.org/wiki/File:Mosques_in_Great_Britain-_Islamic_Architecture_in_the_UK%2C_c_1945_D24089.jpg"
+      },
+      "source_refs": [
+        {
+          "publisher": "BBC Arabic",
+          "url": "https://www.bbc.com/arabic/articles/cmd910jlk73wo",
+          "language": "ar",
+          "published_at": "2026-11-24T09:56:09Z"
+        }
+      ],
+      "word_count": 482,
       "minutes": 3
     }
   ]
