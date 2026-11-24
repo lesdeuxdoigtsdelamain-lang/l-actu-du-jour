@@ -1,0 +1,132 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-11-24T19:41:45.910833Z",
+  "hadiths": [
+    {
+      "id": "hadith-treasure-of-paradise",
+      "arabic": "يَا عَبْدَاللَّهِ بْنَ قَيْسٍ، أَلَا أَدُلُّكَ عَلَى كَنْزٍ مِنْ كُنُوزِ الْجَنَّةِ؟ لَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ.",
+      "narrator_ar": "أبو موسى الأشعري",
+      "reference_ar": "رواه البخاري ومسلم (متفق عليه).",
+      "authenticity_fr": "Authentique (sahih) — rapporté par al-Bukhârî et Muslim.",
+      "translation_fr": "Ô 'Abdallâh ibn Qays, ne t'indiquerais-je pas un trésor parmi les trésors du Paradis ? « Il n'y a de puissance ni de force qu'en Allah. »",
+      "explanation_fr": "Ibn Bâz explique que cette parole reconnaît notre besoin constant de l'aide d'Allah. Dans les actes d'adoration comme dans les affaires quotidiennes, le serviteur se rappelle que sa capacité d'agir vient de Lui.",
+      "sources": [
+        {
+          "publisher": "الموقع الرسمي للشيخ ابن باز",
+          "scholar": "الشيخ عبدالعزيز بن عبدالله بن باز",
+          "url": "https://binbaz.org.sa/audios/163/13--من-حديث-يا-عبدالله-بن-قيس-الا-ادلك-على-كنز-من-كنوز-الجنة",
+          "language": "ar"
+        }
+      ],
+      "edition_date": "2026-11-24"
+    },
+    {
+      "id": "hadith-good-character",
+      "arabic": "الْبِرُّ: حُسْنُ الْخُلُقِ، والْإِثْمُ: مَا حَاكَ فِي صَدْرِكَ، وكَرِهْتَ أَنْ يَطَّلِعَ عَلَيْهِ النَّاسُ.",
+      "narrator_ar": "النواس بن سمعان",
+      "reference_ar": "رواه مسلم.",
+      "authenticity_fr": "Authentique (sahih) — rapporté par Muslim.",
+      "translation_fr": "La vertu, c'est le bon comportement. Le péché, c'est ce qui trouble ta poitrine et que tu détesterais voir découvert par les gens.",
+      "explanation_fr": "Ibn Bâz souligne le bon comportement envers la famille et les voisins. Lorsqu'une action paraît douteuse, il recommande la prudence plutôt que de s'engager sans savoir si elle est permise.",
+      "sources": [
+        {
+          "publisher": "الموقع الرسمي للشيخ ابن باز",
+          "scholar": "الشيخ عبدالعزيز بن عبدالله بن باز",
+          "url": "https://binbaz.org.sa/audios/151/1--من-حديث-حق-المسلم-على-المسلم-ست-اذا-لقيته-فسلم-عليه",
+          "language": "ar"
+        }
+      ],
+      "edition_date": "2026-11-23"
+    },
+    {
+      "id": "hadith-follow-commands",
+      "arabic": "ما نهيتُكم عنه فاجتنبوه، وما أمرتُكم به فأتوا منه ما استطعتُم، فإنما أهلك الذين من قبلكم كثرةُ مسائلهم واختلافُهم على أنبيائهم.",
+      "narrator_ar": "أبو هريرة عبدالرحمن بن صخر",
+      "reference_ar": "رواه البخاري ومسلم (متفق عليه).",
+      "authenticity_fr": "Authentique (sahih) — rapporté par al-Bukhârî et Muslim.",
+      "translation_fr": "Évitez ce que je vous ai interdit, et accomplissez de ce que je vous ai ordonné ce dont vous êtes capables. Ceux qui vous ont précédés ont été perdus par la multiplication de leurs questions et leurs divergences envers leurs prophètes.",
+      "explanation_fr": "Ibn Bâz explique que les devoirs s'accomplissent selon la capacité réelle. Le hadith invite aussi à poser des questions utiles pour comprendre sa religion, en évitant les disputes et les questions obstinées sans besoin.",
+      "sources": [
+        {
+          "publisher": "الموقع الرسمي للشيخ ابن باز",
+          "scholar": "الشيخ عبدالعزيز بن عبدالله بن باز",
+          "url": "https://binbaz.org.sa/audios/1846/09-من-حديث-ما-نهيتكم-عنه-فاجتنبوه",
+          "language": "ar"
+        }
+      ],
+      "edition_date": "2026-11-22"
+    },
+    {
+      "id": "hadith-mutual-rights",
+      "arabic": "حَقُّ الْمُسْلِمِ عَلَى الْمُسْلِمِ سِتٌّ: إِذَا لَقِيتَهُ فَسَلِّمْ عَلَيْهِ، وإِذَا دَعَاكَ فَأَجِبْهُ، وإِذَا اسْتَنْصَحَكَ فَانْصَحْهُ، وإِذَا عَطَسَ فَحَمِدَ اللَّهَ فَسَمِّتْهُ، وإِذَا مَرِضَ فَعُدْهُ، وإِذَا مَاتَ فَاتْبَعْهُ.",
+      "narrator_ar": "أبو هريرة",
+      "reference_ar": "رواه مسلم.",
+      "authenticity_fr": "Authentique (sahih) — rapporté par Muslim.",
+      "translation_fr": "Le musulman a six droits sur le musulman : lorsque tu le rencontres, salue-le ; lorsqu'il t'invite, réponds-lui ; lorsqu'il te demande conseil, conseille-le ; lorsqu'il éternue puis loue Allah, souhaite-lui la miséricorde ; lorsqu'il est malade, rends-lui visite ; lorsqu'il meurt, accompagne son cortège funèbre.",
+      "explanation_fr": "Ibn Bâz présente ces gestes comme des moyens de renforcer l'affection et l'entraide. Il insiste sur le conseil honnête, sans tromperie, et sur l'attention portée à la personne malade.",
+      "sources": [
+        {
+          "publisher": "الموقع الرسمي للشيخ ابن باز",
+          "scholar": "الشيخ عبدالعزيز بن عبدالله بن باز",
+          "url": "https://binbaz.org.sa/audios/151/1--من-حديث-حق-المسلم-على-المسلم-ست-اذا-لقيته-فسلم-عليه",
+          "language": "ar"
+        }
+      ],
+      "edition_date": "2026-11-21"
+    },
+    {
+      "id": "hadith-master-anger",
+      "arabic": "لَيس الشَّديدُ بِالصُّرعَةِ، إِنَّما الشَّديدُ الَّذِي يَملِكُ نفسَهُ عِندَ الغضبِ",
+      "narrator_ar": "أبو هريرة",
+      "reference_ar": "رواه البخاري ومسلم (متفق عليه).",
+      "authenticity_fr": "Authentique (sahih) — rapporté par al-Bukhârî et Muslim.",
+      "translation_fr": "Le fort n'est pas celui qui terrasse les autres dans la lutte ; le fort est celui qui se maîtrise au moment de la colère.",
+      "explanation_fr": "Ibn Bâz rattache ce hadith à la patience, au pardon et à la maîtrise de soi. La vraie force consiste à retenir sa réaction et à ne pas se précipiter pour punir ou se venger.",
+      "sources": [
+        {
+          "publisher": "الموقع الرسمي للشيخ ابن باز",
+          "scholar": "الشيخ عبدالعزيز بن عبدالله بن باز",
+          "url": "https://binbaz.org.sa/audios/2543/220-من-حديث-كنت-امشي-مع-رسول-الله-صلى-الله-عليه-وسلم-وعليه-برد-نجراني-غليظ-الحاشية",
+          "language": "ar"
+        }
+      ],
+      "edition_date": "2026-11-20"
+    },
+    {
+      "id": "hadith-make-things-easy",
+      "arabic": "يَسِّرُوا وَلا تُعَسِّروا، وَبَشِّرُوا وَلا تُنَفِّرُوا",
+      "narrator_ar": "أنس",
+      "reference_ar": "رواه البخاري ومسلم (متفق عليه).",
+      "authenticity_fr": "Authentique (sahih) — rapporté par al-Bukhârî et Muslim.",
+      "translation_fr": "Facilitez les choses et ne les rendez pas difficiles. Annoncez de bonnes nouvelles et ne repoussez pas les gens.",
+      "explanation_fr": "Ibn Bâz rappelle la manière patiente dont le Prophète ﷺ enseignait à ceux qui ignoraient. Conseiller demande de la douceur et de la pédagogie, afin d'aider les personnes à comprendre et à progresser.",
+      "sources": [
+        {
+          "publisher": "الموقع الرسمي للشيخ ابن باز",
+          "scholar": "الشيخ عبدالعزيز بن عبدالله بن باز",
+          "url": "https://binbaz.org.sa/audios/2540/217-من-حديث-ان-الله-رفيق-يحب-الرفق-ويعطي-على-الرفق-ما-لا-يعطي-على-العنف",
+          "language": "ar"
+        }
+      ],
+      "edition_date": "2026-11-19"
+    },
+    {
+      "id": "hadith-share-with-neighbors",
+      "arabic": "إِذَا طَبَخْتَ مَرَقَةً فَأَكْثِرْ مَاءَهَا، وتَعَاهَدْ جِيرَانَكَ.",
+      "narrator_ar": "أبو ذر",
+      "reference_ar": "رواه مسلم.",
+      "authenticity_fr": "Authentique (sahih) — rapporté par Muslim.",
+      "translation_fr": "Lorsque tu prépares un bouillon, augmente la quantité d'eau et pense à en offrir à tes voisins.",
+      "explanation_fr": "Ibn Bâz montre qu'on peut être généreux avec peu. Partager un repas simple entretient les liens avec ses voisins ; l'attention et l'aide comptent, sans attendre d'avoir de grandes ressources.",
+      "sources": [
+        {
+          "publisher": "الموقع الرسمي للشيخ ابن باز",
+          "scholar": "الشيخ عبدالعزيز بن عبدالله بن باز",
+          "url": "https://binbaz.org.sa/audios/154/4--من-حديث-لا-يحل-لمسلم-ان-يهجر-اخاه-فوق-ثلاث-ليال",
+          "language": "ar"
+        }
+      ],
+      "edition_date": "2026-11-18"
+    }
+  ]
+}

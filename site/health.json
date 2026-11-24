@@ -1,52 +1,55 @@
 {
-  "checked_at": "2026-11-24T19:07:29.252975+00:00",
+  "checked_at": "2026-11-24T19:41:28.860631+00:00",
   "state": "success",
-  "reason": "Édition complete: 7 articles, 20 min; Maroc au maximum une fois, contrôle des événements sur sept jours.",
+  "reason": "Édition complete: 5 articles, 14 min; Maroc au maximum une fois, contrôle des événements sur sept jours.",
   "feeds": {
-    "bbc-world": {
-      "ok": 25
-    },
-    "bbc-business": {
+    "france24": {
       "ok": 24
+    },
+    "bbc-world": {
+      "ok": 26
     },
     "aljazeera-en": {
       "ok": 23
     },
-    "bbc-science": {
-      "ok": 10
-    },
-    "sky-world": {
-      "ok": 5
+    "bbc-uk": {
+      "ok": 23
     },
     "rfi": {
       "ok": 22
     },
-    "franceinfo": {
-      "ok": 25
-    },
-    "france24": {
-      "ok": 24
-    },
-    "bbc-uk": {
-      "ok": 23
-    },
     "hespress-ar": {
       "ok": 12
     },
-    "bbc-ar": {
-      "ok": 12
+    "sky-world": {
+      "ok": 5
     },
-    "aljazeera-ar": {
-      "ok": 25
+    "bbc-science": {
+      "ok": 10
+    },
+    "bbc-business": {
+      "ok": 24
     },
     "hespress-fr": {
       "ok": 10
     },
-    "nsf": {
-      "ok": 2
+    "aljazeera-ar": {
+      "ok": 25
+    },
+    "gov-uk": {
+      "ok": 19
     },
     "nasa": {
       "ok": 10
+    },
+    "bbc-ar": {
+      "ok": 12
+    },
+    "nsf": {
+      "ok": 2
+    },
+    "alarabiya": {
+      "error": "HTTP 403"
     },
     "nps": {
       "error": "Payload too large"
@@ -54,43 +57,38 @@
     "france24-france": {
       "ok": 14
     },
-    "alarabiya": {
-      "error": "HTTP 403"
-    },
-    "rfi-france": {
-      "ok": 15
-    },
     "sky-uk": {
       "ok": 9
     },
-    "gov-uk": {
-      "ok": 19
+    "franceinfo": {
+      "ok": 27
+    },
+    "rfi-france": {
+      "ok": 16
+    },
+    "telquel": {
+      "error": "Disallowed host / scheme"
+    },
+    "globalvoices-ar": {
+      "ok": 0
     },
     "globalvoices": {
       "ok": 1
     },
-    "telquel": {
-      "ok": 49
-    },
-    "un-en": {
-      "error": "HTTP 404"
-    },
     "un-fr": {
       "error": "HTTP 404"
     },
-    "globalvoices-ar": {
-      "ok": 0
+    "un-en": {
+      "error": "HTTP 404"
     }
   },
   "ai_usage": {
-    "calls": 5,
+    "calls": 0,
     "neurons": 0.0,
-    "groq_requests": 5,
-    "groq_tokens": 29089,
+    "groq_requests": 0,
+    "groq_tokens": 0,
     "cloudflare_requests": 0,
-    "providers": [
-      "groq"
-    ],
+    "providers": [],
     "disabled_providers": [],
     "limits": {
       "writer_calls": 18,
@@ -99,16 +97,9 @@
       "cloudflare_calls": 4,
       "cloudflare_neurons": 3800
     },
-    "groq_rate_limits": {
-      "requests_limit_per_day": 1000,
-      "requests_remaining_per_day": 994,
-      "tokens_limit_per_minute": 8000,
-      "tokens_remaining_per_minute": 1347
-    },
+    "groq_rate_limits": {},
     "diagnostics": [],
-    "quality_rejections": {
-      "chiffre sans preuve dans les sources": 2
-    },
-    "quality_rejections_total": 2
+    "quality_rejections": {},
+    "quality_rejections_total": 0
   }
 }
