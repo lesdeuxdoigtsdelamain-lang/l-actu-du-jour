@@ -253,7 +253,9 @@ def test_edition_length_target():
     uk=SimpleNamespace(word_count=500,minutes=3,title='Le Royaume-Uni annonce une décision publique',paragraphs=[])
     fr=SimpleNamespace(word_count=350,minutes=2,title='Tour de l’actu en France',paragraphs=[])
     assert not complete([long]*7)
-    assert complete([long]*5+[uk,fr])
+    assert complete([long]*3+[uk,fr])
+    assert complete([long]*4+[uk,fr])
+    assert not complete([long]*5+[uk,fr])
 
 def test_numeric_revision_reports_only_unsupported_values():
     from generator.app.editor import unsupported_numbers,allowed_numbers
@@ -262,7 +264,7 @@ def test_numeric_revision_reports_only_unsupported_values():
     assert allowed_numbers(facts,[])=={'12'}
     assert unsupported_numbers(output,facts,[])=={'777'}
 
-def test_partial_edition_is_extended_not_replaced(monkeypatch,tmp_path):
+def test_legacy_partial_edition_reserves_required_slots_under_the_six_article_cap(monkeypatch,tmp_path):
     from generator.app import main as runner
     from dataclasses import replace
     global_feed=replace(FEED,category='Monde')
@@ -304,10 +306,16 @@ def test_partial_edition_is_extended_not_replaced(monkeypatch,tmp_path):
                     'preuves':[['0','1']]*6}
     result,_,_,_=runner.generate(tmp_path,NOW,Provider(),[global_feed])
     assert result is not None
-    assert len(result.articles)>=6
-    assert [a.id for a in result.articles[:5]]==[a.id for a in previous.articles]
-    assert result.minutes>previous.minutes
-    assert len(result.articles)<=8
+    assert result.status=='partielle'
+    assert [a.id for a in result.articles]==[a.id for a in previous.articles[:4]]
+    assert len(result.articles)+runner.slots_missing(result.articles)<=6
+
+
+def test_five_article_wire_contract_keeps_legacy_archives_readable():
+    assert Edition.model_validate(edition(size=5).model_copy(update={'status':'complete'}).model_dump()).status=='complete'
+    assert Edition.model_validate(edition(size=8).model_dump()).status=='complete'
+    with pytest.raises(ValidationError):
+        Edition.model_validate(edition(size=4).model_copy(update={'status':'complete'}).model_dump())
 
 
 def test_english_people_is_not_an_entertainment_keyword():

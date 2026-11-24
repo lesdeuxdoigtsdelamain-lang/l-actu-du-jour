@@ -50,7 +50,7 @@ def uk(key='britishnews',day=TODAY):
 
 def edition(articles,day=TODAY):
     return Edition(edition_id=f'{day}-fr-FR',edition_date=day,generated_at=NOW,
-                   status='complete' if len(articles)>=6 else 'partielle',articles=articles,
+                   status='complete' if len(articles)>=5 else 'partielle',articles=articles,
                    minutes=sum(a.minutes for a in articles))
 
 
@@ -77,7 +77,7 @@ class Provider:
 
 def complete_articles(prefix='',day=TODAY):
     return [france(prefix+'brief',day),uk(prefix+'british',day),
-            *[article(prefix+key,day=day) for key in ('asteroid','energy','forest','water','education')]]
+            *[article(prefix+key,day=day) for key in ('asteroid','energy','forest')]]
 
 
 def freeze_now(monkeypatch):
@@ -110,7 +110,7 @@ def test_edition_can_be_complete_without_any_morocco_article():
     articles=complete_articles()
     assert runner.complete(articles)
     assert sum(is_morocco_article(a) for a in articles)==0
-    assert len(articles)==7 and sum(a.minutes for a in articles)==20
+    assert len(articles)==5 and sum(a.minutes for a in articles)==14
 
 
 def test_full_old_edition_reserves_and_fills_france_and_uk_slots(monkeypatch,tmp_path):
@@ -127,7 +127,7 @@ def test_full_old_edition_reserves_and_fills_france_and_uk_slots(monkeypatch,tmp
         return (france() if kwargs.get('mode')=='tour_france' else uk()),[]
     monkeypatch.setattr(runner,'draft',draft)
     result,_,_,_=runner.generate(tmp_path,NOW,Provider(),[FEED])
-    assert result is not None and len(result.articles)<=8
+    assert result is not None and len(result.articles)<=6
     assert sum(is_roundup(a) for a in result.articles)==1
     assert sum(article_region(a)=='Royaume-Uni' for a in result.articles)==1
     assert len({a.id for a in result.articles})==len(result.articles)
@@ -155,7 +155,7 @@ def test_generated_morocco_story_cannot_bypass_cap_with_foreign_rss_category(mon
     assert result is not None
     assert sum(is_morocco_article(a) for a in result.articles)==1
     assert generated[candidates[0].id].id not in {a.id for a in result.articles}
-    assert len(result.articles)==7
+    assert len(result.articles)==5
 
 
 def roundup_inputs(count):
@@ -291,7 +291,7 @@ def test_two_date_repair_publishes_each_correction_and_keeps_newest_manifest(mon
     assert runner.main()==0
     assert calls==[yesterday,TODAY]
     assert json.loads((tmp_path/'latest.json').read_text())['date']=='2026-11-20'
-    assert all(len(Edition.model_validate_json(p.read_bytes()).articles)==7
+    assert all(len(Edition.model_validate_json(p.read_bytes()).articles)==5
                for p in (tmp_path/'editions').glob('*.json'))
     validate(tmp_path)
 
@@ -385,18 +385,37 @@ def test_obviously_english_generated_title_gets_one_french_revision():
     assert provider.calls==2
 
 
-def test_twenty_minute_complete_edition_does_not_gain_an_unnecessary_eighth_article(monkeypatch,tmp_path):
-    articles=[france(),uk().model_copy(),*[article('neartarget'+chr(97+i),count=450) for i in range(5)]]
-    assert runner.complete(articles) and sum(a.minutes for a in articles)==20
-    assert sum(a.word_count for a in articles)<runner.TARGET_WORDS
+def test_five_complete_articles_do_not_consume_a_sixth_drafting_call(monkeypatch,tmp_path):
+    articles=[france(),uk(),*[article('neartarget'+chr(97+i),count=450) for i in range(3)]]
+    assert runner.complete(articles) and sum(a.minutes for a in articles)==14
     put(tmp_path,edition(articles),NOW)
     extra=candidate('unnecessary','Des chercheurs cartographient une nouvelle zone forestière')
     monkeypatch.setattr(runner,'collect',lambda feeds,now:([extra],{}))
     monkeypatch.setattr(runner,'find',lambda *args:None)
-    monkeypatch.setattr(runner,'make_facts',lambda *args:pytest.fail('A complete twenty-minute edition needs no eighth article'))
+    monkeypatch.setattr(runner,'make_facts',lambda *args:pytest.fail('Five complete reports need no extra article'))
     result,_,_,_=runner.generate(tmp_path,NOW,Provider(),[FEED])
-    assert result is not None and len(result.articles)==7
+    assert result is not None and len(result.articles)==5
     assert [a.id for a in result.articles]==[a.id for a in articles]
+
+
+def test_legacy_eight_article_edition_reduces_to_five_without_rewriting(monkeypatch,tmp_path):
+    old=[*complete_articles(), *[article('legacy'+key) for key in ('water','energy','education')]]
+    put(tmp_path,edition(old),NOW)
+    monkeypatch.setattr(runner,'collect',lambda feeds,now:([],{}))
+    provider=Provider()
+    result,_,_,_=runner.generate(tmp_path,NOW,provider,[FEED])
+    assert result.status=='complete' and len(result.articles)==5
+    assert provider.calls==0
+    assert result.articles==old[:5]
+    put(tmp_path,result,NOW)
+    validate(tmp_path)
+
+
+def test_six_retained_reports_are_allowed_when_five_have_insufficient_depth():
+    reports=[france(),uk(),*[article('shortlegacy'+chr(97+i),count=320) for i in range(4)]]
+    kept,_=runner.seed_articles(edition(reports),[])
+    assert len(kept)==6 and runner.complete(kept)
+    assert all(not runner.complete(kept[:i]+kept[i+1:]) for i in range(len(kept)))
 
 
 def test_reviewed_historical_source_has_priority_when_only_one_drafting_call_remains(monkeypatch,tmp_path):

@@ -43,6 +43,10 @@ def validate(site:Path):
     if extras.exists():
         from .extras import Extras
         Extras.model_validate_json(extras.read_bytes())
+    hadith = site / 'hadith.json'
+    if hadith.exists():
+        from .hadith import HadithFeed
+        HadithFeed.model_validate_json(hadith.read_bytes())
     for f in (site/'editions').glob('*.json'):
         e=Edition.model_validate_json(f.read_bytes())
         if f.name!=f'{e.edition_date}.json':raise ValueError('Mismatch edition filename')

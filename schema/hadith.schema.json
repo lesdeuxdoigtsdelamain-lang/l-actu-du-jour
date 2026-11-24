@@ -1,0 +1,142 @@
+{
+  "$defs": {
+    "HadithNote": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 64,
+          "minLength": 12,
+          "pattern": "^[a-z0-9_-]+$",
+          "title": "Id",
+          "type": "string"
+        },
+        "arabic": {
+          "maxLength": 1600,
+          "minLength": 1,
+          "title": "Arabic",
+          "type": "string"
+        },
+        "narrator_ar": {
+          "maxLength": 240,
+          "minLength": 2,
+          "title": "Narrator Ar",
+          "type": "string"
+        },
+        "reference_ar": {
+          "maxLength": 500,
+          "minLength": 2,
+          "title": "Reference Ar",
+          "type": "string"
+        },
+        "authenticity_fr": {
+          "maxLength": 240,
+          "minLength": 10,
+          "title": "Authenticity Fr",
+          "type": "string"
+        },
+        "translation_fr": {
+          "maxLength": 1600,
+          "minLength": 5,
+          "title": "Translation Fr",
+          "type": "string"
+        },
+        "explanation_fr": {
+          "maxLength": 1000,
+          "minLength": 10,
+          "title": "Explanation Fr",
+          "type": "string"
+        },
+        "sources": {
+          "items": {
+            "$ref": "#/$defs/HadithSource"
+          },
+          "maxItems": 3,
+          "minItems": 1,
+          "title": "Sources",
+          "type": "array"
+        },
+        "edition_date": {
+          "format": "date",
+          "title": "Edition Date",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "arabic",
+        "narrator_ar",
+        "reference_ar",
+        "authenticity_fr",
+        "translation_fr",
+        "explanation_fr",
+        "sources",
+        "edition_date"
+      ],
+      "title": "HadithNote",
+      "type": "object"
+    },
+    "HadithSource": {
+      "additionalProperties": false,
+      "properties": {
+        "publisher": {
+          "maxLength": 90,
+          "minLength": 2,
+          "title": "Publisher",
+          "type": "string"
+        },
+        "scholar": {
+          "maxLength": 120,
+          "minLength": 2,
+          "title": "Scholar",
+          "type": "string"
+        },
+        "url": {
+          "title": "Url",
+          "type": "string"
+        },
+        "language": {
+          "const": "ar",
+          "title": "Language",
+          "type": "string"
+        }
+      },
+      "required": [
+        "publisher",
+        "scholar",
+        "url",
+        "language"
+      ],
+      "title": "HadithSource",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": 1,
+      "default": 1,
+      "title": "Schema Version",
+      "type": "integer"
+    },
+    "updated_at": {
+      "format": "date-time",
+      "title": "Updated At",
+      "type": "string"
+    },
+    "hadiths": {
+      "items": {
+        "$ref": "#/$defs/HadithNote"
+      },
+      "maxItems": 7,
+      "minItems": 1,
+      "title": "Hadiths",
+      "type": "array"
+    }
+  },
+  "required": [
+    "updated_at",
+    "hadiths"
+  ],
+  "title": "HadithFeed",
+  "type": "object"
+}

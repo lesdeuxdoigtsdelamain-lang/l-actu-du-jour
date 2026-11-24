@@ -31,6 +31,8 @@ jobs:
       - name: Check recent serious events without any AI call
         # This job intentionally receives no Groq or Cloudflare secret.
         run: python -m generator.app.extras --alerts-only
+      - name: Refresh the dated hadith from reviewed Arabic sources without AI
+        run: python -m generator.app.hadith
       - name: Validate and retain publications
         run: |
           python -m generator.app.verify_site site

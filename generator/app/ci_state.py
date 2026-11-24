@@ -25,7 +25,7 @@ def main():
             previous=worktree/'site'
             if not previous.is_dir():raise SystemExit('Publication state is incomplete; refusing to replace it.')
             for name in ('editions','latest.json','archive.json','editorial-memory.json','health.json',
-                         'extras.json','extras-health.json'):
+                         'extras.json','extras-health.json','hadith.json','hadith-health.json'):
                 src=previous/name;dest=ROOT/'site'/name
                 if src.is_dir():shutil.copytree(src,dest,dirs_exist_ok=True)
                 elif src.is_file():shutil.copy2(src,dest)

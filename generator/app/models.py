@@ -94,8 +94,10 @@ class Edition(Wire):
             raise ValueError('Repeated articles')
         if sum(a.minutes for a in self.articles) != self.minutes:
             raise ValueError('Incorrect estimated reading time')
-        if self.status == 'complete' and not (6 <= len(self.articles) <= 8):
-            raise ValueError('Complete edition needs 6-8 articles')
+        # The writer now publishes five/six; keep older seven/eight-item
+        # archives readable instead of retroactively invalidating their hashes.
+        if self.status == 'complete' and not (5 <= len(self.articles) <= 8):
+            raise ValueError('Complete edition needs at least five articles')
         return self
 
 class Manifest(Wire):

@@ -93,7 +93,9 @@ fun valid(e: Edition): Edition {
     require(e.id == "$date-fr-FR" && e.status in listOf("complete","partielle"))
     OffsetDateTime.parse(e.generatedAt)
     require(e.articles.size in 1..8 && e.articles.map { it.id }.distinct().size == e.articles.size)
-    if(e.status == "complete") require(e.articles.size >= 6)
+    // New editions contain five (at most six) stories; seven/eight-story archives
+    // remain readable after installing the update.
+    if(e.status == "complete") require(e.articles.size >= 5)
     require(e.minutes == e.articles.sumOf { it.minutes })
     for(a in e.articles) {
         require(a.id.length in 12..64 && a.title.length in 18..180 && a.sources.isNotEmpty())

@@ -31,6 +31,8 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.style.TextDirection
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -52,12 +54,15 @@ fun ReaderApp(model:NewsViewModel,onBrowser:(String)->Unit,onFullScreen:(Boolean
     val all by model.editions.collectAsState()
     val read by model.readIds.collectAsState()
     val extras by model.extras.collectAsState()
+    val hadith by model.hadith.collectAsState()
     val alerts = activeAlerts(extras, model.clock.value)
+    val today = model.clock.value.atZone(london).toLocalDate()
     var chosenDate by remember { mutableStateOf<String?>(null) }
     var chosenArticle by remember { mutableStateOf<String?>(null) }
     var options by remember { mutableStateOf(false) }
     var full by remember { mutableStateOf(false) }
     val chosen=all.firstOrNull {it.date==chosenDate} ?: all.firstOrNull()
+    val supplementDay=supplementDate(chosenDate,chosen?.date,today)
     val article=chosen?.articles?.firstOrNull { it.id==chosenArticle }
     val back:()->Unit={ chosenArticle=null; full=false;onFullScreen(false) }
 
@@ -121,11 +126,24 @@ fun ReaderApp(model:NewsViewModel,onBrowser:(String)->Unit,onFullScreen:(Boolean
                     items(alerts,key={"alert-${it.id}"}) { alert ->
                         UrgentCard(alert,model.font.value,onBrowser)
                     }
+                    item(key="today") {
+                        Column(Modifier.fillMaxWidth().padding(top=4.dp),
+                            verticalArrangement=Arrangement.spacedBy(3.dp)) {
+                            Text("Aujourd'hui",style=MaterialTheme.typography.labelMedium,
+                                color=MaterialTheme.colorScheme.primary)
+                            Text(niceDate(today.toString()),style=MaterialTheme.typography.headlineSmall,
+                                fontWeight=FontWeight.Medium)
+                        }
+                    }
                     if(chosen!=null) {
                         item {
                             LazyRow(horizontalArrangement=Arrangement.spacedBy(8.dp)) {
-                                items(all,key={it.id}) { e ->
-                                    FilterChip(selected=chosen.date==e.date,
+                                item {
+                                    FilterChip(selected=chosenDate==null,onClick={chosenDate=null},
+                                        label={Text("Aujourd'hui")})
+                                }
+                                items(all.filter { it.date!=today.toString() },key={it.id}) { e ->
+                                    FilterChip(selected=chosenDate==e.date,
                                         onClick={chosenDate=e.date},label={Text(LocalDate.parse(e.date)
                                             .format(DateTimeFormatter.ofPattern("dd MMM",fr)))})
                                 }
@@ -133,13 +151,16 @@ fun ReaderApp(model:NewsViewModel,onBrowser:(String)->Unit,onFullScreen:(Boolean
                         }
                         item {
                             Spacer(Modifier.height(4.dp))
-                            Text(niceDate(chosen.date),style=MaterialTheme.typography.headlineSmall,
-                                fontWeight=FontWeight.Medium)
+                            Text(if(chosen.date==today.toString())"Votre journal du jour"
+                                else "Édition du ${niceDate(chosen.date)}",
+                                style=MaterialTheme.typography.titleLarge,fontWeight=FontWeight.Medium)
                             Text("${chosen.articles.size} articles · ${chosen.minutes} min de lecture",
                                 color=MaterialTheme.colorScheme.onSurfaceVariant)
                             if(chosen.status=="partielle") Text("Édition partielle : seules les actualités assez documentées ont été retenues.",
                                 style=MaterialTheme.typography.bodySmall)
-                            if(chosen.date!=ukToday().toString()) Text("Édition archivée — pas le journal d'aujourd'hui",
+                            if(chosen.date!=today.toString()) Text(
+                                if(chosenDate==null)"Dernière édition disponible. Le journal d'aujourd'hui est attendu."
+                                else "Vous consultez une édition archivée.",
                                 style=MaterialTheme.typography.bodySmall)
                         }
                         items(chosen.articles,key={it.id}) { a ->
@@ -162,9 +183,13 @@ fun ReaderApp(model:NewsViewModel,onBrowser:(String)->Unit,onFullScreen:(Boolean
                             }
                         }
                     }
-                    val note=historyFor(extras,chosen?.date ?: ukToday().toString())
+                    val note=historyFor(extras,supplementDay,today)
                     if(note!=null) item(key="history-${note.editionDate}") {
                         HistoryCard(note,model.font.value,onBrowser)
+                    }
+                    val dailyHadith=hadithFor(hadith,supplementDay,today)
+                    if(dailyHadith!=null) item(key="hadith-${dailyHadith.editionDate}") {
+                        HadithCard(dailyHadith,model.font.value,onBrowser)
                     }
                     if(model.message.value.isNotBlank()) item {
                         Text(model.message.value,style=MaterialTheme.typography.bodySmall,
@@ -210,6 +235,41 @@ private fun HistoryCard(note:HistoryNote,font:Float,onBrowser:(String)->Unit) {
                 TextButton(onClick={onBrowser(source.url)},
                     contentPadding=PaddingValues(horizontal=0.dp,vertical=4.dp)) {
                     Text("Source : ${source.publisher}",fontSize=(13*font).sp)
+                }
+            }
+        }
+    }
+}
+
+@Composable
+private fun HadithCard(note:HadithNote,font:Float,onBrowser:(String)->Unit) {
+    Surface(shape=RoundedCornerShape(12.dp),tonalElevation=1.dp) {
+        Column(Modifier.fillMaxWidth().padding(18.dp),verticalArrangement=Arrangement.spacedBy(10.dp)) {
+            Text("Hadith du jour",style=MaterialTheme.typography.titleMedium,
+                fontWeight=FontWeight.Bold,color=MaterialTheme.colorScheme.primary)
+            Text(niceDate(note.editionDate),style=MaterialTheme.typography.labelMedium,
+                color=MaterialTheme.colorScheme.onSurfaceVariant)
+            Text(note.arabic,modifier=Modifier.fillMaxWidth(),fontSize=(23*font).sp,
+                lineHeight=(38*font).sp,textAlign=TextAlign.Right,
+                style=MaterialTheme.typography.bodyLarge.copy(textDirection=TextDirection.Rtl))
+            Text(note.narratorAr,modifier=Modifier.fillMaxWidth(),fontSize=(15*font).sp,
+                lineHeight=(24*font).sp,textAlign=TextAlign.Right,
+                style=MaterialTheme.typography.bodyMedium.copy(textDirection=TextDirection.Rtl))
+            Text(note.referenceAr,modifier=Modifier.fillMaxWidth(),fontSize=(15*font).sp,
+                lineHeight=(24*font).sp,textAlign=TextAlign.Right,
+                style=MaterialTheme.typography.bodyMedium.copy(textDirection=TextDirection.Rtl))
+            Text(note.authenticityFr,fontSize=(13*font).sp,lineHeight=(20*font).sp,
+                color=MaterialTheme.colorScheme.onSurfaceVariant)
+            HorizontalDivider()
+            Text("Traduction du sens",fontSize=(14*font).sp,fontWeight=FontWeight.SemiBold)
+            Text(note.translationFr,fontSize=(16*font).sp,lineHeight=(25*font).sp)
+            Text("Explication brève",fontSize=(14*font).sp,fontWeight=FontWeight.SemiBold)
+            Text(note.explanationFr,fontSize=(16*font).sp,lineHeight=(25*font).sp)
+            for(source in note.sources) {
+                TextButton(onClick={onBrowser(source.url)},
+                    contentPadding=PaddingValues(horizontal=0.dp,vertical=4.dp)) {
+                    Text("Source arabe : ${source.scholar}\n${source.publisher}",
+                        fontSize=(13*font).sp,lineHeight=(20*font).sp)
                 }
             }
         }

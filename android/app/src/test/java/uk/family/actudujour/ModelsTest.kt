@@ -34,4 +34,12 @@ class ModelsTest {
     @Test fun hashesPublicEditionForIntegrity() {
         assertEquals("2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824",sha("hello".encodeToByteArray()))
     }
+    @Test fun acceptsFiveStoryEditionsAndStillReadsOlderLargerArchives() {
+        val a=article(List(6){paragraph})
+        fun complete(count:Int)=edition(a).copy(status="complete",minutes=count*a.minutes,
+            articles=List(count){a.copy(id="article-test-${it.toString().padStart(4,'0')}")})
+        for(count in 5..8) assertEquals(count,valid(complete(count)).articles.size)
+        assertThrows(IllegalArgumentException::class.java){valid(complete(4))}
+        assertThrows(IllegalArgumentException::class.java){valid(complete(9))}
+    }
 }

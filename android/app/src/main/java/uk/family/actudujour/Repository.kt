@@ -15,14 +15,19 @@ import java.time.LocalDate
 import java.util.concurrent.TimeUnit
 
 class NewsRepository(private val context: Context) {
-    companion object { private val extrasLock = Mutex() }
+    companion object {
+        private val extrasLock = Mutex()
+        private val hadithLock = Mutex()
+    }
     private val client = OkHttpClient.Builder()
         .connectTimeout(8,TimeUnit.SECONDS).readTimeout(17,TimeUnit.SECONDS)
         .followRedirects(false).build()
     private val folder = File(context.filesDir,"editions").apply { mkdirs() }
     private val settings = context.getSharedPreferences("reader",Context.MODE_PRIVATE)
     private val extrasFile = File(context.filesDir, "extras.json")
+    private val hadithFile = File(context.filesDir, "hadith.json")
     val extras = MutableStateFlow(runCatching { parseExtras(extrasFile.readBytes()) }.getOrNull())
+    val hadith = MutableStateFlow(runCatching { parseHadith(hadithFile.readBytes()) }.getOrNull())
     val editions = MutableStateFlow(loadLocal())
     val readIds = MutableStateFlow(settings.getStringSet("read",emptySet())?.toSet() ?: emptySet())
 
@@ -93,6 +98,31 @@ class NewsRepository(private val context: Context) {
                 require(tmp.renameTo(extrasFile)) { "Échec d'enregistrement des compléments" }
             } finally { tmp.delete() }
             extras.value = parsed
+            old != parsed
+        }
+    }
+
+    /** A failed, malformed or delayed hadith response never replaces a healthy saved note. */
+    suspend fun refreshHadith(): Boolean = withContext(Dispatchers.IO) {
+        hadithLock.withLock {
+            val raw = download("hadith.json", 100000)
+            val parsed = parseHadith(raw)
+            val old = hadith.value
+            val disk = runCatching { parseHadith(hadithFile.readBytes()) }.getOrNull()
+            val latest = listOfNotNull(old, disk).maxByOrNull {
+                java.time.OffsetDateTime.parse(it.updatedAt).toInstant()
+            }
+            if (latest != null && java.time.OffsetDateTime.parse(parsed.updatedAt).toInstant()
+                    .isBefore(java.time.OffsetDateTime.parse(latest.updatedAt).toInstant())) {
+                hadith.value = latest
+                return@withLock false
+            }
+            val tmp = File.createTempFile("hadith-", ".tmp", context.filesDir)
+            try {
+                tmp.writeBytes(raw)
+                require(tmp.renameTo(hadithFile)) { "Échec d'enregistrement du hadith" }
+            } finally { tmp.delete() }
+            hadith.value = parsed
             old != parsed
         }
     }

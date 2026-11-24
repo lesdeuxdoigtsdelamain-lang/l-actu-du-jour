@@ -23,10 +23,11 @@ from .briefing import prepare_roundup, is_roundup, topic_records
 
 ROOT = Path(__file__).resolve().parents[2]
 LONDON = ZoneInfo('Europe/London')
-TARGET_WORDS = 3300
-MIN_COMPLETE_WORDS = 3060
-MAX_ARTICLES = 8
-MIN_ARTICLES = 6
+# Five substantial reports leave room for the independent daily supplements.
+# A sixth can complete a shorter retained edition; never chase a time quota.
+MIN_COMPLETE_WORDS = 2100
+MAX_ARTICLES = 6
+MIN_ARTICLES = 5
 
 
 def ai_usage(provider, errors=()):
@@ -46,10 +47,9 @@ def ai_usage(provider, errors=()):
 
 
 def complete(articles):
-    """A long but unbalanced edition is not complete."""
+    """Five reports normally suffice; required coverage and real depth remain."""
     return (MIN_ARTICLES <= len(articles) <= MAX_ARTICLES
             and sum(a.word_count for a in articles) >= MIN_COMPLETE_WORDS
-            and sum(a.minutes for a in articles) >= 18
             and sum(is_roundup(a) and 300 <= a.word_count <= 400 for a in articles) == 1
             and any(article_region(a) == 'Royaume-Uni' for a in articles)
             and sum(is_morocco_article(a) for a in articles) <= 1)
@@ -98,7 +98,7 @@ def seed_articles(existing, previous):
             and all(s.published_at.astimezone(LONDON).date() <= existing.edition_date for s in a.source_refs)
             and (article_region(a) != 'France' or is_roundup(a))
             and (not is_roundup(a) or 300 <= a.word_count <= 400)]
-    # Reserve the required slots even when an old edition already had eight items.
+    # Reserve the required slots when reducing an older seven/eight-item edition.
     while len(kept) + slots_missing(kept) > MAX_ARTICLES:
         index = next((i for i in reversed(range(len(kept)))
                       if not is_roundup(kept[i]) and article_region(kept[i]) != 'Royaume-Uni'), None)
@@ -106,18 +106,15 @@ def seed_articles(existing, previous):
             break
         removed = kept.pop(index)
         reasons.append(f'{removed.id}: place réservée aux rubriques France et Royaume-Uni')
-    # An eight-item legacy edition must not be frozen below the reading target.
-    # Replace only its shortest non-required reports, leaving room for real depth.
-    if len(existing.articles) == MAX_ARTICLES:
-        while (sum(a.word_count for a in kept) + 550 * (MAX_ARTICLES-len(kept)) < MIN_COMPLETE_WORDS
-               or sum(a.minutes for a in kept) + 3 * (MAX_ARTICLES-len(kept)) < 18):
-            eligible = [a for a in kept if not is_roundup(a) and article_region(a) != 'Royaume-Uni'
-                        and a.word_count < 450]
-            if not eligible:
-                break
-            shortest = min(eligible, key=lambda a:a.word_count)
-            kept.remove(shortest)
-            reasons.append(f'{shortest.id}: remplacement d’un article trop court pour la durée visée')
+    # Prefer five whenever those five already meet the editorial gate. Retain
+    # six only when removing another report would lose required coverage/depth.
+    while len(kept) > MIN_ARTICLES:
+        index = next((i for i in reversed(range(len(kept)))
+                      if complete(kept[:i] + kept[i+1:])), None)
+        if index is None:
+            break
+        removed = kept.pop(index)
+        reasons.append(f'{removed.id}: édition ramenée à cinq actualités')
     # Show the country explicitly instead of hiding Morocco in health/business.
     kept = [a.model_copy(update={'category': article_region(a)})
             if article_region(a) in ('Maroc', 'Royaume-Uni') else a for a in kept]
@@ -333,8 +330,7 @@ def generate(site, now, provider, feeds, *, target_day=None, memory_sink=None):
                     break
                 if len(articles) >= MAX_ARTICLES:
                     break
-                if complete(articles) and (sum(a.word_count for a in articles) >= TARGET_WORDS
-                                           or sum(a.minutes for a in articles) >= 19):
+                if complete(articles):
                     break
                 region = candidate_region(c)
                 # The French domestic news belongs in the single daily roundup.
