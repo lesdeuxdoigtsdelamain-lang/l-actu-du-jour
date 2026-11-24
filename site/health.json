@@ -1,28 +1,34 @@
 {
-  "checked_at": "2026-11-23T19:16:48.000361+00:00",
+  "checked_at": "2026-11-24T17:52:45.154036+00:00",
   "state": "partial",
-  "reason": "Édition partielle: 6 articles, 17 min; Maroc au maximum une fois, contrôle des événements sur sept jours.",
+  "reason": "Édition partielle: 1 articles, 3 min; Maroc au maximum une fois, contrôle des événements sur sept jours. Manque : tour France",
   "feeds": {
-    "rfi": {
-      "ok": 23
-    },
     "bbc-world": {
-      "ok": 27
+      "ok": 26
     },
-    "france24": {
-      "ok": 23
+    "franceinfo": {
+      "ok": 25
     },
     "aljazeera-en": {
-      "ok": 25
-    },
-    "bbc-science": {
-      "ok": 14
-    },
-    "aljazeera-ar": {
-      "ok": 25
+      "ok": 23
     },
     "bbc-business": {
-      "ok": 23
+      "ok": 26
+    },
+    "france24": {
+      "ok": 24
+    },
+    "bbc-uk": {
+      "ok": 22
+    },
+    "rfi": {
+      "ok": 22
+    },
+    "bbc-ar": {
+      "ok": 12
+    },
+    "bbc-science": {
+      "ok": 12
     },
     "hespress-fr": {
       "ok": 10
@@ -30,50 +36,44 @@
     "hespress-ar": {
       "ok": 12
     },
-    "bbc-ar": {
-      "ok": 14
-    },
-    "bbc-uk": {
-      "ok": 32
-    },
-    "sky-world": {
-      "ok": 3
-    },
-    "gov-uk": {
-      "ok": 20
-    },
-    "franceinfo": {
+    "aljazeera-ar": {
       "ok": 25
     },
-    "telquel": {
-      "error": "Disallowed host / scheme"
+    "sky-world": {
+      "ok": 5
     },
-    "nsf": {
-      "ok": 0
+    "gov-uk": {
+      "ok": 19
     },
     "nasa": {
-      "ok": 7
+      "ok": 10
+    },
+    "nsf": {
+      "ok": 2
+    },
+    "france24-france": {
+      "ok": 14
+    },
+    "nps": {
+      "error": "Payload too large"
+    },
+    "sky-uk": {
+      "ok": 9
+    },
+    "rfi-france": {
+      "ok": 15
     },
     "alarabiya": {
       "error": "HTTP 403"
     },
-    "france24-france": {
-      "ok": 6
-    },
-    "rfi-france": {
-      "ok": 11
-    },
-    "sky-uk": {
-      "ok": 8
+    "globalvoices-ar": {
+      "ok": 0
     },
     "globalvoices": {
-      "ok": 1
-    },
-    "globalvoices-ar": {
       "ok": 2
     },
-    "nps": {
-      "error": "Payload too large"
+    "telquel": {
+      "ok": 47
     },
     "un-fr": {
       "error": "HTTP 404"
@@ -83,10 +83,10 @@
     }
   },
   "ai_usage": {
-    "calls": 17,
-    "neurons": 1123.19,
-    "groq_requests": 12,
-    "groq_tokens": 68756,
+    "calls": 18,
+    "neurons": 1157.05,
+    "groq_requests": 13,
+    "groq_tokens": 68607,
     "cloudflare_requests": 4,
     "providers": [
       "groq",

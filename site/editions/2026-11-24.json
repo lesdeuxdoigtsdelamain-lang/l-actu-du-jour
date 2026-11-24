@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "edition_id": "2026-11-24-fr-FR",
+  "edition_date": "2026-11-24",
+  "generated_at": "2026-11-24T17:52:45.154036Z",
+  "language": "fr-FR",
+  "timezone": "Europe/London",
+  "status": "partielle",
+  "minutes": 3,
+  "articles": [
+    {
+      "id": "d8a99416203b8c3c9b075e",
+      "category": "Royaume-Uni",
+      "title": "Le Royaume-Uni lance une étude officielle sur sa politique pendant les Troubles et publie 5 000 dossiers en ligne",
+      "paragraphs": [
+        "Le gouvernement britannique a annoncé aujourd’hui la création d’un projet historique majeur : la nomination de cinq historiens indépendants pour conduire une étude officielle sur la politique du Royaume-Uni pendant les Troubles en Irlande du Nord. Cette initiative, première du genre dans les 110 ans d’histoire de la série Official History, vise à offrir une analyse rigoureuse des décisions gouvernementales durant le conflit. Les historiens, choisis après un processus ouvert, travailleront en toute autonomie, sans influence politique, afin de garantir la crédibilité du travail.",
+        "Le financement du programme s’élève à 3,6 million de livres sur cinq ans, assurant aux chercheurs un accès complet aux archives d’État, y compris les dossiers classés et partiellement censurés. Cette indépendance leur permettra d’examiner les documents sans restriction, tant pour la phase de recherche que pour la rédaction des conclusions et la publication finale. Le soutien budgétaire souligne l’engagement du gouvernement à fournir les ressources nécessaires à une enquête exhaustive.",
+        "Parallèlement à la nomination des historiens, les Archives nationales ont rendu disponibles en ligne près de 5 000 documents numérisés relatifs aux premières années des Troubles, aux réponses sécuritaires, à l’accord de Sunningdale et à l’effondrement de l’exécutif de 1974. Ces dossiers, déjà consultables en version papier à Kew, sont désormais accessibles instantanément, éliminant les obstacles physiques pour les chercheurs, les étudiants et le grand public. D’autres vagues de mise en ligne sont prévues au cours des quatre prochaines années.",
+        "Le secrétaire d’État pour l’Irlande du Nord, Sir Chris Bryant, a souligné que la compréhension approfondie du passé est indispensable pour traiter l’héritage des Troubles et bâtir une base stable pour l’avenir. Selon lui, disposer d’un compte‑rendu complet des politiques gouvernementales est essentiel pour la réconciliation et la stabilité à long terme. Cette déclaration reflète la volonté politique de soutenir le projet historique comme un pilier du processus de paix.",
+        "Baroness Anderson, sous‑secrétaire d’État pour l’Irlande du Nord, a rappelé que la réconciliation véritable repose sur la connaissance. Elle a ajouté que l’accès numérique élargi aux archives permettra aux citoyens et aux universitaires d’obtenir le contexte nécessaire pour réfléchir au passé. Le professeur Nic Dháibhéid, co‑président du comité consultatif, a exprimé sa satisfaction quant à la sélection des historiens, affirmant que le processus compétitif garantit la plus haute qualité académique pour ce travail crucial.",
+        "Lord Bew, co‑président du même comité, a souligné la diversité des parcours des cinq historiens, tous animés par la détermination de révéler la vérité historique contenue dans les archives. Leur mission ne consiste pas à rédiger une histoire exhaustive du conflit, mais à produire une histoire officielle centrée sur les décisions du gouvernement britannique. Cette approche ciblée vise à éclairer les débats publics et à fournir des bases factuelles pour les politiques futures liées à la réconciliation en Irlande du Nord."
+      ],
+      "image": null,
+      "source_refs": [
+        {
+          "publisher": "GOV.UK",
+          "url": "https://www.gov.uk/government/news/landmark-study-into-uk-government-policy-during-the-troubles-launched-as-thousands-more-archival-records-made-available-online",
+          "language": "en",
+          "published_at": "2026-11-24T15:07:00Z"
+        }
+      ],
+      "word_count": 460,
+      "minutes": 3
+    }
+  ]
+}
