@@ -394,5 +394,71 @@
         }
       ]
     }
+  ],
+  "2026-11-25": [
+    {
+      "id": "df04bc94824c6015eeb181",
+      "title": "Le maire de Cannes, Philippe Laurent, a été réélu à la tête de l'Association des maires de France pour un troisième mandat.",
+      "category": "France",
+      "paragraphs": [
+        "Le maire de Cannes, Philippe Laurent, a été réélu à la tête de l'Association des maires de France pour un troisième mandat. Cette victoire, annoncée mercredi 25 novembre, s'inscrit dans la continuité de son parcours au sein de l'AMF, où il a d'abord été élu en 2023. Son programme met l'accent sur la défense des libertés locales et la concrétisation de projets territoriaux. Malgré les critiques de certains élus qui dénoncent un « mélange des genres » entre mandat associatif et ambition présidentielle, Laurent a obtenu 40 % des voix, consolidant ainsi son influence au sein du paysage politique local."
+      ],
+      "source_refs": [
+        {
+          "publisher": "RFI",
+          "url": "https://www.rfi.fr/fr/france/20261125-david-lisnard-candidat-%C3%A0-la-pr%C3%A9sidentielle-r%C3%A9%C3%A9lu-%C3%A0-la-t%C3%AAte-de-l-association-des-maires-de-france",
+          "language": "fr",
+          "published_at": "2026-11-25T13:41:27+00:00"
+        }
+      ]
+    },
+    {
+      "id": "c3ae6f78fa86b38075a1da",
+      "title": "Le préfet du Loiret, Hugues Moutouh, a été officiellement démis de ses fonctions lors du Conseil des ministres du 25 novembre, suite à une enquête sur d'éventuelles fuites",
+      "category": "France",
+      "paragraphs": [
+        "Le préfet du Loiret, Hugues Moutouh, a été officiellement démis de ses fonctions lors du Conseil des ministres du 25 novembre, suite à une enquête sur d'éventuelles fuites d'éléments judiciaires concernant le Rassemblement national. Après avoir demandé à être relevé de ses fonctions, il a été remplacé par Pierre Ory, préfet de Seine-et-Marne, considéré comme proche du ministre de l'Intérieur. Cette décision intervient après que le ministre de l'Intérieur, Laurent Nuñez, avait proposé un nouveau nom au chef de l'État, soulignant la sensibilité politique de l'affaire et les accusations d'une opération visant à discréditer le préfet."
+      ],
+      "source_refs": [
+        {
+          "publisher": "Franceinfo",
+          "url": "https://www.franceinfo.fr/politique/front-national/enquete-sur-des-soupcons-de-fuites-vers-le-rn-hugues-moutouh-a-ete-officiellement-demis-de-ses-fonctions-remplace-par-le-prefet-pierre-ory_8299428.html",
+          "language": "fr",
+          "published_at": "2026-11-25T16:18:12+00:00"
+        }
+      ]
+    },
+    {
+      "id": "d6a82746cbc94c2bc9455a",
+      "title": "Une étude Ifop commandée par le Crédit Mutuel et la Fédération nationale Solidarité femmes, publiée le 25 novembre à l'occasion de la journée internationale contre les violences",
+      "category": "France",
+      "paragraphs": [
+        "Une étude Ifop commandée par le Crédit Mutuel et la Fédération nationale Solidarité femmes, publiée le 25 novembre à l'occasion de la journée internationale contre les violences faites aux femmes, révèle qu'une femme sur cinq subit des violences économiques au sein de son couple. Ces formes d'abus, qui incluent le contrôle des dépenses, le détournement de l'argent du foyer et l'exclusion des décisions financières, créent une dépendance financière difficile à briser. Le témoignage de Clara, victime de violences conjugales, illustre comment la perte d'autonomie économique peut enfermer les femmes dans des relations abusives, même lorsqu'elles occupent un emploi stable."
+      ],
+      "source_refs": [
+        {
+          "publisher": "Franceinfo",
+          "url": "https://www.franceinfo.fr/societe/violences-faites-aux-femmes/les-violences-economiques-ont-vocation-a-instaurer-un-climat-de-dependance-quand-l-argent-devient-un-outil-d-emprise_8298447.html",
+          "language": "fr",
+          "published_at": "2026-11-25T06:20:44+00:00"
+        }
+      ]
+    },
+    {
+      "id": "92475dbc0a7a7f55b855bf",
+      "title": "Le rapport de la Fondation des femmes, publié le même jour, rappelle que les violences à l'égard des femmes restent la violation des droits humains la plus répandue dans le monde,",
+      "category": "France",
+      "paragraphs": [
+        "Le rapport de la Fondation des femmes, publié le même jour, rappelle que les violences à l'égard des femmes restent la violation des droits humains la plus répandue dans le monde, avec près de 840 millions de femmes touchées selon l'ONU. En France, le nombre de féminicides a atteint 111 en 2025, en hausse par rapport à 107 en 2024, tandis que les plaintes pour violences conjugales ont dépassé les 285 000 en 2025. Ces chiffres soulignent la persistance d'un problème sociétal majeur et la nécessité d'un soutien accru aux victimes, notamment en matière de séparation et de protection juridique."
+      ],
+      "source_refs": [
+        {
+          "publisher": "RFI",
+          "url": "https://www.rfi.fr/fr/france/20261125-violences-sexistes-et-sexuelles-la-fondation-des-femmes-chiffre-le-co%C3%BBt-de-la-s%C3%A9paration-pour-les-victimes",
+          "language": "fr",
+          "published_at": "2026-11-25T05:54:22+00:00"
+        }
+      ]
+    }
   ]
 }

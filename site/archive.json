@@ -3,6 +3,13 @@
   "editions": [
     {
       "schema_version": 1,
+      "date": "2026-11-25",
+      "path": "editions/2026-11-25.json",
+      "sha256": "10823b3d8ea3b5a7cae25b31a4237c214d3bbedf7869650a526566c7f4a6a85c",
+      "published_at": "2026-11-25T17:50:44.129112Z"
+    },
+    {
+      "schema_version": 1,
       "date": "2026-11-24",
       "path": "editions/2026-11-24.json",
       "sha256": "5e705149211448d004940300ecef9c54a91cd7d68835da34943a943555144488",
@@ -42,13 +49,6 @@
       "path": "editions/2026-11-19.json",
       "sha256": "6ff16724364582036ecd29255de3b80187f4c6e08f239111986f4b69b80976a8",
       "published_at": "2026-11-21T00:15:12.872120Z"
-    },
-    {
-      "schema_version": 1,
-      "date": "2026-11-18",
-      "path": "editions/2026-11-18.json",
-      "sha256": "ab1a2166218b212cb4f7ddb2de4d9e765b828f75f20ef5a634ff47d55d369778",
-      "published_at": "2026-11-18T14:31:18.806239Z"
     }
   ]
 }

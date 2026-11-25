@@ -1,35 +1,61 @@
 {
-  "checked_at": "2026-11-25T17:38:48.448266+00:00",
+  "checked_at": "2026-11-25T17:56:16.044561+00:00",
   "feeds": {
-    "hespress-fr": {
-      "ok": 9
+    "france24": {
+      "ok": 23
     },
     "france24-france": {
       "ok": 24
     },
-    "france24": {
-      "ok": 23
+    "hespress-fr": {
+      "ok": 9
     },
     "rfi-france": {
       "ok": 17
+    },
+    "rfi": {
+      "ok": 23
     },
     "franceinfo": {
       "ok": 29
     },
     "telquel": {
-      "error": "Disallowed host / scheme"
-    },
-    "rfi": {
-      "ok": 23
+      "ok": 49
     },
     "un-fr": {
       "error": "HTTP 404"
     }
   },
   "alerts_state": "checked",
-  "history_date": "2026-11-24",
-  "history_state": "cached",
+  "history_date": "2026-11-25",
+  "history_state": "generated",
   "alert_count": 0,
   "alert_memory": [],
-  "history_available": false
+  "history_available": true,
+  "history_attempted_for": "2026-11-25",
+  "history_ai_usage": {
+    "calls": 1,
+    "neurons": 0.0,
+    "groq_requests": 1,
+    "groq_tokens": 1085,
+    "cloudflare_requests": 0,
+    "providers": [
+      "groq"
+    ],
+    "disabled_providers": [],
+    "limits": {
+      "writer_calls": 18,
+      "groq_calls": 18,
+      "groq_tokens": 65000,
+      "cloudflare_calls": 4,
+      "cloudflare_neurons": 3800
+    },
+    "groq_rate_limits": {
+      "requests_limit_per_day": 1000,
+      "requests_remaining_per_day": 993,
+      "tokens_limit_per_minute": 8000,
+      "tokens_remaining_per_minute": 2459
+    },
+    "diagnostics": []
+  }
 }
