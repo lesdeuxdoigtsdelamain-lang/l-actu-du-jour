@@ -1,7 +1,25 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-24T23:51:58.963374Z",
+  "updated_at": "2026-11-25T00:44:55.833315Z",
   "hadiths": [
+    {
+      "id": "hadith-no-hurtful-whispers",
+      "arabic": "إِذَا كُنْتُمْ ثَلَاثَةً فَلَا يَتَنَاجَى اثْنَانِ دُونَ الْآخَرِ، حَتَّى تَخْتَلِطُوا بِالنَّاسِ؛ مِنْ أَجْلِ أَنَّ ذَلِكَ يُحْزِنُهُ.",
+      "narrator_ar": "عبدالله بن مسعود",
+      "reference_ar": "رواه البخاري ومسلم (متفق عليه).",
+      "authenticity_fr": "Authentique (sahih) — rapporté par al-Bukhârî et Muslim.",
+      "translation_fr": "Lorsque vous êtes trois, que deux d'entre vous ne s'entretiennent pas à voix basse en laissant le troisième à l'écart, jusqu'à ce que vous vous mêliez à d'autres personnes, car cela l'attriste.",
+      "explanation_fr": "Ibn Bâz explique que cette règle protège les sentiments de la personne isolée. Il y rattache également les échanges dans une langue qu'elle ignore, lorsqu'ils la laissent seule à l'écart.",
+      "sources": [
+        {
+          "publisher": "الموقع الرسمي للشيخ ابن باز",
+          "scholar": "الشيخ عبدالعزيز بن عبدالله بن باز",
+          "url": "https://binbaz.org.sa/audios/151/1--من-حديث-حق-المسلم-على-المسلم-ست-اذا-لقيته-فسلم-عليه",
+          "language": "ar"
+        }
+      ],
+      "edition_date": "2026-11-25"
+    },
     {
       "id": "hadith-treasure-of-paradise",
       "arabic": "يَا عَبْدَاللَّهِ بْنَ قَيْسٍ، أَلَا أَدُلُّكَ عَلَى كَنْزٍ مِنْ كُنُوزِ الْجَنَّةِ؟ لَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ.",
@@ -109,24 +127,6 @@
         }
       ],
       "edition_date": "2026-11-19"
-    },
-    {
-      "id": "hadith-share-with-neighbors",
-      "arabic": "إِذَا طَبَخْتَ مَرَقَةً فَأَكْثِرْ مَاءَهَا، وتَعَاهَدْ جِيرَانَكَ.",
-      "narrator_ar": "أبو ذر",
-      "reference_ar": "رواه مسلم.",
-      "authenticity_fr": "Authentique (sahih) — rapporté par Muslim.",
-      "translation_fr": "Lorsque tu prépares un bouillon, augmente la quantité d'eau et pense à en offrir à tes voisins.",
-      "explanation_fr": "Ibn Bâz montre qu'on peut être généreux avec peu. Partager un repas simple entretient les liens avec ses voisins ; l'attention et l'aide comptent, sans attendre d'avoir de grandes ressources.",
-      "sources": [
-        {
-          "publisher": "الموقع الرسمي للشيخ ابن باز",
-          "scholar": "الشيخ عبدالعزيز بن عبدالله بن باز",
-          "url": "https://binbaz.org.sa/audios/154/4--من-حديث-لا-يحل-لمسلم-ان-يهجر-اخاه-فوق-ثلاث-ليال",
-          "language": "ar"
-        }
-      ],
-      "edition_date": "2026-11-18"
     }
   ]
 }
