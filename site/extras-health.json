@@ -1,23 +1,23 @@
 {
-  "checked_at": "2026-11-25T08:19:22.393514+00:00",
+  "checked_at": "2026-11-25T09:40:41.125973+00:00",
   "feeds": {
-    "france24": {
-      "ok": 23
+    "franceinfo": {
+      "ok": 27
     },
     "france24-france": {
-      "ok": 11
+      "ok": 12
     },
     "rfi": {
       "ok": 22
     },
     "rfi-france": {
-      "ok": 15
+      "ok": 14
     },
     "hespress-fr": {
       "ok": 10
     },
-    "franceinfo": {
-      "ok": 28
+    "france24": {
+      "ok": 23
     },
     "telquel": {
       "error": "Disallowed host / scheme"
