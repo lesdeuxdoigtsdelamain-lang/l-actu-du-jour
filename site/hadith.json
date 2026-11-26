@@ -1,7 +1,25 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-25T23:26:42.799320Z",
+  "updated_at": "2026-11-26T00:27:30.739070Z",
   "hadiths": [
+    {
+      "id": "hadith-leading-to-good",
+      "arabic": "مَنْ دَلَّ عَلَى خَيْرٍ فَلَهُ مِثْلُ أَجْرِ فَاعِلِهِ.",
+      "narrator_ar": "أبو مسعود",
+      "reference_ar": "رواه مسلم.",
+      "authenticity_fr": "Authentique (sahih) — rapporté par Muslim.",
+      "translation_fr": "Celui qui indique un bien obtient une récompense semblable à celle de celui qui l'accomplit.",
+      "explanation_fr": "Ibn Bâz évoque celui qui signale un nécessiteux à une personne pouvant l'aider. Orienter vers une bonne action permet de participer au bien, même sans pouvoir l'accomplir directement soi-même.",
+      "sources": [
+        {
+          "publisher": "الموقع الرسمي للشيخ ابن باز",
+          "scholar": "الشيخ عبدالعزيز بن عبدالله بن باز",
+          "url": "https://binbaz.org.sa/audios/154/4--من-حديث-لا-يحل-لمسلم-ان-يهجر-اخاه-فوق-ثلاث-ليال",
+          "language": "ar"
+        }
+      ],
+      "edition_date": "2026-11-26"
+    },
     {
       "id": "hadith-no-hurtful-whispers",
       "arabic": "إِذَا كُنْتُمْ ثَلَاثَةً فَلَا يَتَنَاجَى اثْنَانِ دُونَ الْآخَرِ، حَتَّى تَخْتَلِطُوا بِالنَّاسِ؛ مِنْ أَجْلِ أَنَّ ذَلِكَ يُحْزِنُهُ.",
@@ -109,24 +127,6 @@
         }
       ],
       "edition_date": "2026-11-20"
-    },
-    {
-      "id": "hadith-make-things-easy",
-      "arabic": "يَسِّرُوا وَلا تُعَسِّروا، وَبَشِّرُوا وَلا تُنَفِّرُوا",
-      "narrator_ar": "أنس",
-      "reference_ar": "رواه البخاري ومسلم (متفق عليه).",
-      "authenticity_fr": "Authentique (sahih) — rapporté par al-Bukhârî et Muslim.",
-      "translation_fr": "Facilitez les choses et ne les rendez pas difficiles. Annoncez de bonnes nouvelles et ne repoussez pas les gens.",
-      "explanation_fr": "Ibn Bâz rappelle la manière patiente dont le Prophète ﷺ enseignait à ceux qui ignoraient. Conseiller demande de la douceur et de la pédagogie, afin d'aider les personnes à comprendre et à progresser.",
-      "sources": [
-        {
-          "publisher": "الموقع الرسمي للشيخ ابن باز",
-          "scholar": "الشيخ عبدالعزيز بن عبدالله بن باز",
-          "url": "https://binbaz.org.sa/audios/2540/217-من-حديث-ان-الله-رفيق-يحب-الرفق-ويعطي-على-الرفق-ما-لا-يعطي-على-العنف",
-          "language": "ar"
-        }
-      ],
-      "edition_date": "2026-11-19"
     }
   ]
 }
