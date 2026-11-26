@@ -1,8 +1,30 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-26T17:45:29.065543Z",
+  "updated_at": "2026-11-26T18:03:49.488118Z",
   "alerts": [],
   "history": [
+    {
+      "edition_date": "2026-11-26",
+      "event_date": "1979-11-26",
+      "lines": [
+        "Le 26 novembre 1979, le mouvement olympique a réadmis la Chine parmi ses membres.",
+        "Cette réadmission survient après une absence de vingt‑et‑une années.",
+        "La Chine concernée est la République populaire de Chine.",
+        "L'événement marque le retour du pays dans les compétitions olympiques internationales.",
+        "Cette décision ouvre la voie à la participation des athlètes chinois aux Jeux futurs.",
+        "Le 26 novembre reste ainsi une date symbolique pour le sport chinois."
+      ],
+      "sources": [
+        {
+          "publisher": "Wikipédia (CC BY-SA)",
+          "url": "https://fr.wikipedia.org/wiki/26_novembre"
+        },
+        {
+          "publisher": "Wikipédia (CC BY-SA)",
+          "url": "https://fr.wikipedia.org/wiki/Chine"
+        }
+      ]
+    },
     {
       "edition_date": "2026-11-25",
       "event_date": "1830-11-25",
