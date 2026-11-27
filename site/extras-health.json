@@ -1,26 +1,26 @@
 {
-  "checked_at": "2026-11-27T04:39:52.757295+00:00",
+  "checked_at": "2026-11-27T05:46:13.154878+00:00",
   "feeds": {
-    "france24": {
-      "ok": 24
-    },
-    "france24-france": {
-      "ok": 20
+    "franceinfo": {
+      "ok": 29
     },
     "hespress-fr": {
       "ok": 10
     },
-    "franceinfo": {
-      "ok": 30
+    "france24": {
+      "ok": 24
     },
     "rfi": {
-      "ok": 23
+      "ok": 21
     },
     "rfi-france": {
-      "ok": 11
+      "ok": 12
+    },
+    "france24-france": {
+      "ok": 20
     },
     "telquel": {
-      "ok": 39
+      "ok": 34
     },
     "un-fr": {
       "error": "HTTP 404"
