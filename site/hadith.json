@@ -1,7 +1,25 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-26T23:40:50.535687Z",
+  "updated_at": "2026-11-27T00:43:41.750336Z",
   "hadiths": [
+    {
+      "id": "hadith-avoid-suspicion",
+      "arabic": "إِيَّاكُمْ والظَّنَّ؛ فَإِنَّ الظَّنَّ أَكْذَبُ الْحَدِيثِ.",
+      "narrator_ar": "أبو هريرة",
+      "reference_ar": "رواه البخاري ومسلم (متفق عليه).",
+      "authenticity_fr": "Authentique (sahih) — rapporté par al-Bukhârî et Muslim.",
+      "translation_fr": "Gardez-vous des soupçons, car le soupçon est la plus mensongère des paroles.",
+      "explanation_fr": "Ibn Bâz met en garde contre les accusations fondées sur de simples suppositions. Il recommande de préserver une bonne opinion des personnes dont on ne connaît pas de faute et d'éviter de leur prêter injustement de mauvaises intentions.",
+      "sources": [
+        {
+          "publisher": "الموقع الرسمي للشيخ ابن باز",
+          "scholar": "الشيخ عبدالعزيز بن عبدالله بن باز",
+          "url": "https://binbaz.org.sa/audios/160/10--من-حديث-عليكم-بالصدق-فان-الصدق-يهدي",
+          "language": "ar"
+        }
+      ],
+      "edition_date": "2026-11-27"
+    },
     {
       "id": "hadith-leading-to-good",
       "arabic": "مَنْ دَلَّ عَلَى خَيْرٍ فَلَهُ مِثْلُ أَجْرِ فَاعِلِهِ.",
@@ -109,24 +127,6 @@
         }
       ],
       "edition_date": "2026-11-21"
-    },
-    {
-      "id": "hadith-master-anger",
-      "arabic": "لَيس الشَّديدُ بِالصُّرعَةِ، إِنَّما الشَّديدُ الَّذِي يَملِكُ نفسَهُ عِندَ الغضبِ",
-      "narrator_ar": "أبو هريرة",
-      "reference_ar": "رواه البخاري ومسلم (متفق عليه).",
-      "authenticity_fr": "Authentique (sahih) — rapporté par al-Bukhârî et Muslim.",
-      "translation_fr": "Le fort n'est pas celui qui terrasse les autres dans la lutte ; le fort est celui qui se maîtrise au moment de la colère.",
-      "explanation_fr": "Ibn Bâz rattache ce hadith à la patience, au pardon et à la maîtrise de soi. La vraie force consiste à retenir sa réaction et à ne pas se précipiter pour punir ou se venger.",
-      "sources": [
-        {
-          "publisher": "الموقع الرسمي للشيخ ابن باز",
-          "scholar": "الشيخ عبدالعزيز بن عبدالله بن باز",
-          "url": "https://binbaz.org.sa/audios/2543/220-من-حديث-كنت-امشي-مع-رسول-الله-صلى-الله-عليه-وسلم-وعليه-برد-نجراني-غليظ-الحاشية",
-          "language": "ar"
-        }
-      ],
-      "edition_date": "2026-11-20"
     }
   ]
 }
