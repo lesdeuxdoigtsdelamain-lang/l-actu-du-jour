@@ -1,43 +1,43 @@
 {
-  "checked_at": "2026-11-27T17:12:25.131278+00:00",
+  "checked_at": "2026-11-27T18:00:07.647297+00:00",
   "feeds": {
+    "hespress-fr": {
+      "ok": 9
+    },
+    "rfi": {
+      "ok": 22
+    },
     "france24": {
       "ok": 23
     },
     "france24-france": {
       "error": "HTTP 403"
     },
-    "hespress-fr": {
-      "ok": 10
-    },
     "franceinfo": {
       "ok": 25
     },
     "rfi-france": {
-      "ok": 11
+      "ok": 12
     },
     "telquel": {
-      "ok": 64
-    },
-    "rfi": {
-      "ok": 23
+      "ok": 65
     },
     "un-fr": {
       "error": "HTTP 404"
     }
   },
   "alerts_state": "checked",
-  "history_date": "2026-11-26",
-  "history_state": "cached",
+  "history_date": "2026-11-27",
+  "history_state": "generated",
   "alert_count": 0,
   "alert_memory": [],
-  "history_available": false,
-  "history_attempted_for": "2026-11-26",
+  "history_available": true,
+  "history_attempted_for": "2026-11-27",
   "history_ai_usage": {
     "calls": 1,
     "neurons": 0.0,
     "groq_requests": 1,
-    "groq_tokens": 977,
+    "groq_tokens": 1216,
     "cloudflare_requests": 0,
     "providers": [
       "groq"
@@ -52,9 +52,9 @@
     },
     "groq_rate_limits": {
       "requests_limit_per_day": 1000,
-      "requests_remaining_per_day": 989,
+      "requests_remaining_per_day": 993,
       "tokens_limit_per_minute": 8000,
-      "tokens_remaining_per_minute": 3714
+      "tokens_remaining_per_minute": 2721
     },
     "diagnostics": []
   }

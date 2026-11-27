@@ -1,8 +1,38 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-27T17:12:25.131278Z",
+  "updated_at": "2026-11-27T18:00:07.647297Z",
   "alerts": [],
   "history": [
+    {
+      "edition_date": "2026-11-27",
+      "event_date": "1790-11-27",
+      "lines": [
+        "Le 27 novembre 1790, à Paris, l'Assemblée constituante impose le serment aux ecclésiastiques.",
+        "Paris est la capitale de la France, située sur une boucle de la Seine.",
+        "L'Assemblée nationale constituante a été créée à la suite des états généraux de 1789.",
+        "Elle était d'abord appelée Assemblée nationale puis Assemblée nationale constituante en juillet 1789.",
+        "Le serment est une affirmation solennelle faite oralement pour garantir la vérité ou l'engagement.",
+        "Cette mesure visait à aligner le clergé sur les nouvelles lois de la Révolution."
+      ],
+      "sources": [
+        {
+          "publisher": "Wikipédia (CC BY-SA)",
+          "url": "https://fr.wikipedia.org/wiki/27_novembre"
+        },
+        {
+          "publisher": "Wikipédia (CC BY-SA)",
+          "url": "https://fr.wikipedia.org/wiki/Paris"
+        },
+        {
+          "publisher": "Wikipédia (CC BY-SA)",
+          "url": "https://fr.wikipedia.org/wiki/Assembl%C3%A9e_nationale_constituante_(1789)"
+        },
+        {
+          "publisher": "Wikipédia (CC BY-SA)",
+          "url": "https://fr.wikipedia.org/wiki/Serment"
+        }
+      ]
+    },
     {
       "edition_date": "2026-11-26",
       "event_date": "1979-11-26",

@@ -1,96 +1,95 @@
 {
-  "checked_at": "2026-11-26T17:54:08.231743+00:00",
+  "checked_at": "2026-11-27T17:54:36.983712+00:00",
   "state": "success",
   "reason": "Édition complete: 5 articles, 14 min; Maroc au maximum une fois, contrôle des événements sur sept jours.",
   "feeds": {
-    "aljazeera-en": {
-      "ok": 25
-    },
-    "franceinfo": {
-      "ok": 29
-    },
     "france24": {
-      "ok": 24
+      "ok": 23
     },
     "bbc-ar": {
-      "ok": 10
+      "ok": 12
     },
-    "bbc-world": {
-      "ok": 28
+    "aljazeera-en": {
+      "ok": 22
     },
-    "sky-world": {
-      "ok": 6
-    },
-    "aljazeera-ar": {
+    "franceinfo": {
       "ok": 25
     },
+    "rfi": {
+      "ok": 22
+    },
+    "bbc-world": {
+      "ok": 29
+    },
+    "bbc-business": {
+      "ok": 24
+    },
     "bbc-uk": {
-      "ok": 19
+      "ok": 21
     },
     "hespress-ar": {
       "ok": 12
     },
-    "bbc-business": {
-      "ok": 28
-    },
     "hespress-fr": {
-      "ok": 10
-    },
-    "rfi": {
-      "ok": 23
+      "ok": 9
     },
     "bbc-science": {
       "ok": 21
     },
-    "nasa": {
-      "ok": 7
+    "aljazeera-ar": {
+      "ok": 24
     },
     "gov-uk": {
       "ok": 20
     },
+    "sky-world": {
+      "ok": 6
+    },
+    "nasa": {
+      "ok": 4
+    },
+    "telquel": {
+      "error": "Disallowed host / scheme"
+    },
     "nsf": {
       "ok": 0
-    },
-    "nps": {
-      "error": "Payload too large"
-    },
-    "france24-france": {
-      "ok": 30
     },
     "alarabiya": {
       "error": "HTTP 403"
     },
     "sky-uk": {
-      "ok": 10
+      "ok": 9
     },
-    "rfi-france": {
-      "ok": 14
+    "nps": {
+      "error": "Payload too large"
     },
-    "globalvoices": {
-      "ok": 2
+    "france24-france": {
+      "ok": 23
     },
     "globalvoices-ar": {
       "ok": 0
     },
-    "telquel": {
-      "ok": 59
+    "globalvoices": {
+      "ok": 2
     },
-    "un-en": {
-      "error": "HTTP 404"
+    "rfi-france": {
+      "ok": 12
     },
     "un-fr": {
+      "error": "HTTP 404"
+    },
+    "un-en": {
       "error": "HTTP 404"
     }
   },
   "ai_usage": {
-    "calls": 10,
-    "neurons": 260.38,
-    "groq_requests": 10,
-    "groq_tokens": 46410,
-    "cloudflare_requests": 1,
+    "calls": 6,
+    "neurons": 0.0,
+    "groq_requests": 6,
+    "groq_tokens": 32356,
+    "cloudflare_requests": 0,
     "providers": [
-      "groq",
-      "cloudflare"
+      "groq"
     ],
     "disabled_providers": [],
     "limits": {
@@ -102,27 +101,14 @@
     },
     "groq_rate_limits": {
       "requests_limit_per_day": 1000,
-      "requests_remaining_per_day": 990,
+      "requests_remaining_per_day": 994,
       "tokens_limit_per_minute": 8000,
-      "tokens_remaining_per_minute": 3044
+      "tokens_remaining_per_minute": 2811
     },
-    "diagnostics": [
-      {
-        "provider": "groq",
-        "category": "invalid_response",
-        "retryable": true,
-        "http_status": 400,
-        "error_code": "json_validate_failed",
-        "error_type": "invalid_request_error"
-      }
-    ],
+    "diagnostics": [],
     "quality_rejections": {
-      "longueur réelle 294, attendu 300 à 400 mots": 1,
-      "longueur réelle 446, attendu 450 à 650 mots": 1,
-      "longueur réelle 365, attendu 450 à 650 mots": 1,
-      "les références techniques doivent figurer uniquement dans le champ preuves": 1,
-      "chiffre sans preuve dans les sources": 1
+      "les références techniques doivent figurer uniquement dans le champ preuves": 1
     },
-    "quality_rejections_total": 5
+    "quality_rejections_total": 1
   }
 }
