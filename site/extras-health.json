@@ -1,14 +1,11 @@
 {
-  "checked_at": "2026-11-28T19:12:19.388935+00:00",
+  "checked_at": "2026-11-28T19:23:24.593058+00:00",
   "feeds": {
-    "hespress-fr": {
-      "ok": 10
-    },
     "rfi": {
       "ok": 22
     },
-    "france24-france": {
-      "ok": 8
+    "hespress-fr": {
+      "ok": 10
     },
     "rfi-france": {
       "ok": 10
@@ -18,6 +15,9 @@
     },
     "franceinfo": {
       "ok": 26
+    },
+    "france24-france": {
+      "ok": 8
     },
     "telquel": {
       "ok": 31
