@@ -1,8 +1,34 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-28T17:24:01.012388Z",
+  "updated_at": "2026-11-28T17:57:39.036482Z",
   "alerts": [],
   "history": [
+    {
+      "edition_date": "2026-11-28",
+      "event_date": "2023-11-28",
+      "lines": [
+        "Le 28 novembre 2023, Virgin Atlantic a effectué un vol transatlantique de Londres‑Heathrow à New York‑JFK.",
+        "Ce vol a été réalisé avec un Boeing 787 alimenté à 100 % de carburant durable d'aviation.",
+        "Le carburant durable est certifié par des organismes indépendants et répond aux normes ASTM D1655.",
+        "Il possède les mêmes propriétés physiques et chimiques que le carburant fossile, sans nécessiter de modifications d’avion.",
+        "Heathrow, premier aéroport d’Europe en 2023, a servi de point de départ à cet historique décollage.",
+        "Ce succès montre la viabilité du CDA pour les liaisons commerciales longues distances."
+      ],
+      "sources": [
+        {
+          "publisher": "Wikipédia (CC BY-SA)",
+          "url": "https://fr.wikipedia.org/wiki/28_novembre"
+        },
+        {
+          "publisher": "Wikipédia (CC BY-SA)",
+          "url": "https://fr.wikipedia.org/wiki/Carburant_durable_d'aviation"
+        },
+        {
+          "publisher": "Wikipédia (CC BY-SA)",
+          "url": "https://fr.wikipedia.org/wiki/A%C3%A9roport_de_Londres-Heathrow"
+        }
+      ]
+    },
     {
       "edition_date": "2026-11-27",
       "event_date": "1790-11-27",

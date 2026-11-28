@@ -1,97 +1,101 @@
 {
-  "checked_at": "2026-11-27T17:54:36.983712+00:00",
-  "state": "success",
-  "reason": "Édition complete: 5 articles, 14 min; Maroc au maximum une fois, contrôle des événements sur sept jours.",
+  "checked_at": "2026-11-28T17:43:32.647255+00:00",
+  "state": "partial",
+  "reason": "Édition partielle: 4 articles, 11 min; Maroc au maximum une fois, contrôle des événements sur sept jours.",
   "feeds": {
-    "france24": {
+    "aljazeera-en": {
       "ok": 23
     },
-    "bbc-ar": {
-      "ok": 12
-    },
-    "aljazeera-en": {
-      "ok": 22
+    "france24": {
+      "ok": 24
     },
     "franceinfo": {
       "ok": 25
     },
+    "bbc-world": {
+      "ok": 23
+    },
     "rfi": {
       "ok": 22
     },
-    "bbc-world": {
-      "ok": 29
+    "bbc-ar": {
+      "ok": 10
     },
     "bbc-business": {
-      "ok": 24
-    },
-    "bbc-uk": {
-      "ok": 21
-    },
-    "hespress-ar": {
-      "ok": 12
-    },
-    "hespress-fr": {
-      "ok": 9
+      "ok": 10
     },
     "bbc-science": {
-      "ok": 21
+      "ok": 15
     },
     "aljazeera-ar": {
-      "ok": 24
+      "ok": 25
+    },
+    "bbc-uk": {
+      "ok": 28
+    },
+    "hespress-fr": {
+      "ok": 10
+    },
+    "sky-world": {
+      "ok": 3
+    },
+    "hespress-ar": {
+      "ok": 11
+    },
+    "nasa": {
+      "ok": 3
     },
     "gov-uk": {
       "ok": 20
     },
-    "sky-world": {
-      "ok": 6
-    },
-    "nasa": {
-      "ok": 4
-    },
-    "telquel": {
-      "error": "Disallowed host / scheme"
-    },
     "nsf": {
       "ok": 0
+    },
+    "france24-france": {
+      "ok": 8
     },
     "alarabiya": {
       "error": "HTTP 403"
     },
-    "sky-uk": {
-      "ok": 9
-    },
     "nps": {
       "error": "Payload too large"
     },
-    "france24-france": {
-      "ok": 23
+    "rfi-france": {
+      "ok": 10
+    },
+    "sky-uk": {
+      "ok": 10
     },
     "globalvoices-ar": {
       "ok": 0
     },
     "globalvoices": {
-      "ok": 2
+      "ok": 3
     },
-    "rfi-france": {
-      "ok": 12
-    },
-    "un-fr": {
-      "error": "HTTP 404"
+    "telquel": {
+      "ok": 31
     },
     "un-en": {
+      "error": "HTTP 404"
+    },
+    "un-fr": {
       "error": "HTTP 404"
     }
   },
   "ai_usage": {
-    "calls": 6,
-    "neurons": 0.0,
-    "groq_requests": 6,
-    "groq_tokens": 32356,
-    "cloudflare_requests": 0,
+    "calls": 18,
+    "neurons": 1005.97,
+    "groq_requests": 13,
+    "groq_tokens": 66631,
+    "cloudflare_requests": 4,
     "providers": [
+      "groq",
+      "cloudflare"
+    ],
+    "disabled_providers": [
+      "cloudflare",
       "groq"
     ],
-    "disabled_providers": [],
     "limits": {
       "writer_calls": 18,
       "groq_calls": 18,
@@ -101,14 +105,36 @@
     },
     "groq_rate_limits": {
       "requests_limit_per_day": 1000,
-      "requests_remaining_per_day": 994,
+      "requests_remaining_per_day": 987,
       "tokens_limit_per_minute": 8000,
-      "tokens_remaining_per_minute": 2811
+      "tokens_remaining_per_minute": 3034
     },
-    "diagnostics": [],
+    "diagnostics": [
+      {
+        "provider": "groq",
+        "category": "local_limit",
+        "retryable": false,
+        "limit": "groq_tokens",
+        "ceiling": 65000
+      },
+      {
+        "provider": "cloudflare",
+        "category": "local_limit",
+        "retryable": false,
+        "limit": "cloudflare_calls",
+        "ceiling": 4
+      }
+    ],
     "quality_rejections": {
-      "les références techniques doivent figurer uniquement dans le champ preuves": 1
+      "longueur réelle 392, attendu 450 à 650 mots": 1,
+      "les références techniques doivent figurer uniquement dans le champ preuves": 4,
+      "chiffre sans preuve dans les sources": 3,
+      "longueur réelle 444, attendu 450 à 650 mots": 1,
+      "longueur réelle 334, attendu 450 à 650 mots": 1,
+      "longueur réelle 352, attendu 450 à 650 mots": 2,
+      "longueur réelle 375, attendu 450 à 650 mots": 1
     },
-    "quality_rejections_total": 1
+    "quality_rejections_total": 13,
+    "local_attempt_limit_reached": true
   }
 }
