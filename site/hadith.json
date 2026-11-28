@@ -1,7 +1,25 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-27T23:28:57.223372Z",
+  "updated_at": "2026-11-28T00:25:53.087970Z",
   "hadiths": [
+    {
+      "id": "hadith-respect-others-seat",
+      "arabic": "لَا يُقِيمُ الرَّجُلُ الرَّجُلَ مِنْ مَجْلِسِهِ ثم يَجْلِسُ فِيهِ، ولَكِنْ تَفَسَّحُوا وتَوَسَّعُوا.",
+      "narrator_ar": "عبدالله بن عمر",
+      "reference_ar": "رواه البخاري ومسلم (متفق عليه).",
+      "authenticity_fr": "Authentique (sahih) — rapporté par al-Bukhârî et Muslim.",
+      "translation_fr": "Qu'un homme ne fasse pas lever un autre de sa place pour s'y asseoir. Faites plutôt de la place et élargissez-vous.",
+      "explanation_fr": "Ibn Bâz rappelle que le premier arrivé conserve sa place. On accueille le nouvel arrivant en se serrant ; céder sa place reste possible librement, sans subir de pression des autres.",
+      "sources": [
+        {
+          "publisher": "الموقع الرسمي للشيخ ابن باز",
+          "scholar": "الشيخ عبدالعزيز بن عبدالله بن باز",
+          "url": "https://binbaz.org.sa/audios/151/1--من-حديث-حق-المسلم-على-المسلم-ست-اذا-لقيته-فسلم-عليه",
+          "language": "ar"
+        }
+      ],
+      "edition_date": "2026-11-28"
+    },
     {
       "id": "hadith-avoid-suspicion",
       "arabic": "إِيَّاكُمْ والظَّنَّ؛ فَإِنَّ الظَّنَّ أَكْذَبُ الْحَدِيثِ.",
@@ -109,24 +127,6 @@
         }
       ],
       "edition_date": "2026-11-22"
-    },
-    {
-      "id": "hadith-mutual-rights",
-      "arabic": "حَقُّ الْمُسْلِمِ عَلَى الْمُسْلِمِ سِتٌّ: إِذَا لَقِيتَهُ فَسَلِّمْ عَلَيْهِ، وإِذَا دَعَاكَ فَأَجِبْهُ، وإِذَا اسْتَنْصَحَكَ فَانْصَحْهُ، وإِذَا عَطَسَ فَحَمِدَ اللَّهَ فَسَمِّتْهُ، وإِذَا مَرِضَ فَعُدْهُ، وإِذَا مَاتَ فَاتْبَعْهُ.",
-      "narrator_ar": "أبو هريرة",
-      "reference_ar": "رواه مسلم.",
-      "authenticity_fr": "Authentique (sahih) — rapporté par Muslim.",
-      "translation_fr": "Le musulman a six droits sur le musulman : lorsque tu le rencontres, salue-le ; lorsqu'il t'invite, réponds-lui ; lorsqu'il te demande conseil, conseille-le ; lorsqu'il éternue puis loue Allah, souhaite-lui la miséricorde ; lorsqu'il est malade, rends-lui visite ; lorsqu'il meurt, accompagne son cortège funèbre.",
-      "explanation_fr": "Ibn Bâz présente ces gestes comme des moyens de renforcer l'affection et l'entraide. Il insiste sur le conseil honnête, sans tromperie, et sur l'attention portée à la personne malade.",
-      "sources": [
-        {
-          "publisher": "الموقع الرسمي للشيخ ابن باز",
-          "scholar": "الشيخ عبدالعزيز بن عبدالله بن باز",
-          "url": "https://binbaz.org.sa/audios/151/1--من-حديث-حق-المسلم-على-المسلم-ست-اذا-لقيته-فسلم-عليه",
-          "language": "ar"
-        }
-      ],
-      "edition_date": "2026-11-21"
     }
   ]
 }
