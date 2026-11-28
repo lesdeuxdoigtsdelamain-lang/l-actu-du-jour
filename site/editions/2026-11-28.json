@@ -2,11 +2,11 @@
   "schema_version": 1,
   "edition_id": "2026-11-28-fr-FR",
   "edition_date": "2026-11-28",
-  "generated_at": "2026-11-28T17:43:32.647255Z",
+  "generated_at": "2026-11-28T19:12:04.034479Z",
   "language": "fr-FR",
   "timezone": "Europe/London",
-  "status": "partielle",
-  "minutes": 11,
+  "status": "complete",
+  "minutes": 14,
   "articles": [
     {
       "id": "france-tour-2026-11-28",
@@ -118,6 +118,36 @@
         }
       ],
       "word_count": 486,
+      "minutes": 3
+    },
+    {
+      "id": "cafc3d64152d73d81697f0",
+      "category": "Monde",
+      "title": "Escalade des frappes sur les infrastructures énergétiques entre la Russie et l'Ukraine",
+      "paragraphs": [
+        "À l'approche du cinquième anniversaire de l'invasion russe, les attaques contre les installations énergétiques se sont intensifiées, mêlant drones, missiles et frappes terrestres. Les deux pays s'échangent régulièrement des frappes visant les réseaux d'électricité, les raffineries et les stations de pompage, dans un contexte de guerre hybride où chaque côté cherche à affaiblir la capacité de l'autre à soutenir l'effort de guerre. Cette dynamique reflète une escalade stratégique qui dépasse les simples opérations militaires ponctuelles, affectant directement les civils et les économies locales.",
+        "Les forces russes ont déclaré avoir abattu 1 246 drones ukrainiens pendant la nuit, un des plus hauts chiffres enregistrés depuis le début du conflit. Cette information, fournie par le ministère russe de la Défense, ne précise pas le nombre de drones lancés ni le taux de réussite des frappes, mais souligne la capacité de défense aérienne russe autour de Moscou, où 462 drones auraient été interceptés depuis le vendredi soir. Ces données illustrent l'intensité des tentatives ukrainiennes de pénétrer le territoire russe.",
+        "Du côté ukrainien, le ministère de la Défense a indiqué que ses forces ont ciblé plusieurs installations pétrolières russes, dont la raffinerie de Novoshakhtinsk dans la région de Rostov, touchée pour la seconde fois en cinq jours, ainsi que des sites de transport et de stockage à Samara et Bashkortostan. Ces attaques visent à perturber l'approvisionnement énergétique russe, tout en démontrant la capacité de l'Ukraine à projeter des frappes à longue distance, malgré les risques de représailles accrues.",
+        "En Ukraine, les frappes russes ont touché des infrastructures critiques à Kyiv, notamment une sous‑station et une centrale thermique dans la région de la capitale, provoquant des craintes de coupures d'électricité et d'eau. Le maire Vitali Klitschko a alerté la population sur d'éventuelles perturbations, tandis que les autorités locales ont signalé des explosions et des alertes aériennes. Ces attaques soulignent la vulnérabilité des réseaux urbains face à des offensives aériennes soutenues.",
+        "Dans la région occupée de Zaporizhzhia, les autorités pro‑russes ont rapporté la mort d'une infirmière et d'un conducteur suite à un drone ukrainien qui aurait percuté un véhicule hospitalier. D'autres blessés, dont le chef du service médical, ont été signalés. Cette incident s'inscrit dans une série d'attaques où plus de 700 drones auraient été déployés en 24 heures, selon le responsable militaire local, accentuant le caractère intensif et continu des opérations aériennes dans les zones contestées.",
+        "Les conséquences humaines de ces échanges d'attaques sont lourdes: au moins dix civils ont perdu la vie à la suite de drones russes sur le territoire ukrainien, tandis que les combats ont fait de nombreux blessés dans les deux pays. Les autorités ukrainiennes ont également indiqué que sept personnes ont été tuées et sept blessées dans une attaque sur une entreprise à Nizhyn, dans la région de Chernihiv, et qu'une femme a été tuée à Kyiv. Ces pertes soulignent le coût humain croissant de la guerre énergétique."
+      ],
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Earth_Geoid_Field_Anomaly_globe%2C_NASA_Earth_Observatory.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "alt": "Photographie d’illustration — Monde",
+        "credit": "NASA Earth Observatory",
+        "license": "Public domain",
+        "page": "https://commons.wikimedia.org/wiki/File:Earth_Geoid_Field_Anomaly_globe%2C_NASA_Earth_Observatory.jpg"
+      },
+      "source_refs": [
+        {
+          "publisher": "Al Jazeera English",
+          "url": "https://www.aljazeera.com/news/2026/11/28/russia-and-ukraine-strike-energy-infrastructure-as-attacks-kill-10",
+          "language": "en",
+          "published_at": "2026-11-28T18:06:10Z"
+        }
+      ],
+      "word_count": 478,
       "minutes": 3
     }
   ]
