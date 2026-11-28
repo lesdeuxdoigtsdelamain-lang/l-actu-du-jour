@@ -1,11 +1,11 @@
 {
-  "checked_at": "2026-11-28T11:24:49.322117+00:00",
+  "checked_at": "2026-11-28T12:26:09.743701+00:00",
   "feeds": {
-    "france24": {
-      "ok": 24
+    "rfi": {
+      "ok": 22
     },
-    "france24-france": {
-      "ok": 8
+    "rfi-france": {
+      "ok": 12
     },
     "hespress-fr": {
       "ok": 10
@@ -13,14 +13,14 @@
     "franceinfo": {
       "ok": 29
     },
-    "rfi": {
-      "ok": 22
+    "france24": {
+      "ok": 24
     },
-    "rfi-france": {
-      "ok": 12
+    "france24-france": {
+      "ok": 8
     },
     "telquel": {
-      "ok": 37
+      "error": "Disallowed host / scheme"
     },
     "un-fr": {
       "error": "HTTP 404"
